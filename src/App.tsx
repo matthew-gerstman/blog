@@ -26,7 +26,7 @@ function App() {
   });
 
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/blog/">
       <ProgressBar />
       <Header theme={theme} onToggleTheme={toggleTheme} />
       <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} posts={posts} />
