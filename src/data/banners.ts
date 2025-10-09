@@ -1,0 +1,22 @@
+export const bannerImages: Record<string, string> = {
+  'all-in-on-homekit': 'https://www.matthewgerstman.com/content/images/size/w2000/2022/01/01-1.jpeg',
+  'es-everything': 'https://www.matthewgerstman.com/content/images/size/w2000/2020/01/scott-trento-xrBxbPiK2w8-unsplash.jpg',
+  'functional-programming-fundamentals': 'https://www.matthewgerstman.com/content/images/2019/01/alex-perez-512610-unsplash.jpg',
+  'hello-there': 'https://www.matthewgerstman.com/content/images/2019/01/01.jpeg',
+  'history-of-the-web': 'https://www.matthewgerstman.com/content/images/size/w2000/2021/05/benjamin-voros-phIFdC6lA4E-unsplash.jpg',
+  'how-i-prepare-a-talk': 'https://www.matthewgerstman.com/content/images/2019/04/israel-palacio-683476-unsplash.jpg',
+  'how-redux-works-part-1': 'https://www.matthewgerstman.com/content/images/2019/01/joshua-earle-183374-unsplash.jpg',
+  'how-redux-works-part-2': 'https://www.matthewgerstman.com/content/images/2019/01/joshua-earle-183374-unsplash-1.jpg',
+  'map-filter-reduce': 'https://www.matthewgerstman.com/content/images/2019/03/markus-spiske-221494-unsplash.jpg',
+  'mary-had-a-little-lambda': 'https://www.matthewgerstman.com/content/images/2019/01/veeterzy-118209-unsplash.jpg',
+  'performance-testing-anonymous-functions': 'https://www.matthewgerstman.com/content/images/2019/09/scott-webb-102825-unsplash.jpg',
+  'reduce-reduce-reduce': 'https://www.matthewgerstman.com/content/images/2019/03/barn-images-523848-unsplash.jpg',
+  'redux-with-code-splitting-and-type-checking': 'https://www.matthewgerstman.com/content/images/2019/01/sebastian-unrau-47679-unsplash.jpg',
+  'surviving-the-technical-interview': 'https://www.matthewgerstman.com/content/images/2019/09/you-x-ventures-470005-unsplash.jpg',
+  'throttle-and-debounce': 'https://www.matthewgerstman.com/content/images/2019/03/markus-spiske-221494-unsplash-1.jpg',
+  'ts-tricks-higher-order-components': 'https://www.matthewgerstman.com/content/images/2019/01/david-clode-369257-unsplash.jpg',
+  'ts-tricks-type-guards': 'https://www.matthewgerstman.com/content/images/2019/01/markus-spiske-221494-unsplash-2.jpg',
+  'ts-tricks-type-safe-reducers': 'https://www.matthewgerstman.com/content/images/2019/01/sebastian-unrau-47679-unsplash-1.jpg',
+  'what-the-functor': 'https://www.matthewgerstman.com/content/images/2019/01/alex-perez-512610-unsplash-1.jpg',
+  'bay-area-internship': 'https://www.matthewgerstman.com/content/images/2019/05/maarten-van-den-heuvel-400626-unsplash.jpg'
+};
