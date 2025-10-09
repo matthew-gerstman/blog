@@ -1,0 +1,92 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--grappa-border);
+  transition: background-color 0.3s;
+}
+
+:root[data-theme="light"] .header {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--grappa-bright) 0%, var(--text) 50%, var(--grappa-bright) 100%);
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: background-position 0.6s ease;
+}
+
+.logo:hover {
+  background-position: 100% 0%;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--grappa-bright);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--grappa-bright);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.themeToggle {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.themeToggle:hover {
+  border-color: var(--grappa-border);
+}
+
+.themeIcon {
+  font-size: 1rem;
+}

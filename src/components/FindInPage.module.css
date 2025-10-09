@@ -1,0 +1,53 @@
+.container {
+  position: fixed;
+  top: 80px;
+  right: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--grappa-border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 200;
+}
+
+.input {
+  width: 200px;
+  padding: 0.5rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.input:focus { border-color: var(--grappa-bright); }
+.input::placeholder { color: var(--text-dim); }
+.matches { font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; }
+.controls { display: flex; gap: 0.25rem; }
+
+.button {
+  width: 28px;
+  height: 28px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--grappa);
+  border-color: var(--grappa-border);
+  color: var(--text);
+}
+
+.button:disabled { opacity: 0.3; cursor: not-allowed; }

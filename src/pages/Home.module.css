@@ -1,0 +1,7 @@
+.container { max-width: 720px; margin: 0 auto; }
+.sortControls { padding: 1rem 2rem; display: flex; gap: 0.5rem; }
+.sortButton { padding: 0.35rem 0.75rem; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); font-size: 0.75rem; cursor: pointer; transition: all 0.2s; }
+.sortButton:hover { border-color: var(--grappa-border); color: var(--text); }
+.sortButton.active { background: var(--grappa); border-color: var(--grappa); color: var(--text); }
+.posts { padding: 2rem 2rem 8rem; }
+@media (max-width: 768px) { .posts { padding: 2rem 1.5rem 6rem; } }
