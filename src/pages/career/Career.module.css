@@ -1,5 +1,5 @@
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -7,7 +7,6 @@
 .hero {
   text-align: center;
   padding: 3rem 0 4rem 0;
-  border-bottom: 1px solid var(--border);
   margin-bottom: 3rem;
 }
 
@@ -24,23 +23,14 @@
 
 .timeline {
   position: relative;
-  padding-left: 3rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0.75rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, var(--grappa-bright), var(--grappa));
 }
 
 .timelineItem {
-  position: relative;
-  margin-bottom: 4rem;
-  animation: slideInRight 0.6s ease-out backwards;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 4rem;
+  margin-bottom: 6rem;
+  animation: fadeIn 0.6s ease-out backwards;
 }
 
 .timelineItem:nth-child(1) { animation-delay: 0.1s; }
@@ -50,90 +40,84 @@
 .timelineItem:nth-child(5) { animation-delay: 0.5s; }
 .timelineItem:nth-child(6) { animation-delay: 0.6s; }
 
-@keyframes slideInRight {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
-.timelineDot {
-  position: absolute;
-  left: -2.5rem;
-  top: 0.5rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  border: 3px solid var(--background);
-  box-shadow: 0 0 0 2px var(--grappa-bright);
-  z-index: 1;
-  transition: all 0.3s ease;
+.jobInfo {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+  padding-right: 2rem;
+  border-right: 2px solid var(--grappa-bright);
 }
 
-.timelineItem:hover .timelineDot {
-  transform: scale(1.3);
-  box-shadow: 0 0 0 4px var(--grappa-bright), 0 0 20px var(--grappa-bright);
-}
-
-.timelineContent {
-  background: var(--surface);
-  padding: 2rem;
-  border-radius: 16px;
-  border: 2px solid var(--border);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.timelineItem:hover .timelineContent {
-  border-color: var(--grappa-bright);
-  box-shadow: 0 8px 24px var(--grappa-subtle);
-  transform: translateX(8px);
-}
-
-.companyHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.companyHeader h2 {
-  font-size: 2rem;
+.companyName {
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--grappa-bright);
-  margin: 0;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.role {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
 }
 
 .period {
   font-size: 0.95rem;
   color: var(--text-muted);
-  font-weight: 600;
-}
-
-.role {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  font-weight: 600;
-  margin: 0 0 1rem 0;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .companyDescription {
-  color: var(--text);
-  line-height: 1.7;
-  margin: 0 0 2rem 0;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .projects {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 2rem;
+  padding-top: 0.5rem;
+}
+
+/* Remove borders from project cards */
+.projects :global(.projectCard) {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.projects :global(.projectCard:hover) {
+  border: none;
+  box-shadow: none;
+  transform: none;
+}
+
+@media (max-width: 1024px) {
+  .timelineItem {
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+  }
+
+  .jobInfo {
+    top: 80px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -141,31 +125,21 @@
     font-size: 2rem;
   }
 
-  .timeline {
-    padding-left: 2rem;
+  .timelineItem {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
   }
 
-  .timeline::before {
-    left: 0.5rem;
+  .jobInfo {
+    position: static;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 2px solid var(--grappa-bright);
+    padding-bottom: 1.5rem;
   }
 
-  .timelineDot {
-    left: -1.75rem;
-    width: 1rem;
-    height: 1rem;
-  }
-
-  .timelineContent {
-    padding: 1.5rem;
-  }
-
-  .companyHeader h2 {
+  .companyName {
     font-size: 1.5rem;
-  }
-
-  .companyHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
   }
 }
