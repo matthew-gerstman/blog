@@ -6,7 +6,7 @@
 
 .backLink {
   display: inline-block;
-  color: var(--primary-color, #2563eb);
+  color: var(--grappa-bright);
   text-decoration: none;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -19,7 +19,7 @@
 .hero {
   text-align: center;
   padding: 3rem 0;
-  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  border-bottom: 1px solid var(--border);
   margin-bottom: 3rem;
 }
 
@@ -27,11 +27,12 @@
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
+  color: var(--text);
 }
 
 .subtitle {
   font-size: 1.25rem;
-  color: var(--text-secondary, #6b7280);
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
 }
 
@@ -40,6 +41,7 @@
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.8;
+  color: var(--text);
 }
 
 .section {
@@ -50,21 +52,23 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  border-bottom: 3px solid var(--primary-color, #2563eb);
+  color: var(--text);
+  border-bottom: 3px solid var(--grappa-bright);
   padding-bottom: 0.5rem;
 }
 
 .projectDetail {
-  background: var(--bg-secondary, #f9fafb);
+  background: var(--surface);
   padding: 2rem;
   border-radius: 12px;
   margin-bottom: 2rem;
-  border-left: 4px solid var(--primary-color, #2563eb);
+  border-left: 4px solid var(--grappa-bright);
 }
 
 .projectDetail h2 {
   border-bottom: none;
   margin-bottom: 1.5rem;
+  color: var(--text);
 }
 
 .subsection {
@@ -75,7 +79,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--text-primary, #1f2937);
+  color: var(--text);
 }
 
 .subsection h4 {
@@ -83,7 +87,13 @@
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
-  color: var(--primary-color, #2563eb);
+  color: var(--grappa-bright);
+}
+
+.subsection p {
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
 .subsection ul {
@@ -93,6 +103,7 @@
 
 .subsection li {
   margin-bottom: 0.5rem;
+  color: var(--text);
 }
 
 .techTags {
@@ -103,8 +114,8 @@
 }
 
 .techTag {
-  background: var(--primary-color, #2563eb);
-  color: white;
+  background: var(--grappa);
+  color: var(--text);
   padding: 0.25rem 0.75rem;
   border-radius: 16px;
   font-size: 0.875rem;
@@ -112,8 +123,8 @@
 }
 
 .impactStat {
-  background: var(--primary-color, #2563eb);
-  color: white;
+  background: var(--grappa);
+  color: var(--text);
   padding: 1rem 1.5rem;
   border-radius: 8px;
   font-weight: 700;
@@ -131,22 +142,25 @@
   margin-bottom: 1rem;
   padding-left: 1.5rem;
   position: relative;
+  color: var(--text);
 }
 
 .themesList li::before {
   content: "→";
   position: absolute;
   left: 0;
-  color: var(--primary-color, #2563eb);
+  color: var(--grappa-bright);
   font-weight: bold;
 }
 
 code {
-  background: var(--bg-tertiary, #e5e7eb);
+  background: var(--surface);
+  color: var(--text);
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-family: 'Courier New', monospace;
   font-size: 0.875rem;
+  border: 1px solid var(--border);
 }
 
 @media (max-width: 768px) {

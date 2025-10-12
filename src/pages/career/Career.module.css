@@ -7,7 +7,7 @@
 .hero {
   text-align: center;
   padding: 4rem 0;
-  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  border-bottom: 1px solid var(--border);
   margin-bottom: 3rem;
 }
 
@@ -15,11 +15,12 @@
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
+  color: var(--text);
 }
 
 .subtitle {
   font-size: 1.5rem;
-  color: var(--text-secondary, #6b7280);
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
 }
 
@@ -28,6 +29,7 @@
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.8;
+  color: var(--text);
 }
 
 .section {
@@ -38,7 +40,8 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  border-bottom: 3px solid var(--primary-color, #2563eb);
+  color: var(--text);
+  border-bottom: 3px solid var(--grappa-bright);
   padding-bottom: 0.5rem;
 }
 
@@ -46,43 +49,54 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  color: var(--text);
 }
 
 .section h4 {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: var(--primary-color, #2563eb);
+  color: var(--grappa-bright);
+}
+
+.section p {
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
 .job {
-  background: var(--bg-secondary, #f9fafb);
+  background: var(--surface);
   padding: 2rem;
   border-radius: 12px;
   margin-bottom: 2rem;
-  border: 1px solid var(--border-color, #e5e7eb);
+  border: 1px solid var(--border);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .job:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px var(--grappa-subtle);
 }
 
 .job h3 {
-  color: var(--primary-color, #2563eb);
+  color: var(--grappa-bright);
   margin-bottom: 0.5rem;
 }
 
 .jobTitle {
-  color: var(--text-secondary, #6b7280);
+  color: var(--text-muted);
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
+.job p {
+  color: var(--text);
+}
+
 .projectCard {
-  background: var(--bg-primary, #ffffff);
-  border: 2px solid var(--border-color, #e5e7eb);
+  background: var(--surface);
+  border: 2px solid var(--border);
   padding: 1.5rem;
   border-radius: 12px;
   margin-bottom: 1.5rem;
@@ -90,16 +104,21 @@
 }
 
 .projectCard:hover {
-  border-color: var(--primary-color, #2563eb);
+  border-color: var(--grappa-bright);
   transform: translateY(-2px);
 }
 
 .projectCard h3 {
   margin-bottom: 0.25rem;
+  color: var(--text);
+}
+
+.projectCard p {
+  color: var(--text);
 }
 
 .projectCompany {
-  color: var(--primary-color, #2563eb);
+  color: var(--grappa-bright);
   font-weight: 600;
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
@@ -107,8 +126,8 @@
 
 .btn {
   display: inline-block;
-  background: var(--primary-color, #2563eb);
-  color: white;
+  background: var(--grappa);
+  color: var(--text);
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
@@ -118,7 +137,7 @@
 }
 
 .btn:hover {
-  background: var(--primary-dark, #1e40af);
+  background: var(--grappa-bright);
   transform: translateY(-1px);
 }
 
@@ -131,10 +150,18 @@
 }
 
 .techCategory {
-  background: var(--bg-secondary, #f9fafb);
+  background: var(--surface);
   padding: 1.5rem;
   border-radius: 12px;
-  border: 1px solid var(--border-color, #e5e7eb);
+  border: 1px solid var(--border);
+}
+
+.techCategory h4 {
+  color: var(--grappa-bright);
+}
+
+.techCategory p {
+  color: var(--text);
 }
 
 .strengths ul {
@@ -142,9 +169,14 @@
   padding-left: 0;
 }
 
+.strengths li {
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
 .strengths li::before {
   content: "✓ ";
-  color: var(--primary-color, #2563eb);
+  color: var(--grappa-bright);
   font-weight: bold;
   margin-right: 0.5rem;
 }
@@ -159,7 +191,7 @@
 }
 
 .contactLinks a {
-  color: var(--primary-color, #2563eb);
+  color: var(--grappa-bright);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.125rem;
