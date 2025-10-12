@@ -7,6 +7,8 @@ import { FindInPage } from './components/FindInPage';
 import { Home } from './pages/Home';
 import { Article } from './pages/Article';
 import { Talks } from './pages/Talks';
+import { Career } from './pages/career/Career';
+import { Datadog } from './pages/career/Datadog';
 import { useTheme } from './hooks/useTheme';
 import { useKeyboard } from './hooks/useKeyboard';
 import { posts } from './data/posts';
@@ -35,6 +37,8 @@ function App() {
         <Route path="/" element={<Home posts={posts} />} />
         <Route path="/tech/:slug" element={<Article posts={posts} />} />
         <Route path="/talks" element={<Talks />} />
+        <Route path="/career" element={<Career />} />
+        <Route path="/career/datadog" element={<Datadog />} />
         <Route path="*" element={<Home posts={posts} />} />
       </Routes>
     </BrowserRouter>
