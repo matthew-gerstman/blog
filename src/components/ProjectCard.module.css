@@ -1,0 +1,199 @@
+.projectCard {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projectCard:hover {
+  transform: translateX(8px);
+}
+
+.projectCard.expanded {
+  background: transparent;
+}
+
+.projectHeader {
+  user-select: none;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.3s ease;
+}
+
+.projectCard:hover .projectHeader {
+  border-color: var(--grappa-bright);
+}
+
+.projectTop {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.projectTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+.projectCard:hover .projectTitle {
+  color: var(--grappa-bright);
+}
+
+.projectYear {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.expandIcon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--grappa-bright);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  flex-shrink: 0;
+  opacity: 0;
+}
+
+.projectCard:hover .expandIcon {
+  opacity: 1;
+}
+
+.projectCard.expanded .expandIcon {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.projectDescription {
+  color: var(--text);
+  line-height: 1.7;
+  margin: 0 0 0.75rem 0;
+}
+
+.projectImpact {
+  background: var(--surface);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--grappa-bright);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin: 0.75rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.impactIcon {
+  font-size: 1.2rem;
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.projectTag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--grappa);
+  color: var(--text);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.projectCard:hover .projectTag {
+  opacity: 1;
+}
+
+.projectDetails {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projectCard.expanded .projectDetails {
+  max-height: 1000px;
+}
+
+.projectDetailsContent {
+  padding-top: 1.5rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detailSection {
+  margin-bottom: 1.5rem;
+}
+
+.detailSection:last-child {
+  margin-bottom: 0;
+}
+
+.detailSection h5 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--grappa-bright);
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+
+.detailSection p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.detailSection ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.detailSection li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .projectCard {
+    padding: 0;
+  }
+
+  .projectTop {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .expandIcon {
+    opacity: 1;
+  }
+}

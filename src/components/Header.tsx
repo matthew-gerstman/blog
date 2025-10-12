@@ -15,7 +15,8 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
         <nav className={styles.nav}>
           <Link to="/">Writing</Link>
           <Link to="/talks">Talks</Link>
-          <a href="https://www.matthewgerstman.com" target="_blank" rel="noopener noreferrer">About</a>
+          <Link to="/career">Career</Link>
+          <Link to="/about">About</Link>
           <button className={styles.themeToggle} onClick={onToggleTheme} aria-label="Toggle theme">
             <span className={styles.themeIcon}>{theme === 'dark' ? '🌙' : '☀️'}</span>
           </button>
