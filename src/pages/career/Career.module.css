@@ -64,35 +64,6 @@
   margin-bottom: 1rem;
 }
 
-.job {
-  background: var(--surface);
-  padding: 2rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  border: 1px solid var(--border);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.job:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--grappa-subtle);
-}
-
-.job h3 {
-  color: var(--grappa-bright);
-  margin-bottom: 0.5rem;
-}
-
-.jobTitle {
-  color: var(--text-muted);
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.job p {
-  color: var(--text);
-}
-
 .projectCard {
   background: var(--surface);
   border: 2px solid var(--border);
