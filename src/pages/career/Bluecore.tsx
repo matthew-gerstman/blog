@@ -1,3 +1,4 @@
+import { GradientText } from '../../components/GradientText';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProjectPage.module.css';
@@ -8,7 +9,7 @@ export const Bluecore: React.FC = () => {
       <Link to="/career" className={styles.backLink}>← Back to Career Overview</Link>
       
       <header className={styles.hero}>
-        <h1>Bluecore Projects</h1>
+        <GradientText as="h1">Bluecore Projects</GradientText>
         <p className={styles.subtitle}>Staff Engineer | June 2021 - September 2022</p>
         <p className={styles.lead}>
           Led frontend platform architecture and modernization initiatives at marketing technology platform 

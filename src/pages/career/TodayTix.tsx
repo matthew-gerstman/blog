@@ -1,3 +1,4 @@
+import { GradientText } from '../../components/GradientText';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProjectPage.module.css';
@@ -8,7 +9,7 @@ export const TodayTix: React.FC = () => {
       <Link to="/career" className={styles.backLink}>← Back to Career Overview</Link>
       
       <header className={styles.hero}>
-        <h1>TodayTix Projects</h1>
+        <GradientText as="h1">TodayTix Projects</GradientText>
         <p className={styles.subtitle}>Software Engineer | January 2016 - June 2017</p>
         <p className={styles.lead}>
           Full-stack development for mobile-first theater ticketing platform, delivering dramatic performance 

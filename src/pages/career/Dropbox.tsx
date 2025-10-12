@@ -1,3 +1,4 @@
+import { GradientText } from '../../components/GradientText';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProjectPage.module.css';
@@ -8,7 +9,7 @@ export const Dropbox: React.FC = () => {
       <Link to="/career" className={styles.backLink}>← Back to Career Overview</Link>
       
       <header className={styles.hero}>
-        <h1>Dropbox Projects</h1>
+        <GradientText as="h1">Dropbox Projects</GradientText>
         <p className={styles.subtitle}>Software Engineer → Senior Software Engineer | June 2017 - June 2021</p>
         <p className={styles.lead}>
           Architected state management systems, led frontend development for major product launches, and founded 

@@ -1,3 +1,4 @@
+import { GradientText } from '../../components/GradientText';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProjectPage.module.css';
@@ -8,7 +9,7 @@ export const Skills: React.FC = () => {
       <Link to="/career" className={styles.backLink}>← Back to Career Overview</Link>
       
       <header className={styles.hero}>
-        <h1>Technical Skills & Philosophy</h1>
+        <GradientText as="h1">Technical Skills & Philosophy</GradientText>
       </header>
 
       <section className={styles.section}>

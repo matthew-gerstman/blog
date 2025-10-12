@@ -1,3 +1,4 @@
+import { GradientText } from '../../components/GradientText';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProjectPage.module.css';
@@ -8,7 +9,7 @@ export const Datadog: React.FC = () => {
       <Link to="/career" className={styles.backLink}>← Back to Career Overview</Link>
       
       <header className={styles.hero}>
-        <h1>Datadog Projects</h1>
+        <GradientText as="h1">Datadog Projects</GradientText>
         <p className={styles.subtitle}>Senior Software Engineer | September 2022 - Present</p>
         <p className={styles.lead}>
           Leading development of collaborative data science tooling and dashboard infrastructure at one of 

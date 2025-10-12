@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { GradientText } from '../../components/GradientText';
 import styles from './Career.module.css';
 
 export const Career: React.FC = () => {
   return (
     <div className={styles.container}>
       <header className={styles.hero}>
-        <h1>Matthew Gerstman</h1>
+        <GradientText as="h1">Matthew Gerstman</GradientText>
         <p className={styles.subtitle}>Software Engineer</p>
         <p className={styles.lead}>
           Over 12 years building complex, performant systems that make sophisticated technology feel simple. 

@@ -1,3 +1,4 @@
+import { GradientText } from '../../components/GradientText';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProjectPage.module.css';
@@ -8,7 +9,7 @@ export const DanceMarathon: React.FC = () => {
       <Link to="/career" className={styles.backLink}>← Back to Career Overview</Link>
       
       <header className={styles.hero}>
-        <h1>Dance Marathon at University of Florida</h1>
+        <GradientText as="h1">Dance Marathon at University of Florida</GradientText>
         <p className={styles.subtitle}>Technology Captain → Technology Overall Director | September 2010 - April 2013</p>
         <p className={styles.lead}>
           Led technology strategy for Dance Marathon at UF, one of the largest student-run philanthropies in the country. 

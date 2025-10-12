@@ -1,3 +1,4 @@
+import { GradientText } from '../../components/GradientText';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProjectPage.module.css';
@@ -8,7 +9,7 @@ export const Zetta: React.FC = () => {
       <Link to="/career" className={styles.backLink}>← Back to Career Overview</Link>
       
       <header className={styles.hero}>
-        <h1>Zetta.net Projects</h1>
+        <GradientText as="h1">Zetta.net Projects</GradientText>
         <p className={styles.subtitle}>Intern → Software Engineer | June 2012 - December 2015</p>
         <p className={styles.lead}>
           Cloud storage platform development with rapid progression from intern to technical leader. Led major 
