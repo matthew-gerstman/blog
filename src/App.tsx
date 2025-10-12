@@ -8,6 +8,7 @@ import { Home } from './pages/Home';
 import { Article } from './pages/Article';
 import { Talks } from './pages/Talks';
 import { Career } from './pages/career/Career';
+import { About } from './pages/career/About';
 import { Datadog } from './pages/career/Datadog';
 import { Bluecore } from './pages/career/Bluecore';
 import { Dropbox } from './pages/career/Dropbox';
@@ -44,6 +45,7 @@ function App() {
         <Route path="/tech/:slug" element={<Article posts={posts} />} />
         <Route path="/talks" element={<Talks />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/about" element={<About />} />
         <Route path="/career/datadog" element={<Datadog />} />
         <Route path="/career/bluecore" element={<Bluecore />} />
         <Route path="/career/dropbox" element={<Dropbox />} />
