@@ -1,397 +1,47 @@
 import React from 'react';
 import { GradientText } from '../../components/GradientText';
 import { ProjectCard } from '../../components/ProjectCard';
+import type { CareerData } from '../../types/career';
+import careerData from '../../data/career.json';
 import styles from './Career.module.css';
+
+const data = careerData as CareerData;
 
 export const Career: React.FC = () => {
   return (
     <div className={styles.container}>
       <header className={styles.hero}>
-        <GradientText as="h1">Career Timeline</GradientText>
-        <p className={styles.subtitle}>12+ years building systems that scale</p>
+        <GradientText as="h1">{data.hero.title}</GradientText>
+        <p className={styles.subtitle}>{data.hero.subtitle}</p>
       </header>
 
       <div className={styles.timeline}>
-        {/* Datadog */}
-        <div className={styles.timelineItem}>
-          <div className={styles.jobInfo}>
-            <h2 className={styles.companyName}>Datadog</h2>
-            <p className={styles.role}>Senior Software Engineer</p>
-            <span className={styles.period}>September 2022 - Present</span>
-            <p className={styles.companyDescription}>
-              Leading development of collaborative data science tooling and dashboard infrastructure.
-            </p>
+        {data.jobs.map((job) => (
+          <div key={job.id} className={styles.timelineItem}>
+            <div className={styles.jobInfo}>
+              <h2 className={styles.companyName}>{job.company}</h2>
+              <p className={styles.role}>{job.role}</p>
+              <span className={styles.period}>{job.period}</span>
+              <p className={styles.companyDescription}>{job.description}</p>
+            </div>
+
+            <div className={styles.projects}>
+              {job.projects.map((project, index) => (
+                <ProjectCard
+                  key={`${job.id}-${index}`}
+                  title={project.title}
+                  year={project.year}
+                  description={project.description}
+                  challenge={project.challenge}
+                  approach={project.approach}
+                  impact={project.impact}
+                  technologies={project.technologies}
+                  leadership={project.leadership}
+                />
+              ))}
+            </div>
           </div>
-
-          <div className={styles.projects}>
-            <ProjectCard
-              title="Notebooks 2.0"
-              year="2024"
-              description="Complete rebuild of collaborative data science tooling to support real-time multi-user editing and complex notebook interactions at scale."
-              challenge="Build production-ready collaborative editing platform for data science notebooks with complex state management for multi-user scenarios."
-              approach={[
-                "Architected real-time collaboration system for data science notebooks",
-                "Built complex state management for multi-user editing scenarios",
-                "Implemented sophisticated UI for notebook cell interactions",
-                "Designed for performance with large datasets and visualizations",
-                "Created robust testing framework for complex UI interactions"
-              ]}
-              technologies={["TypeScript", "React", "Real-time Collaboration"]}
-            />
-
-            <ProjectCard
-              title="PDF Reporting System"
-              year="2023"
-              description="Built horizontally scalable Node.js/Puppeteer system for dashboard PDF generation."
-              impact="Widget fidelity: 70% → 100% (~10x improvement)"
-              challenge="Legacy email-based widget snapshot system had ~70% success rate with flaky rendering and poor user experience."
-              approach={[
-                "Built stateless, horizontally scalable Node.js/Puppeteer system",
-                "Created report-printer service for PDF generation",
-                "Coordinated 50+ widget types across virtualized dashboards",
-                "Built PrintModeAdapter component to aggregate render status",
-                "Reduced dev loop from 30 minutes to 1 minute",
-                "Created foundational HTTP/gRPC client library (now used by 15+ services)"
-              ]}
-              leadership={[
-                "Drove technology selection and architecture decisions",
-                "Led 6-week prototyping process with weekly stakeholder reviews",
-                "Navigated organizational challenges around Node.js adoption",
-                "Coordinated with multiple teams (backend, frontend, email platform)"
-              ]}
-              technologies={["Node.js", "Puppeteer", "TypeScript", "gRPC"]}
-            />
-
-            <ProjectCard
-              title="Dashboard Type Safety Initiative"
-              year="2023-2024"
-              description="Systematic TypeScript migration across dashboards codebase."
-              impact="Cut TypeScript 'any' usage by 50%"
-              approach={[
-                "Systematic audit of TypeScript type usage",
-                "Incremental migration strategy to proper typing",
-                "Created type-safe patterns for common dashboard operations"
-              ]}
-              technologies={["TypeScript", "React", "Redux"]}
-            />
-
-            <ProjectCard
-              title="Integration Testing Framework"
-              year="2023"
-              description="Pioneered integration testing approach for complex UI interactions in dashboards."
-              approach={[
-                "Built testing patterns for multi-widget interactions",
-                "Created test utilities for dashboard scenarios",
-                "Established best practices for UI testing"
-              ]}
-              technologies={["TypeScript", "React", "Testing"]}
-            />
-          </div>
-        </div>
-
-        {/* Bluecore */}
-        <div className={styles.timelineItem}>
-          <div className={styles.jobInfo}>
-            <h2 className={styles.companyName}>Bluecore</h2>
-            <p className={styles.role}>Staff Engineer</p>
-            <span className={styles.period}>June 2021 - September 2022</span>
-            <p className={styles.companyDescription}>
-              Led frontend platform architecture and TypeScript migration for marketing technology platform.
-            </p>
-          </div>
-
-          <div className={styles.projects}>
-            <ProjectCard
-              title="TypeScript Migration & Component Library"
-              year="2021-2022"
-              description="Led migration of entire component library to TypeScript with modern CSS architecture and design system principles."
-              approach={[
-                "Led migration of entire component library to TypeScript",
-                "Standardized component library with modern CSS patterns",
-                "Implemented CSS variables for theming",
-                "Created responsive layout systems",
-                "Improved accessibility and performance"
-              ]}
-              technologies={["TypeScript", "React", "Modern CSS", "Design Systems"]}
-            />
-
-            <ProjectCard
-              title="Autogenerated API Client"
-              year="2021"
-              description="Built autogenerated API client system with gRPC/HTTP transcoding."
-              impact="Eliminated manual API client maintenance"
-              approach={[
-                "Architected autogenerated API client system",
-                "Implemented gRPC/HTTP transcoding for seamless protocol translation",
-                "Created code generation pipeline from API definitions",
-                "Built type-safe client with automatic updates"
-              ]}
-              technologies={["TypeScript", "gRPC", "Code Generation"]}
-            />
-
-            <ProjectCard
-              title="Weekly TypeScript & React Training"
-              year="2021-2022"
-              description="Designed and taught comprehensive training curriculum for entire engineering team."
-              approach={[
-                "Designed comprehensive training curriculum",
-                "Taught weekly classes on TypeScript fundamentals",
-                "Covered advanced React patterns and best practices",
-                "Provided hands-on exercises and code reviews"
-              ]}
-              technologies={["Teaching", "TypeScript", "React"]}
-            />
-          </div>
-        </div>
-
-        {/* Dropbox */}
-        <div className={styles.timelineItem}>
-          <div className={styles.jobInfo}>
-            <h2 className={styles.companyName}>Dropbox</h2>
-            <p className={styles.role}>Software Engineer → Senior Software Engineer</p>
-            <span className={styles.period}>June 2017 - June 2021</span>
-            <p className={styles.companyDescription}>
-              Architected state management systems and founded JavaScript Guild for organizational best practices.
-            </p>
-          </div>
-
-          <div className={styles.projects}>
-            <ProjectCard
-              title="Redux State Management System"
-              year="2018"
-              description="Designed comprehensive Redux architecture with TypeScript type-safe patterns adopted across the organization."
-              impact="Adopted by ~10 teams across ~25 features"
-              approach={[
-                "Designed comprehensive Redux architecture with TypeScript",
-                "Created reusable patterns for common state operations",
-                "Built extensive documentation and training materials",
-                "Systematic rollout across organization with team support",
-                "Established best practices and code review guidelines"
-              ]}
-              technologies={["TypeScript", "Redux", "React"]}
-            />
-
-            <ProjectCard
-              title="Plus Plus: Family Plans & Life Vault"
-              year="2020"
-              description="Led end-to-end frontend architecture for new product line with complex family sharing features."
-              impact="Created new revenue stream"
-              approach={[
-                "Led end-to-end frontend architecture from ideation to launch",
-                "Designed complex state management for family account relationships",
-                "Built intuitive UI for family plan management",
-                "Coordinated cross-functional teams (design, product, backend)",
-                "Implemented Life Vault feature for important document storage"
-              ]}
-              technologies={["TypeScript", "React", "Redux"]}
-            />
-
-            <ProjectCard
-              title="File Viewer SDK"
-              year="2018"
-              description="Led architecture and bootstrapping of cross-platform SDK for file preview functionality."
-              approach={[
-                "Led architecture and bootstrapping of cross-platform SDK",
-                "Owned build pipeline and asset optimization",
-                "Designed API for embedding file previews",
-                "Coordinated between web and desktop teams"
-              ]}
-              technologies={["TypeScript", "React", "SDK Development"]}
-            />
-
-            <ProjectCard
-              title="JavaScript Guild"
-              year="2017-2021"
-              description="Founded JavaScript Guild and organized 100+ attendee technical summits for frontend engineers."
-              approach={[
-                "Founded JavaScript Guild as community for frontend engineers",
-                "Organized regular knowledge-sharing sessions",
-                "Published newsletters with tips and updates",
-                "Coordinated multi-day technical summits"
-              ]}
-              technologies={["Community", "Leadership"]}
-            />
-          </div>
-        </div>
-
-        {/* TodayTix */}
-        <div className={styles.timelineItem}>
-          <div className={styles.jobInfo}>
-            <h2 className={styles.companyName}>TodayTix</h2>
-            <p className={styles.role}>Software Engineer</p>
-            <span className={styles.period}>January 2016 - June 2017</span>
-            <p className={styles.companyDescription}>
-              Full-stack development for theater ticketing platform with dramatic performance improvements.
-            </p>
-          </div>
-
-          <div className={styles.projects}>
-            <ProjectCard
-              title="Page Load Optimization"
-              year="2016"
-              description="Comprehensive performance profiling and systematic optimization of mobile-first theater ticketing app."
-              impact="95% reduction: 8 seconds → 400ms"
-              approach={[
-                "Comprehensive performance profiling to identify bottlenecks",
-                "Systematic bundle strategy optimization and code splitting",
-                "Asset delivery improvements (compression, CDN, caching)",
-                "Render path performance enhancements",
-                "Critical path optimization for above-the-fold content"
-              ]}
-              technologies={["JavaScript", "Webpack", "Performance"]}
-            />
-
-            <ProjectCard
-              title="Web 2.0: React + Redux Rebuild"
-              year="2016"
-              description="Built production-ready React + Redux application from scratch with comprehensive component library."
-              approach={[
-                "Complete application architecture design",
-                "Built comprehensive component library",
-                "Implemented Redux state management patterns",
-                "Created Node.js authentication layer",
-                "Designed and built checkout flow"
-              ]}
-              technologies={["React", "Redux", "Node.js", "ES6+"]}
-            />
-
-            <ProjectCard
-              title="Special Offers Feature"
-              year="2016"
-              description="End-to-end feature design converting users who lost lottery into alternative sales."
-              impact="New revenue stream from lost sales"
-              approach={[
-                "End-to-end feature design from user research to implementation",
-                "Built Groovy APIs with complex SQL queries for offer matching",
-                "Designed frontend experience for offer selection",
-                "Implemented business logic for offer eligibility"
-              ]}
-              technologies={["Groovy", "React", "SQL", "Full-Stack"]}
-            />
-          </div>
-        </div>
-
-        {/* Zetta.net */}
-        <div className={styles.timelineItem}>
-          <div className={styles.jobInfo}>
-            <h2 className={styles.companyName}>Zetta.net</h2>
-            <p className={styles.role}>Intern → Software Engineer</p>
-            <span className={styles.period}>June 2012 - December 2015</span>
-            <p className={styles.companyDescription}>
-              Cloud storage platform development with rapid progression to technical leadership.
-            </p>
-          </div>
-
-          <div className={styles.projects}>
-            <ProjectCard
-              title="Backbone + RESTful APIs Migration"
-              year="2015"
-              description="Led complete backend migration to RESTful architecture and frontend migration to Backbone.js."
-              impact="First major technical leadership role"
-              approach={[
-                "Led complete backend migration to RESTful resource architecture",
-                "Migrated frontend to Backbone.js for better structure",
-                "Established API design standards and conventions",
-                "Created documentation and training materials"
-              ]}
-              technologies={["Backbone.js", "RESTful APIs", "JavaScript"]}
-            />
-
-            <ProjectCard
-              title="SVN → Git Migration"
-              year="2015"
-              description="Planned and executed organizational migration with team training and code review processes."
-              leadership={[
-                "Planned and executed organizational migration from SVN to Git",
-                "Established branching strategies and PR processes",
-                "Created Git training materials and documentation",
-                "Provided hands-on training for team members"
-              ]}
-              technologies={["Git", "Version Control"]}
-            />
-
-            <ProjectCard
-              title="Data Restore Flow"
-              year="2014"
-              description="Built complete data restore flow with intuitive UI for version history and conflict resolution."
-              impact="Core revenue-driving feature"
-              approach={[
-                "Built complete data restore flow",
-                "Created file selection and restoration UI",
-                "Integrated backend restore operations",
-                "Designed user experience for complex operations"
-              ]}
-              technologies={["Full-Stack", "UI/UX", "Product Engineering"]}
-            />
-
-            <ProjectCard
-              title="CI + Sentry Implementation"
-              year="2015"
-              description="Set up continuous integration pipeline and Sentry for production error tracking."
-              approach={[
-                "Set up continuous integration pipeline",
-                "Implemented Sentry for production error tracking",
-                "Established quality standards and gates"
-              ]}
-              technologies={["CI/CD", "Sentry", "Testing"]}
-            />
-          </div>
-        </div>
-
-        {/* Dance Marathon */}
-        <div className={styles.timelineItem}>
-          <div className={styles.jobInfo}>
-            <h2 className={styles.companyName}>Dance Marathon at UF</h2>
-            <p className={styles.role}>Technology Captain → Technology Overall Director</p>
-            <span className={styles.period}>September 2010 - April 2013</span>
-            <p className={styles.companyDescription}>
-              Led technology strategy for one of the largest student-run philanthropies.
-            </p>
-          </div>
-
-          <div className={styles.projects}>
-            <ProjectCard
-              title="DMAssassins"
-              year="2012"
-              description="Real-life 'assassins' game with target assignment system keeping thousands engaged throughout 26.6-hour marathon."
-              impact="Used by thousands for 5+ years"
-              approach={[
-                "Designed real-life 'assassins' game with target assignment system",
-                "Built pin verification system for 'hits'",
-                "Implemented automatic target reassignment upon elimination",
-                "Created MySQL backend for game state management",
-                "Built jQuery frontend for game interface"
-              ]}
-              technologies={["PHP", "MySQL", "jQuery", "Game Design"]}
-            />
-
-            <ProjectCard
-              title="Tweet Two Screens"
-              year="2013"
-              description="Custom tweet visualizers optimized for Jumbotron display with real-time aggregation."
-              approach={[
-                "Built custom tweet visualizers optimized for Jumbotron display",
-                "Implemented real-time tweet aggregation via Twitter API",
-                "Created visual design specifically for large-screen viewing",
-                "Built content moderation system for appropriate messaging"
-              ]}
-              technologies={["Twitter API", "jQuery", "Real-time"]}
-            />
-
-            <ProjectCard
-              title="DMatUF iPhone App"
-              year="2013"
-              description="Native iOS event app with schedule, song requests, and arena map for offline-first usage."
-              approach={[
-                "Built native iOS event app (pre-widespread adoption era)",
-                "Implemented event schedule and timing features",
-                "Created song request functionality",
-                "Designed locally hosted basketball arena map"
-              ]}
-              technologies={["iOS", "Objective-C", "Native Mobile"]}
-            />
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
