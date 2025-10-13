@@ -18,11 +18,15 @@
           "year": "2023-2024",
           "startYear": 2023,
           "endYear": 2024,
-          "role": "Engineering Manager",
+          "role": "Engineering Manager aspiring to be Ted Lasso",
           "description": "Led the complete rebuild of Datadog's collaborative notebook editor, managing a team through parallel rich text and multiplayer initiatives while maintaining a Ted Lasso-inspired leadership approach.",
           "impact": "Shipped production collaborative editor to 100% of Datadog customers. Grew team from 0 to 4 engineers with 2 promotions. Established customer-driven release cadence that went from alpha to full GA in 9 months.",
           "context": "Datadog's legacy notebooks were built as a list of markdown cells plus visualizations (tiledefs rendered via Univiz). The product needed real-time multiplayer collaboration and a modern rich text editing experience. Two parallel technical initiatives\u2014rich text and multiplayer\u2014required careful coordination while retrofitting onto legacy architecture.",
           "execution": [
+            "Managed 4 direct reports with 2 promotions",
+            "Built customer council with shared Slack channels for rapid feedback loops",
+            "Balanced technical leadership with customer advocacy throughout launch process",
+            "Owned the complete rebuild of Datadog's collaborative notebook editor, managing a team through parallel rich text and multiplayer initiatives while maintaining a Ted Lasso-inspired leadership approach.",
             "Identified architectural conflict: ProseMirror and Redux competing for state management, ProseMirror and React competing for DOM control",
             "Guided team to design fast/slow loop architecture\u2014short loop within ProseMirror, long loop through Redux for what we called Multiplayer V0",
             "Established weekly learning sessions covering Redux internals, type design, React fundamentals to level up the team",
@@ -37,14 +41,7 @@
             "Built custom gating service to bypass feature flag limitations\u2014loaded existing notebook orgs into memory, allowed instant rollout from 20% to 95% of paying customers",
             "Leveraged markdown import/export to support API users managing notebooks via legacy cell model",
             "Shipped to 100% of customers including API users to complete launch"
-          ],
-          "leadership": [
-            "Managed 4 direct reports with 2 promotions: Engineer A (IC2\u2192IC3, owned copy/paste and architecture refactors), Engineer B (IC1\u2192IC2, owned lists, version history, test coverage, markdown import/export), Engineer C (IC2, owned comments and widget editing), Engineer D (hired IC1, bugfixes, table implementation, emoji)",
-            "Created teaching-focused culture where engineers learned by teaching others",
-            "Established quality-first sprint methodology with structured pairing to spread system knowledge",
-            "Built customer council with shared Slack channels for rapid feedback loops",
-            "Balanced technical leadership with customer advocacy throughout launch process"
-          ],
+          ],          
           "technologies": [
             "ProseMirror",
             "Yjs",

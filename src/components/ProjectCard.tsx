@@ -73,6 +73,16 @@ export function ProjectCard({
                 <p>{context}</p>
               </div>
             )}
+             {leadership && leadership.length > 0 && (
+              <div className={styles.detailSection}>
+                <h5>Leadership</h5>
+                <ul>
+                  {leadership.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             
             {execution && execution.length > 0 && (
               <div className={styles.detailSection}>
@@ -83,18 +93,7 @@ export function ProjectCard({
                   ))}
                 </ul>
               </div>
-            )}
-            
-            {leadership && leadership.length > 0 && (
-              <div className={styles.detailSection}>
-                <h5>Leadership</h5>
-                <ul>
-                  {leadership.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+            )}        
           </div>
         </div>
       )}
