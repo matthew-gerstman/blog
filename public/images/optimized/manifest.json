@@ -134,6 +134,15 @@
       "full": "/images/optimized/full/Apartment-1.webp"
     }
   },
+  "Bay-Bridge.jpg": {
+    "original": "/images/blog/Bay-Bridge.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/Bay-Bridge.webp",
+      "medium": "/images/optimized/medium/Bay-Bridge.webp",
+      "large": "/images/optimized/large/Bay-Bridge.webp",
+      "full": "/images/optimized/full/Bay-Bridge.webp"
+    }
+  },
   "FP-Wood.jpg": {
     "original": "/images/blog/FP-Wood.jpg",
     "sizes": {
@@ -141,6 +150,15 @@
       "medium": "/images/optimized/medium/FP-Wood.webp",
       "large": "/images/optimized/large/FP-Wood.webp",
       "full": "/images/optimized/full/FP-Wood.webp"
+    }
+  },
+  "Functor-Wood.jpg": {
+    "original": "/images/blog/Functor-Wood.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/Functor-Wood.webp",
+      "medium": "/images/optimized/medium/Functor-Wood.webp",
+      "large": "/images/optimized/large/Functor-Wood.webp",
+      "full": "/images/optimized/full/Functor-Wood.webp"
     }
   },
   "IMG_0001.PNG": {
@@ -231,6 +249,15 @@
       "medium": "/images/optimized/medium/IMG_0741.webp",
       "large": "/images/optimized/large/IMG_0741.webp",
       "full": "/images/optimized/full/IMG_0741.webp"
+    }
+  },
+  "Mic-Talks.jpg": {
+    "original": "/images/blog/Mic-Talks.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/Mic-Talks.webp",
+      "medium": "/images/optimized/medium/Mic-Talks.webp",
+      "large": "/images/optimized/large/Mic-Talks.webp",
+      "full": "/images/optimized/full/Mic-Talks.webp"
     }
   },
   "Reducer-Trees.jpg": {
