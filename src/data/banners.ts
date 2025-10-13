@@ -17,4 +17,5 @@ export const bannerImages: { [key: string]: string } = {
   'what-the-functor': '/images/blog/Functor-Wood.jpg',
   'everything-i-wish-i-knew-before-my-first-bay-area-internship': '/images/blog/Bay-Bridge.jpg',
   'mary-had-a-little-lambda': '/images/blog/Lambda-Tree.jpg',
+  'all-in-on-homekit': '/images/blog/01-1.jpeg',
 };
