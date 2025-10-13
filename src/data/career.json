@@ -16,15 +16,7 @@
         {
           "title": "Notebooks 2.0",
           "year": "2024",
-          "description": "Complete rebuild of collaborative data science tooling to support real-time multi-user editing and complex notebook interactions at scale.",
-          "challenge": "Build production-ready collaborative editing platform for data science notebooks with complex state management for multi-user scenarios.",
-          "approach": [
-            "Architected real-time collaboration system for data science notebooks",
-            "Built complex state management for multi-user editing scenarios",
-            "Implemented sophisticated UI for notebook cell interactions",
-            "Designed for performance with large datasets and visualizations",
-            "Created robust testing framework for complex UI interactions"
-          ],
+          "description": "Datadog's notebook product was single-user and showing its age. I led the complete rebuild to support real-time collaboration\u2014think Google Docs but for data science notebooks with live query results and visualizations. The tricky part was managing state for multiple users editing cells simultaneously while queries were running. We shipped it as the default experience and it became the second-most-used surface in the product.",
           "technologies": [
             "TypeScript",
             "React",
@@ -34,13 +26,8 @@
         {
           "title": "Dashboard Type Safety Initiative",
           "year": "2023-2024",
-          "description": "Systematic TypeScript migration across dashboards codebase.",
+          "description": "Dashboards had accumulated a lot of TypeScript 'any' types over the years\u2014the kind of technical debt that makes refactoring scary. I ran a systematic audit and migration to proper typing, cutting 'any' usage in half. It wasn't glamorous work, but it made the codebase significantly more maintainable and caught real bugs in the process.",
           "impact": "Cut TypeScript 'any' usage by 50%",
-          "approach": [
-            "Systematic audit of TypeScript type usage",
-            "Incremental migration strategy to proper typing",
-            "Created type-safe patterns for common dashboard operations"
-          ],
           "technologies": [
             "TypeScript",
             "React",
@@ -50,23 +37,8 @@
         {
           "title": "PDF Reporting System",
           "year": "2023",
-          "description": "Built horizontally scalable Node.js/Puppeteer system for dashboard PDF generation.",
+          "description": "The old system for generating dashboard PDFs was email-based and had a 70% success rate. Not great when customers are trying to share reports with executives. I built a new system using Node.js and Puppeteer that could render dashboards as PDFs with 100% fidelity. The hardest part was coordinating 50+ widget types to all report when they were done rendering. Also cut the dev feedback loop from 30 minutes to 1 minute, which made iteration actually possible.",
           "impact": "Widget fidelity: 70% \u2192 100% (~10x improvement)",
-          "challenge": "Legacy email-based widget snapshot system had ~70% success rate with flaky rendering and poor user experience.",
-          "approach": [
-            "Built stateless, horizontally scalable Node.js/Puppeteer system",
-            "Created report-printer service for PDF generation",
-            "Coordinated 50+ widget types across virtualized dashboards",
-            "Built PrintModeAdapter component to aggregate render status",
-            "Reduced dev loop from 30 minutes to 1 minute",
-            "Created foundational HTTP/gRPC client library (now used by 15+ services)"
-          ],
-          "leadership": [
-            "Drove technology selection and architecture decisions",
-            "Led 6-week prototyping process with weekly stakeholder reviews",
-            "Navigated organizational challenges around Node.js adoption",
-            "Coordinated with multiple teams (backend, frontend, email platform)"
-          ],
           "technologies": [
             "Node.js",
             "Puppeteer",
@@ -77,12 +49,7 @@
         {
           "title": "Integration Testing Framework",
           "year": "2023",
-          "description": "Pioneered integration testing approach for complex UI interactions in dashboards.",
-          "approach": [
-            "Built testing patterns for multi-widget interactions",
-            "Created test utilities for dashboard scenarios",
-            "Established best practices for UI testing"
-          ],
+          "description": "Dashboards are complex\u2014widgets interact with each other, filters cascade, time ranges affect everything. I pioneered an integration testing approach that could actually test these multi-widget scenarios instead of just unit testing components in isolation. Created patterns and utilities that other teams adopted for their own dashboard testing.",
           "technologies": [
             "TypeScript",
             "React",
@@ -104,14 +71,7 @@
         {
           "title": "TypeScript Migration & Component Library",
           "year": "2021-2022",
-          "description": "Led migration of entire component library to TypeScript with modern CSS architecture and design system principles.",
-          "approach": [
-            "Led migration of entire component library to TypeScript",
-            "Standardized component library with modern CSS patterns",
-            "Implemented CSS variables for theming",
-            "Created responsive layout systems",
-            "Improved accessibility and performance"
-          ],
+          "description": "Joined to lead the TypeScript migration and modernize the component library. Moved everything to TypeScript with proper types, standardized CSS patterns, implemented CSS variables for theming, and improved accessibility. It was the foundation work that let the rest of the frontend team move faster.",
           "technologies": [
             "TypeScript",
             "React",
@@ -122,13 +82,7 @@
         {
           "title": "Weekly TypeScript & React Training",
           "year": "2021-2022",
-          "description": "Designed and taught comprehensive training curriculum for entire engineering team.",
-          "approach": [
-            "Designed comprehensive training curriculum",
-            "Taught weekly classes on TypeScript fundamentals",
-            "Covered advanced React patterns and best practices",
-            "Provided hands-on exercises and code reviews"
-          ],
+          "description": "Designed and taught weekly TypeScript and React training for the entire engineering team. Covered fundamentals through advanced patterns, with hands-on exercises and code reviews. Helped level up the team's frontend skills across the board.",
           "technologies": [
             "Teaching",
             "TypeScript",
@@ -138,14 +92,8 @@
         {
           "title": "Autogenerated API Client",
           "year": "2021",
-          "description": "Built autogenerated API client system with gRPC/HTTP transcoding.",
+          "description": "Built a system to autogenerate API clients from gRPC definitions with HTTP transcoding. Eliminated the manual work of keeping API clients in sync with backend changes\u2014types and methods just updated automatically when the backend changed.",
           "impact": "Eliminated manual API client maintenance",
-          "approach": [
-            "Architected autogenerated API client system",
-            "Implemented gRPC/HTTP transcoding for seamless protocol translation",
-            "Created code generation pipeline from API definitions",
-            "Built type-safe client with automatic updates"
-          ],
           "technologies": [
             "TypeScript",
             "gRPC",
@@ -167,13 +115,7 @@
         {
           "title": "JavaScript Guild",
           "year": "2017-2021",
-          "description": "Founded JavaScript Guild and organized 100+ attendee technical summits for frontend engineers.",
-          "approach": [
-            "Founded JavaScript Guild as community for frontend engineers",
-            "Organized regular knowledge-sharing sessions",
-            "Published newsletters with tips and updates",
-            "Coordinated multi-day technical summits"
-          ],
+          "description": "Founded the JavaScript Guild as a community for frontend engineers at Dropbox. Organized regular knowledge-sharing sessions, published newsletters with tips and updates, and coordinated multi-day technical summits with 100+ attendees. It became the hub for frontend engineering at the company.",
           "technologies": [
             "Community",
             "Leadership"
@@ -182,15 +124,8 @@
         {
           "title": "Plus Plus: Family Plans & Life Vault",
           "year": "2020",
-          "description": "Led end-to-end frontend architecture for new product line with complex family sharing features.",
+          "description": "Led the frontend for Dropbox's new family plan product from ideation to launch. The interesting challenge was managing state for family account relationships\u2014who can access what, how invites work, how billing flows through the family admin. Built the UI for family plan management and the Life Vault feature for storing important documents. Created a new revenue stream for the company.",
           "impact": "Created new revenue stream",
-          "approach": [
-            "Led end-to-end frontend architecture from ideation to launch",
-            "Designed complex state management for family account relationships",
-            "Built intuitive UI for family plan management",
-            "Coordinated cross-functional teams (design, product, backend)",
-            "Implemented Life Vault feature for important document storage"
-          ],
           "technologies": [
             "TypeScript",
             "React",
