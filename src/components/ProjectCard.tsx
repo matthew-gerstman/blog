@@ -48,7 +48,7 @@ export function ProjectCard({
         <p className={styles.projectDescription}>{description}</p>
         {impact && (
           <div className={styles.projectImpact}>
-            <span className={styles.impactIcon}>⚡</span>
+            
             {impact}
           </div>
         )}

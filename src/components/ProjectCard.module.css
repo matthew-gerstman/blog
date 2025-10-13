@@ -83,27 +83,18 @@
 }
 
 .projectImpact {
-  background: var(--surface);
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  border-left: 3px solid var(--grappa-bright);
   font-weight: 600;
   font-size: 0.95rem;
   color: var(--text);
-  margin: 0.75rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  margin: 0.75rem 0 0 0;
+  line-height: 1.5;
 }
 
-.impactIcon {
-  font-size: 1.2rem;
-}
 
 .projectTags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  
   margin-top: 0.75rem;
 }
 
@@ -190,7 +181,7 @@
 
   .projectTop {
     flex-wrap: wrap;
-    gap: 0.5rem;
+    
   }
 
   .expandIcon {
