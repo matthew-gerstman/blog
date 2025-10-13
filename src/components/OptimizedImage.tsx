@@ -5,7 +5,7 @@ import styles from './OptimizedImage.module.css';
 import manifest from '../../public/images/optimized/manifest.json';
 
 interface OptimizedImageProps {
-  src: string; // Original image filename (e.g., "image-10.png")
+  src: string; // Image path (e.g., "/images/blog/hello-there/bay-bridge-sf.jpg")
   alt: string;
   size?: 'thumbnail' | 'medium' | 'large' | 'full';
   className?: string;
@@ -22,14 +22,15 @@ export function OptimizedImage({
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentSrc, setCurrentSrc] = useState<string>('');
 
-  // Extract filename from src (handle both /images/blog/file.png and just file.png)
-  const filename = src.includes('/') ? src.split('/').pop() || src : src;
-  const imageData = manifest[filename as keyof typeof manifest];
+  // Extract relative path from src (remove /images/blog/ prefix)
+  const relativePath = src.replace('/images/blog/', '');
+  const imageData = manifest[relativePath as keyof typeof manifest];
 
   useEffect(() => {
     if (!imageData) {
       // Fallback to original if not in manifest
       setCurrentSrc(src);
+      setIsLoaded(true);
       return;
     }
 

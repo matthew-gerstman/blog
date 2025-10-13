@@ -25,20 +25,45 @@ async function ensureDir(dir) {
   }
 }
 
-async function optimizeImage(inputPath, filename) {
-  const ext = path.extname(filename).toLowerCase();
-  const name = path.basename(filename, ext);
+async function getAllImages(dir, baseDir = dir) {
+  const images = [];
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    
+    if (entry.isDirectory()) {
+      // Recursively get images from subdirectories
+      images.push(...await getAllImages(fullPath, baseDir));
+    } else if (/\.(jpg|jpeg|png|webp)$/i.test(entry.name)) {
+      // Get relative path from base blog directory
+      const relativePath = path.relative(baseDir, fullPath);
+      images.push({ fullPath, relativePath });
+    }
+  }
+  
+  return images;
+}
+
+async function optimizeImage(inputPath, relativePath) {
+  const ext = path.extname(relativePath).toLowerCase();
+  const nameWithPath = relativePath.replace(ext, '');
   
   // Skip GIFs (they need special handling)
   if (ext === '.gif') {
-    console.log(`Skipping GIF: ${filename}`);
-    return;
+    console.log(`Skipping GIF: ${relativePath}`);
+    return null;
   }
 
-  console.log(`Processing: ${filename}`);
+  console.log(`Processing: ${relativePath}`);
+
+  const result = {
+    original: `/images/blog/${relativePath}`,
+    sizes: {}
+  };
 
   for (const [sizeName, config] of Object.entries(SIZES)) {
-    const outputPath = path.join(OUTPUT_DIR, sizeName, `${name}.webp`);
+    const outputPath = path.join(OUTPUT_DIR, sizeName, `${nameWithPath}.webp`);
     await ensureDir(path.dirname(outputPath));
 
     try {
@@ -52,10 +77,14 @@ async function optimizeImage(inputPath, filename) {
 
       const stats = await fs.stat(outputPath);
       console.log(`  ✓ ${sizeName}: ${(stats.size / 1024).toFixed(1)}KB`);
+      
+      result.sizes[sizeName] = `/images/optimized/${sizeName}/${nameWithPath}.webp`;
     } catch (err) {
       console.error(`  ✗ ${sizeName}: ${err.message}`);
     }
   }
+  
+  return { relativePath, result };
 }
 
 async function main() {
@@ -66,45 +95,37 @@ async function main() {
     await ensureDir(path.join(OUTPUT_DIR, sizeName));
   }
 
-  // Get all images
-  const files = await fs.readdir(INPUT_DIR);
-  const imageFiles = files.filter(f => 
-    /\.(jpg|jpeg|png|webp)$/i.test(f)
-  );
-
-  console.log(`Found ${imageFiles.length} images to process\n`);
+  // Get all images recursively
+  const images = await getAllImages(INPUT_DIR);
+  console.log(`Found ${images.length} images to process\n`);
 
   // Process images in parallel (4 at a time)
   const CONCURRENCY = 4;
-  for (let i = 0; i < imageFiles.length; i += CONCURRENCY) {
-    const batch = imageFiles.slice(i, i + CONCURRENCY);
-    await Promise.all(
-      batch.map(filename => 
-        optimizeImage(path.join(INPUT_DIR, filename), filename)
+  const manifest = {};
+  
+  for (let i = 0; i < images.length; i += CONCURRENCY) {
+    const batch = images.slice(i, i + CONCURRENCY);
+    const results = await Promise.all(
+      batch.map(({ fullPath, relativePath }) => 
+        optimizeImage(fullPath, relativePath)
       )
     );
+    
+    // Add to manifest
+    for (const item of results) {
+      if (item) {
+        manifest[item.relativePath] = item.result;
+      }
+    }
   }
 
-  // Generate manifest
-  const manifest = {};
-  for (const filename of imageFiles) {
-    const ext = path.extname(filename);
-    const name = path.basename(filename, ext);
-    
-    if (ext === '.gif') {
-      manifest[filename] = {
-        original: `/images/blog/${filename}`,
+  // Also handle GIFs
+  for (const { fullPath, relativePath } of images) {
+    if (path.extname(relativePath).toLowerCase() === '.gif') {
+      manifest[relativePath] = {
+        original: `/images/blog/${relativePath}`,
         sizes: {}
       };
-    } else {
-      manifest[filename] = {
-        original: `/images/blog/${filename}`,
-        sizes: {}
-      };
-      
-      for (const sizeName of Object.keys(SIZES)) {
-        manifest[filename].sizes[sizeName] = `/images/optimized/${sizeName}/${name}.webp`;
-      }
     }
   }
 
@@ -113,7 +134,9 @@ async function main() {
     JSON.stringify(manifest, null, 2)
   );
 
-  console.log(`\n✅ Optimization complete! Manifest written to ${OUTPUT_DIR}/manifest.json`);
+  console.log(`\n✅ Optimization complete!`);
+  console.log(`   Processed ${images.length} images`);
+  console.log(`   Manifest written to ${OUTPUT_DIR}/manifest.json`);
 }
 
 main().catch(err => {

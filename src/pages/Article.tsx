@@ -6,6 +6,7 @@ import { calculateReadingTime, getWordCount } from '../utils/reading';
 import { useKeyboard } from '../hooks/useKeyboard';
 import { TwitterEmbed } from '../components/TwitterEmbed';
 import { BasicDemo, ThrottleDemo, DebounceDemo } from '../demos/ThrottleDebounceDemo';
+import { OptimizedImage } from '../components/OptimizedImage';
 import styles from './Article.module.css';
 
 interface ArticleProps {
@@ -114,7 +115,36 @@ export function Article({ posts }: ArticleProps) {
         const root = createRoot(container);
         root.render(<DemoComponent />);
       });
-    }, 100);
+    
+      
+      // Replace content images with OptimizedImage components
+      document.querySelectorAll('.article-body img').forEach((img) => {
+        const src = img.getAttribute('src') || '';
+        const alt = img.getAttribute('alt') || '';
+        
+        // Skip if already processed
+        if (img.classList.contains('optimized-processed')) return;
+        
+        // Create wrapper div for React component
+        const wrapper = document.createElement('div');
+        wrapper.className = 'optimized-image-wrapper';
+        img.parentNode?.insertBefore(wrapper, img);
+        
+        // Render OptimizedImage component
+        const root = createRoot(wrapper);
+        root.render(
+          <OptimizedImage 
+            src={src}
+            alt={alt}
+            size="large"
+            loading="lazy"
+            className={img.className}
+          />
+        );
+        
+        // Remove original img
+        img.remove();
+      });}, 100);
   }, [slug, posts, navigate]);
 
   const currentIndex = post ? posts.findIndex(p => p.id === post.id) : -1;
@@ -143,7 +173,15 @@ export function Article({ posts }: ArticleProps) {
           <span className={styles.badge}>{readingTime} min read</span>
           <span className={styles.badge}>{wordCount.toLocaleString()} words</span>
         </div>
-        {banner && <img src={banner} alt={post.title} className={styles.banner} />}
+        {banner && (
+          <OptimizedImage 
+            src={banner} 
+            alt={post.title} 
+            className={styles.banner}
+            size="full"
+            loading="eager"
+          />
+        )}
       </header>
       
       <div className={`${styles.body} article-body`} data-reading-time={readingTime} dangerouslySetInnerHTML={{ __html: post.content }} />
