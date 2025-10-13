@@ -39,6 +39,7 @@
 .timelineItem:nth-child(4) { animation-delay: 0.4s; }
 .timelineItem:nth-child(5) { animation-delay: 0.5s; }
 .timelineItem:nth-child(6) { animation-delay: 0.6s; }
+.timelineItem:nth-child(7) { animation-delay: 0.7s; }
 
 @keyframes fadeIn {
   from {
@@ -62,7 +63,7 @@
 .companyName {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--grappa-bright);
+  /* Color is set inline from data */
   margin: 0 0 0.5rem 0;
   line-height: 1.2;
 }
