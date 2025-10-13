@@ -5,9 +5,10 @@ interface ProjectCardProps {
   title: string;
   year: string;
   description: string;
-  challenge?: string;
-  approach?: string[];
+  context?: string;
+  execution?: string[];
   impact?: string;
+  role?: string;
   technologies?: string[];
   leadership?: string[];
 }
@@ -16,15 +17,16 @@ export function ProjectCard({
   title, 
   year, 
   description, 
-  challenge,
-  approach,
-  impact, 
+  context,
+  execution,
+  impact,
+  role,
   technologies,
   leadership
 }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   
-  const hasDetails = challenge || approach || leadership;
+  const hasDetails = context || execution || leadership;
 
   return (
     <div className={`${styles.projectCard} ${isExpanded ? styles.expanded : ''}`}>
@@ -40,6 +42,9 @@ export function ProjectCard({
             <span className={styles.expandIcon}>{isExpanded ? '−' : '+'}</span>
           )}
         </div>
+        {role && (
+          <div className={styles.projectRole}>{role}</div>
+        )}
         <p className={styles.projectDescription}>{description}</p>
         {impact && (
           <div className={styles.projectImpact}>
@@ -59,18 +64,18 @@ export function ProjectCard({
       {hasDetails && (
         <div className={styles.projectDetails}>
           <div className={styles.projectDetailsContent}>
-            {challenge && (
+            {context && (
               <div className={styles.detailSection}>
                 <h5>Context</h5>
-                <p>{challenge}</p>
+                <p>{context}</p>
               </div>
             )}
             
-            {approach && approach.length > 0 && (
+            {execution && execution.length > 0 && (
               <div className={styles.detailSection}>
                 <h5>Execution</h5>
                 <ul>
-                  {approach.map((item, i) => (
+                  {execution.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>

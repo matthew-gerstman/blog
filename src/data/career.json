@@ -17,50 +17,44 @@
           "title": "Notebooks 2.0",
           "year": "2024",
           "description": "Complete rebuild of collaborative data science tooling to support real-time multi-user editing and complex notebook interactions at scale.",
-          "challenge": "Build production-ready collaborative editing platform for data science notebooks with complex state management for multi-user scenarios.",
-          "approach": [
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Real-time Collaboration"
+          ],
+          "context": "Build production-ready collaborative editing platform for data science notebooks with complex state management for multi-user scenarios.",
+          "execution": [
             "Architected real-time collaboration system for data science notebooks",
             "Built complex state management for multi-user editing scenarios",
             "Implemented sophisticated UI for notebook cell interactions",
             "Designed for performance with large datasets and visualizations",
             "Created robust testing framework for complex UI interactions"
           ],
-          "technologies": [
-            "TypeScript",
-            "React",
-            "Real-time Collaboration"
-          ]
+          "role": ""
         },
         {
           "title": "Dashboard Type Safety Initiative",
           "year": "2023-2024",
           "description": "Systematic TypeScript migration across dashboards codebase.",
           "impact": "Cut TypeScript 'any' usage by 50%",
-          "approach": [
-            "Systematic audit of TypeScript type usage",
-            "Incremental migration strategy to proper typing",
-            "Created type-safe patterns for common dashboard operations"
-          ],
           "technologies": [
             "TypeScript",
             "React",
             "Redux"
-          ]
+          ],
+          "context": null,
+          "execution": [
+            "Systematic audit of TypeScript type usage",
+            "Incremental migration strategy to proper typing",
+            "Created type-safe patterns for common dashboard operations"
+          ],
+          "role": ""
         },
         {
           "title": "PDF Reporting System",
           "year": "2023",
           "description": "Built horizontally scalable Node.js/Puppeteer system for dashboard PDF generation.",
-          "impact": "Widget fidelity: 70% \u2192 100% (~10x improvement)",
-          "challenge": "Legacy email-based widget snapshot system had ~70% success rate with flaky rendering and poor user experience.",
-          "approach": [
-            "Built stateless, horizontally scalable Node.js/Puppeteer system",
-            "Created report-printer service for PDF generation",
-            "Coordinated 50+ widget types across virtualized dashboards",
-            "Built PrintModeAdapter component to aggregate render status",
-            "Reduced dev loop from 30 minutes to 1 minute",
-            "Created foundational HTTP/gRPC client library (now used by 15+ services)"
-          ],
+          "impact": "Widget fidelity: 70% → 100% (~10x improvement)",
           "leadership": [
             "Drove technology selection and architecture decisions",
             "Led 6-week prototyping process with weekly stakeholder reviews",
@@ -72,22 +66,34 @@
             "Puppeteer",
             "TypeScript",
             "gRPC"
-          ]
+          ],
+          "context": "Legacy email-based widget snapshot system had ~70% success rate with flaky rendering and poor user experience.",
+          "execution": [
+            "Built stateless, horizontally scalable Node.js/Puppeteer system",
+            "Created report-printer service for PDF generation",
+            "Coordinated 50+ widget types across virtualized dashboards",
+            "Built PrintModeAdapter component to aggregate render status",
+            "Reduced dev loop from 30 minutes to 1 minute",
+            "Created foundational HTTP/gRPC client library (now used by 15+ services)"
+          ],
+          "role": ""
         },
         {
           "title": "Integration Testing Framework",
           "year": "2023",
           "description": "Pioneered integration testing approach for complex UI interactions in dashboards.",
-          "approach": [
-            "Built testing patterns for multi-widget interactions",
-            "Created test utilities for dashboard scenarios",
-            "Established best practices for UI testing"
-          ],
           "technologies": [
             "TypeScript",
             "React",
             "Testing"
-          ]
+          ],
+          "context": null,
+          "execution": [
+            "Built testing patterns for multi-widget interactions",
+            "Created test utilities for dashboard scenarios",
+            "Established best practices for UI testing"
+          ],
+          "role": ""
         }
       ]
     },
@@ -105,59 +111,65 @@
           "title": "TypeScript Migration & Component Library",
           "year": "2021-2022",
           "description": "Led migration of entire component library to TypeScript with modern CSS architecture and design system principles.",
-          "approach": [
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Modern CSS",
+            "Design Systems"
+          ],
+          "context": null,
+          "execution": [
             "Led migration of entire component library to TypeScript",
             "Standardized component library with modern CSS patterns",
             "Implemented CSS variables for theming",
             "Created responsive layout systems",
             "Improved accessibility and performance"
           ],
-          "technologies": [
-            "TypeScript",
-            "React",
-            "Modern CSS",
-            "Design Systems"
-          ]
+          "role": ""
         },
         {
           "title": "Weekly TypeScript & React Training",
           "year": "2021-2022",
           "description": "Designed and taught comprehensive training curriculum for entire engineering team.",
-          "approach": [
+          "technologies": [
+            "Teaching",
+            "TypeScript",
+            "React"
+          ],
+          "context": null,
+          "execution": [
             "Designed comprehensive training curriculum",
             "Taught weekly classes on TypeScript fundamentals",
             "Covered advanced React patterns and best practices",
             "Provided hands-on exercises and code reviews"
           ],
-          "technologies": [
-            "Teaching",
-            "TypeScript",
-            "React"
-          ]
+          "role": ""
         },
         {
           "title": "Autogenerated API Client",
           "year": "2021",
           "description": "Built autogenerated API client system with gRPC/HTTP transcoding.",
           "impact": "Eliminated manual API client maintenance",
-          "approach": [
+          "technologies": [
+            "TypeScript",
+            "gRPC",
+            "Code Generation"
+          ],
+          "context": null,
+          "execution": [
             "Architected autogenerated API client system",
             "Implemented gRPC/HTTP transcoding for seamless protocol translation",
             "Created code generation pipeline from API definitions",
             "Built type-safe client with automatic updates"
           ],
-          "technologies": [
-            "TypeScript",
-            "gRPC",
-            "Code Generation"
-          ]
+          "role": ""
         }
       ]
     },
     {
       "id": "dropbox",
       "company": "Dropbox",
-      "role": "Software Engineer \u2192 Senior Software Engineer",
+      "role": "Software Engineer → Senior Software Engineer",
       "period": "June 2017 - June 2021",
       "startDate": "2017-06",
       "endDate": "2021-06",
@@ -168,68 +180,76 @@
           "title": "JavaScript Guild",
           "year": "2017-2021",
           "description": "Founded JavaScript Guild and organized 100+ attendee technical summits for frontend engineers.",
-          "approach": [
+          "technologies": [
+            "Community",
+            "Leadership"
+          ],
+          "context": null,
+          "execution": [
             "Founded JavaScript Guild as community for frontend engineers",
             "Organized regular knowledge-sharing sessions",
             "Published newsletters with tips and updates",
             "Coordinated multi-day technical summits"
           ],
-          "technologies": [
-            "Community",
-            "Leadership"
-          ]
+          "role": ""
         },
         {
           "title": "Plus Plus: Family Plans & Life Vault",
           "year": "2020",
           "description": "Led end-to-end frontend architecture for new product line with complex family sharing features.",
           "impact": "Created new revenue stream",
-          "approach": [
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Redux"
+          ],
+          "context": null,
+          "execution": [
             "Led end-to-end frontend architecture from ideation to launch",
             "Designed complex state management for family account relationships",
             "Built intuitive UI for family plan management",
             "Coordinated cross-functional teams (design, product, backend)",
             "Implemented Life Vault feature for important document storage"
           ],
-          "technologies": [
-            "TypeScript",
-            "React",
-            "Redux"
-          ]
+          "role": ""
         },
         {
           "title": "Redux State Management System",
           "year": "2018",
           "description": "Designed comprehensive Redux architecture with TypeScript type-safe patterns adopted across the organization.",
           "impact": "Adopted by ~10 teams across ~25 features",
-          "approach": [
+          "technologies": [
+            "TypeScript",
+            "Redux",
+            "React"
+          ],
+          "context": null,
+          "execution": [
             "Designed comprehensive Redux architecture with TypeScript",
             "Created reusable patterns for common state operations",
             "Built extensive documentation and training materials",
             "Systematic rollout across organization with team support",
             "Established best practices and code review guidelines"
           ],
-          "technologies": [
-            "TypeScript",
-            "Redux",
-            "React"
-          ]
+          "role": ""
         },
         {
           "title": "File Viewer SDK",
           "year": "2018",
           "description": "Led architecture and bootstrapping of cross-platform SDK for file preview functionality.",
-          "approach": [
+          "technologies": [
+            "TypeScript",
+            "React",
+            "SDK Development"
+          ],
+          "context": null,
+          "execution": [
             "Led architecture and bootstrapping of cross-platform SDK",
             "Owned build pipeline and asset optimization",
             "Designed API for embedding file previews",
             "Coordinated between web and desktop teams"
           ],
-          "technologies": [
-            "TypeScript",
-            "React",
-            "SDK Development"
-          ]
+          "role": ""
         }
       ]
     },
@@ -247,62 +267,68 @@
           "title": "Page Load Optimization",
           "year": "2016",
           "description": "Comprehensive performance profiling and systematic optimization of mobile-first theater ticketing app.",
-          "impact": "95% reduction: 8 seconds \u2192 400ms",
-          "approach": [
+          "impact": "95% reduction: 8 seconds → 400ms",
+          "technologies": [
+            "JavaScript",
+            "Webpack",
+            "Performance"
+          ],
+          "context": null,
+          "execution": [
             "Comprehensive performance profiling to identify bottlenecks",
             "Systematic bundle strategy optimization and code splitting",
             "Asset delivery improvements (compression, CDN, caching)",
             "Render path performance enhancements",
             "Critical path optimization for above-the-fold content"
           ],
-          "technologies": [
-            "JavaScript",
-            "Webpack",
-            "Performance"
-          ]
+          "role": ""
         },
         {
           "title": "Web 2.0: React + Redux Rebuild",
           "year": "2016",
           "description": "Built production-ready React + Redux application from scratch with comprehensive component library.",
-          "approach": [
+          "technologies": [
+            "React",
+            "Redux",
+            "Node.js",
+            "ES6+"
+          ],
+          "context": null,
+          "execution": [
             "Complete application architecture design",
             "Built comprehensive component library",
             "Implemented Redux state management patterns",
             "Created Node.js authentication layer",
             "Designed and built checkout flow"
           ],
-          "technologies": [
-            "React",
-            "Redux",
-            "Node.js",
-            "ES6+"
-          ]
+          "role": ""
         },
         {
           "title": "Special Offers Feature",
           "year": "2016",
           "description": "End-to-end feature design converting users who lost lottery into alternative sales.",
           "impact": "New revenue stream from lost sales",
-          "approach": [
-            "End-to-end feature design from user research to implementation",
-            "Built Groovy APIs with complex SQL queries for offer matching",
-            "Designed frontend experience for offer selection",
-            "Implemented business logic for offer eligibility"
-          ],
           "technologies": [
             "Groovy",
             "React",
             "SQL",
             "Full-Stack"
-          ]
+          ],
+          "context": null,
+          "execution": [
+            "End-to-end feature design from user research to implementation",
+            "Built Groovy APIs with complex SQL queries for offer matching",
+            "Designed frontend experience for offer selection",
+            "Implemented business logic for offer eligibility"
+          ],
+          "role": ""
         }
       ]
     },
     {
       "id": "zetta",
       "company": "Zetta.net",
-      "role": "Intern \u2192 Software Engineer",
+      "role": "Intern → Software Engineer",
       "period": "June 2012 - December 2015",
       "startDate": "2012-06",
       "endDate": "2015-12",
@@ -314,20 +340,22 @@
           "year": "2015",
           "description": "Led complete backend migration to RESTful architecture and frontend migration to Backbone.js.",
           "impact": "First major technical leadership role",
-          "approach": [
+          "technologies": [
+            "Backbone.js",
+            "RESTful APIs",
+            "JavaScript"
+          ],
+          "context": null,
+          "execution": [
             "Led complete backend migration to RESTful resource architecture",
             "Migrated frontend to Backbone.js for better structure",
             "Established API design standards and conventions",
             "Created documentation and training materials"
           ],
-          "technologies": [
-            "Backbone.js",
-            "RESTful APIs",
-            "JavaScript"
-          ]
+          "role": ""
         },
         {
-          "title": "SVN \u2192 Git Migration",
+          "title": "SVN → Git Migration",
           "year": "2015",
           "description": "Planned and executed organizational migration with team training and code review processes.",
           "leadership": [
@@ -339,46 +367,53 @@
           "technologies": [
             "Git",
             "Version Control"
-          ]
+          ],
+          "context": null,
+          "execution": null,
+          "role": ""
         },
         {
           "title": "CI + Sentry Implementation",
           "year": "2015",
           "description": "Set up continuous integration pipeline and Sentry for production error tracking.",
-          "approach": [
-            "Set up continuous integration pipeline",
-            "Implemented Sentry for production error tracking",
-            "Established quality standards and gates"
-          ],
           "technologies": [
             "CI/CD",
             "Sentry",
             "Testing"
-          ]
+          ],
+          "context": null,
+          "execution": [
+            "Set up continuous integration pipeline",
+            "Implemented Sentry for production error tracking",
+            "Established quality standards and gates"
+          ],
+          "role": ""
         },
         {
           "title": "Data Restore Flow",
           "year": "2014",
           "description": "Built complete data restore flow with intuitive UI for version history and conflict resolution.",
           "impact": "Core revenue-driving feature",
-          "approach": [
+          "technologies": [
+            "Full-Stack",
+            "UI/UX",
+            "Product Engineering"
+          ],
+          "context": null,
+          "execution": [
             "Built complete data restore flow",
             "Created file selection and restoration UI",
             "Integrated backend restore operations",
             "Designed user experience for complex operations"
           ],
-          "technologies": [
-            "Full-Stack",
-            "UI/UX",
-            "Product Engineering"
-          ]
+          "role": ""
         }
       ]
     },
     {
       "id": "dance-marathon",
       "company": "Dance Marathon at UF",
-      "role": "Technology Captain \u2192 Technology Overall Director",
+      "role": "Technology Captain → Technology Overall Director",
       "period": "September 2010 - April 2013",
       "startDate": "2010-09",
       "endDate": "2013-04",
@@ -389,52 +424,58 @@
           "title": "Tweet Two Screens",
           "year": "2013",
           "description": "Custom tweet visualizers optimized for Jumbotron display with real-time aggregation.",
-          "approach": [
+          "technologies": [
+            "Twitter API",
+            "jQuery",
+            "Real-time"
+          ],
+          "context": null,
+          "execution": [
             "Built custom tweet visualizers optimized for Jumbotron display",
             "Implemented real-time tweet aggregation via Twitter API",
             "Created visual design specifically for large-screen viewing",
             "Built content moderation system for appropriate messaging"
           ],
-          "technologies": [
-            "Twitter API",
-            "jQuery",
-            "Real-time"
-          ]
+          "role": ""
         },
         {
           "title": "DMatUF iPhone App",
           "year": "2013",
           "description": "Native iOS event app with schedule, song requests, and arena map for offline-first usage.",
-          "approach": [
+          "technologies": [
+            "iOS",
+            "Objective-C",
+            "Native Mobile"
+          ],
+          "context": null,
+          "execution": [
             "Built native iOS event app (pre-widespread adoption era)",
             "Implemented event schedule and timing features",
             "Created song request functionality",
             "Designed locally hosted basketball arena map"
           ],
-          "technologies": [
-            "iOS",
-            "Objective-C",
-            "Native Mobile"
-          ]
+          "role": ""
         },
         {
           "title": "DMAssassins",
           "year": "2012",
           "description": "Real-life 'assassins' game with target assignment system keeping thousands engaged throughout 26.6-hour marathon.",
           "impact": "Used by thousands for 5+ years",
-          "approach": [
+          "technologies": [
+            "PHP",
+            "MySQL",
+            "jQuery",
+            "Game Design"
+          ],
+          "context": null,
+          "execution": [
             "Designed real-life 'assassins' game with target assignment system",
             "Built pin verification system for 'hits'",
             "Implemented automatic target reassignment upon elimination",
             "Created MySQL backend for game state management",
             "Built jQuery frontend for game interface"
           ],
-          "technologies": [
-            "PHP",
-            "MySQL",
-            "jQuery",
-            "Game Design"
-          ]
+          "role": ""
         }
       ]
     },
@@ -452,13 +493,6 @@
           "title": "University of Florida - Computer Science Degree",
           "year": "2009-2013",
           "description": "Comprehensive computer science education covering programming, algorithms, systems, and mathematics.",
-          "approach": [
-            "Core CS: Data Structures, Algorithms, Operating Systems, Networks, Databases",
-            "Systems: Computer Organization, Digital Logic, Circuits",
-            "Mathematics: Calculus 1-3, Differential Equations, Linear Algebra, Statistics",
-            "Languages: Java, C, PHP, MySQL",
-            "Continued WordPress contracting work during college"
-          ],
           "technologies": [
             "Java",
             "C",
@@ -466,42 +500,55 @@
             "MySQL",
             "WordPress",
             "CS Fundamentals"
-          ]
+          ],
+          "context": null,
+          "execution": [
+            "Core CS: Data Structures, Algorithms, Operating Systems, Networks, Databases",
+            "Systems: Computer Organization, Digital Logic, Circuits",
+            "Mathematics: Calculus 1-3, Differential Equations, Linear Algebra, Statistics",
+            "Languages: Java, C, PHP, MySQL",
+            "Continued WordPress contracting work during college"
+          ],
+          "role": ""
         },
         {
           "title": "Freelance Computer Repair & Web Design",
           "year": "2006-2009",
           "description": "High school freelance work doing computer repair, virus removal, and building simple websites.",
-          "approach": [
+          "technologies": [
+            "Computer Repair",
+            "Web Design",
+            "Customer Service"
+          ],
+          "context": null,
+          "execution": [
             "Computer repair and troubleshooting",
             "Virus removal during 'era of constant malware'",
             "Software installation and configuration",
             "Teaching people how to use computers",
             "Designing and building simple websites"
           ],
-          "technologies": [
-            "Computer Repair",
-            "Web Design",
-            "Customer Service"
-          ]
+          "role": ""
         },
         {
           "title": "Body Logic MD - IT Support",
           "year": "2008-2009",
           "description": "First 'real' job in office environment during high school, supporting workplace users.",
-          "approach": [
-            "Supported systems people depended on for their jobs",
-            "Learned professional work skills",
-            "Handled non-technical workplace users",
-            "Organized group of friends to QA company's new website on weekend"
-          ],
           "leadership": [
             "Team leadership: Organized QA testing weekend with friends"
           ],
           "technologies": [
             "IT Support",
             "QA Testing"
-          ]
+          ],
+          "context": null,
+          "execution": [
+            "Supported systems people depended on for their jobs",
+            "Learned professional work skills",
+            "Handled non-technical workplace users",
+            "Organized group of friends to QA company's new website on weekend"
+          ],
+          "role": ""
         },
         {
           "title": "Johns Hopkins Summer Program",
@@ -510,13 +557,22 @@
           "technologies": [
             "Computer Science Fundamentals",
             "Philosophy"
-          ]
+          ],
+          "context": null,
+          "execution": null,
+          "role": ""
         },
         {
           "title": "Don Estridge High Tech Middle School",
           "year": "2005",
           "description": "Programming in Pascal, hardware assembly, field support, and early security research.",
-          "approach": [
+          "technologies": [
+            "Pascal",
+            "Hardware Assembly",
+            "Field Support"
+          ],
+          "context": null,
+          "execution": [
             "Wrote programs for fun in Pascal classes",
             "Built command line interactive Periodic Table for science project",
             "Discovered and reported printer security vulnerability",
@@ -524,27 +580,25 @@
             "Fixed computers for students and teachers",
             "Developed skills explaining technical concepts to non-technical users"
           ],
-          "technologies": [
-            "Pascal",
-            "Hardware Assembly",
-            "Field Support"
-          ]
+          "role": ""
         },
         {
           "title": "First Programs & Websites",
           "year": "1999-2000",
           "description": "Started with Visual Basic guest book, then built websites with HTML and JavaScript including the legendary 'DBZ dance party site'.",
-          "approach": [
+          "technologies": [
+            "Visual Basic",
+            "HTML",
+            "JavaScript"
+          ],
+          "context": null,
+          "execution": [
             "First program: Generic guest book using Visual Basic 5",
             "Built websites to show classmates at school",
             "Created site with personalized message prompts",
             "Made 'DBZ dance party' site with Dragon Ball Z gifs and Ocarina of Time music"
           ],
-          "technologies": [
-            "Visual Basic",
-            "HTML",
-            "JavaScript"
-          ]
+          "role": ""
         }
       ]
     }
