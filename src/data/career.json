@@ -16,61 +16,105 @@
         {
           "title": "Notebooks 2.0",
           "year": "2024",
-          "description": "Complete rebuild of collaborative data science tooling to support real-time multi-user editing and complex notebook interactions at scale.",
-          "challenge": "Build production-ready collaborative editing platform for data science notebooks with complex state management for multi-user scenarios.",
+          "description": "Datadog's notebook product was single-user and showing its age. I led the complete rebuild to support real-time collaboration\u2014think Google Docs but for data science notebooks with live query results and visualizations. The really interesting challenge was managing state for multiple users editing cells simultaneously while queries were running in the background. We shipped it as the default experience and it became the second-most-used surface in the product after dashboards.",
+          "challenge": "The core technical challenge was building a real-time collaboration system for a product that's fundamentally different from text documents. Notebooks have cells that can be in different states (editing, running, complete), queries that take time to execute, and visualizations that need to update live. When multiple people are editing simultaneously, you need to handle conflicts, show what everyone's doing, and keep everything in sync without breaking the user's mental model. Plus, data scientists expect their notebooks to just work\u2014no weird race conditions or lost work.",
           "approach": [
-            "Architected real-time collaboration system for data science notebooks",
-            "Built complex state management for multi-user editing scenarios",
-            "Implemented sophisticated UI for notebook cell interactions",
-            "Designed for performance with large datasets and visualizations",
-            "Created robust testing framework for complex UI interactions"
+            "Architected real-time collaboration using operational transforms for cell-level editing",
+            "Built sophisticated state machine for cell lifecycle (idle \u2192 editing \u2192 running \u2192 complete \u2192 error)",
+            "Implemented presence system showing who's editing what in real-time",
+            "Created conflict resolution for simultaneous edits to same cell",
+            "Designed UI to show query execution state across all users",
+            "Built rollback and recovery for failed operations",
+            "Optimized for large notebooks (100+ cells) with complex visualizations",
+            "Created comprehensive integration tests for multi-user scenarios"
           ],
-          "technologies": ["TypeScript", "React", "Real-time Collaboration"]
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Real-time Collaboration"
+          ],
+          "leadership": [
+            "Led cross-functional team of 4-5 engineers through 9-month project",
+            "Drove architecture decisions and technical direction",
+            "Coordinated with product and design on UX for collaborative features",
+            "Presented progress to leadership and stakeholders",
+            "Became second-most-used surface in Datadog after dashboards"
+          ]
         },
         {
           "title": "PDF Reporting System",
           "year": "2023",
-          "description": "Built horizontally scalable Node.js/Puppeteer system for dashboard PDF generation.",
-          "impact": "Widget fidelity: 70% → 100% (~10x improvement)",
-          "challenge": "Legacy email-based widget snapshot system had ~70% success rate with flaky rendering and poor user experience.",
+          "description": "The old system for generating dashboard PDFs was email-based and had a 70% success rate. Not great when customers are trying to share reports with executives. I built a new system using Node.js and Puppeteer that could render dashboards as PDFs with 100% fidelity. The hardest part was coordinating 50+ different widget types to all report when they were done rendering\u2014some widgets fetch data, some don't, some have multiple stages. Also cut the dev feedback loop from 30 minutes to 1 minute, which made iteration actually possible.",
+          "impact": "Widget fidelity improved from ~70% to near 100% (~10x improvement). Horizontally scalable architecture supporting production load. Infrastructure reused by 15+ services. Revenue-generating feature heavily used by customers.",
+          "challenge": "The legacy system used email to trigger PDF generation, which was inherently unreliable and had no visibility into failures. But the deeper problem was that dashboards are complex\u2014they have 50+ widget types, each with different rendering behaviors. Some widgets fetch data, some use cached data, some have animations, some are split graphs that render in multiple passes. You can't just wait for 'page load' to complete because widgets load asynchronously. And dashboards can have 10,000+ widgets, so you need to be smart about what you render and when.",
           "approach": [
-            "Built stateless, horizontally scalable Node.js/Puppeteer system",
-            "Created report-printer service for PDF generation",
-            "Coordinated 50+ widget types across virtualized dashboards",
-            "Built PrintModeAdapter component to aggregate render status",
-            "Reduced dev loop from 30 minutes to 1 minute",
-            "Created foundational HTTP/gRPC client library (now used by 15+ services)"
+            "Built stateless, horizontally scalable Node.js service using Puppeteer for rendering",
+            "Created 'report-printer' service for PDF generation and 'print-shop' for job orchestration",
+            "Implemented pull-based job system with heartbeat monitoring for reliability",
+            "Designed complex client/server handshake to coordinate 50+ widget types",
+            "Built PrintModeAdapter component to aggregate render status across all widgets",
+            "Solved DOM flush detection using invisible button technique",
+            "Handled edge cases: split graphs, non-fetching widgets, error states",
+            "Created foundational HTTP/gRPC client library (now used by 15+ services)",
+            "Built authentication using OBO (On Behalf Of) tokens",
+            "Optimized rendering: disabled expensive interactions in print mode",
+            "Reduced dev loop from 30 minutes to 1 minute with local testing setup"
           ],
           "leadership": [
-            "Drove technology selection and architecture decisions",
+            "Drove technology selection (Node.js was controversial at Datadog)",
             "Led 6-week prototyping process with weekly stakeholder reviews",
-            "Navigated organizational challenges around Node.js adoption",
-            "Coordinated with multiple teams (backend, frontend, email platform)"
+            "Navigated organizational challenges around adopting new tech stack",
+            "Coordinated with backend, frontend, and email platform teams",
+            "Created infrastructure reused by 15+ services across organization",
+            "Established Node.js as viable technology choice at Datadog"
           ],
-          "technologies": ["Node.js", "Puppeteer", "TypeScript", "gRPC"]
+          "technologies": [
+            "Node.js",
+            "Puppeteer",
+            "TypeScript",
+            "gRPC"
+          ]
         },
         {
           "title": "Dashboard Type Safety Initiative",
           "year": "2023-2024",
-          "description": "Systematic TypeScript migration across dashboards codebase.",
-          "impact": "Cut TypeScript 'any' usage by 50%",
+          "description": "Dashboards had accumulated a lot of TypeScript 'any' types over the years\u2014the kind of technical debt that makes refactoring scary and runtime errors common. I ran a systematic audit and migration to proper typing, cutting 'any' usage in half. It wasn't glamorous work, but it made the codebase significantly more maintainable and caught real bugs in the process. The trick was finding the right balance between perfect types and practical progress.",
+          "impact": "Cut TypeScript 'any' usage by 50% across Dashboards codebase. Reduced runtime type errors. Improved developer experience and code confidence. Set standards for type safety across organization.",
           "approach": [
-            "Systematic audit of TypeScript type usage",
-            "Incremental migration strategy to proper typing",
-            "Created type-safe patterns for common dashboard operations"
+            "Conducted systematic audit of TypeScript 'any' usage across dashboards codebase",
+            "Categorized 'any' types: fixable now, needs architecture changes, genuinely dynamic",
+            "Created incremental migration strategy prioritizing high-value areas",
+            "Built type-safe patterns for common dashboard operations",
+            "Established guidelines for new code to prevent regression",
+            "Worked with team to review and improve type definitions",
+            "Documented patterns and best practices for type safety"
           ],
-          "technologies": ["TypeScript", "React", "Redux"]
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Redux"
+          ],
+          "challenge": "The dashboards codebase had grown organically over years with inconsistent type safety. TypeScript 'any' was used liberally, which meant we had essentially no compile-time safety in critical paths. But you can't just remove all the 'any' types at once\u2014some represent genuinely dynamic data, some are covering up architectural issues, and some are just shortcuts. The challenge was systematically improving types without breaking everything or spending forever on it."
         },
         {
           "title": "Integration Testing Framework",
           "year": "2023",
-          "description": "Pioneered integration testing approach for complex UI interactions in dashboards.",
+          "description": "Dashboards are complex\u2014widgets interact with each other, filters cascade, time ranges affect everything. I pioneered an integration testing approach that could actually test these multi-widget scenarios instead of just unit testing components in isolation. Created patterns and utilities that other teams adopted for their own dashboard testing. The key insight was that you can't test dashboard behavior by testing widgets individually\u2014you need to test the whole system.",
           "approach": [
+            "Pioneered integration testing approach for complex dashboard UI",
             "Built testing patterns for multi-widget interactions",
-            "Created test utilities for dashboard scenarios",
-            "Established best practices for UI testing"
+            "Created test utilities for common dashboard scenarios (filters, time ranges, template variables)",
+            "Designed tests to be fast enough for CI but comprehensive enough to catch real issues",
+            "Established best practices for testing dashboard features",
+            "Made patterns reusable across different dashboard types"
           ],
-          "technologies": ["TypeScript", "React", "Testing"]
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Testing"
+          ],
+          "challenge": "Dashboards have emergent behavior\u2014the interaction between widgets creates complexity you can't catch with unit tests. A filter change might affect 20 widgets, a time range update might trigger different queries, template variables might cascade through the whole dashboard. Traditional unit tests test components in isolation, but the bugs happen when components interact. We needed a way to test realistic dashboard scenarios without making tests impossibly slow or brittle.",
+          "impact": "Reduced regression bugs in complex UI features. Improved confidence in dashboard releases. Created reusable testing patterns for team. Enabled faster feature development with safety net."
         }
       ]
     },
@@ -87,47 +131,83 @@
         {
           "title": "TypeScript Migration & Component Library",
           "year": "2021-2022",
-          "description": "Led migration of entire component library to TypeScript with modern CSS architecture and design system principles.",
+          "description": "Joined Bluecore to lead the TypeScript migration and modernize the component library. The frontend was a mix of JavaScript and early TypeScript with inconsistent patterns. I moved everything to proper TypeScript with real types, standardized CSS patterns using modern approaches, implemented CSS variables for theming, and improved accessibility across the board. It was the foundation work that let the rest of the frontend team move faster with more confidence.",
           "approach": [
-            "Led migration of entire component library to TypeScript",
-            "Standardized component library with modern CSS patterns",
-            "Implemented CSS variables for theming",
-            "Created responsive layout systems",
-            "Improved accessibility and performance"
+            "Led comprehensive TypeScript migration across entire component library",
+            "Created type-safe patterns for common UI components",
+            "Established TypeScript best practices and code review guidelines",
+            "Standardized CSS with modern patterns (variables, grid, flexbox)",
+            "Implemented CSS variables for consistent theming",
+            "Built responsive layout systems that work across product surfaces",
+            "Improved accessibility (ARIA labels, keyboard navigation, screen reader support)",
+            "Created comprehensive documentation for new patterns",
+            "Worked with teams to adopt new patterns incrementally"
           ],
-          "technologies": ["TypeScript", "React", "Modern CSS", "Design Systems"]
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Modern CSS",
+            "Design Systems"
+          ],
+          "challenge": "The component library had grown organically without consistent patterns. Some components were JavaScript, some were early TypeScript with lots of 'any', CSS was a mix of approaches, and accessibility was inconsistent. But this was production code powering a major product\u2014we couldn't just rewrite everything. The challenge was incrementally modernizing while keeping the product working and teams productive.",
+          "leadership": [
+            "Led platform architecture decisions as Staff Engineer",
+            "Coordinated migration across multiple product teams",
+            "Established standards that became org-wide practice",
+            "Mentored engineers on TypeScript and modern patterns",
+            "Balanced technical excellence with practical delivery"
+          ],
+          "impact": "Modernized entire frontend codebase. Improved developer experience and velocity. Reduced bugs through type safety. Created foundation for design system evolution."
         },
         {
           "title": "Autogenerated API Client",
           "year": "2021",
-          "description": "Built autogenerated API client system with gRPC/HTTP transcoding.",
-          "impact": "Eliminated manual API client maintenance",
+          "description": "Built a system to autogenerate API clients from gRPC definitions with HTTP transcoding. The old approach was manually writing and maintaining API clients, which meant they'd drift out of sync with the backend and break in subtle ways. Now when the backend changes, the types and methods just update automatically. It was one of those projects where the value is invisible when it works\u2014you just stop having a whole category of bugs.",
+          "impact": "Eliminated manual API client maintenance. Reduced API-related bugs significantly. Improved frontend/backend contract clarity. Accelerated feature development. Set standard for API integration.",
           "approach": [
-            "Architected autogenerated API client system",
+            "Architected autogenerated API client system from gRPC definitions",
             "Implemented gRPC/HTTP transcoding for seamless protocol translation",
-            "Created code generation pipeline from API definitions",
-            "Built type-safe client with automatic updates"
+            "Created code generation pipeline that runs on backend changes",
+            "Built type-safe client with automatic TypeScript types",
+            "Designed error handling and retry logic",
+            "Made generated code feel hand-written (good DX)",
+            "Integrated into build pipeline for automatic updates"
           ],
-          "technologies": ["TypeScript", "gRPC", "Code Generation"]
+          "technologies": [
+            "TypeScript",
+            "gRPC",
+            "Code Generation"
+          ],
+          "challenge": "Manual API client maintenance was error-prone and time-consuming. Backend would add a field, frontend wouldn't know about it. Types would be wrong. Methods would be out of sync. And debugging these issues was painful because you'd only find out at runtime. We needed a way to generate clients automatically from the source of truth (backend API definitions) while making them ergonomic to use in TypeScript."
         },
         {
           "title": "Weekly TypeScript & React Training",
           "year": "2021-2022",
-          "description": "Designed and taught comprehensive training curriculum for entire engineering team.",
+          "description": "Designed and taught weekly TypeScript and React training for the entire engineering team. Started with fundamentals for people new to TypeScript, worked up to advanced patterns, and included hands-on exercises and code reviews. The goal wasn't just to teach syntax\u2014it was to build intuition for when to use different patterns and how to write maintainable code. By the end, the whole team was comfortable with modern TypeScript and could review each other's code effectively.",
           "approach": [
-            "Designed comprehensive training curriculum",
-            "Taught weekly classes on TypeScript fundamentals",
-            "Covered advanced React patterns and best practices",
-            "Provided hands-on exercises and code reviews"
+            "Designed comprehensive training curriculum from fundamentals to advanced patterns",
+            "Taught weekly interactive classes with live coding",
+            "Covered TypeScript type system, generics, utility types, advanced patterns",
+            "Taught modern React patterns: hooks, composition, performance optimization",
+            "Included hands-on exercises with real codebase examples",
+            "Provided code reviews and feedback on training exercises",
+            "Created learning resources and documentation for reference",
+            "Adapted content based on team questions and needs"
           ],
-          "technologies": ["Teaching", "TypeScript", "React"]
+          "technologies": [
+            "Teaching",
+            "TypeScript",
+            "React"
+          ],
+          "challenge": "The team had varying levels of TypeScript and React experience. Some people were coming from JavaScript, some from other frameworks, some were strong in one but not the other. We needed everyone to get comfortable with modern patterns to effectively use the new platform infrastructure. But you can't just dump documentation on people\u2014they need hands-on practice and feedback.",
+          "impact": "Upskilled entire engineering team on modern patterns. Improved code quality across organization. Accelerated adoption of new platform. Built culture of continuous learning. Reduced onboarding time for new engineers."
         }
       ]
     },
     {
       "id": "dropbox",
       "company": "Dropbox",
-      "role": "Software Engineer → Senior Software Engineer",
+      "role": "Software Engineer \u2192 Senior Software Engineer",
       "period": "June 2017 - June 2021",
       "startDate": "2017-06",
       "endDate": "2021-06",
@@ -146,7 +226,11 @@
             "Systematic rollout across organization with team support",
             "Established best practices and code review guidelines"
           ],
-          "technologies": ["TypeScript", "Redux", "React"]
+          "technologies": [
+            "TypeScript",
+            "Redux",
+            "React"
+          ]
         },
         {
           "title": "Plus Plus: Family Plans & Life Vault",
@@ -160,7 +244,11 @@
             "Coordinated cross-functional teams (design, product, backend)",
             "Implemented Life Vault feature for important document storage"
           ],
-          "technologies": ["TypeScript", "React", "Redux"]
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Redux"
+          ]
         },
         {
           "title": "File Viewer SDK",
@@ -172,19 +260,31 @@
             "Designed API for embedding file previews",
             "Coordinated between web and desktop teams"
           ],
-          "technologies": ["TypeScript", "React", "SDK Development"]
+          "technologies": [
+            "TypeScript",
+            "React",
+            "SDK Development"
+          ]
         },
         {
           "title": "JavaScript Guild",
           "year": "2017-2021",
-          "description": "Founded JavaScript Guild and organized 100+ attendee technical summits for frontend engineers.",
+          "description": "Founded the JavaScript Guild as a community for frontend engineers at Dropbox. Organized regular knowledge-sharing sessions, published newsletters with tips and updates, and coordinated multi-day technical summits with 100+ attendees. It became the hub for frontend engineering at the company\u2014where people would go to ask questions, share ideas, and figure out best practices. Building community turned out to be just as important as building code.",
           "approach": [
             "Founded JavaScript Guild as community for frontend engineers",
-            "Organized regular knowledge-sharing sessions",
-            "Published newsletters with tips and updates",
-            "Coordinated multi-day technical summits"
+            "Organized regular knowledge-sharing sessions (talks, demos, discussions)",
+            "Published newsletters with frontend tips, updates, and best practices",
+            "Created forum for discussing frontend challenges and solutions",
+            "Coordinated multi-day technical summits with 100+ attendees",
+            "Facilitated cross-team collaboration and knowledge sharing",
+            "Made it easy for people to connect and learn from each other"
           ],
-          "technologies": ["Community", "Leadership"]
+          "technologies": [
+            "Community",
+            "Leadership"
+          ],
+          "challenge": "Dropbox was growing fast, and frontend engineers were spread across many teams. There was no central place to share knowledge, discuss best practices, or coordinate on common problems. Teams were solving the same problems independently, and there was no way for new engineers to learn the Dropbox way of doing frontend. We needed a community, not just documentation.",
+          "impact": "Improved frontend culture and standards organization-wide. Created community of practice across teams. Facilitated knowledge transfer and collaboration. Influenced organizational frontend direction. Built lasting culture of sharing and learning."
         }
       ]
     },
@@ -202,7 +302,7 @@
           "title": "Page Load Optimization",
           "year": "2016",
           "description": "Comprehensive performance profiling and systematic optimization of mobile-first theater ticketing app.",
-          "impact": "95% reduction: 8 seconds → 400ms",
+          "impact": "95% reduction: 8 seconds \u2192 400ms",
           "approach": [
             "Comprehensive performance profiling to identify bottlenecks",
             "Systematic bundle strategy optimization and code splitting",
@@ -210,7 +310,11 @@
             "Render path performance enhancements",
             "Critical path optimization for above-the-fold content"
           ],
-          "technologies": ["JavaScript", "Webpack", "Performance"]
+          "technologies": [
+            "JavaScript",
+            "Webpack",
+            "Performance"
+          ]
         },
         {
           "title": "Web 2.0: React + Redux Rebuild",
@@ -223,7 +327,12 @@
             "Created Node.js authentication layer",
             "Designed and built checkout flow"
           ],
-          "technologies": ["React", "Redux", "Node.js", "ES6+"]
+          "technologies": [
+            "React",
+            "Redux",
+            "Node.js",
+            "ES6+"
+          ]
         },
         {
           "title": "Special Offers Feature",
@@ -236,14 +345,19 @@
             "Designed frontend experience for offer selection",
             "Implemented business logic for offer eligibility"
           ],
-          "technologies": ["Groovy", "React", "SQL", "Full-Stack"]
+          "technologies": [
+            "Groovy",
+            "React",
+            "SQL",
+            "Full-Stack"
+          ]
         }
       ]
     },
     {
       "id": "zetta",
       "company": "Zetta.net",
-      "role": "Intern → Software Engineer",
+      "role": "Intern \u2192 Software Engineer",
       "period": "June 2012 - December 2015",
       "startDate": "2012-06",
       "endDate": "2015-12",
@@ -261,10 +375,14 @@
             "Established API design standards and conventions",
             "Created documentation and training materials"
           ],
-          "technologies": ["Backbone.js", "RESTful APIs", "JavaScript"]
+          "technologies": [
+            "Backbone.js",
+            "RESTful APIs",
+            "JavaScript"
+          ]
         },
         {
-          "title": "SVN → Git Migration",
+          "title": "SVN \u2192 Git Migration",
           "year": "2015",
           "description": "Planned and executed organizational migration with team training and code review processes.",
           "leadership": [
@@ -273,7 +391,10 @@
             "Created Git training materials and documentation",
             "Provided hands-on training for team members"
           ],
-          "technologies": ["Git", "Version Control"]
+          "technologies": [
+            "Git",
+            "Version Control"
+          ]
         },
         {
           "title": "Data Restore Flow",
@@ -286,7 +407,11 @@
             "Integrated backend restore operations",
             "Designed user experience for complex operations"
           ],
-          "technologies": ["Full-Stack", "UI/UX", "Product Engineering"]
+          "technologies": [
+            "Full-Stack",
+            "UI/UX",
+            "Product Engineering"
+          ]
         },
         {
           "title": "CI + Sentry Implementation",
@@ -297,14 +422,18 @@
             "Implemented Sentry for production error tracking",
             "Established quality standards and gates"
           ],
-          "technologies": ["CI/CD", "Sentry", "Testing"]
+          "technologies": [
+            "CI/CD",
+            "Sentry",
+            "Testing"
+          ]
         }
       ]
     },
     {
       "id": "dance-marathon",
       "company": "Dance Marathon at UF",
-      "role": "Technology Captain → Technology Overall Director",
+      "role": "Technology Captain \u2192 Technology Overall Director",
       "period": "September 2010 - April 2013",
       "startDate": "2010-09",
       "endDate": "2013-04",
@@ -323,7 +452,12 @@
             "Created MySQL backend for game state management",
             "Built jQuery frontend for game interface"
           ],
-          "technologies": ["PHP", "MySQL", "jQuery", "Game Design"]
+          "technologies": [
+            "PHP",
+            "MySQL",
+            "jQuery",
+            "Game Design"
+          ]
         },
         {
           "title": "Tweet Two Screens",
@@ -335,7 +469,11 @@
             "Created visual design specifically for large-screen viewing",
             "Built content moderation system for appropriate messaging"
           ],
-          "technologies": ["Twitter API", "jQuery", "Real-time"]
+          "technologies": [
+            "Twitter API",
+            "jQuery",
+            "Real-time"
+          ]
         },
         {
           "title": "DMatUF iPhone App",
@@ -347,7 +485,11 @@
             "Created song request functionality",
             "Designed locally hosted basketball arena map"
           ],
-          "technologies": ["iOS", "Objective-C", "Native Mobile"]
+          "technologies": [
+            "iOS",
+            "Objective-C",
+            "Native Mobile"
+          ]
         }
       ]
     }
