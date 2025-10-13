@@ -40,7 +40,6 @@ export const About: React.FC = () => {
             </div>
           ))}
         </div>
-        <Link to="/career/skills" className={styles.btn}>Full Skills & Philosophy →</Link>
       </section>
 
       <section className={styles.section}>
