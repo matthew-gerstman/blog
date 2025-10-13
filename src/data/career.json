@@ -21,10 +21,10 @@
           "role": "Engineering Manager",
           "description": "Led the complete rebuild of Datadog's collaborative notebook editor, managing a team through parallel rich text and multiplayer initiatives while maintaining a Ted Lasso-inspired leadership approach.",
           "impact": "Shipped production collaborative editor to 100% of Datadog customers. Grew team from 0 to 4 engineers with 2 promotions. Established customer-driven release cadence that went from alpha to full GA in 9 months.",
-          "context": "Datadog's legacy notebooks were built as a list of markdown cells plus visualizations (tiledefs rendered via Univiz). The product needed real-time multiplayer collaboration and a modern rich text editing experience. Two parallel technical initiatives—rich text and multiplayer—required careful coordination while retrofitting onto legacy architecture.",
+          "context": "Datadog's legacy notebooks were built as a list of markdown cells plus visualizations (tiledefs rendered via Univiz). The product needed real-time multiplayer collaboration and a modern rich text editing experience. Two parallel technical initiatives\u2014rich text and multiplayer\u2014required careful coordination while retrofitting onto legacy architecture.",
           "execution": [
             "Identified architectural conflict: ProseMirror and Redux competing for state management, ProseMirror and React competing for DOM control",
-            "Guided team to design fast/slow loop architecture—short loop within ProseMirror, long loop through Redux for what we called Multiplayer V0",
+            "Guided team to design fast/slow loop architecture\u2014short loop within ProseMirror, long loop through Redux for what we called Multiplayer V0",
             "Established weekly learning sessions covering Redux internals, type design, React fundamentals to level up the team",
             "Mentored IC2 engineer (Engineer A) toward senior promotion by having her learn concepts then teach them to the team",
             "Coordinated parallel workstreams: multiplayer squad built Node service receiving CRDTs from clients and hitting legacy APIs; rich text squad implemented fast/slow loops and core editing features",
@@ -34,12 +34,12 @@
             "Built customer pipeline: identified high-usage customers, coordinated with CSMs, scheduled pitch meetings, launched to Square before EOY",
             "Established release principle: ship to someone new every week, more customers each week than the last",
             "Responded to customer feedback mid-rollout: ran 'bring back buttons' initiative to add click interfaces on keyboard-first design, personally built print mode using knowledge from previous dashboard reports project",
-            "Built custom gating service to bypass feature flag limitations—loaded existing notebook orgs into memory, allowed instant rollout from 20% to 95% of paying customers",
+            "Built custom gating service to bypass feature flag limitations\u2014loaded existing notebook orgs into memory, allowed instant rollout from 20% to 95% of paying customers",
             "Leveraged markdown import/export to support API users managing notebooks via legacy cell model",
             "Shipped to 100% of customers including API users to complete launch"
           ],
           "leadership": [
-            "Managed 4 direct reports with 2 promotions: Engineer A (IC2→IC3, owned copy/paste and architecture refactors), Engineer B (IC1→IC2, owned lists, version history, test coverage, markdown import/export), Engineer C (IC2, owned comments and widget editing), Engineer D (hired IC1, bugfixes, table implementation, emoji)",
+            "Managed 4 direct reports with 2 promotions: Engineer A (IC2\u2192IC3, owned copy/paste and architecture refactors), Engineer B (IC1\u2192IC2, owned lists, version history, test coverage, markdown import/export), Engineer C (IC2, owned comments and widget editing), Engineer D (hired IC1, bugfixes, table implementation, emoji)",
             "Created teaching-focused culture where engineers learned by teaching others",
             "Established quality-first sprint methodology with structured pairing to spread system knowledge",
             "Built customer council with shared Slack channels for rapid feedback loops",
@@ -78,34 +78,52 @@
           "endYear": 2024
         },
         {
-          "title": "PDF Reporting System",
+          "title": "Dashboard Reporting & PDF Export",
           "year": "2023",
-          "description": "Built horizontally scalable Node.js/Puppeteer system for dashboard PDF generation.",
-          "impact": "Widget fidelity: 70% → 100% (~10x improvement)",
+          "startYear": 2023,
+          "endYear": 2023,
+          "role": "Staff Engineer / Tech Lead",
+          "description": "Architected and built Datadog's PDF reporting system from scratch, enabling offline dashboard snapshots with 95%+ widget fidelity. Led technical design, prototyping, and implementation of novel client/server handshake for complex dashboard rendering.",
+          "impact": "Shipped production PDF reporting to all customers, improving widget fidelity from 70% to 95%+. Established Node.js foundation code now used by 15+ services. Generated new revenue stream and became heavily-used customer feature with permanent team support.",
+          "context": "Legacy reporting emailed unorganized widget snapshots with 70% success rate. Customers needed offline dashboard access without Datadog credentials. Technical constraints: 50+ widget types, complex data fetching, virtualized rendering, dashboards with 10,000+ widgets. Node.js was nascent at Datadog\u2014historically banned by leadership until another team won political battle for isomorphic code.",
+          "execution": [
+            "Led 6-week prototyping phase with weekly design reviews exploring PDF layout options for horizontally-long dashboards and page break handling",
+            "Evaluated rendering engines (Selenium vs Puppeteer vs Cypress)\u2014chose Puppeteer as thin Chrome wrapper for browser-fidelity PDFs after interviewing engineers about Selenium pain points",
+            "Personally wrote all Node.js HTTP/gRPC service communication code, now foundational for 15+ services\u2014extensive tests and documentation written pre-AI era",
+            "Designed stateless architecture: report-printer pulls jobs from print-shop queue, sends heartbeat every 30s, auto-requeues on 15min timeout\u2014enabled horizontal scaling without coordination",
+            "Built complex client/server handshake: load page \u2192 wait for React tree \u2192 resize browser to force all widgets into viewport \u2192 wait for data fetch completion \u2192 resize to exact PDF dimensions \u2192 flush DOM \u2192 wait 1-3s \u2192 snapshot",
+            "Created PrintModeAdapter component to aggregate rendering status from all Univiz widget instances and expose fidelity metrics (succeeded/failed widgets)",
+            "Collaborated with Univiz team over weeks to expose widget fetch status for quality bar enforcement (retry if <95% fidelity)",
+            "Implemented /dashboard-print/:id route with print mode boolean for conditional rendering: new header, removed interactive elements, optimized styling for static PDF",
+            "Performance optimizations: disabled drag-and-drop, graph selection, tooltips in print mode",
+            "Solved split graph bug: widgets using same context provider as render detection\u2014built proxy version to bubble status to PrintModeAdapter",
+            "Removed image widget support: security risk (external hosting) and file size issues (Chrome uncompresses transformed images, bloating PDFs)",
+            "Handled note widgets (text-only, no data fetch) not marking dashboard complete\u2014integrated with Univiz to track which widgets should influence fidelity",
+            "Implemented OBO (on behalf of) token authentication: reports reflect permissions of creator, tokens managed by print-shop and injected via Puppeteer request interception",
+            "Reduced local dev loop from 30 minutes to 1 minute with custom scripts for running report-printer + web app",
+            "Navigated security constraints: report-printer had minimal infrastructure access, initially open internet then proxied, due to Node.js security perception",
+            "Shipped after quarter delay waiting for new email platform to avoid reputation risk"
+          ],
           "leadership": [
-            "Drove technology selection and architecture decisions",
-            "Led 6-week prototyping process with weekly stakeholder reviews",
-            "Navigated organizational challenges around Node.js adoption",
-            "Coordinated with multiple teams (backend, frontend, email platform)"
+            "Led technical design and architecture decisions across frontend, backend, and infrastructure teams",
+            "Built consensus through weekly prototyping and stakeholder reviews",
+            "Collaborated with Univiz team to extend library capabilities for reporting use case",
+            "Mentored backend team on Puppeteer vs Selenium tradeoffs",
+            "Transitioned to Notebooks management role as project reached productionization"
           ],
           "technologies": [
             "Node.js",
             "Puppeteer",
+            "Chrome DevTools Protocol",
+            "React",
             "TypeScript",
-            "gRPC"
-          ],
-          "context": "Legacy email-based widget snapshot system had ~70% success rate with flaky rendering and poor user experience.",
-          "execution": [
-            "Built stateless, horizontally scalable Node.js/Puppeteer system",
-            "Created report-printer service for PDF generation",
-            "Coordinated 50+ widget types across virtualized dashboards",
-            "Built PrintModeAdapter component to aggregate render status",
-            "Reduced dev loop from 30 minutes to 1 minute",
-            "Created foundational HTTP/gRPC client library (now used by 15+ services)"
-          ],
-          "role": "",
-          "startYear": 2023,
-          "endYear": 2023
+            "PDF Generation",
+            "HTTP/gRPC",
+            "Docker",
+            "Python",
+            "Univiz",
+            "Authentication (OBO tokens)"
+          ]
         },
         {
           "title": "Integration Testing Framework",
@@ -206,7 +224,7 @@
     {
       "id": "dropbox",
       "company": "Dropbox",
-      "role": "Software Engineer → Senior Software Engineer",
+      "role": "Software Engineer \u2192 Senior Software Engineer",
       "period": "June 2017 - June 2021",
       "startDate": "2017-06",
       "endDate": "2021-06",
@@ -312,7 +330,7 @@
           "title": "Page Load Optimization",
           "year": "2016",
           "description": "Comprehensive performance profiling and systematic optimization of mobile-first theater ticketing app.",
-          "impact": "95% reduction: 8 seconds → 400ms",
+          "impact": "95% reduction: 8 seconds \u2192 400ms",
           "technologies": [
             "JavaScript",
             "Webpack",
@@ -379,7 +397,7 @@
     {
       "id": "zetta",
       "company": "Zetta.net",
-      "role": "Intern → Software Engineer",
+      "role": "Intern \u2192 Software Engineer",
       "period": "June 2012 - December 2015",
       "startDate": "2012-06",
       "endDate": "2015-12",
@@ -408,7 +426,7 @@
           "endYear": 2015
         },
         {
-          "title": "SVN → Git Migration",
+          "title": "SVN \u2192 Git Migration",
           "year": "2015",
           "description": "Planned and executed organizational migration with team training and code review processes.",
           "leadership": [
@@ -472,7 +490,7 @@
     {
       "id": "dance-marathon",
       "company": "Dance Marathon at UF",
-      "role": "Technology Captain → Technology Overall Director",
+      "role": "Technology Captain \u2192 Technology Overall Director",
       "period": "September 2010 - April 2013",
       "startDate": "2010-09",
       "endDate": "2013-04",
