@@ -2,7 +2,7 @@ import React from 'react';
 import { GradientText } from '../../components/GradientText';
 import { ProjectCard } from '../../components/ProjectCard';
 import type { CareerData } from '../../types/career';
-import careerData from '../../data/career.json';
+import careerData from '../../data/career';
 import styles from './Career.module.css';
 
 const data = careerData as CareerData;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { GradientText } from '../../components/GradientText';
 import type { AboutData } from '../../types/career';
-import aboutData from '../../data/about.json';
+import aboutData from '../../data/about';
 import styles from './About.module.css';
 
 const data = aboutData as AboutData;
