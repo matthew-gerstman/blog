@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Preview Deployments</title>
+  <style>
+    body { font-family: system-ui; max-width: 800px; margin: 50px auto; padding: 20px; }
+    h1 { color: #333; }
+    .preview { padding: 15px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
+    .preview a { color: #0066cc; text-decoration: none; font-size: 18px; }
+    .preview a:hover { text-decoration: underline; }
+    .branch { color: #666; font-size: 14px; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <h1>🚀 Preview Deployments</h1>
+  <p>Available branch previews:</p>
+  <div id="previews"></div>
+  <script>
+    fetch('.')
+      .then(r => r.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const links = Array.from(doc.querySelectorAll('a'))
+          .filter(a => a.href.includes('/previews/') && !a.href.endsWith('/previews/'))
+          .map(a => a.textContent.replace('/', ''));
+        
+        const container = document.getElementById('previews');
+        links.forEach(branch => {
+          const div = document.createElement('div');
+          div.className = 'preview';
+          div.innerHTML = `
+            <a href="${branch}/">${branch}</a>
+            <div class="branch">Branch: ${branch}</div>
+          `;
+          container.appendChild(div);
+        });
+      });
+  </script>
+</body>
+</html>
