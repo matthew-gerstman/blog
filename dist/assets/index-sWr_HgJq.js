@@ -462,7 +462,7 @@ In that article I covered monads, mon`,content:`<p>Originally I set out to write
 
 <hr>
 
-<p><em>Read the original article on the <a href="https://dropbox.tech/frontend/migrating-from-underscore-to-lodash">Dropbox Tech Blog</a></em></p>`,tags:["Tech","javascript","dropbox"],banner_img:"/images/blog/underscore-lodash-train.jpg"},{id:22,slug:"software-engineering-lifecycle-dropbox-plus",title:"The Software Engineering Lifecycle: How We Built the New Dropbox Plus",date:"September 15, 2020",excerpt:"A behind-the-scenes look at building Dropbox Plus, from problem scoping through launch, covering team dynamics, technical decisions, and lessons learned.",content:`<p><em>Originally published on the <a href="https://dropbox.tech/frontend/the-software-engineering-lifecycle--how-we-built-the-new-dropbox">Dropbox Tech Blog</a></em></p>
+<p><em>Read the original article on the <a href="https://dropbox.tech/frontend/migrating-from-underscore-to-lodash">Dropbox Tech Blog</a></em></p>`,tags:["Tech","javascript","dropbox"],banner_img:"/images/blog/migrating-from-underscore-to-lodash/underscore-lodash-train.jpg"},{id:22,slug:"software-engineering-lifecycle-dropbox-plus",title:"The Software Engineering Lifecycle: How We Built the New Dropbox Plus",date:"September 15, 2020",excerpt:"A behind-the-scenes look at building Dropbox Plus, from problem scoping through launch, covering team dynamics, technical decisions, and lessons learned.",content:`<p><em>Originally published on the <a href="https://dropbox.tech/frontend/the-software-engineering-lifecycle--how-we-built-the-new-dropbox">Dropbox Tech Blog</a></em></p>
 
 <p><strong>By Matthew Gerstman • September 15, 2020</strong></p>
 
