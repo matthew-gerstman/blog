@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
 import type { Post } from '../types';
 import { calculateReadingTime, getWordCount } from '../utils/reading';
 import { bannerImages } from '../data/banners';
 import { useKeyboard } from '../hooks/useKeyboard';
 import { TwitterEmbed } from '../components/TwitterEmbed';
+import { BasicDemo, ThrottleDemo, DebounceDemo } from '../demos/ThrottleDebounceDemo';
 import styles from './Article.module.css';
 
 interface ArticleProps {
@@ -39,6 +41,7 @@ export function Article({ posts }: ArticleProps) {
     window.scrollTo(0, 0);
     
     setTimeout(() => {
+      // Syntax highlighting
       if (window.hljs) {
         document.querySelectorAll('pre code').forEach((block) => {
           const text = block.textContent || '';
@@ -63,6 +66,7 @@ export function Article({ posts }: ArticleProps) {
         });
       }
       
+      // Heading IDs
       document.querySelectorAll('.article-body h2').forEach((heading, index) => {
         heading.id = `heading-${index}`;
       });
@@ -87,6 +91,29 @@ export function Article({ posts }: ArticleProps) {
         (iframe as HTMLIFrameElement).style.width = '100%';
         (iframe as HTMLIFrameElement).style.height = '100%';
         (iframe as HTMLIFrameElement).style.border = 'none';
+      });
+      
+      // Hydrate throttle/debounce demos
+      document.querySelectorAll('[data-demo]').forEach((container) => {
+        const demoType = container.getAttribute('data-demo');
+        let DemoComponent;
+        
+        switch (demoType) {
+          case 'throttle-debounce-basic':
+            DemoComponent = BasicDemo;
+            break;
+          case 'throttle-debounce-throttle':
+            DemoComponent = ThrottleDemo;
+            break;
+          case 'throttle-debounce-debounce':
+            DemoComponent = DebounceDemo;
+            break;
+          default:
+            return;
+        }
+        
+        const root = createRoot(container);
+        root.render(<DemoComponent />);
       });
     }, 100);
   }, [slug, posts, navigate]);
