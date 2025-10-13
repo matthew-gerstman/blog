@@ -21,27 +21,6 @@
           "role": "Engineering Manager aspiring to be Ted Lasso",
           "description": "Led the complete rebuild of Datadog's collaborative notebook editor, managing a team through parallel rich text and multiplayer initiatives while maintaining a Ted Lasso-inspired leadership approach.",
           "impact": "Shipped production collaborative editor to 100% of Datadog customers. Grew team from 0 to 4 engineers with 2 promotions. Established customer-driven release cadence that went from alpha to full GA in 9 months.",
-          "context": "Datadog's legacy notebooks were built as a list of markdown cells plus visualizations (tiledefs rendered via Univiz). The product needed real-time multiplayer collaboration and a modern rich text editing experience. Two parallel technical initiatives\u2014rich text and multiplayer\u2014required careful coordination while retrofitting onto legacy architecture.",
-          "execution": [
-            "Managed 4 direct reports with 2 promotions",
-            "Built customer council with shared Slack channels for rapid feedback loops",
-            "Balanced technical leadership with customer advocacy throughout launch process",
-            "Owned the complete rebuild of Datadog's collaborative notebook editor, managing a team through parallel rich text and multiplayer initiatives while maintaining a Ted Lasso-inspired leadership approach.",
-            "Identified architectural conflict: ProseMirror and Redux competing for state management, ProseMirror and React competing for DOM control",
-            "Guided team to design fast/slow loop architecture\u2014short loop within ProseMirror, long loop through Redux for what we called Multiplayer V0",
-            "Established weekly learning sessions covering Redux internals, type design, React fundamentals to level up the team",
-            "Mentored IC2 engineer (Engineer A) toward senior promotion by having her learn concepts then teach them to the team",
-            "Coordinated parallel workstreams: multiplayer squad built Node service receiving CRDTs from clients and hitting legacy APIs; rich text squad implemented fast/slow loops and core editing features",
-            "Shipped rich text features: inlined widgets with text handling, copy/paste, toolbar, list indentation/continuation, codeblocks, comments, version history, inline tables",
-            "Ran two-week quality sprint with daily 90-minute assigned pairing sessions to maximize knowledge transfer and establish pairing culture",
-            "Turned on Multiplayer V1 for employees in Q4, handled integration bugs with focus on preventing data loss (addressed critical incident where docs overwrote with empty state)",
-            "Built customer pipeline: identified high-usage customers, coordinated with CSMs, scheduled pitch meetings, launched to Square before EOY",
-            "Established release principle: ship to someone new every week, more customers each week than the last",
-            "Responded to customer feedback mid-rollout: ran 'bring back buttons' initiative to add click interfaces on keyboard-first design, personally built print mode using knowledge from previous dashboard reports project",
-            "Built custom gating service to bypass feature flag limitations\u2014loaded existing notebook orgs into memory, allowed instant rollout from 20% to 95% of paying customers",
-            "Leveraged markdown import/export to support API users managing notebooks via legacy cell model",
-            "Shipped to 100% of customers including API users to complete launch"
-          ],          
           "technologies": [
             "ProseMirror",
             "Yjs",
@@ -52,6 +31,37 @@
             "Redux",
             "Node.js",
             "Real-time Collaboration"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Context",
+              "content": [
+                "Datadog's legacy notebooks were built as a list of markdown cells plus visualizations (tiledefs rendered via Univiz). The product needed real-time multiplayer collaboration and a modern rich text editing experience. Two parallel technical initiatives—rich text and multiplayer—required careful coordination while retrofitting onto legacy architecture."
+              ]
+            },
+            {
+              "title": "Execution",
+              "content": [
+                "Managed 4 direct reports with 2 promotions",
+                "Built customer council with shared Slack channels for rapid feedback loops",
+                "Balanced technical leadership with customer advocacy throughout launch process",
+                "Owned the complete rebuild of Datadog's collaborative notebook editor, managing a team through parallel rich text and multiplayer initiatives while maintaining a Ted Lasso-inspired leadership approach.",
+                "Identified architectural conflict: ProseMirror and Redux competing for state management, ProseMirror and React competing for DOM control",
+                "Guided team to design fast/slow loop architecture—short loop within ProseMirror, long loop through Redux for what we called Multiplayer V0",
+                "Established weekly learning sessions covering Redux internals, type design, React fundamentals to level up the team",
+                "Mentored IC2 engineer (Engineer A) toward senior promotion by having her learn concepts then teach them to the team",
+                "Coordinated parallel workstreams: multiplayer squad built Node service receiving CRDTs from clients and hitting legacy APIs; rich text squad implemented fast/slow loops and core editing features",
+                "Shipped rich text features: inlined widgets with text handling, copy/paste, toolbar, list indentation/continuation, codeblocks, comments, version history, inline tables",
+                "Ran two-week quality sprint with daily 90-minute assigned pairing sessions to maximize knowledge transfer and establish pairing culture",
+                "Turned on Multiplayer V1 for employees in Q4, handled integration bugs with focus on preventing data loss (addressed critical incident where docs overwrote with empty state)",
+                "Built customer pipeline: identified high-usage customers, coordinated with CSMs, scheduled pitch meetings, launched to Square before EOY",
+                "Established release principle: ship to someone new every week, more customers each week than the last",
+                "Responded to customer feedback mid-rollout: ran 'bring back buttons' initiative to add click interfaces on keyboard-first design, personally built print mode using knowledge from previous dashboard reports project",
+                "Built custom gating service to bypass feature flag limitations—loaded existing notebook orgs into memory, allowed instant rollout from 20% to 95% of paying customers",
+                "Leveraged markdown import/export to support API users managing notebooks via legacy cell model",
+                "Shipped to 100% of customers including API users to complete launch"
+              ]
+            }
           ]
         },
         {
@@ -64,15 +74,19 @@
             "React",
             "Redux"
           ],
-          "context": null,
-          "execution": [
-            "Systematic audit of TypeScript type usage",
-            "Incremental migration strategy to proper typing",
-            "Created type-safe patterns for common dashboard operations"
-          ],
           "role": "",
           "startYear": 2023,
-          "endYear": 2024
+          "endYear": 2024,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Systematic audit of TypeScript type usage",
+                "Incremental migration strategy to proper typing",
+                "Created type-safe patterns for common dashboard operations"
+              ]
+            }
+          ]
         },
         {
           "title": "Dashboard Reporting & PDF Export",
@@ -82,32 +96,6 @@
           "role": "Staff Engineer / Tech Lead",
           "description": "Architected and built Datadog's PDF reporting system from scratch, enabling offline dashboard snapshots with 95%+ widget fidelity. Led technical design, prototyping, and implementation of novel client/server handshake for complex dashboard rendering.",
           "impact": "Shipped production PDF reporting to all customers, improving widget fidelity from 70% to 95%+. Established Node.js foundation code now used by 15+ services. Generated new revenue stream and became heavily-used customer feature with permanent team support.",
-          "context": "Legacy reporting emailed unorganized widget snapshots with 70% success rate. Customers needed offline dashboard access without Datadog credentials. Technical constraints: 50+ widget types, complex data fetching, virtualized rendering, dashboards with 10,000+ widgets. Node.js was nascent at Datadog\u2014historically banned by leadership until another team won political battle for isomorphic code.",
-          "execution": [
-            "Led 6-week prototyping phase with weekly design reviews exploring PDF layout options for horizontally-long dashboards and page break handling",
-            "Evaluated rendering engines (Selenium vs Puppeteer vs Cypress)\u2014chose Puppeteer as thin Chrome wrapper for browser-fidelity PDFs after interviewing engineers about Selenium pain points",
-            "Personally wrote all Node.js HTTP/gRPC service communication code, now foundational for 15+ services\u2014extensive tests and documentation written pre-AI era",
-            "Designed stateless architecture: report-printer pulls jobs from print-shop queue, sends heartbeat every 30s, auto-requeues on 15min timeout\u2014enabled horizontal scaling without coordination",
-            "Built complex client/server handshake: load page \u2192 wait for React tree \u2192 resize browser to force all widgets into viewport \u2192 wait for data fetch completion \u2192 resize to exact PDF dimensions \u2192 flush DOM \u2192 wait 1-3s \u2192 snapshot",
-            "Created PrintModeAdapter component to aggregate rendering status from all Univiz widget instances and expose fidelity metrics (succeeded/failed widgets)",
-            "Collaborated with Univiz team over weeks to expose widget fetch status for quality bar enforcement (retry if <95% fidelity)",
-            "Implemented /dashboard-print/:id route with print mode boolean for conditional rendering: new header, removed interactive elements, optimized styling for static PDF",
-            "Performance optimizations: disabled drag-and-drop, graph selection, tooltips in print mode",
-            "Solved split graph bug: widgets using same context provider as render detection\u2014built proxy version to bubble status to PrintModeAdapter",
-            "Removed image widget support: security risk (external hosting) and file size issues (Chrome uncompresses transformed images, bloating PDFs)",
-            "Handled note widgets (text-only, no data fetch) not marking dashboard complete\u2014integrated with Univiz to track which widgets should influence fidelity",
-            "Implemented OBO (on behalf of) token authentication: reports reflect permissions of creator, tokens managed by print-shop and injected via Puppeteer request interception",
-            "Reduced local dev loop from 30 minutes to 1 minute with custom scripts for running report-printer + web app",
-            "Navigated security constraints: report-printer had minimal infrastructure access, initially open internet then proxied, due to Node.js security perception",
-            "Shipped after quarter delay waiting for new email platform to avoid reputation risk"
-          ],
-          "leadership": [
-            "Led technical design and architecture decisions across frontend, backend, and infrastructure teams",
-            "Built consensus through weekly prototyping and stakeholder reviews",
-            "Collaborated with Univiz team to extend library capabilities for reporting use case",
-            "Mentored backend team on Puppeteer vs Selenium tradeoffs",
-            "Transitioned to Notebooks management role as project reached productionization"
-          ],
           "technologies": [
             "Node.js",
             "Puppeteer",
@@ -120,6 +108,45 @@
             "Python",
             "Univiz",
             "Authentication (OBO tokens)"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Context",
+              "content": [
+                "Legacy reporting emailed unorganized widget snapshots with 70% success rate. Customers needed offline dashboard access without Datadog credentials. Technical constraints: 50+ widget types, complex data fetching, virtualized rendering, dashboards with 10,000+ widgets. Node.js was nascent at Datadog—historically banned by leadership until another team won political battle for isomorphic code."
+              ]
+            },
+            {
+              "title": "Execution",
+              "content": [
+                "Led 6-week prototyping phase with weekly design reviews exploring PDF layout options for horizontally-long dashboards and page break handling",
+                "Evaluated rendering engines (Selenium vs Puppeteer vs Cypress)—chose Puppeteer as thin Chrome wrapper for browser-fidelity PDFs after interviewing engineers about Selenium pain points",
+                "Personally wrote all Node.js HTTP/gRPC service communication code, now foundational for 15+ services—extensive tests and documentation written pre-AI era",
+                "Designed stateless architecture: report-printer pulls jobs from print-shop queue, sends heartbeat every 30s, auto-requeues on 15min timeout—enabled horizontal scaling without coordination",
+                "Built complex client/server handshake: load page → wait for React tree → resize browser to force all widgets into viewport → wait for data fetch completion → resize to exact PDF dimensions → flush DOM → wait 1-3s → snapshot",
+                "Created PrintModeAdapter component to aggregate rendering status from all Univiz widget instances and expose fidelity metrics (succeeded/failed widgets)",
+                "Collaborated with Univiz team over weeks to expose widget fetch status for quality bar enforcement (retry if <95% fidelity)",
+                "Implemented /dashboard-print/:id route with print mode boolean for conditional rendering: new header, removed interactive elements, optimized styling for static PDF",
+                "Performance optimizations: disabled drag-and-drop, graph selection, tooltips in print mode",
+                "Solved split graph bug: widgets using same context provider as render detection—built proxy version to bubble status to PrintModeAdapter",
+                "Removed image widget support: security risk (external hosting) and file size issues (Chrome uncompresses transformed images, bloating PDFs)",
+                "Handled note widgets (text-only, no data fetch) not marking dashboard complete—integrated with Univiz to track which widgets should influence fidelity",
+                "Implemented OBO (on behalf of) token authentication: reports reflect permissions of creator, tokens managed by print-shop and injected via Puppeteer request interception",
+                "Reduced local dev loop from 30 minutes to 1 minute with custom scripts for running report-printer + web app",
+                "Navigated security constraints: report-printer had minimal infrastructure access, initially open internet then proxied, due to Node.js security perception",
+                "Shipped after quarter delay waiting for new email platform to avoid reputation risk"
+              ]
+            },
+            {
+              "title": "Leadership",
+              "content": [
+                "Led technical design and architecture decisions across frontend, backend, and infrastructure teams",
+                "Built consensus through weekly prototyping and stakeholder reviews",
+                "Collaborated with Univiz team to extend library capabilities for reporting use case",
+                "Mentored backend team on Puppeteer vs Selenium tradeoffs",
+                "Transitioned to Notebooks management role as project reached productionization"
+              ]
+            }
           ]
         },
         {
@@ -131,15 +158,19 @@
             "React",
             "Testing"
           ],
-          "context": null,
-          "execution": [
-            "Built testing patterns for multi-widget interactions",
-            "Created test utilities for dashboard scenarios",
-            "Established best practices for UI testing"
-          ],
           "role": "",
           "startYear": 2023,
-          "endYear": 2023
+          "endYear": 2023,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Built testing patterns for multi-widget interactions",
+                "Created test utilities for dashboard scenarios",
+                "Established best practices for UI testing"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -161,23 +192,6 @@
           "role": "Staff Engineer / Frontend Lead",
           "description": "Led frontend transformation at newly-minted unicorn ($1B valuation, $125M Series E). Established technical vision and modernized architecture to enable complex retail marketing workflows as company scaled from data science focus to product-led growth.",
           "impact": "Published engineering blog defining frontend strategy. Established TypeScript-first culture across engineering org. Built foundation for next-generation product workflows serving enterprise retail customers.",
-          "context": "Bluecore had invested heavily in data science and infrastructure while building a relatively light frontend. As the company reached unicorn status and needed to enable more complex customer workflows, the frontend needed to scale both technically and organizationally. Wrote Frontend North Star to align the team around modern practices and establish technical direction.",
-          "execution": [
-            "Authored 'Bluecore's Frontend North Star' blog post establishing technical vision and principles for scaling frontend at unicorn-stage company",
-            "Led complete TypeScript migration of component library with modern CSS architecture and design system principles",
-            "Architected autogenerated API client system with gRPC/HTTP transcoding, eliminating manual client maintenance",
-            "Implemented CSS variables for theming and created responsive layout systems",
-            "Designed and taught comprehensive weekly training curriculum for entire engineering team covering TypeScript fundamentals and advanced React patterns",
-            "Improved accessibility and performance across component library",
-            "Established code generation pipeline from API definitions with type-safe clients and automatic updates",
-            "Created hands-on exercises and code review processes to upskill team"
-          ],
-          "leadership": [
-            "Defined frontend technical strategy for unicorn-stage company transitioning to product-led growth",
-            "Built TypeScript-first culture through teaching and hands-on mentorship",
-            "Collaborated with data science and infrastructure teams to align frontend with company mission",
-            "Published public engineering content representing company technical brand"
-          ],
           "technologies": [
             "TypeScript",
             "React",
@@ -194,6 +208,36 @@
               "text": "Frontend North Star Blog Post",
               "url": "https://medium.com/bluecore-engineering/bluecores-frontend-north-star-eb7d2a04167a"
             }
+          ],
+          "belowTheFold": [
+            {
+              "title": "Context",
+              "content": [
+                "Bluecore had invested heavily in data science and infrastructure while building a relatively light frontend. As the company reached unicorn status and needed to enable more complex customer workflows, the frontend needed to scale both technically and organizationally. Wrote Frontend North Star to align the team around modern practices and establish technical direction."
+              ]
+            },
+            {
+              "title": "Execution",
+              "content": [
+                "Authored 'Bluecore's Frontend North Star' blog post establishing technical vision and principles for scaling frontend at unicorn-stage company",
+                "Led complete TypeScript migration of component library with modern CSS architecture and design system principles",
+                "Architected autogenerated API client system with gRPC/HTTP transcoding, eliminating manual client maintenance",
+                "Implemented CSS variables for theming and created responsive layout systems",
+                "Designed and taught comprehensive weekly training curriculum for entire engineering team covering TypeScript fundamentals and advanced React patterns",
+                "Improved accessibility and performance across component library",
+                "Established code generation pipeline from API definitions with type-safe clients and automatic updates",
+                "Created hands-on exercises and code review processes to upskill team"
+              ]
+            },
+            {
+              "title": "Leadership",
+              "content": [
+                "Defined frontend technical strategy for unicorn-stage company transitioning to product-led growth",
+                "Built TypeScript-first culture through teaching and hands-on mentorship",
+                "Collaborated with data science and infrastructure teams to align frontend with company mission",
+                "Published public engineering content representing company technical brand"
+              ]
+            }
           ]
         }
       ]
@@ -201,7 +245,7 @@
     {
       "id": "dropbox",
       "company": "Dropbox",
-      "role": "Software Engineer \u2192 Senior Software Engineer",
+      "role": "Software Engineer → Senior Software Engineer",
       "period": "June 2017 - June 2021",
       "startDate": "2017-06",
       "endDate": "2021-06",
@@ -216,16 +260,20 @@
             "Community",
             "Leadership"
           ],
-          "context": null,
-          "execution": [
-            "Founded JavaScript Guild as community for frontend engineers",
-            "Organized regular knowledge-sharing sessions",
-            "Published newsletters with tips and updates",
-            "Coordinated multi-day technical summits"
-          ],
           "role": "",
           "startYear": 2017,
-          "endYear": 2021
+          "endYear": 2021,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Founded JavaScript Guild as community for frontend engineers",
+                "Organized regular knowledge-sharing sessions",
+                "Published newsletters with tips and updates",
+                "Coordinated multi-day technical summits"
+              ]
+            }
+          ]
         },
         {
           "title": "Plus Plus: Family Plans & Life Vault",
@@ -237,17 +285,21 @@
             "React",
             "Redux"
           ],
-          "context": null,
-          "execution": [
-            "Led end-to-end frontend architecture from ideation to launch",
-            "Designed complex state management for family account relationships",
-            "Built intuitive UI for family plan management",
-            "Coordinated cross-functional teams (design, product, backend)",
-            "Implemented Life Vault feature for important document storage"
-          ],
           "role": "",
           "startYear": 2020,
-          "endYear": 2020
+          "endYear": 2020,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Led end-to-end frontend architecture from ideation to launch",
+                "Designed complex state management for family account relationships",
+                "Built intuitive UI for family plan management",
+                "Coordinated cross-functional teams (design, product, backend)",
+                "Implemented Life Vault feature for important document storage"
+              ]
+            }
+          ]
         },
         {
           "title": "Redux State Management System",
@@ -259,17 +311,21 @@
             "Redux",
             "React"
           ],
-          "context": null,
-          "execution": [
-            "Designed comprehensive Redux architecture with TypeScript",
-            "Created reusable patterns for common state operations",
-            "Built extensive documentation and training materials",
-            "Systematic rollout across organization with team support",
-            "Established best practices and code review guidelines"
-          ],
           "role": "",
           "startYear": 2018,
-          "endYear": 2018
+          "endYear": 2018,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Designed comprehensive Redux architecture with TypeScript",
+                "Created reusable patterns for common state operations",
+                "Built extensive documentation and training materials",
+                "Systematic rollout across organization with team support",
+                "Established best practices and code review guidelines"
+              ]
+            }
+          ]
         },
         {
           "title": "File Viewer SDK",
@@ -280,16 +336,20 @@
             "React",
             "SDK Development"
           ],
-          "context": null,
-          "execution": [
-            "Led architecture and bootstrapping of cross-platform SDK",
-            "Owned build pipeline and asset optimization",
-            "Designed API for embedding file previews",
-            "Coordinated between web and desktop teams"
-          ],
           "role": "",
           "startYear": 2018,
-          "endYear": 2018
+          "endYear": 2018,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Led architecture and bootstrapping of cross-platform SDK",
+                "Owned build pipeline and asset optimization",
+                "Designed API for embedding file previews",
+                "Coordinated between web and desktop teams"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -307,23 +367,27 @@
           "title": "Page Load Optimization",
           "year": "2016",
           "description": "Comprehensive performance profiling and systematic optimization of mobile-first theater ticketing app.",
-          "impact": "95% reduction: 8 seconds \u2192 400ms",
+          "impact": "95% reduction: 8 seconds → 400ms",
           "technologies": [
             "JavaScript",
             "Webpack",
             "Performance"
           ],
-          "context": null,
-          "execution": [
-            "Comprehensive performance profiling to identify bottlenecks",
-            "Systematic bundle strategy optimization and code splitting",
-            "Asset delivery improvements (compression, CDN, caching)",
-            "Render path performance enhancements",
-            "Critical path optimization for above-the-fold content"
-          ],
           "role": "",
           "startYear": 2016,
-          "endYear": 2016
+          "endYear": 2016,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Comprehensive performance profiling to identify bottlenecks",
+                "Systematic bundle strategy optimization and code splitting",
+                "Asset delivery improvements (compression, CDN, caching)",
+                "Render path performance enhancements",
+                "Critical path optimization for above-the-fold content"
+              ]
+            }
+          ]
         },
         {
           "title": "Web 2.0: React + Redux Rebuild",
@@ -335,17 +399,21 @@
             "Node.js",
             "ES6+"
           ],
-          "context": null,
-          "execution": [
-            "Complete application architecture design",
-            "Built comprehensive component library",
-            "Implemented Redux state management patterns",
-            "Created Node.js authentication layer",
-            "Designed and built checkout flow"
-          ],
           "role": "",
           "startYear": 2016,
-          "endYear": 2016
+          "endYear": 2016,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Complete application architecture design",
+                "Built comprehensive component library",
+                "Implemented Redux state management patterns",
+                "Created Node.js authentication layer",
+                "Designed and built checkout flow"
+              ]
+            }
+          ]
         },
         {
           "title": "Special Offers Feature",
@@ -358,23 +426,27 @@
             "SQL",
             "Full-Stack"
           ],
-          "context": null,
-          "execution": [
-            "End-to-end feature design from user research to implementation",
-            "Built Groovy APIs with complex SQL queries for offer matching",
-            "Designed frontend experience for offer selection",
-            "Implemented business logic for offer eligibility"
-          ],
           "role": "",
           "startYear": 2016,
-          "endYear": 2016
+          "endYear": 2016,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "End-to-end feature design from user research to implementation",
+                "Built Groovy APIs with complex SQL queries for offer matching",
+                "Designed frontend experience for offer selection",
+                "Implemented business logic for offer eligibility"
+              ]
+            }
+          ]
         }
       ]
     },
     {
       "id": "zetta",
       "company": "Zetta.net",
-      "role": "Intern \u2192 Software Engineer",
+      "role": "Intern → Software Engineer",
       "period": "June 2012 - December 2015",
       "startDate": "2012-06",
       "endDate": "2015-12",
@@ -391,36 +463,43 @@
             "RESTful APIs",
             "JavaScript"
           ],
-          "context": null,
-          "execution": [
-            "Led complete backend migration to RESTful resource architecture",
-            "Migrated frontend to Backbone.js for better structure",
-            "Established API design standards and conventions",
-            "Created documentation and training materials"
-          ],
           "role": "",
           "startYear": 2015,
-          "endYear": 2015
+          "endYear": 2015,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Led complete backend migration to RESTful resource architecture",
+                "Migrated frontend to Backbone.js for better structure",
+                "Established API design standards and conventions",
+                "Created documentation and training materials"
+              ]
+            }
+          ]
         },
         {
-          "title": "SVN \u2192 Git Migration",
+          "title": "SVN → Git Migration",
           "year": "2015",
           "description": "Planned and executed organizational migration with team training and code review processes.",
-          "leadership": [
-            "Planned and executed organizational migration from SVN to Git",
-            "Established branching strategies and PR processes",
-            "Created Git training materials and documentation",
-            "Provided hands-on training for team members"
-          ],
           "technologies": [
             "Git",
             "Version Control"
           ],
-          "context": null,
-          "execution": null,
           "role": "",
           "startYear": 2015,
-          "endYear": 2015
+          "endYear": 2015,
+          "belowTheFold": [
+            {
+              "title": "Leadership",
+              "content": [
+                "Planned and executed organizational migration from SVN to Git",
+                "Established branching strategies and PR processes",
+                "Created Git training materials and documentation",
+                "Provided hands-on training for team members"
+              ]
+            }
+          ]
         },
         {
           "title": "CI + Sentry Implementation",
@@ -431,15 +510,19 @@
             "Sentry",
             "Testing"
           ],
-          "context": null,
-          "execution": [
-            "Set up continuous integration pipeline",
-            "Implemented Sentry for production error tracking",
-            "Established quality standards and gates"
-          ],
           "role": "",
           "startYear": 2015,
-          "endYear": 2015
+          "endYear": 2015,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Set up continuous integration pipeline",
+                "Implemented Sentry for production error tracking",
+                "Established quality standards and gates"
+              ]
+            }
+          ]
         },
         {
           "title": "Data Restore Flow",
@@ -451,23 +534,27 @@
             "UI/UX",
             "Product Engineering"
           ],
-          "context": null,
-          "execution": [
-            "Built complete data restore flow",
-            "Created file selection and restoration UI",
-            "Integrated backend restore operations",
-            "Designed user experience for complex operations"
-          ],
           "role": "",
           "startYear": 2014,
-          "endYear": 2014
+          "endYear": 2014,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Built complete data restore flow",
+                "Created file selection and restoration UI",
+                "Integrated backend restore operations",
+                "Designed user experience for complex operations"
+              ]
+            }
+          ]
         }
       ]
     },
     {
       "id": "dance-marathon",
       "company": "Dance Marathon at UF",
-      "role": "Technology Captain \u2192 Technology Overall Director",
+      "role": "Technology Captain → Technology Overall Director",
       "period": "September 2010 - April 2013",
       "startDate": "2010-09",
       "endDate": "2013-04",
@@ -483,16 +570,20 @@
             "jQuery",
             "Real-time"
           ],
-          "context": null,
-          "execution": [
-            "Built custom tweet visualizers optimized for Jumbotron display",
-            "Implemented real-time tweet aggregation via Twitter API",
-            "Created visual design specifically for large-screen viewing",
-            "Built content moderation system for appropriate messaging"
-          ],
           "role": "",
           "startYear": 2013,
-          "endYear": 2013
+          "endYear": 2013,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Built custom tweet visualizers optimized for Jumbotron display",
+                "Implemented real-time tweet aggregation via Twitter API",
+                "Created visual design specifically for large-screen viewing",
+                "Built content moderation system for appropriate messaging"
+              ]
+            }
+          ]
         },
         {
           "title": "DMatUF iPhone App",
@@ -503,16 +594,20 @@
             "Objective-C",
             "Native Mobile"
           ],
-          "context": null,
-          "execution": [
-            "Built native iOS event app (pre-widespread adoption era)",
-            "Implemented event schedule and timing features",
-            "Created song request functionality",
-            "Designed locally hosted basketball arena map"
-          ],
           "role": "",
           "startYear": 2013,
-          "endYear": 2013
+          "endYear": 2013,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Built native iOS event app (pre-widespread adoption era)",
+                "Implemented event schedule and timing features",
+                "Created song request functionality",
+                "Designed locally hosted basketball arena map"
+              ]
+            }
+          ]
         },
         {
           "title": "DMAssassins",
@@ -525,17 +620,21 @@
             "jQuery",
             "Game Design"
           ],
-          "context": null,
-          "execution": [
-            "Designed real-life 'assassins' game with target assignment system",
-            "Built pin verification system for 'hits'",
-            "Implemented automatic target reassignment upon elimination",
-            "Created MySQL backend for game state management",
-            "Built jQuery frontend for game interface"
-          ],
           "role": "",
           "startYear": 2012,
-          "endYear": 2012
+          "endYear": 2012,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Designed real-life 'assassins' game with target assignment system",
+                "Built pin verification system for 'hits'",
+                "Implemented automatic target reassignment upon elimination",
+                "Created MySQL backend for game state management",
+                "Built jQuery frontend for game interface"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -561,17 +660,21 @@
             "WordPress",
             "CS Fundamentals"
           ],
-          "context": null,
-          "execution": [
-            "Core CS: Data Structures, Algorithms, Operating Systems, Networks, Databases",
-            "Systems: Computer Organization, Digital Logic, Circuits",
-            "Mathematics: Calculus 1-3, Differential Equations, Linear Algebra, Statistics",
-            "Languages: Java, C, PHP, MySQL",
-            "Continued WordPress contracting work during college"
-          ],
           "role": "",
           "startYear": 2009,
-          "endYear": 2013
+          "endYear": 2013,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Core CS: Data Structures, Algorithms, Operating Systems, Networks, Databases",
+                "Systems: Computer Organization, Digital Logic, Circuits",
+                "Mathematics: Calculus 1-3, Differential Equations, Linear Algebra, Statistics",
+                "Languages: Java, C, PHP, MySQL",
+                "Continued WordPress contracting work during college"
+              ]
+            }
+          ]
         },
         {
           "title": "Freelance Computer Repair & Web Design",
@@ -582,39 +685,50 @@
             "Web Design",
             "Customer Service"
           ],
-          "context": null,
-          "execution": [
-            "Computer repair and troubleshooting",
-            "Virus removal during 'era of constant malware'",
-            "Software installation and configuration",
-            "Teaching people how to use computers",
-            "Designing and building simple websites"
-          ],
           "role": "",
           "startYear": 2006,
-          "endYear": 2009
+          "endYear": 2009,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Computer repair and troubleshooting",
+                "Virus removal during 'era of constant malware'",
+                "Software installation and configuration",
+                "Teaching people how to use computers",
+                "Designing and building simple websites"
+              ]
+            }
+          ]
         },
         {
           "title": "Body Logic MD - IT Support",
           "year": "2008-2009",
           "description": "First 'real' job in office environment during high school, supporting workplace users.",
-          "leadership": [
-            "Team leadership: Organized QA testing weekend with friends"
-          ],
           "technologies": [
             "IT Support",
             "QA Testing"
           ],
-          "context": null,
-          "execution": [
-            "Supported systems people depended on for their jobs",
-            "Learned professional work skills",
-            "Handled non-technical workplace users",
-            "Organized group of friends to QA company's new website on weekend"
-          ],
           "role": "",
           "startYear": 2008,
-          "endYear": 2009
+          "endYear": 2009,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Supported systems people depended on for their jobs",
+                "Learned professional work skills",
+                "Handled non-technical workplace users",
+                "Organized group of friends to QA company's new website on weekend"
+              ]
+            },
+            {
+              "title": "Leadership",
+              "content": [
+                "Team leadership: Organized QA testing weekend with friends"
+              ]
+            }
+          ]
         },
         {
           "title": "Johns Hopkins Summer Program",
@@ -624,8 +738,6 @@
             "Computer Science Fundamentals",
             "Philosophy"
           ],
-          "context": null,
-          "execution": null,
           "role": "",
           "startYear": 2008,
           "endYear": 2008
@@ -639,18 +751,22 @@
             "Hardware Assembly",
             "Field Support"
           ],
-          "context": null,
-          "execution": [
-            "Wrote programs for fun in Pascal classes",
-            "Built command line interactive Periodic Table for science project",
-            "Discovered and reported printer security vulnerability",
-            "Learned computer assembly, BIOS configuration, and hardware troubleshooting",
-            "Fixed computers for students and teachers",
-            "Developed skills explaining technical concepts to non-technical users"
-          ],
           "role": "",
           "startYear": 2005,
-          "endYear": 2005
+          "endYear": 2005,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Wrote programs for fun in Pascal classes",
+                "Built command line interactive Periodic Table for science project",
+                "Discovered and reported printer security vulnerability",
+                "Learned computer assembly, BIOS configuration, and hardware troubleshooting",
+                "Fixed computers for students and teachers",
+                "Developed skills explaining technical concepts to non-technical users"
+              ]
+            }
+          ]
         },
         {
           "title": "First Programs & Websites",
@@ -661,16 +777,20 @@
             "HTML",
             "JavaScript"
           ],
-          "context": null,
-          "execution": [
-            "First program: Generic guest book using Visual Basic 5",
-            "Built websites to show classmates at school",
-            "Created site with personalized message prompts",
-            "Made 'DBZ dance party' site with Dragon Ball Z gifs and Ocarina of Time music"
-          ],
           "role": "",
           "startYear": 1999,
-          "endYear": 2000
+          "endYear": 2000,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "First program: Generic guest book using Visual Basic 5",
+                "Built websites to show classmates at school",
+                "Created site with personalized message prompts",
+                "Made 'DBZ dance party' site with Dragon Ball Z gifs and Ocarina of Time music"
+              ]
+            }
+          ]
         }
       ]
     }

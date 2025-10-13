@@ -1,15 +1,18 @@
+export interface BelowTheFoldSection {
+  title: string;
+  content: string[];
+}
+
 export interface Project {
   title: string;
   year: string;
   startYear: number;
   endYear: number;
   description: string;
-  context?: string;
-  execution?: string[];
+  belowTheFold?: BelowTheFoldSection[];
   impact?: string;
   role?: string;
   technologies?: string[];
-  leadership?: string[];
 }
 
 export interface Job {
