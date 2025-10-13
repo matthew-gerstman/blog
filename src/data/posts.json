@@ -9,7 +9,8 @@
     "tags": [
       "Tech",
       "react"
-    ]
+    ],
+    "banner_img": "/images/blog/ahmad-dirini-F7Sive0fwIg-unsplash.jpg"
   },
   {
     "id": 16,
@@ -20,7 +21,8 @@
     "content": "<p>I've found myself giving a bunch of advise on technical interviews lately and thought it'd make for a good blog post. While most of us acknowledge that technical interviews have a lot of false negatives, the industry as a whole hasn't come up with a better alternative. Here's my guide to surviving interviews.</p><h1 id=\"practice\">Practice</h1><p>This one seems obvious, but I need to say it up front. Practice, practice, practice. <em>Proper planning prevents poor performance</em>. I've personally done almost every problem in <a href=\"https://amzn.to/2l8CeGG\">Cracking The Coding Interview</a> and I can't recommend that book enough. It helps you get into the mindset of interviewing.</p><p>A big failure mode with this book though is how it's organized. The problems are all neatly organized by what tool you need to solve them. For example theres a chapter with array problems and a chapter with tree problems. Real interviews won't be like this. You'll have to identify what tools to use on the problem when it's given to you.</p><p>The advanced chapters in the back are really helpful here because they don't provide any context, they're just problems to solve.</p><h1 id=\"turn-your-inner-monologue-inside-out\">Turn Your Inner Monologue Inside Out</h1><p>This is so important. As an interviewer I need to get a sense of how you solve the problem. If you silently struggle, I can't give you the hint you need to succeed. Talk to yourself as you work through the practice problems. It may feel silly at first, but you need to practice saying out loud what's going through your head. Really say out loud everything going through your head.</p><p>Even say out loud the bad ideas and why they won't work. During the interview, I'm looking for <strong>signal</strong>, either positive or negative that we should hire you. If you mention something that won't work and why, that's really positive signal. It shows me that you can think through multiple solutions and know their tradeoffs.</p><p>It's also important to state your assumptions. Sometimes it might seem like you intuitively figured out a key part of the problem, but I need to verify that. Often if a candidate seems to just know something I'll ask some followup questions that seem really simple, just to confirm we're on the same page.</p><h1 id=\"if-you-re-stuck-make-a-magic-function\">If You're Stuck, Make a Magic Function</h1><p>This one took me years to learn. When you're stuck on part of a problem, for example you don't know how to sort something, or organize a data structure, just pretend you have a function that does it for you. You will need to implement that magic function later, but this will help you get unstuck for the time being.</p><p>In fact, this is really positive signal for me. It shows me you can break down the problem into multiple steps, and that you can write clean code. It's often difficult to parse giant single-function solutions.</p><h1 id=\"take-a-deep-breath\">Take a Deep Breath</h1><p>During some interview somewhere, you'll probably get stuck and flustered. Don't go into panic mode. Getting stuck on a small part of the problem is totally okay, and expected. Take a deep breath and go back to the basics to wrap your head around it.</p><p>For on-sites, you'll often do several interviews back to back. Remember that each interview has no bearing on the next one. You can fail one interview, pass the rest, and that interview becomes an outlier. When you finish an interview put it in the past, and move onto the next one.</p><h1 id=\"i-m-taking-notes\">I'm Taking Notes</h1><p>This is important. I take notes throughout the whole interview to make sure I'm giving a fair evaluation. Here's what they might look like. </p><blockquote>5:06 PM Explained question<br>5:08 PM Candidate asked if they can assume a type of input, I say yes.<br>5:10 PM Candidate started writing error checking, i told them to assume it's valid input.<br>5:13 PM Candidate has the first part of the implementation.<br>5:14 PM Asked candidate to walk me through at a high level.<br>5:14 PM Candidates solution works like this ____________________<br>5:16 PM I asked what their data structure looks like.<br>5:18 PM They showed me they know what it looks like, now I can give them a sample input.<br>5:19 PM They're very caught up on this section. I'm asking them what would happen if they had a magic function to do it for them.<br>5:24 PM I asked what the code looks like for this simpler case.<br>5:29 PM Algo works for simple case, I told them I see a bug.<br>5:31 PM I told them \"I would wager they could make this function work for the advanced case\"<br>5:31 PM They figured out the advanced case.<br>5:35 PM There's a bug on line 33.<br>5:36 PM They found the bug on line 33 on their own.<br>5:40 PM I suggest a big scary edge case.<br>5:43 PM Candidate has a high level solution for edge case.<br>5:48 PM Candidate has implemented psuedocode around this.<br>5:53 PM We hit a good stopping point for questions.</blockquote><p>These are intentionally vague, but it's encapsulates the things I need to remember:</p><ol><li>How long did each part of the problem take the candidate?</li><li>When did they get stuck?</li><li>Were they able to figure it out the bugs on their own?</li></ol><p>After doing the same question dozens (or sometimes hundreds) of times, I have a pretty good sense of how the interview should go, what types of solutions a candidate may have, and when they're likely to get stuck.</p><h1 id=\"be-honest\">Be Honest</h1><p>It's very likely at some point you'll be asked a question you've seen before. There are only so many interview questions out there. When this happens, tell the interviewer! I can usually tell if a candidate knows the question in advance and it feels like I'm being lied to. When this happens, I have to flag this suspicion and recommend we reinterview them.</p><h1 id=\"it-s-a-numbers-game\">It's a Numbers Game</h1><p>Interviewing is it's own skill you need to hone; it can take years of practice. When I was going from my first to my second job I talked to 50 tech companies (and failed a lot of interviews). The more interviews you do, the better you'll get at it.</p><p>If you're just ramping up on a job search, consider scheduling the companies you're less excited about earlier. This will help you practice with less pressure. You'll feel more ready when you get to the interview you really care about.</p>",
     "tags": [
       "Tech"
-    ]
+    ],
+    "banner_img": "/images/blog/photo-1471107340929-a87cd0f5b5f3.jpeg"
   },
   {
     "id": 13,
@@ -32,7 +34,8 @@
     "tags": [
       "Tech",
       "functional-programming"
-    ]
+    ],
+    "banner_img": "/images/blog/reduce-lumber.jpg"
   },
   {
     "id": 11,
@@ -44,7 +47,8 @@
     "tags": [
       "Tech",
       "functional-programming"
-    ]
+    ],
+    "banner_img": "/images/blog/map-reduce-filter.jpg"
   },
   {
     "id": 12,
@@ -55,7 +59,8 @@
     "content": "<p>In this article, we're going to talk about two of the most important functions in frontend development, throttle and debounce.</p><p>Both of these functions are commonly used to deal with situations where a user is causing an event handler to fire on repeat and we want to slow down the underlying function call. Think scroll handlers, keyboard events, or even just clicking a button rapidly.</p><h1 id=\"throttle\">Throttle</h1><p>Throttle is a <a href=\"http://matthewgerstman.com/functional-programming-fundamentals/\">higher order function</a> that takes a function and a timeout and only allows that function at most once per the amount of time specified.</p><p>Before we use throttle. Let's start with an example.</p><!--kg-card-begin: html--><script src=\"https://gist.github.com/matthew-gerstman/c5d7a590204043ad7982946b3ca63a5c.js\"></script><!--kg-card-end: html--><p>In this example above we have a piece of state <code>numSpells</code> and a function that can increment this state <code>castSpell</code>. We have a button we can click that increments <code>numSpells</code>. You can play with it below.</p><!--kg-card-begin: html--><div data-demo=\"throttle-debounce-basic\"></div><!--kg-card-end: html--><p>Now you can click this button as quickly as you want and it will increment the number of spells cast. Now spells take some time to recharge, so we can use throttle to slow down the user.</p><!--kg-card-begin: html--><script src=\"https://gist.github.com/matthew-gerstman/cc13aaffdcf78987efb8a61d403324bc.js\"></script><!--kg-card-end: html--><p>We now have a button that call <code>castSpellThrottled</code> when the user clicks it. Try it out below.</p><!--kg-card-begin: html--><div data-demo=\"throttle-debounce-throttle\"></div><!--kg-card-end: html--><p>Now that we understand what it does, lets dive into the source of throttle.</p><!--kg-card-begin: html--><script src=\"https://gist.github.com/matthew-gerstman/d8d2090f84290dbcfe92ba51ef5dc6a8.js\"></script><!--kg-card-end: html--><p>What's going on here? Throttle is a function that takes a function and a timeout. Throttle returns a new function that forms a closure around the original one.</p><p>We keep track of a <code>boolean</code> called <code>ready</code> that stops the inner function from firing unless the timeout has elapsed. If we fire the function we also fire a timeout that will set <code>ready</code> to true when the timeout has elapsed. Pretty cool, huh?</p><h1 id=\"debounce\">Debounce</h1><p>Debounce is a bit different from throttle. With throttle we slow down function calls as they happen, with debounce we don't fire at all until the user has stopped calling it.</p><p>This is really useful if you want to perform a computation or hit an api when the user is done typing or done scrolling. Let's play with another example.</p><!--kg-card-begin: html--><div data-demo=\"throttle-debounce-debounce\"></div><!--kg-card-end: html--><p>You'll notice, you can click Cast Spell Debounced as many times as you'd like, but it will only fire after you've stopped clicking it. The source for this is similar to the previous component.</p><!--kg-card-begin: html--><script src=\"https://gist.github.com/matthew-gerstman/d4fea64d5553a71058bbaef129d08d09.js\"></script><!--kg-card-end: html--><p>Now that we know what it does, let's see how it works.</p><!--kg-card-begin: html--><script src=\"https://gist.github.com/matthew-gerstman/f9b5c2df747a4e50b46ea4cc2e7e68b0.js\"></script><!--kg-card-end: html--><p>While the last one relied on a simple boolean, with this one we need to maintain access to the timer. We do this because we need to clear the previous timeout every time the function gets called again. We then set a new timeout to call the inner function.</p><h1 id=\"real-world\">Real World</h1><p>Now these implementations of throttle and debounce were both very naive. If you take a look at the <a href=\"https://github.com/lodash/lodash/blob/master/debounce.js\">lodash source</a> you can see a much more advanced version of debounce that considers things like calling the function before or after we set the timeout.</p><p>It also allows fancy things like a <code>maxWait</code> and a <code>cancel</code>. They even implement <a href=\"https://github.com/lodash/lodash/blob/master/throttle.js\">throttle with debounce.</a></p><h1 id=\"wrapping-up\">Wrapping Up</h1><p>Hopefully you've learned a bit about debounce and throttle. For more real world code, check out some of my other articles <a href=\"http://matthewgerstman.com/functional-programming-fundamentals/\"><strong>Functional Programming Fundamental</strong></a><strong> </strong>or <a href=\"__GHOST_URL__/map-filter-reduce/\"><strong>Map, Filter, Reduce</strong></a><strong>.</strong></p><p>If you're looking for more abstract stuff check out <a href=\"__GHOST_URL__/what-the-functor/\"><strong>What the Functor?</strong></a><strong> </strong>and <strong><a href=\"__GHOST_URL__/mary-had-a-little-lambda/\">Mary Had a Little Lambda.</a> </strong></p><p>Also if you feel the need to buy me a drink you can do so <a href=\"http://cash.me/$MatthewGerstman\">here</a> or follow me on twitter <a href=\"https://twitter.com/MatthewGerstman\">@MatthewGerstman</a>.</p>",
     "tags": [
       "Tech"
-    ]
+    ],
+    "banner_img": "/images/blog/throttle-debounce-1.jpg"
   },
   {
     "id": 19,
@@ -69,7 +74,8 @@
       "frontend",
       "javascript",
       "typescript"
-    ]
+    ],
+    "banner_img": "/images/blog/benjamin-voros-phIFdC6lA4E-unsplash.jpg"
   },
   {
     "id": 7,
@@ -81,7 +87,8 @@
     "tags": [
       "Tech",
       "redux"
-    ]
+    ],
+    "banner_img": "/images/blog/westboundary-photography-chris-gill-60180-unsplash.jpg"
   },
   {
     "id": 2,
@@ -93,7 +100,8 @@
     "tags": [
       "Tech",
       "redux"
-    ]
+    ],
+    "banner_img": "/images/blog/blake-richard-verdoorn-20063-unsplash-1.jpg"
   },
   {
     "id": 6,
@@ -104,7 +112,8 @@
     "content": "<p>Higher order components are a useful pattern for creating composable logic within a React application. While they're not as popular as other tools like render props or hooks, they're still worth knowing.</p><p>How do higher order components work? Well as we discussed in <a href=\"__GHOST_URL__/functional-programming-fundamentals/\">Functional Programming Fundamentals</a>, higher order functions take a function as an argument and/or returns an argument as it's result.</p><p>In this case, higher order components are functions that take a component as an argument and return a new supercharged component as a result. This poses an interesting problem for typing.</p><p>We want to expose a component that only needs require the props <em>not</em> provided by the HOC, but we still want to be able to access the original uncomposed component.</p><p>Let's walk through an example.</p><!--kg-card-begin: html--><script src=\"https://gist.github.com/matthew-gerstman/343b3bb2726bb1b63c80406ecca419c8.js\"></script><!--kg-card-end: html--><p>We start with a super basic component, <code>TomRiddle</code>. Now it matters not what someone is born, but what they chose to be. <code>TomRiddle</code> takes an <code>isEvil</code> prop that determines if it renders \"Tom Marvolo Riddle\" or \"I am Lord Voldemort\".</p><p>Tom isn't such a great guy and wants to learn how to make horcruxes. How do we teach him? Well we could make him into a class component and add some state. Let's see what that looks like.</p><!--kg-card-begin: html--><script src=\"https://gist.github.com/matthew-gerstman/1fa3633692b86a5be34229777d0cae1d.js\"></script><!--kg-card-end: html--><p>This totally works. We've taught Tom how to make horcruxes. Now Tom wants to recruit some followers, he calls those Death Eaters. Let's add another prop for those. While we're at it, let's derive <code>isEvil</code> \u00a0from the number of horcruxes the wizard has. </p><!--kg-card-begin: html--><script src=\"https://gist.github.com/matthew-gerstman/008edec62ba9f1a661910071327e554e.js\"></script><!--kg-card-end: html--><p>Now this component is doing a bit too much. It's rendering to the DOM and it's managing state. Also, anyone can learn to make horcruxes, what if we take that functionality and make it into a higher order component. </p><p>Before we get to typing this, let's take a look at what this would look like in vanilla JS.</p><!--kg-card-begin: html--><script src=\"https://gist.github.com/matthew-gerstman/9f09e9aed1cc76125902ddbf58e1ad37.js\"></script><!--kg-card-end: html--><p><code>EvilWizard</code> is a function that takes a component, <code>Wizard</code>, and passes that component the following props <code>numHorcruxes</code>, and <code>makeHorcrux</code>. It also manages this state for them.</p><p>Now, two minor gotchas with HOCs, we need to set the <code>displayName</code> and <code>hoistNonReactStatics</code>.</p><p>Okay now let's type this thing. </p><!--kg-card-begin: html--><script src=\"https://gist.github.com/matthew-gerstman/984fd1a6f9473dca0bb9004ee66b5438.js\"></script><!--kg-card-end: html--><p>What's going on here? A lot actually. Let's break it down. We export a type called <code>WithEvilWizardProps</code>. This type takes <code>T</code>, a generic, and returns an intersection type of <code>T</code> and <code>EvilWizardInnerProps</code>.</p><p>The function <code>EvilWizard</code> takes a <code>Wizard</code> that is either a <code>ComponentClass</code> or a <code>FunctionComponent</code>. The props of this component is of type <code>EvilWizardInnerProps &amp; T</code>. Now here's the real magic. The component we're returning is a class of type <code>React.ComponentClass&lt;T&gt;</code>. </p><p>What does this mean? Well because we're using an intersection type, Typescript is smart enough to unpack this and return a component that only requires the props <strong>not</strong> provided by the HOC.</p><p>One last thing, let's update <code>TomRiddle</code> to use this new HOC.</p><!--kg-card-begin: html--><script src=\"https://gist.github.com/matthew-gerstman/12e3e8ed7234df320490df373841a091.js\"></script><!--kg-card-end: html--><p>We've now extracted all that state back out and we're using <code>WithEvilWizardProps</code> when declaring <code>TomRiddleProps</code>. Now let's use our components!</p><!--kg-card-begin: html--><script src=\"https://gist.github.com/matthew-gerstman/f63c4028e796863f55f991bb815b5ce0.js\"></script><!--kg-card-end: html--><p>As you can see above, we have the option of using <code>LordVoldemort</code> the output of <code>EvilWizard(TomRiddle)</code> or we can just call <code>TomRiddle</code> directly. This is particularly useful if you want to test the behavior of the inner component without the HOC.</p>",
     "tags": [
       "Tech"
-    ]
+    ],
+    "banner_img": "/images/blog/hoc-snake-1.jpg"
   },
   {
     "id": 4,
@@ -116,7 +125,8 @@
     "tags": [
       "Tech",
       "typescript"
-    ]
+    ],
+    "banner_img": "/images/blog/Type-Guards.jpg"
   },
   {
     "id": 5,
@@ -129,7 +139,8 @@
       "Tech",
       "typescript",
       "redux"
-    ]
+    ],
+    "banner_img": "/images/blog/Reducer-Trees.jpg"
   },
   {
     "id": 3,
@@ -141,7 +152,8 @@
     "tags": [
       "Tech",
       "functional-programming"
-    ]
+    ],
+    "banner_img": "/images/blog/FP-Wood.jpg"
   },
   {
     "id": 1,
@@ -155,7 +167,8 @@
       "redux",
       "typescript",
       "code-splitting"
-    ]
+    ],
+    "banner_img": "/images/blog/Redux-Trees.jpeg"
   },
   {
     "id": 14,
@@ -168,7 +181,8 @@
       "Tech",
       "Theater",
       "Travel"
-    ]
+    ],
+    "banner_img": "/images/blog/Apartment-1.jpeg"
   },
   {
     "id": 18,
@@ -182,7 +196,8 @@
       "tc39",
       "ecmascript",
       "Tech"
-    ]
+    ],
+    "banner_img": "/images/blog/scott-trento-xrBxbPiK2w8-unsplash.jpg"
   },
   {
     "id": 20,
@@ -193,7 +208,8 @@
     "content": "<p>I've shared a lot of pictures of my apartment, but I haven't spent a whole lot of time talking about how automated this place is. I put a lot of work into automating it and thought I'd do a writeup. Also all of the amazon links are affiliate links so I might make a dollar if you buy something.</p><p>I'm an Apple Enthusiast and I consistently opt in to whatever they provide in their ecosystem. We're up to two HomePod Classics, four HomePod Minis, multiple Macs, and several dozen iPods. Also the latest iPhone, iPad Pro, and the Apple Watch.</p><p>To put simply, if Apple has a product category, I've opted in. It's no surprise I went with HomeKit for my home operating system. HomeKit presents different challenges from the Alexa and Google ecosystems. For example, HomeKit requires developers register with Apple and meet certain hardware requirements on their products. As a result there are significantly fewer accessories that work with HomeKit. I do however find they generally perform better than non-HomeKit equivalents I've set up in other homes.</p><h2 id=\"layout\">Layout</h2><p>We've got three main rooms in the apartment: The Office (or Guest Room), The Living Room, and The Bedroom. The bulk of the equipment is in The Office, so we'll start there.</p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/2020-10-31-14.14.12.jpg\" class=\"kg-image\" alt loading=\"lazy\" width=\"775\" height=\"595\"><figcaption><em>Marked up floorplan I used when planning.</em></figcaption></figure><h1 id=\"the-office\">The Office</h1><p>The Office or The Guest Room, is where I spend the bulk of my day working from home. I picked green because it's a color that helps me stay awake and focus. Also it goes nicely with plants.</p><p>My work machine is a 2020 16\" intel MacBook, a <a href=\"https://amzn.to/3EOlw2c\">Dell 27\" monitor</a>, and a <a href=\"https://amzn.to/337e992\">Dell 24\" monitor</a> vertically oriented. I also have my personal iMac which is a plex server for the apartment. Behind the iMac I use a <a href=\"https://amzn.to/3zq4HJK\">variety</a> of <a href=\"https://amzn.to/3HE2a1k\">cable management</a> boxes to hide the wires and a pair of <a href=\"https://amzn.to/3eOib8P\">Philips Hue Play Bars</a> and <a href=\"https://amzn.to/3ztY9dk\">Philips Hue Blooms</a> for lighting. Below is what it looks like on an average day.</p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/11.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1500\"><figcaption>Office Doorway</figcaption></figure><p>There's a pair of HomePod Minis as a studio pair I can use with either of the Macs. I also use my Airpods Max while working and for conference calls. </p><p>Behind the closet I've got a FreeNas, networking equipment, and hubs for the hue lights, shades, and overhead lights. I recently added a smart power switch so I can power cycle these from my phone. </p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/IMG_0735.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"2667\"><figcaption>Server Closet</figcaption></figure><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/15.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1500\"><figcaption>Office - Bed and Bookshelf</figcaption></figure><p>This room has a few lamps, most notably the <a href=\"https://amzn.to/3GbaPbD\">hydra lamp</a>, and the <a href=\"https://amzn.to/3eSkUOA\">hotel style usb lamp</a>. I also have a <a href=\"https://amzn.to/3mVrwQu\">charging station</a> at the bed for guests. The various lamps in the room are all <a href=\"https://amzn.to/3t1W7Qe\">Philips Hue White bulbs</a> with <a href=\"https://amzn.to/3pVRvcG\">VOCOLinc smart plugs</a> for the bookshelf lights and lava lamp. </p><h2 id=\"networking\">Networking</h2><p>The apartment network is powered by a Ubiquity Dream Machine, a ton of <a href=\"https://amzn.to/3F7jjzb\">UniFi switches</a>, and a few <a href=\"https://amzn.to/3eVBvRi\">WiFi 6 access points</a>. The Dream Machine lives behind the iMac with the bulk of the switches in the server closet. I also have a <a href=\"https://amzn.to/3mVla3A\">Raspberry Pi</a> running <a href=\"https://pi-hole.net\">Pi-hole</a> as a DNS level ad-blocker.</p><p>I drilled a small hole in the walls against the Living Room and Bedroom to send an ethernet cable to the other room.</p><h1 id=\"the-living-room\">The Living Room</h1><p>The Living Room is where I watch TV with the cats or hangout with friends I'm entertaining. <a href=\"https://amzn.to/3mRqtBd\">AppleTV</a> was a no-brainer. The display is a <a href=\"https://amzn.to/3JKwc5t\">LG GX65 OLED</a>. Theres a <a href=\"https://amzn.to/3JH08zz\">Philips Hue Gradient Strip</a> along with <a href=\"https://amzn.to/3qIxSUu\">two Play Bar lights</a> synced with the <a href=\"https://amzn.to/3pSpZws\">Hue Play Sync Box</a>.</p><p>This is hooked up to a <a href=\"https://amzn.to/3pQ0j3z\">Sonos Arc</a>, Two Rear <a href=\"https://amzn.to/3EUDxMl\">Sonos One SLs</a>, and a <a href=\"https://amzn.to/3zr4PIT\">Sonos Sub</a>. Each of these is connected via ethernet using wires running under and behind the furniture. I use these <a href=\"https://amzn.to/3pU8UCh\">cord protectors</a> to keep the cables neat and protected from the cats. I have <a href=\"https://amzn.to/3r7548z\">this charging station</a> on the end table, along with chargers next to the AC unit for on-couch charging.</p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/02.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1500\"><figcaption>Living Room</figcaption></figure><h2 id=\"lighting\">Lighting</h2><p>Separate from the television lighting system, every light in the apartment is smart. </p><p>Most of the Living Room bulbs are <a href=\"https://amzn.to/3t1W7Qe\">Philips Hue White bulbs</a>, however the <a href=\"https://amzn.to/32ZhBSU\">couch lamps</a> are using <a href=\"https://amzn.to/3pSLXPS\">Philips Hue Color bulbs</a> for fun scenes. I tried syncing these with the TV but it ended up being more annoying than fun.</p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/03.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1500\"><figcaption>Living Room - Behind the couch</figcaption></figure><p>In the dining room I have this <a href=\"https://amzn.to/334npKL\">larger lamp</a> along with the three bulb unit I got at a local hardware store. The overhead lights are using <a href=\"https://amzn.to/3JBbDsl\">Caseta Lutron</a> switches. The water fountain for the cats is hooked up to a <a href=\"https://amzn.to/3nimFJB\">VOCOLinc smart plug</a> so I can turn it on/off with the lights.</p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/04.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1500\"><figcaption>Dining Room</figcaption></figure><h1 id=\"kitchen\">Kitchen</h1><p>The kitchen has a surprising amount of tech packed into it. Under the cabinets are <a href=\"https://amzn.to/3EPLsdD\">Philips Hue lightstrips</a> that can change color. I mostly use these to light the countertops. I attempted to use these for the office bookshelf but it was a nightmare splicing them and I went with a cheaper IKEA solution. There's a HomePod mini in the kitchen that I use mostly for siri but occasionally for music. </p><p>I also have a <a href=\"https://amzn.to/31r0J77\">GE Opal ice maker</a> that I adore. It's a nightmare to clean though.</p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/07.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1500\"><figcaption>Kitchen</figcaption></figure><h1 id=\"the-entryway\">The Entryway</h1><p>The first thing you see when you walk into the apartment is a television hooked up to a raspberry pi. I use <a href=\"https://dakboard.com/site\">DakboardOS</a> to power a display that shows me my daily calendar along with updating news. This is exceptionally useful when I'm pacing between my office and the kitchen during the work day.</p><p>Most of the panels were available out of the box, but I had to roll my own <a href=\"http://github.com/matthew-gerstman/tweetonescreen\">tweet visualizer</a> in the lower left hand corner.</p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/IMG_0737.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"2667\"><figcaption>Entryway Dakboard</figcaption></figure><p>I also have <a href=\"https://amzn.to/3pWhdxm\">Eufy Pan and Tilt cameras</a> here and in every other room so I can watch the cats or check on the apartment when I'm out of town. </p><h2 id=\"the-bedroom\">The Bedroom</h2><p>In the the bedroom I took things up a notch with <a href=\"https://amzn.to/3324wYS\">White Ambiance</a> bulbs. I like these because the temperature is warmer at night and easier on the eyes. The television is connected to an Apple TV with two HomePod Classics in a stereo pair. I connected my vintage turntable to the Homepods with <a href=\"https://amzn.to/3zshGuH\">this adapter</a>, a <a href=\"https://amzn.to/3pSkOfY\">Behringer USB preamp</a> and <a href=\"https://www.airchordapp.com\">AirChord</a> running on my old iPad.</p><p>There are a pair of <a href=\"https://amzn.to/3sYnMkX\">Philips Hue Edison Bulbs</a> in <a href=\"https://amzn.to/3pUGDvC\">these lamps</a>. </p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/16.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1500\"><figcaption>Bedroom</figcaption></figure><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/18.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1500\"><figcaption>Bedroom Media</figcaption></figure><h1 id=\"scenes\">Scenes</h1><p>All this integration means I can do a lot of nifty things with scenes. First, theres some simple automation. The couch lamps and the steel lamp both turn off at 5 PM every day. The bedroom shade automatically lifts at 7:30 AM on weekdays which abruptly informs the cats its time to wake me up.</p><p>The AC is controlled with a <a href=\"https://amzn.to/3FV8AZv\">Sensibo Air</a> to make the window units smart.</p><p>The scenes I use every day are Good Morning and Good Night. Good Morning opens every shade, turns on every light to 100%, and boots the entryway TV up. Good Night turns off every light. There's another scene: Make it Dark, that turns off every light and closes every shade. </p><p>Each room has a <a href=\"https://amzn.to/31oY8dQ\">hue dimmer switch</a> that controls the whole room. I made two scenes for each room, Room One and Room Zero. Those turn off every light and control the shades. In between those I have scenes that brings an assorted set of lights on. For example in the kitchen I have a scene that only turns on the countertop lights.</p><p>My favorite scene is Lullaby which turns off my TV, closes my shades, and begins playing a playlist in the bedroom currently composed of The Postal Service, Taylor Swift, The Postal Service again, and Billie Eilish. There's also Nap Time which does all this and turns off the bedroom lights.</p><p>In the same vein, Nightlight turns on a dim light in the master bathroom, kitchen, and living room. </p><p>For anything Marvel, I put on TV Time which closes the shades and turns off any light that I can see from the Living Room, including the entryway TV. It's counterspell is Chill, which opens all shades and turns every light in the apartment to 50%. I used <a href=\"http://leviosashades.com\">Leviosa Shades</a> which integrate with HomeKit, although I wish the bridge was more reliable.</p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/IMG_0001.PNG\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1397\"><figcaption>Home App Screenshot</figcaption></figure><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/IMG_0002.PNG\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1397\"><figcaption>Home App Screenshot - Bedroom</figcaption></figure><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/IMG_0003.PNG\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1397\"><figcaption>Home App Screenshot - Kitchen</figcaption></figure><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/IMG_0004.PNG\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1397\"><figcaption>Home App Screenshot - Living Room</figcaption></figure><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/IMG_0005.PNG\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1397\"><figcaption>Home App Screenshot - Office</figcaption></figure><h1 id=\"speakers-and-music\">Speakers and Music</h1><p>I've already touched on the speakers but I'll reiterate and be a bit more thorough this time. The Office has a paired set of HomePod mini's that I use with the computers. The bookshelf has a <a href=\"https://amzn.to/31tr0lo\">Sonos Five</a> connected to a <a href=\"https://amzn.to/3mZjuGj\">Fluance RT85</a> turntable for vinyl. This can stream vinyl throughout the entire apartment.</p><p>The Bedroom has a pair of HomePod Classics for primary listening. The turntable is a vintage Sanyo with an <a href=\"https://amzn.to/331ORsA\">Ortofon Blue cartridge</a>. I like to read and listen to records on this setup. I occasionally put the <a href=\"https://amzn.to/3pSzN9K\">Sonos roam</a> in here if I'm doing a project where I'm running between rooms and want to listen to vinyl.</p><p>I've also got one of two iPod displays in the Bedroom. I love iPods, they were iconic during my formative years and are a form of Apple Nostalgia for me. The iPod Mini display includes one of each color with a different artist on each. They are from left to right Green Day, Taylor Swift, Coldplay, Blink 182, and Frank Turner. They also work! I stream them to an old Zenith radio using an iTrip.</p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/IMG_0554.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"2667\"><figcaption>iPod Mini Display</figcaption></figure><p>The Living Room is where the magic happens. The main system is a <a href=\"https://amzn.to/3pQ0j3z\">Sonos Arc</a>, two rear <a href=\"https://amzn.to/3EUDxMl\">Sonos One SLs</a>, and a <a href=\"https://amzn.to/3zr4PIT\">Sonos Sub</a>. This sounds fantastic for movies and is also a great party system.</p><p>To the right I have the iPod Classic display. This contains each generation of iPod and the first five generations of iPhone. All of these devices work and are loaded with content.</p><p>There's also an iPod Hi-Fi that can accept any of the iPods with dock connectors and play their music. Inside the box is an Airport Express to pair this speaker to AirPlay 2. I mostly use this speaker when I'm working out in the landing strip between the carpet and the display or when I'm drunk and feel like dancing.</p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/05.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1500\"><figcaption>Photo Wall With iPod Display</figcaption></figure><p>Finally, there's a HomePod mini tucked away in the back that I exclusively use for Siri.</p><h1 id=\"legacy-macs\">Legacy Macs</h1><p>Behind the couch is my legacy mac setup. There's a few machines here. There's a 2014 Macbook Pro I use to manage all of my devices. A 2009 Macbook Pro I use to manage some legacy iPads. and my favorite, a 2007 Black Macbook that's dual booting Snow Leopard and Windows XP.</p><p>These are mostly toys, but they all work and I use them for projects.</p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/IMG_0741.jpeg\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1500\"><figcaption>2007 Macbook running WIndows XP</figcaption></figure><h1 id=\"bugs\">Bugs</h1><p>I'm really proud of this thing I built, but it definitely has it's quirks. The various bridges all need to be reset from time to time, and I once just turned off the circuit breaker to turn off everything at once and reboot the whole apartment. Recently, I added a <a href=\"https://amzn.to/3HvAuvy\">smart power switch</a> so I could power cycle the bridges from my phone. The Pi-hole DNS is one of the most likely things to crash so I have that plugged into it as well.</p><p>Scenes featuring music are particularly unreliable. Lullaby and Nightlight will work for a while and then stop. I used to have a scene called Tunes that would play a playlist on every speaker in the house, but I gave up after too many failures.</p><p>There's also an issue where the living room AppleTV is slightly out of sync with other AirPlay devices. I work around this by unplugging the Sonos Arc and airplaying directly to it when I want to use multiple speakers at once.</p><p>Another issue is Siri always feels the need to tell me when one or more devices didn't respond. This is great in theory, but is almost never useful. I consistently repeat the request and it works the second time. It also doesn't give me any insight into which device failed. Many of my scenes are controlling 30+ accessories so I have no way of knowing if a bridge is down or the bathroom light is just off. It'd be nice if the home app gave me this info.</p><figure class=\"kg-card kg-image-card kg-card-hascaption\"><img src=\"/images/blog/IMG_0006.PNG\" class=\"kg-image\" alt loading=\"lazy\" width=\"2000\" height=\"1397\"><figcaption>Home App Screenshot - Misc</figcaption></figure><p></p><h1 id=\"wrap-up-and-feature-requests\">Wrap Up and Feature Requests</h1><p>The main tools I used to make this apartment smart were Philips Hue bulbs and fixtures, Apple devices, the Leviosa Shades, and a bunch of VOCOLinc adapters. From there it was a massive time investment to get everything working the way I wanted it to.</p><p>Scenes are a small nightmare to compose. Any time I add or move I light I need to modify every single scene it's in. I would love to see composable scenes where I can say \"this is the office in chill mode\" or \"this is the bedroom 100%\". This way I could make Good Morning the composition of Bedroom One, Living Room One, and Office One.</p><p>I would also love a guest mode. Whenever I have someone visiting I need to be careful with apartment-wide scenes while they're sleeping. It would be great if I could just make a room automonmous for a period.</p><p>The home app is overdue for a makeover. It was perfect when I lived in a 350 sqft studio apartment, but now that I have multiple rooms, many accessories, and many scenes it's unweildy and unreliable. I'm hoping that Apple improves this in a future release.</p><p>Overall though, I'm happy I went with HomeKit. It integrates with everything else I own and Apple's track record on privacy is next to none. I really hope Apple improves the stability of HomeKit and HomePods over the next few years, but until then I'll keep tinkering.</p>",
     "tags": [
       "Tech"
-    ]
+    ],
+    "banner_img": "/images/blog/01-1.jpeg"
   },
   {
     "id": 9,
@@ -205,7 +221,8 @@
     "tags": [
       "Tech",
       "functional-programming"
-    ]
+    ],
+    "banner_img": "/images/blog/Functor-Wood.jpg"
   },
   {
     "id": 10,
@@ -217,7 +234,8 @@
     "tags": [
       "Tech",
       "functional-programming"
-    ]
+    ],
+    "banner_img": "/images/blog/Lambda-Tree.jpg"
   },
   {
     "id": 8,
@@ -230,7 +248,8 @@
       "Tech",
       "internship",
       "bay-area"
-    ]
+    ],
+    "banner_img": "/images/blog/Bay-Bridge.jpg"
   },
   {
     "id": 15,
@@ -242,7 +261,8 @@
     "tags": [
       "Tech",
       "public-speaking"
-    ]
+    ],
+    "banner_img": "/images/blog/Mic-Talks.jpg"
   },
   {
     "id": 21,
@@ -255,7 +275,8 @@
       "Tech",
       "javascript",
       "dropbox"
-    ]
+    ],
+    "banner_img": "/images/blog/underscore-lodash-train.jpg"
   },
   {
     "id": 22,
@@ -268,6 +289,7 @@
       "Tech",
       "dropbox",
       "product"
-    ]
+    ],
+    "banner_img": "/images/blog/dropbox-plus-mountains.jpg"
   }
 ]
