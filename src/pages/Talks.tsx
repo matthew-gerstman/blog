@@ -1,29 +1,155 @@
+import { useState } from 'react';
 import { talks } from '../data/talks';
 import styles from './Talks.module.css';
 
 export function Talks() {
+  const [expandedId, setExpandedId] = useState<number | null>(null);
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  // Get all unique tags
+  const allTags = Array.from(new Set(talks.flatMap(talk => talk.tags || [])));
+
+  // Filter talks by selected tag
+  const filteredTalks = selectedTag
+    ? talks.filter(talk => talk.tags?.includes(selectedTag))
+    : talks;
+
+  const toggleExpand = (id: number) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
         <h1>Talks</h1>
+        <p className={styles.subtitle}>
+          Conference talks and presentations on TypeScript, React, career growth, and software engineering.
+        </p>
       </header>
-      <div className={styles.talks}>
-        {talks.map(talk => (
-          <div key={talk.id} className={styles.talkItem}>
-            <h2 className={styles.title}>{talk.title}</h2>
-            {talk.subtitle && <div className={styles.subtitle}>{talk.subtitle}</div>}
-            <div className={styles.videoWrapper}>
-              <iframe
-                src={`https://www.youtube.com/embed/${talk.video}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title={talk.title}
-              />
-            </div>
-          </div>
+
+      {/* Tag Filter */}
+      <div className={styles.tagFilter}>
+        <button
+          className={`${styles.tagButton} ${!selectedTag ? styles.active : ''}`}
+          onClick={() => setSelectedTag(null)}
+        >
+          All
+        </button>
+        {allTags.map(tag => (
+          <button
+            key={tag}
+            className={`${styles.tagButton} ${selectedTag === tag ? styles.active : ''}`}
+            onClick={() => setSelectedTag(tag)}
+          >
+            {tag}
+          </button>
         ))}
       </div>
+
+      {/* Talks Grid */}
+      <div className={styles.talksGrid}>
+        {filteredTalks.map(talk => {
+          const isExpanded = expandedId === talk.id;
+          
+          return (
+            <div 
+              key={talk.id} 
+              className={`${styles.talkCard} ${isExpanded ? styles.expanded : ''}`}
+            >
+              {/* Thumbnail/Video */}
+              <div className={styles.videoSection}>
+                {isExpanded ? (
+                  <div className={styles.videoWrapper}>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${talk.video}`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      title={talk.title}
+                    />
+                  </div>
+                ) : (
+                  <div 
+                    className={styles.thumbnail}
+                    onClick={() => toggleExpand(talk.id)}
+                  >
+                    <img 
+                      src={`https://img.youtube.com/vi/${talk.video.split('?')[0]}/maxresdefault.jpg`}
+                      alt={talk.title}
+                      onError={(e) => {
+                        // Fallback to standard quality if maxres doesn't exist
+                        (e.target as HTMLImageElement).src = 
+                          `https://img.youtube.com/vi/${talk.video.split('?')[0]}/hqdefault.jpg`;
+                      }}
+                    />
+                    <div className={styles.playOverlay}>
+                      <svg width="68" height="48" viewBox="0 0 68 48">
+                        <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path>
+                        <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                      </svg>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Content */}
+              <div className={styles.content}>
+                <div className={styles.meta}>
+                  {talk.date && <span className={styles.date}>{talk.date}</span>}
+                  {talk.venue && (
+                    <>
+                      <span className={styles.separator}>•</span>
+                      <span className={styles.venue}>{talk.venue}</span>
+                    </>
+                  )}
+                </div>
+
+                <h2 
+                  className={styles.title}
+                  onClick={() => toggleExpand(talk.id)}
+                >
+                  {talk.title}
+                </h2>
+                
+                {talk.subtitle && (
+                  <div className={styles.conference}>{talk.subtitle}</div>
+                )}
+
+                <p className={styles.description}>{talk.description}</p>
+
+                {/* Tags */}
+                {talk.tags && talk.tags.length > 0 && (
+                  <div className={styles.tags}>
+                    {talk.tags.map(tag => (
+                      <span 
+                        key={tag} 
+                        className={styles.tag}
+                        onClick={() => setSelectedTag(tag)}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Watch Button */}
+                <button 
+                  className={styles.watchButton}
+                  onClick={() => toggleExpand(talk.id)}
+                >
+                  {isExpanded ? 'Close Video' : 'Watch Talk'}
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {filteredTalks.length === 0 && (
+        <div className={styles.noResults}>
+          No talks found for "{selectedTag}". <button onClick={() => setSelectedTag(null)}>Clear filter</button>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,10 +1,305 @@
-.container { max-width: 680px; margin: 0 auto; padding: 4rem 2rem 8rem; }
-.header { margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 1px solid var(--grappa-border); }
-.header h1 { font-size: 2.75rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1.2; color: var(--text); }
-.talks { display: flex; flex-direction: column; gap: 5rem; }
-.talkItem { cursor: pointer; }
-.title { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.5rem; color: var(--text); transition: color 0.2s, font-size 0.2s; }
-.talkItem:hover .title { color: var(--grappa-bright); font-size: 1.625rem; }
-.subtitle { font-size: 0.9rem; color: var(--grappa-bright); margin-bottom: 1.5rem; }
-.videoWrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid var(--grappa-border); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); }
-.videoWrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem 8rem;
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--grappa-bright);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Tag Filter */
+.tagFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--grappa-border);
+}
+
+.tagButton {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--grappa-border);
+  background: transparent;
+  color: var(--grappa-bright);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.tagButton:hover {
+  border-color: var(--grappa-bright);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.tagButton.active {
+  background: var(--grappa-bright);
+  color: var(--background);
+  border-color: var(--grappa-bright);
+}
+
+/* Talks Grid */
+.talksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.talkCard {
+  background: var(--background);
+  border: 1px solid var(--grappa-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.talkCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--grappa-bright);
+}
+
+.talkCard.expanded {
+  grid-column: 1 / -1;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Video Section */
+.videoSection {
+  position: relative;
+  width: 100%;
+}
+
+.thumbnail {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #000;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.05);
+}
+
+.playOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+}
+
+.thumbnail:hover .playOverlay {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Content */
+.content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--grappa-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.date {
+  color: var(--grappa-bright);
+}
+
+.separator {
+  opacity: 0.5;
+}
+
+.venue {
+  color: var(--grappa-bright);
+}
+
+.title {
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--text);
+  cursor: pointer;
+  transition: color 0.2s;
+  margin: 0;
+}
+
+.title:hover {
+  color: var(--grappa-bright);
+}
+
+.conference {
+  font-size: 0.9rem;
+  color: var(--grappa-bright);
+  font-weight: 500;
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+  opacity: 0.85;
+  margin: 0;
+  flex: 1;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--grappa-border);
+  color: var(--grappa-bright);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.tag:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--grappa-bright);
+  transform: translateY(-1px);
+}
+
+/* Watch Button */
+.watchButton {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--grappa-bright);
+  background: transparent;
+  color: var(--grappa-bright);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.watchButton:hover {
+  background: var(--grappa-bright);
+  color: var(--background);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* No Results */
+.noResults {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--grappa-bright);
+  font-size: 1.125rem;
+}
+
+.noResults button {
+  margin-left: 0.5rem;
+  color: var(--text);
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.noResults button:hover {
+  color: var(--grappa-bright);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .talksGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .tagFilter {
+    justify-content: flex-start;
+  }
+}
