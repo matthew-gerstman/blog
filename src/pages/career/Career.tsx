@@ -31,6 +31,8 @@ export const Career: React.FC = () => {
                   key={`${job.id}-${index}`}
                   title={project.title}
                   year={project.year}
+                  startYear={project.startYear}
+                  endYear={project.endYear}
                   description={project.description}
                   context={project.context}
                   execution={project.execution}

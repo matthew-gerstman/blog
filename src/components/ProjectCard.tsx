@@ -4,6 +4,8 @@ import styles from './ProjectCard.module.css';
 interface ProjectCardProps {
   title: string;
   year: string;
+  startYear: number;
+  endYear: number;
   description: string;
   context?: string;
   execution?: string[];
@@ -15,7 +17,9 @@ interface ProjectCardProps {
 
 export function ProjectCard({ 
   title, 
-  year, 
+  year,
+  startYear,
+  endYear,
   description, 
   context,
   execution,
@@ -27,6 +31,11 @@ export function ProjectCard({
   const [isExpanded, setIsExpanded] = useState(false);
   
   const hasDetails = context || execution || leadership;
+  
+  // Format year display: "2024" or "2023–2024"
+  const yearDisplay = startYear === endYear 
+    ? `${endYear}` 
+    : `${startYear}–${endYear}`;
 
   return (
     <div className={`${styles.projectCard} ${isExpanded ? styles.expanded : ''}`}>
@@ -37,7 +46,7 @@ export function ProjectCard({
       >
         <div className={styles.projectTop}>
           <h4 className={styles.projectTitle}>{title}</h4>
-          <span className={styles.projectYear}>{year}</span>
+          <span className={styles.projectYear}>{yearDisplay}</span>
           {hasDetails && (
             <span className={styles.expandIcon}>{isExpanded ? '−' : '+'}</span>
           )}

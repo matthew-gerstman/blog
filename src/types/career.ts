@@ -1,6 +1,8 @@
 export interface Project {
   title: string;
   year: string;
+  startYear: number;
+  endYear: number;
   description: string;
   context?: string;
   execution?: string[];
