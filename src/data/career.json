@@ -18,8 +18,8 @@
           "year": "2023-2024",
           "startYear": 2023,
           "endYear": 2024,
-          "role": "Engineering Manager aspiring to be Ted Lasso",
-          "description": "Led the complete rebuild of Datadog's collaborative notebook editor, managing a team through parallel rich text and multiplayer initiatives while maintaining a Ted Lasso-inspired leadership approach.",
+          "role": "Engineering Manager",
+          "description": "First-time engineering manager leading the rebuild of Datadog's collaborative notebook editor. Focused on team growth, customer engagement, and enabling technical excellence. Built customer council with rapid feedback loop.",
           "impact": "Shipped production collaborative editor to 100% of Datadog customers. Grew team from 0 to 4 engineers with 2 promotions. Established customer-driven release cadence that went from alpha to full GA in 9 months.",
           "technologies": [
             "ProseMirror",
@@ -42,24 +42,11 @@
             {
               "title": "Execution",
               "content": [
-                "Managed 4 direct reports with 2 promotions",
-                "Built customer council with shared Slack channels for rapid feedback loops",
-                "Balanced technical leadership with customer advocacy throughout launch process",
-                "Owned the complete rebuild of Datadog's collaborative notebook editor, managing a team through parallel rich text and multiplayer initiatives while maintaining a Ted Lasso-inspired leadership approach.",
-                "Identified architectural conflict: ProseMirror and Redux competing for state management, ProseMirror and React competing for DOM control",
-                "Guided team to design fast/slow loop architecture—short loop within ProseMirror, long loop through Redux for what we called Multiplayer V0",
-                "Established weekly learning sessions covering Redux internals, type design, React fundamentals to level up the team",
-                "Mentored IC2 engineer (Engineer A) toward senior promotion by having her learn concepts then teach them to the team",
-                "Coordinated parallel workstreams: multiplayer squad built Node service receiving CRDTs from clients and hitting legacy APIs; rich text squad implemented fast/slow loops and core editing features",
-                "Shipped rich text features: inlined widgets with text handling, copy/paste, toolbar, list indentation/continuation, codeblocks, comments, version history, inline tables",
-                "Ran two-week quality sprint with daily 90-minute assigned pairing sessions to maximize knowledge transfer and establish pairing culture",
-                "Turned on Multiplayer V1 for employees in Q4, handled integration bugs with focus on preventing data loss (addressed critical incident where docs overwrote with empty state)",
-                "Built customer pipeline: identified high-usage customers, coordinated with CSMs, scheduled pitch meetings, launched to Square before EOY",
-                "Established release principle: ship to someone new every week, more customers each week than the last",
-                "Responded to customer feedback mid-rollout: ran 'bring back buttons' initiative to add click interfaces on keyboard-first design, personally built print mode using knowledge from previous dashboard reports project",
-                "Built custom gating service to bypass feature flag limitations—loaded existing notebook orgs into memory, allowed instant rollout from 20% to 95% of paying customers",
-                "Leveraged markdown import/export to support API users managing notebooks via legacy cell model",
-                "Shipped to 100% of customers including API users to complete launch"
+                "Team Culture & Development - Grew team from 4 to 6 engineers with 2 promotions; established daily pairing and weekly learning sessions; created environment where people wanted to work together and help each other succeed. My favorite part of the job was coach, I aspired to be Ted Lasso.",
+                "Feature Development Oversight - Oversaw the development of: Rich text editor with ProseMirror integration, Real-time multiplayer collaboration with CRDTs (Yjs) and WebSockets, Inlined widgets with text handling, Copy/paste functionality, Toolbar and formatting controls, List indentation and continuation, Code blocks with syntax highlighting, Comments and version history, Inline tables, Print mode (personally implemented based on prior dashboard reports experience), Markdown import/export for API users",
+                "Customer Engagement - Built customer council with shared Slack channels; identified high-usage customers and coordinated with CSMs for pipeline development. Spoke with multiple external customers per week during rollout. Rapidly implemented their feedback. There is nothing a customer loves more than hearing that their feature request was implemented in 48 hours.",
+                "My product manager was focused on an orthogonal project for 6 months. I kept her informed while I handled prioritizing features and managing the release. In our last quarter I established the principle ship to someone new every week.",
+                "We slowed down for customer feedback and sped up where it didn't apply. For example 2% of customers accessed Notebooks via the API. We were able to release to 98% of customers while we finished the long tail of the project. In another instance a customer didn't like the keyboard first design. We paused for a week while we implemented a Bring Back Buttons initiative."
               ]
             }
           ]
