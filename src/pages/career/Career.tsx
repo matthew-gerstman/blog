@@ -32,11 +32,12 @@ export const Career: React.FC = () => {
                   title={project.title}
                   year={project.year}
                   description={project.description}
-                  challenge={project.challenge}
-                  approach={project.approach}
+                  context={project.context}
+                  execution={project.execution}
                   impact={project.impact}
                   technologies={project.technologies}
                   leadership={project.leadership}
+                  role={project.role}
                 />
               ))}
             </div>
