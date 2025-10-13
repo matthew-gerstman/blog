@@ -27,7 +27,6 @@
 }
 
 /* Tag Filter */
-.tagFilter {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -37,7 +36,6 @@
   border-bottom: 1px solid var(--grappa-border);
 }
 
-.tagButton {
   padding: 0.5rem 1rem;
   border-radius: 20px;
   border: 1px solid var(--grappa-border);
@@ -49,13 +47,11 @@
   font-weight: 500;
 }
 
-.tagButton:hover {
   border-color: var(--grappa-bright);
   color: var(--text);
   transform: translateY(-1px);
 }
 
-.tagButton.active {
   background: var(--grappa-bright);
   color: var(--background);
   border-color: var(--grappa-bright);
@@ -157,7 +153,6 @@
   flex: 1;
 }
 
-.meta {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -168,19 +163,15 @@
   font-weight: 600;
 }
 
-.date {
   color: var(--grappa-bright);
 }
 
-.separator {
   opacity: 0.5;
 }
 
-.venue {
   color: var(--grappa-bright);
 }
 
-.title {
   font-size: 1.375rem;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -191,11 +182,9 @@
   margin: 0;
 }
 
-.title:hover {
   color: var(--grappa-bright);
 }
 
-.conference {
   font-size: 0.9rem;
   color: var(--grappa-bright);
   font-weight: 500;
@@ -211,14 +200,12 @@
 }
 
 /* Tags */
-.tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.5rem;
 }
 
-.tag {
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.05);
@@ -230,7 +217,6 @@
   font-weight: 500;
 }
 
-.tag:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: var(--grappa-bright);
   transform: translateY(-1px);

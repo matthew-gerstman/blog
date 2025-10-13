@@ -1,0 +1,19 @@
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--grappa-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.separator {
+  opacity: 0.5;
+}
+
+.item {
+  color: var(--grappa-bright);
+}

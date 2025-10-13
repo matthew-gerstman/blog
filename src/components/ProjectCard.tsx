@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { CardHeader } from './CardHeader';
+import { TagList } from './TagList';
+import { LinkList } from './LinkList';
 import styles from './ProjectCard.module.css';
 
 interface ProjectCardProps {
@@ -18,7 +21,6 @@ interface ProjectCardProps {
 
 export function ProjectCard({ 
   title, 
-  year,
   startYear,
   endYear,
   description, 
@@ -33,11 +35,7 @@ export function ProjectCard({
   const [isExpanded, setIsExpanded] = useState(false);
   
   const hasDetails = context || execution || leadership;
-  
-  // Format year display: "2024" or "2023–2024"
-  const yearDisplay = startYear === endYear 
-    ? `${endYear}` 
-    : `${startYear}–${endYear}`;
+  const yearDisplay = startYear === endYear ? `${endYear}` : `${startYear}–${endYear}`;
 
   return (
     <div className={`${styles.projectCard} ${isExpanded ? styles.expanded : ''}`}>
@@ -46,45 +44,24 @@ export function ProjectCard({
         onClick={() => hasDetails && setIsExpanded(!isExpanded)}
         style={{ cursor: hasDetails ? 'pointer' : 'default' }}
       >
-        <div className={styles.projectTop}>
-          <h4 className={styles.projectTitle}>{title}</h4>
-          <span className={styles.projectYear}>{yearDisplay}</span>
-          {hasDetails && (
-            <span className={styles.expandIcon}>{isExpanded ? '−' : '+'}</span>
-          )}
-        </div>
-        {role && (
-          <div className={styles.projectRole}>{role}</div>
-        )}
+        <CardHeader
+          title={title}
+          year={yearDisplay}
+          role={role}
+          hasExpand={hasDetails}
+          isExpanded={isExpanded}
+        />
+        
         <p className={styles.projectDescription}>{description}</p>
+        
         {impact && (
           <div className={styles.projectImpact}>
             <span className={styles.outcomeLabel}>Outcome:</span> {impact}
           </div>
         )}
-        {links && links.length > 0 && (
-          <div className={styles.projectLinks}>
-            {links.map((link, i) => (
-              <a 
-                key={i} 
-                href={link.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={styles.projectLink}
-                onClick={(e) => e.stopPropagation()}
-              >
-                {link.text} →
-              </a>
-            ))}
-          </div>
-        )}
-        {technologies && technologies.length > 0 && (
-          <div className={styles.projectTags}>
-            {technologies.map((tech, i) => (
-              <span key={i} className={styles.projectTag}>{tech}</span>
-            ))}
-          </div>
-        )}
+        
+        <LinkList links={links} />
+        <TagList tags={technologies} className={styles.projectTags} />
       </div>
 
       {hasDetails && (
