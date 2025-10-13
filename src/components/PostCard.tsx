@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { Post } from '../types';
 import { calculateReadingTime, getWordCount } from '../utils/reading';
-import { bannerImages } from '../data/banners';
 import styles from './PostCard.module.css';
 
 interface PostCardProps {
@@ -12,7 +11,7 @@ interface PostCardProps {
 export function PostCard({ post, index }: PostCardProps) {
   const readingTime = calculateReadingTime(post.content);
   const wordCount = getWordCount(post.content);
-  const banner = bannerImages[post.slug];
+  const banner = post.banner_img;
 
   return (
     <article className={styles.card} style={{ animationDelay: `${Math.min(index * 0.1, 0.5)}s` }}>
