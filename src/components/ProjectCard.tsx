@@ -61,14 +61,14 @@ export function ProjectCard({
           <div className={styles.projectDetailsContent}>
             {challenge && (
               <div className={styles.detailSection}>
-                <h5>The Challenge</h5>
+                <h5>Context</h5>
                 <p>{challenge}</p>
               </div>
             )}
             
             {approach && approach.length > 0 && (
               <div className={styles.detailSection}>
-                <h5>Technical Approach</h5>
+                <h5>Execution</h5>
                 <ul>
                   {approach.map((item, i) => (
                     <li key={i}>{item}</li>
