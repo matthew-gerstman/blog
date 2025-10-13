@@ -11,7 +11,7 @@ import { Career } from './pages/career/Career';
 import { About } from './pages/career/About';
 import { useTheme } from './hooks/useTheme';
 import { useKeyboard } from './hooks/useKeyboard';
-import { posts } from './data/posts';
+import posts from './data/posts';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
