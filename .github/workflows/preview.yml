@@ -1,0 +1,180 @@
+name: Deploy Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+  push:
+    branches-ignore:
+      - main
+      - gh-pages
+
+permissions:
+  contents: write
+  pull-requests: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build
+        run: npm run build
+        env:
+          VITE_BASE: /blog/previews/${{ github.ref_name }}/
+        
+      - name: Prepare deployment directory
+        run: |
+          BRANCH_NAME="${{ github.ref_name }}"
+          SAFE_BRANCH_NAME=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9-]/-/g')
+          mkdir -p deploy/previews/$SAFE_BRANCH_NAME
+          cp -r dist/* deploy/previews/$SAFE_BRANCH_NAME/
+          
+          cat > deploy/previews/index.html << 'HTMLEOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>Preview Deployments</title>
+            <style>
+              body { font-family: system-ui; max-width: 800px; margin: 50px auto; padding: 20px; }
+              h1 { color: #333; }
+              .preview { padding: 15px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
+              .preview a { color: #0066cc; text-decoration: none; font-size: 18px; }
+              .preview a:hover { text-decoration: underline; }
+              .branch { color: #666; font-size: 14px; margin-top: 5px; }
+            </style>
+          </head>
+          <body>
+            <h1>🚀 Preview Deployments</h1>
+            <p>Available branch previews:</p>
+            <div id="previews"></div>
+            <script>
+              fetch('.')
+                .then(r => r.text())
+                .then(html => {
+                  const parser = new DOMParser();
+                  const doc = parser.parseFromString(html, 'text/html');
+                  const links = Array.from(doc.querySelectorAll('a'))
+                    .filter(a => a.href.includes('/previews/') && !a.href.endsWith('/previews/'))
+                    .map(a => a.textContent.replace('/', ''));
+                  
+                  const container = document.getElementById('previews');
+                  links.forEach(branch => {
+                    const div = document.createElement('div');
+                    div.className = 'preview';
+                    div.innerHTML = `
+                      <a href="${branch}/">${branch}</a>
+                      <div class="branch">Branch: ${branch}</div>
+                    `;
+                    container.appendChild(div);
+                  });
+                });
+            </script>
+          </body>
+          </html>
+          HTMLEOF
+          
+          echo "SAFE_BRANCH_NAME=$SAFE_BRANCH_NAME" >> $GITHUB_ENV
+          
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages-branch
+          
+      - name: Update gh-pages
+        run: |
+          mkdir -p gh-pages-branch/previews
+          cp -r deploy/previews/$SAFE_BRANCH_NAME gh-pages-branch/previews/
+          cp deploy/previews/index.html gh-pages-branch/previews/
+          
+          cd gh-pages-branch
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add previews/
+          git commit -m "Deploy preview for ${{ github.ref_name }}" || echo "No changes to commit"
+          git push
+          
+      - name: Comment Preview URL
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branchName = context.ref.replace('refs/heads/', '');
+            const safeBranchName = branchName.replace(/[^a-zA-Z0-9-]/g, '-');
+            const previewUrl = `https://${{ github.repository_owner }}.github.io/blog/previews/${safeBranchName}/`;
+            
+            const comment = `## 🚀 Preview Deployment Ready!
+            
+            **Preview URL:** ${previewUrl}
+            **Branch:** \`${branchName}\`
+            **Commit:** ${context.sha}
+            
+            This preview will update automatically with new commits.
+            
+            [View all previews](https://${{ github.repository_owner }}.github.io/blog/previews/)`;
+            
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            
+            const botComment = comments.find(comment => 
+              comment.user.type === 'Bot' && 
+              comment.body.includes('Preview Deployment Ready')
+            );
+            
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: comment
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: comment
+              });
+            }
+            
+  cleanup-preview:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          
+      - name: Remove preview
+        run: |
+          BRANCH_NAME="${{ github.head_ref }}"
+          SAFE_BRANCH_NAME=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9-]/-/g')
+          
+          if [ -d "previews/$SAFE_BRANCH_NAME" ]; then
+            rm -rf "previews/$SAFE_BRANCH_NAME"
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add previews/
+            git commit -m "Remove preview for $BRANCH_NAME" || echo "No changes to commit"
+            git push
+          fi
