@@ -11,7 +11,7 @@
       "period": "September 2022 - Present",
       "startDate": "2022-09",
       "description": "Leading development of collaborative data science tooling and dashboard infrastructure.",
-      "color": "var(--grappa-bright)",
+      "color": "#632CA6",
       "projects": [
         {
           "title": "Notebooks 2.0",
@@ -99,7 +99,7 @@
       "startDate": "2021-06",
       "endDate": "2022-09",
       "description": "Led frontend platform architecture and TypeScript migration for marketing technology platform.",
-      "color": "var(--grappa)",
+      "color": "#0052CC",
       "projects": [
         {
           "title": "TypeScript Migration & Component Library",
@@ -162,7 +162,7 @@
       "startDate": "2017-06",
       "endDate": "2021-06",
       "description": "Architected state management systems and founded JavaScript Guild for organizational best practices.",
-      "color": "#7B61FF",
+      "color": "#0061FF",
       "projects": [
         {
           "title": "Redux State Management System",
@@ -241,7 +241,7 @@
       "startDate": "2016-01",
       "endDate": "2017-06",
       "description": "Full-stack development for theater ticketing platform with dramatic performance improvements.",
-      "color": "#FF6B6B",
+      "color": "#E2231A",
       "projects": [
         {
           "title": "Page Load Optimization",
@@ -307,7 +307,7 @@
       "startDate": "2012-06",
       "endDate": "2015-12",
       "description": "Cloud storage platform development with rapid progression to technical leadership.",
-      "color": "#4ECDC4",
+      "color": "#FF6B35",
       "projects": [
         {
           "title": "Backbone + RESTful APIs Migration",
