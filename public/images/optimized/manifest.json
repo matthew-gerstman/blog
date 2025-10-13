@@ -143,6 +143,60 @@
       "full": "/images/optimized/full/FP-Wood.webp"
     }
   },
+  "IMG_0001.PNG": {
+    "original": "/images/blog/IMG_0001.PNG",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0001.webp",
+      "medium": "/images/optimized/medium/IMG_0001.webp",
+      "large": "/images/optimized/large/IMG_0001.webp",
+      "full": "/images/optimized/full/IMG_0001.webp"
+    }
+  },
+  "IMG_0002.PNG": {
+    "original": "/images/blog/IMG_0002.PNG",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0002.webp",
+      "medium": "/images/optimized/medium/IMG_0002.webp",
+      "large": "/images/optimized/large/IMG_0002.webp",
+      "full": "/images/optimized/full/IMG_0002.webp"
+    }
+  },
+  "IMG_0003.PNG": {
+    "original": "/images/blog/IMG_0003.PNG",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0003.webp",
+      "medium": "/images/optimized/medium/IMG_0003.webp",
+      "large": "/images/optimized/large/IMG_0003.webp",
+      "full": "/images/optimized/full/IMG_0003.webp"
+    }
+  },
+  "IMG_0004.PNG": {
+    "original": "/images/blog/IMG_0004.PNG",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0004.webp",
+      "medium": "/images/optimized/medium/IMG_0004.webp",
+      "large": "/images/optimized/large/IMG_0004.webp",
+      "full": "/images/optimized/full/IMG_0004.webp"
+    }
+  },
+  "IMG_0005.PNG": {
+    "original": "/images/blog/IMG_0005.PNG",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0005.webp",
+      "medium": "/images/optimized/medium/IMG_0005.webp",
+      "large": "/images/optimized/large/IMG_0005.webp",
+      "full": "/images/optimized/full/IMG_0005.webp"
+    }
+  },
+  "IMG_0006.PNG": {
+    "original": "/images/blog/IMG_0006.PNG",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0006.webp",
+      "medium": "/images/optimized/medium/IMG_0006.webp",
+      "large": "/images/optimized/large/IMG_0006.webp",
+      "full": "/images/optimized/full/IMG_0006.webp"
+    }
+  },
   "IMG_0554.jpeg": {
     "original": "/images/blog/IMG_0554.jpeg",
     "sizes": {
