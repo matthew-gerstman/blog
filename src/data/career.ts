@@ -1,298 +1,125 @@
-export interface Project {
-  title: string;
-  year: string;
-  role: string;
-  description?: string;
-  impact?: string;
-  execution?: string[];
-  leadership?: string[];
-  belowTheFold?: {
-    execution?: string[];
-    leadership?: string[];
-  };
-}
+import type { CareerData } from '../types/career';
 
-export interface Job {
-  company: string;
-  startDate: string;
-  endDate?: string;
-  projects: Project[];
-}
-
-export const career: { jobs: Job[] } = {
+const careerData: CareerData = {
+  hero: {
+    title: "Career",
+    subtitle: "Building tools, leading teams, and shipping products that matter."
+  },
   jobs: [
     {
+      id: "datadog",
       company: "Datadog",
+      role: "Engineering Manager",
+      period: "2022 - Present",
       startDate: "2022-05-01",
+      description: "Leading engineering teams building collaborative tools and visualization platforms.",
+      color: "#632CA6",
       projects: [
         {
           title: "Graphing Summit",
           year: "2024-2025",
+          startYear: 2024,
+          endYear: 2025,
           role: "Engineering Manager",
-          description: 'Organized Datadog\'s Graphing Summit to build cohesive culture in newly-formed org from recent reorg. Led planning with 2 co-organizers, keeping execution lean—1/10 the time investment of typical summits with better relationship outcomes. Ran pre-summit events (IC1 class, org lunches, donut 1:1s) to increase baseline connections and maximize summit\'s force multiplier effect.',
-          impact: 'Transformed "kind of knew each other" relationships into "really knew each other" connections. Created foundation for cross-team collaboration in graphing org. Delivered successful summit with minimal committee overhead and 90% less planning time than traditional summits.',
-        },
-        {
-          title: "IC1 Engineering Class",
-          year: "2024-2025",
-          role: "Engineering Manager",
+          description: "Organized Datadog\'s Graphing Summit to build cohesive culture in newly-formed org from recent reorg. Led planning with 2 co-organizers, keeping execution lean—1/10 the time investment of typical summits with better relationship outcomes. Ran pre-summit events (IC1 class, org lunches, donut 1:1s) to increase baseline connections and maximize summit\'s force multiplier effect.",
+          impact: "Transformed \"kind of knew each other\" relationships into \"really knew each other\" connections. Created foundation for cross-team collaboration in graphing org. Delivered successful summit with minimal committee overhead and 90% less planning time than traditional summits.",
         },
         {
           title: "Notebooks 2.0",
           year: "2023-2024",
+          startYear: 2023,
+          endYear: 2024,
           role: "Engineering Manager",
-          description: 'Led the complete rebuild of Datadog\'s collaborative notebook editor, managing a team through parallel rich text and multiplayer initiatives while maintaining a Ted Lasso-inspired leadership approach.',
-          impact: 'Shipped production collaborative editor to 100% of Datadog customers. Grew team from 0 to 4 engineers with 2 promotions. Established customer-driven release cadence that went from alpha to full GA in 9 months.',
-          belowTheFold: {
-            // TODO: Add execution and leadership arrays
-          },
+          description: "Led the complete rebuild of Datadog\'s collaborative notebook editor, managing a team through parallel rich text and multiplayer initiatives while maintaining a Ted Lasso-inspired leadership approach.",
+          impact: "Shipped production collaborative editor to 100% of Datadog customers. Grew team from 0 to 4 engineers with 2 promotions. Established customer-driven release cadence that went from alpha to full GA in 9 months.",
+          belowTheFold: [
+            // TODO: Add execution and leadership sections
+          ],
         },
         {
           title: "Dashboard Reporting & PDF Export",
           year: "2023",
+          startYear: 2023,
+          endYear: 2023,
           role: "Senior Software Engineer",
-          description: 'Built Datadog\'s PDF reporting system from scratch—offline dashboard snapshots with 95%+ widget fidelity. Designed client/server rendering handshake, chose Puppeteer over Selenium, established Node.js patterns now used across 15+ services.',
-          impact: 'Shipped to all customers with 95%+ widget fidelity (up from 70%). Created new revenue stream and permanent team. Node.js foundation code became company standard.',
-        },
-        {
-          title: "Integration Testing Framework",
-          year: "2023",
-          role: "Senior Software Engineer",
-        },
-        {
-          title: "TypeScript Cleanup Initiative",
-          year: "2023",
-          role: "Senior Software Engineer",
-        },
-        {
-          title: "Frontend Summit",
-          year: "2023",
-          role: "Senior Software Engineer",
-        },
-        {
-          title: "Dashboard Type Safety Initiative",
-          year: "2022",
-          role: "Senior Software Engineer",
+          description: "Built Datadog\'s PDF reporting system from scratch—offline dashboard snapshots with 95%+ widget fidelity. Designed client/server rendering handshake, chose Puppeteer over Selenium, established Node.js patterns now used across 15+ services.",
+          impact: "Shipped to all customers with 95%+ widget fidelity (up from 70%). Created new revenue stream and permanent team. Node.js foundation code became company standard.",
         }
       ]
     },
     {
+      id: "bluecore",
       company: "Bluecore",
+      role: "Staff Engineer",
+      period: "2021 - 2022",
       startDate: "2021-01-01",
       endDate: "2022-05-01",
+      description: "Led frontend platform modernization and architecture initiatives.",
+      color: "#0066FF",
       projects: [
-        {
-          title: "Frontend North Star & Architecture Modernization",
-          year: "2021-2022",
-          role: "Staff Engineer / Frontend Lead",
-        },
-        {
-          title: "NextServer (Next.js on Kubernetes)",
-          year: "2022",
-          role: "Senior Software Engineer",
-        },
-        {
-          title: "TypeScript Adoption & Strict Types",
-          year: "2021",
-          role: "Senior Software Engineer",
-        },
-        {
-          title: "Autogenerated API Client",
-          year: "2022",
-          role: "Senior Software Engineer",
-        }
       ]
     },
     {
+      id: "dropbox",
       company: "Dropbox",
+      role: "Senior Software Engineer",
+      period: "2017 - 2021",
       startDate: "2017-01-01",
       endDate: "2021-01-01",
+      description: "Built file preview systems and developer tools for web platform.",
+      color: "#0061FF",
       projects: [
-        {
-          title: "Plus Plus: Family Plans & Life Vault",
-          year: "2020",
-          role: "Senior Software Engineer",
-        },
-        {
-          title: "Redux State Management System",
-          year: "2018",
-          role: "Senior Software Engineer",
-        },
-        {
-          title: "File Viewer SDK",
-          year: "2018",
-          role: "Senior Software Engineer",
-        },
-        {
-          title: "Underscore → Lodash Migration",
-          year: "2018",
-          role: "Software Engineer",
-        },
-        {
-          title: "JavaScript Guild",
-          year: "2017-2021",
-          role: "Senior Software Engineer",
-        },
-        {
-          title: "Previews Mobile Web",
-          year: "2017",
-          role: "Software Engineer",
-        },
-        {
-          title: "Showcase",
-          year: "2017",
-          role: "Software Engineer",
-        },
-        {
-          title: "ZIP File Previews",
-          year: "2017",
-          role: "Software Engineer",
-        }
       ]
     },
     {
+      id: "todaytix",
       company: "TodayTix",
+      role: "Software Engineer",
+      period: "2016 - 2017",
       startDate: "2016-01-01",
       endDate: "2017-01-01",
+      description: "Developed ticketing features and infrastructure for theater booking platform.",
+      color: "#E31C79",
       projects: [
-        {
-          title: "Ansible Deployment Automation",
-          year: "2017",
-          role: "Software Engineer",
-        },
-        {
-          title: "Web 2.0: React + Redux Rebuild",
-          year: "2016",
-          role: "Fullstack Software Engineer",
-        },
-        {
-          title: "Special Offers Feature",
-          year: "2016",
-          role: "Fullstack Software Engineer",
-        },
-        {
-          title: "Rush Ticketing",
-          year: "2016",
-          role: "Software Engineer",
-        }
       ]
     },
     {
+      id: "zetta",
       company: "Zetta.net",
+      role: "Software Engineer",
+      period: "2013 - 2016",
       startDate: "2013-01-01",
       endDate: "2016-01-01",
+      description: "Built cloud backup and disaster recovery systems.",
+      color: "#00A0DC",
       projects: [
-        {
-          title: "Page Load Optimization",
-          year: "2014",
-          role: "Fullstack Software Engineer",
-        },
-        {
-          title: "Backbone + RESTful APIs Migration",
-          year: "2015",
-          role: "Fullstack Software Engineer",
-        },
-        {
-          title: "SVN → Git Migration",
-          year: "2015",
-          role: "Fullstack Software Engineer",
-        },
-        {
-          title: "CI + Sentry Implementation",
-          year: "2015",
-          role: "Fullstack Software Engineer",
-        },
-        {
-          title: "Data Restore Flow",
-          year: "2014",
-          role: "Fullstack Software Engineer",
-        },
-        {
-          title: "User Enrollment Flow Refactor",
-          year: "2014",
-          role: "Fullstack Software Engineer",
-        },
-        {
-          title: "Performance Refactor & Grunt Build System",
-          year: "2014",
-          role: "Fullstack Software Engineer",
-        },
-        {
-          title: "Data Deletion Queue",
-          year: "2014",
-          role: "Fullstack Software Engineer",
-        },
-        {
-          title: "Structured Logging",
-          year: "2013",
-          role: "Engineering Intern",
-        },
-        {
-          title: "Release Gating",
-          year: "2013",
-          role: "Software Engineer",
-        }
       ]
     },
     {
+      id: "dancemarathon",
       company: "Dance Marathon at UF",
+      role: "Student Developer",
+      period: "2012 - 2013",
       startDate: "2012-01-01",
       endDate: "2013-01-01",
+      description: "Created mobile apps and web platforms for university fundraising events.",
+      color: "#FA4616",
       projects: [
-        {
-          title: "Tweet Two Screens",
-          year: "2013",
-          role: "Technology Overall Director",
-        },
-        {
-          title: "DMatUF iPhone App",
-          year: "2013",
-          role: "Technology Overall Director",
-        },
-        {
-          title: "DMAssassins",
-          year: "2012",
-          role: "Technology Overall Director",
-        }
       ]
     },
     {
+      id: "early",
       company: "Early Programming & Education",
+      role: "Student",
+      period: "2008 - 2012",
       startDate: "2008-01-01",
       endDate: "2012-01-01",
+      description: "First programming projects and educational foundations.",
+      color: "#999999",
       projects: [
-        {
-          title: "University of Florida - Computer Science Degree",
-          year: "2009-2013",
-          role: "College Student",
-        },
-        {
-          title: "Body Logic MD - IT Support",
-          year: "2008-2009",
-          role: "High School",
-        },
-        {
-          title: "Johns Hopkins Summer Program",
-          year: "2008",
-          role: "High School",
-        },
-        {
-          title: "Freelance Computer Repair & Web Design",
-          year: "2006-2009",
-          role: "High School",
-        },
-        {
-          title: "Don Estridge High Tech Middle School",
-          year: "2005",
-          role: "Middle School",
-        },
-        {
-          title: "First Programs & Websites",
-          year: "1999-2000",
-          role: "Elementary School",
-        }
       ]
     }
   ]
 };
-export default career;
+
+export default careerData;
