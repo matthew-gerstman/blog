@@ -13,6 +13,7 @@ interface ProjectCardProps {
   role?: string;
   technologies?: string[];
   leadership?: string[];
+  links?: { text: string; url: string; }[];
 }
 
 export function ProjectCard({ 
@@ -26,7 +27,8 @@ export function ProjectCard({
   impact,
   role,
   technologies,
-  leadership
+  leadership,
+  links
 }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   
@@ -58,6 +60,22 @@ export function ProjectCard({
         {impact && (
           <div className={styles.projectImpact}>
             <span className={styles.outcomeLabel}>Outcome:</span> {impact}
+          </div>
+        )}
+        {links && links.length > 0 && (
+          <div className={styles.projectLinks}>
+            {links.map((link, i) => (
+              <a 
+                key={i} 
+                href={link.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.projectLink}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {link.text} →
+              </a>
+            ))}
           </div>
         )}
         {technologies && technologies.length > 0 && (
