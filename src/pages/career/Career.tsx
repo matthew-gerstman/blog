@@ -19,7 +19,7 @@ export const Career: React.FC = () => {
         {data.jobs.map((job) => (
           <div key={job.id} className={styles.timelineItem}>
             <div className={styles.jobInfo}>
-              <h2 className={styles.companyName}>{job.company}</h2>
+              <h2 className={styles.companyName} style={{ color: job.color }}>{job.company}</h2>
               <p className={styles.role}>{job.role}</p>
               <span className={styles.period}>{job.period}</span>
               <p className={styles.companyDescription}>{job.description}</p>
