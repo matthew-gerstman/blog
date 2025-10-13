@@ -26,7 +26,7 @@
             "Identified architectural conflict: ProseMirror and Redux competing for state management, ProseMirror and React competing for DOM control",
             "Guided team to design fast/slow loop architecture—short loop within ProseMirror, long loop through Redux for what we called Multiplayer V0",
             "Established weekly learning sessions covering Redux internals, type design, React fundamentals to level up the team",
-            "Mentored IC2 engineer (Danielle) toward senior promotion by having her learn concepts then teach them to the team",
+            "Mentored IC2 engineer (Engineer A) toward senior promotion by having her learn concepts then teach them to the team",
             "Coordinated parallel workstreams: multiplayer squad built Node service receiving CRDTs from clients and hitting legacy APIs; rich text squad implemented fast/slow loops and core editing features",
             "Shipped rich text features: inlined widgets with text handling, copy/paste, toolbar, list indentation/continuation, codeblocks, comments, version history, inline tables",
             "Ran two-week quality sprint with daily 90-minute assigned pairing sessions to maximize knowledge transfer and establish pairing culture",
@@ -39,7 +39,7 @@
             "Shipped to 100% of customers including API users to complete launch"
           ],
           "leadership": [
-            "Managed 4 direct reports with 2 promotions: Danielle (IC2→IC3, owned copy/paste and architecture refactors), Rowani (IC1→IC2, owned lists, version history, test coverage, markdown import/export), Jose (IC2, owned comments and widget editing), Anna (hired IC1, bugfixes, table implementation, emoji)",
+            "Managed 4 direct reports with 2 promotions: Engineer A (IC2→IC3, owned copy/paste and architecture refactors), Engineer B (IC1→IC2, owned lists, version history, test coverage, markdown import/export), Engineer C (IC2, owned comments and widget editing), Engineer D (hired IC1, bugfixes, table implementation, emoji)",
             "Created teaching-focused culture where engineers learned by teaching others",
             "Established quality-first sprint methodology with structured pairing to spread system knowledge",
             "Built customer council with shared Slack channels for rapid feedback loops",
