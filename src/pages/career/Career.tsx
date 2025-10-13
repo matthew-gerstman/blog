@@ -34,11 +34,9 @@ export const Career: React.FC = () => {
                   startYear={project.startYear}
                   endYear={project.endYear}
                   description={project.description}
-                  context={project.context}
-                  execution={project.execution}
+                  belowTheFold={project.belowTheFold}
                   impact={project.impact}
                   technologies={project.technologies}
-                  leadership={project.leadership}
                   role={project.role}
                 />
               ))}

@@ -4,18 +4,21 @@ import { TagList } from './TagList';
 import { LinkList } from './LinkList';
 import styles from './ProjectCard.module.css';
 
+interface BelowTheFoldSection {
+  title: string;
+  content: string[];
+}
+
 interface ProjectCardProps {
   title: string;
   year: string;
   startYear: number;
   endYear: number;
   description: string;
-  context?: string;
-  execution?: string[];
+  belowTheFold?: BelowTheFoldSection[];
   impact?: string;
   role?: string;
   technologies?: string[];
-  leadership?: string[];
   links?: { text: string; url: string; }[];
 }
 
@@ -24,17 +27,15 @@ export function ProjectCard({
   startYear,
   endYear,
   description, 
-  context,
-  execution,
+  belowTheFold,
   impact,
   role,
   technologies,
-  leadership,
   links
 }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   
-  const hasDetails = context || execution || leadership;
+  const hasDetails = belowTheFold && belowTheFold.length > 0;
   const yearDisplay = startYear === endYear ? `${endYear}` : `${startYear}–${endYear}`;
 
   return (
@@ -67,33 +68,20 @@ export function ProjectCard({
       {hasDetails && (
         <div className={styles.projectDetails}>
           <div className={styles.projectDetailsContent}>
-            {context && (
-              <div className={styles.detailSection}>
-                <h5>Context</h5>
-                <p>{context}</p>
+            {belowTheFold?.map((section, index) => (
+              <div key={index} className={styles.detailSection}>
+                <h5>{section.title}</h5>
+                {section.content.length === 1 && !Array.isArray(section.content) ? (
+                  <p>{section.content[0]}</p>
+                ) : (
+                  <ul>
+                    {section.content.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
-            )}
-             {leadership && leadership.length > 0 && (
-              <div className={styles.detailSection}>
-                <h5>Leadership</h5>
-                <ul>
-                  {leadership.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            
-            {execution && execution.length > 0 && (
-              <div className={styles.detailSection}>
-                <h5>Execution</h5>
-                <ul>
-                  {execution.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )}        
+            ))}
           </div>
         </div>
       )}
