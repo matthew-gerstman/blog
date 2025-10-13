@@ -13,4 +13,8 @@ export const bannerImages: { [key: string]: string } = {
   'functional-programming-fundamentals': '/images/blog/FP-Wood.jpg',
   'hello-there': '/images/blog/Apartment-1.jpeg',
   'es-everything': '/images/blog/scott-trento-xrBxbPiK2w8-unsplash.jpg',
+  'how-i-prepare-a-talk': '/images/blog/Mic-Talks.jpg',
+  'what-the-functor': '/images/blog/Functor-Wood.jpg',
+  'everything-i-wish-i-knew-before-my-first-bay-area-internship': '/images/blog/Bay-Bridge.jpg',
+  'mary-had-a-little-lambda': '/images/blog/Lambda-Tree.jpg',
 };
