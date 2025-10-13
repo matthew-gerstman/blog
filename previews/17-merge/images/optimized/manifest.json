@@ -1,0 +1,506 @@
+{
+  "01-1.jpeg": {
+    "original": "/images/blog/01-1.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/01-1.webp",
+      "medium": "/images/optimized/medium/01-1.webp",
+      "large": "/images/optimized/large/01-1.webp",
+      "full": "/images/optimized/full/01-1.webp"
+    }
+  },
+  "02.jpeg": {
+    "original": "/images/blog/02.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/02.webp",
+      "medium": "/images/optimized/medium/02.webp",
+      "large": "/images/optimized/large/02.webp",
+      "full": "/images/optimized/full/02.webp"
+    }
+  },
+  "03.jpeg": {
+    "original": "/images/blog/03.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/03.webp",
+      "medium": "/images/optimized/medium/03.webp",
+      "large": "/images/optimized/large/03.webp",
+      "full": "/images/optimized/full/03.webp"
+    }
+  },
+  "04.jpeg": {
+    "original": "/images/blog/04.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/04.webp",
+      "medium": "/images/optimized/medium/04.webp",
+      "large": "/images/optimized/large/04.webp",
+      "full": "/images/optimized/full/04.webp"
+    }
+  },
+  "05.jpeg": {
+    "original": "/images/blog/05.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/05.webp",
+      "medium": "/images/optimized/medium/05.webp",
+      "large": "/images/optimized/large/05.webp",
+      "full": "/images/optimized/full/05.webp"
+    }
+  },
+  "07.jpeg": {
+    "original": "/images/blog/07.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/07.webp",
+      "medium": "/images/optimized/medium/07.webp",
+      "large": "/images/optimized/large/07.webp",
+      "full": "/images/optimized/full/07.webp"
+    }
+  },
+  "11.jpeg": {
+    "original": "/images/blog/11.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/11.webp",
+      "medium": "/images/optimized/medium/11.webp",
+      "large": "/images/optimized/large/11.webp",
+      "full": "/images/optimized/full/11.webp"
+    }
+  },
+  "1438.jpeg": {
+    "original": "/images/blog/1438.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/1438.webp",
+      "medium": "/images/optimized/medium/1438.webp",
+      "large": "/images/optimized/large/1438.webp",
+      "full": "/images/optimized/full/1438.webp"
+    }
+  },
+  "15.jpeg": {
+    "original": "/images/blog/15.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/15.webp",
+      "medium": "/images/optimized/medium/15.webp",
+      "large": "/images/optimized/large/15.webp",
+      "full": "/images/optimized/full/15.webp"
+    }
+  },
+  "15591301_10154860545531913_6449567889596819102_o.jpg": {
+    "original": "/images/blog/15591301_10154860545531913_6449567889596819102_o.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/15591301_10154860545531913_6449567889596819102_o.webp",
+      "medium": "/images/optimized/medium/15591301_10154860545531913_6449567889596819102_o.webp",
+      "large": "/images/optimized/large/15591301_10154860545531913_6449567889596819102_o.webp",
+      "full": "/images/optimized/full/15591301_10154860545531913_6449567889596819102_o.webp"
+    }
+  },
+  "16.jpeg": {
+    "original": "/images/blog/16.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/16.webp",
+      "medium": "/images/optimized/medium/16.webp",
+      "large": "/images/optimized/large/16.webp",
+      "full": "/images/optimized/full/16.webp"
+    }
+  },
+  "18.jpeg": {
+    "original": "/images/blog/18.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/18.webp",
+      "medium": "/images/optimized/medium/18.webp",
+      "large": "/images/optimized/large/18.webp",
+      "full": "/images/optimized/full/18.webp"
+    }
+  },
+  "2020-10-31-14.14.12.jpg": {
+    "original": "/images/blog/2020-10-31-14.14.12.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/2020-10-31-14.14.12.webp",
+      "medium": "/images/optimized/medium/2020-10-31-14.14.12.webp",
+      "large": "/images/optimized/large/2020-10-31-14.14.12.webp",
+      "full": "/images/optimized/full/2020-10-31-14.14.12.webp"
+    }
+  },
+  "30171707_10156356082131913_483646314901718704_o.jpg": {
+    "original": "/images/blog/30171707_10156356082131913_483646314901718704_o.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/30171707_10156356082131913_483646314901718704_o.webp",
+      "medium": "/images/optimized/medium/30171707_10156356082131913_483646314901718704_o.webp",
+      "large": "/images/optimized/large/30171707_10156356082131913_483646314901718704_o.webp",
+      "full": "/images/optimized/full/30171707_10156356082131913_483646314901718704_o.webp"
+    }
+  },
+  "Apartment-1.jpeg": {
+    "original": "/images/blog/Apartment-1.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/Apartment-1.webp",
+      "medium": "/images/optimized/medium/Apartment-1.webp",
+      "large": "/images/optimized/large/Apartment-1.webp",
+      "full": "/images/optimized/full/Apartment-1.webp"
+    }
+  },
+  "Bay-Bridge.jpg": {
+    "original": "/images/blog/Bay-Bridge.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/Bay-Bridge.webp",
+      "medium": "/images/optimized/medium/Bay-Bridge.webp",
+      "large": "/images/optimized/large/Bay-Bridge.webp",
+      "full": "/images/optimized/full/Bay-Bridge.webp"
+    }
+  },
+  "FP-Wood.jpg": {
+    "original": "/images/blog/FP-Wood.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/FP-Wood.webp",
+      "medium": "/images/optimized/medium/FP-Wood.webp",
+      "large": "/images/optimized/large/FP-Wood.webp",
+      "full": "/images/optimized/full/FP-Wood.webp"
+    }
+  },
+  "Functor-Wood.jpg": {
+    "original": "/images/blog/Functor-Wood.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/Functor-Wood.webp",
+      "medium": "/images/optimized/medium/Functor-Wood.webp",
+      "large": "/images/optimized/large/Functor-Wood.webp",
+      "full": "/images/optimized/full/Functor-Wood.webp"
+    }
+  },
+  "IMG_0001.PNG": {
+    "original": "/images/blog/IMG_0001.PNG",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0001.webp",
+      "medium": "/images/optimized/medium/IMG_0001.webp",
+      "large": "/images/optimized/large/IMG_0001.webp",
+      "full": "/images/optimized/full/IMG_0001.webp"
+    }
+  },
+  "IMG_0002.PNG": {
+    "original": "/images/blog/IMG_0002.PNG",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0002.webp",
+      "medium": "/images/optimized/medium/IMG_0002.webp",
+      "large": "/images/optimized/large/IMG_0002.webp",
+      "full": "/images/optimized/full/IMG_0002.webp"
+    }
+  },
+  "IMG_0003.PNG": {
+    "original": "/images/blog/IMG_0003.PNG",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0003.webp",
+      "medium": "/images/optimized/medium/IMG_0003.webp",
+      "large": "/images/optimized/large/IMG_0003.webp",
+      "full": "/images/optimized/full/IMG_0003.webp"
+    }
+  },
+  "IMG_0004.PNG": {
+    "original": "/images/blog/IMG_0004.PNG",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0004.webp",
+      "medium": "/images/optimized/medium/IMG_0004.webp",
+      "large": "/images/optimized/large/IMG_0004.webp",
+      "full": "/images/optimized/full/IMG_0004.webp"
+    }
+  },
+  "IMG_0005.PNG": {
+    "original": "/images/blog/IMG_0005.PNG",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0005.webp",
+      "medium": "/images/optimized/medium/IMG_0005.webp",
+      "large": "/images/optimized/large/IMG_0005.webp",
+      "full": "/images/optimized/full/IMG_0005.webp"
+    }
+  },
+  "IMG_0006.PNG": {
+    "original": "/images/blog/IMG_0006.PNG",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0006.webp",
+      "medium": "/images/optimized/medium/IMG_0006.webp",
+      "large": "/images/optimized/large/IMG_0006.webp",
+      "full": "/images/optimized/full/IMG_0006.webp"
+    }
+  },
+  "IMG_0554.jpeg": {
+    "original": "/images/blog/IMG_0554.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0554.webp",
+      "medium": "/images/optimized/medium/IMG_0554.webp",
+      "large": "/images/optimized/large/IMG_0554.webp",
+      "full": "/images/optimized/full/IMG_0554.webp"
+    }
+  },
+  "IMG_0735.jpeg": {
+    "original": "/images/blog/IMG_0735.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0735.webp",
+      "medium": "/images/optimized/medium/IMG_0735.webp",
+      "large": "/images/optimized/large/IMG_0735.webp",
+      "full": "/images/optimized/full/IMG_0735.webp"
+    }
+  },
+  "IMG_0737.jpeg": {
+    "original": "/images/blog/IMG_0737.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0737.webp",
+      "medium": "/images/optimized/medium/IMG_0737.webp",
+      "large": "/images/optimized/large/IMG_0737.webp",
+      "full": "/images/optimized/full/IMG_0737.webp"
+    }
+  },
+  "IMG_0741.jpeg": {
+    "original": "/images/blog/IMG_0741.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/IMG_0741.webp",
+      "medium": "/images/optimized/medium/IMG_0741.webp",
+      "large": "/images/optimized/large/IMG_0741.webp",
+      "full": "/images/optimized/full/IMG_0741.webp"
+    }
+  },
+  "Mic-Talks.jpg": {
+    "original": "/images/blog/Mic-Talks.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/Mic-Talks.webp",
+      "medium": "/images/optimized/medium/Mic-Talks.webp",
+      "large": "/images/optimized/large/Mic-Talks.webp",
+      "full": "/images/optimized/full/Mic-Talks.webp"
+    }
+  },
+  "Reducer-Trees.jpg": {
+    "original": "/images/blog/Reducer-Trees.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/Reducer-Trees.webp",
+      "medium": "/images/optimized/medium/Reducer-Trees.webp",
+      "large": "/images/optimized/large/Reducer-Trees.webp",
+      "full": "/images/optimized/full/Reducer-Trees.webp"
+    }
+  },
+  "Type-Guards.jpg": {
+    "original": "/images/blog/Type-Guards.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/Type-Guards.webp",
+      "medium": "/images/optimized/medium/Type-Guards.webp",
+      "large": "/images/optimized/large/Type-Guards.webp",
+      "full": "/images/optimized/full/Type-Guards.webp"
+    }
+  },
+  "ahmad-dirini-F7Sive0fwIg-unsplash.jpg": {
+    "original": "/images/blog/ahmad-dirini-F7Sive0fwIg-unsplash.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/ahmad-dirini-F7Sive0fwIg-unsplash.webp",
+      "medium": "/images/optimized/medium/ahmad-dirini-F7Sive0fwIg-unsplash.webp",
+      "large": "/images/optimized/large/ahmad-dirini-F7Sive0fwIg-unsplash.webp",
+      "full": "/images/optimized/full/ahmad-dirini-F7Sive0fwIg-unsplash.webp"
+    }
+  },
+  "benjamin-voros-phIFdC6lA4E-unsplash.jpg": {
+    "original": "/images/blog/benjamin-voros-phIFdC6lA4E-unsplash.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/benjamin-voros-phIFdC6lA4E-unsplash.webp",
+      "medium": "/images/optimized/medium/benjamin-voros-phIFdC6lA4E-unsplash.webp",
+      "large": "/images/optimized/large/benjamin-voros-phIFdC6lA4E-unsplash.webp",
+      "full": "/images/optimized/full/benjamin-voros-phIFdC6lA4E-unsplash.webp"
+    }
+  },
+  "blake-richard-verdoorn-20063-unsplash-1.jpg": {
+    "original": "/images/blog/blake-richard-verdoorn-20063-unsplash-1.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/blake-richard-verdoorn-20063-unsplash-1.webp",
+      "medium": "/images/optimized/medium/blake-richard-verdoorn-20063-unsplash-1.webp",
+      "large": "/images/optimized/large/blake-richard-verdoorn-20063-unsplash-1.webp",
+      "full": "/images/optimized/full/blake-richard-verdoorn-20063-unsplash-1.webp"
+    }
+  },
+  "hoc-snake-1.jpg": {
+    "original": "/images/blog/hoc-snake-1.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/hoc-snake-1.webp",
+      "medium": "/images/optimized/medium/hoc-snake-1.webp",
+      "large": "/images/optimized/large/hoc-snake-1.webp",
+      "full": "/images/optimized/full/hoc-snake-1.webp"
+    }
+  },
+  "image-10.png": {
+    "original": "/images/blog/image-10.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-10.webp",
+      "medium": "/images/optimized/medium/image-10.webp",
+      "large": "/images/optimized/large/image-10.webp",
+      "full": "/images/optimized/full/image-10.webp"
+    }
+  },
+  "image-11.png": {
+    "original": "/images/blog/image-11.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-11.webp",
+      "medium": "/images/optimized/medium/image-11.webp",
+      "large": "/images/optimized/large/image-11.webp",
+      "full": "/images/optimized/full/image-11.webp"
+    }
+  },
+  "image-12.png": {
+    "original": "/images/blog/image-12.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-12.webp",
+      "medium": "/images/optimized/medium/image-12.webp",
+      "large": "/images/optimized/large/image-12.webp",
+      "full": "/images/optimized/full/image-12.webp"
+    }
+  },
+  "image-15.png": {
+    "original": "/images/blog/image-15.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-15.webp",
+      "medium": "/images/optimized/medium/image-15.webp",
+      "large": "/images/optimized/large/image-15.webp",
+      "full": "/images/optimized/full/image-15.webp"
+    }
+  },
+  "image-16.png": {
+    "original": "/images/blog/image-16.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-16.webp",
+      "medium": "/images/optimized/medium/image-16.webp",
+      "large": "/images/optimized/large/image-16.webp",
+      "full": "/images/optimized/full/image-16.webp"
+    }
+  },
+  "image-17.png": {
+    "original": "/images/blog/image-17.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-17.webp",
+      "medium": "/images/optimized/medium/image-17.webp",
+      "large": "/images/optimized/large/image-17.webp",
+      "full": "/images/optimized/full/image-17.webp"
+    }
+  },
+  "image-2.png": {
+    "original": "/images/blog/image-2.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-2.webp",
+      "medium": "/images/optimized/medium/image-2.webp",
+      "large": "/images/optimized/large/image-2.webp",
+      "full": "/images/optimized/full/image-2.webp"
+    }
+  },
+  "image-3.png": {
+    "original": "/images/blog/image-3.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-3.webp",
+      "medium": "/images/optimized/medium/image-3.webp",
+      "large": "/images/optimized/large/image-3.webp",
+      "full": "/images/optimized/full/image-3.webp"
+    }
+  },
+  "image-4.png": {
+    "original": "/images/blog/image-4.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-4.webp",
+      "medium": "/images/optimized/medium/image-4.webp",
+      "large": "/images/optimized/large/image-4.webp",
+      "full": "/images/optimized/full/image-4.webp"
+    }
+  },
+  "image-5.png": {
+    "original": "/images/blog/image-5.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-5.webp",
+      "medium": "/images/optimized/medium/image-5.webp",
+      "large": "/images/optimized/large/image-5.webp",
+      "full": "/images/optimized/full/image-5.webp"
+    }
+  },
+  "image-6.png": {
+    "original": "/images/blog/image-6.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-6.webp",
+      "medium": "/images/optimized/medium/image-6.webp",
+      "large": "/images/optimized/large/image-6.webp",
+      "full": "/images/optimized/full/image-6.webp"
+    }
+  },
+  "image-7.png": {
+    "original": "/images/blog/image-7.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-7.webp",
+      "medium": "/images/optimized/medium/image-7.webp",
+      "large": "/images/optimized/large/image-7.webp",
+      "full": "/images/optimized/full/image-7.webp"
+    }
+  },
+  "image-8.png": {
+    "original": "/images/blog/image-8.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image-8.webp",
+      "medium": "/images/optimized/medium/image-8.webp",
+      "large": "/images/optimized/large/image-8.webp",
+      "full": "/images/optimized/full/image-8.webp"
+    }
+  },
+  "image.png": {
+    "original": "/images/blog/image.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image.webp",
+      "medium": "/images/optimized/medium/image.webp",
+      "large": "/images/optimized/large/image.webp",
+      "full": "/images/optimized/full/image.webp"
+    }
+  },
+  "image_(12).png": {
+    "original": "/images/blog/image_(12).png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/image_(12).webp",
+      "medium": "/images/optimized/medium/image_(12).webp",
+      "large": "/images/optimized/large/image_(12).webp",
+      "full": "/images/optimized/full/image_(12).webp"
+    }
+  },
+  "map-reduce-filter.jpg": {
+    "original": "/images/blog/map-reduce-filter.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/map-reduce-filter.webp",
+      "medium": "/images/optimized/medium/map-reduce-filter.webp",
+      "large": "/images/optimized/large/map-reduce-filter.webp",
+      "full": "/images/optimized/full/map-reduce-filter.webp"
+    }
+  },
+  "photo-1471107340929-a87cd0f5b5f3.jpeg": {
+    "original": "/images/blog/photo-1471107340929-a87cd0f5b5f3.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/photo-1471107340929-a87cd0f5b5f3.webp",
+      "medium": "/images/optimized/medium/photo-1471107340929-a87cd0f5b5f3.webp",
+      "large": "/images/optimized/large/photo-1471107340929-a87cd0f5b5f3.webp",
+      "full": "/images/optimized/full/photo-1471107340929-a87cd0f5b5f3.webp"
+    }
+  },
+  "reduce-lumber.jpg": {
+    "original": "/images/blog/reduce-lumber.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/reduce-lumber.webp",
+      "medium": "/images/optimized/medium/reduce-lumber.webp",
+      "large": "/images/optimized/large/reduce-lumber.webp",
+      "full": "/images/optimized/full/reduce-lumber.webp"
+    }
+  },
+  "scott-trento-xrBxbPiK2w8-unsplash.jpg": {
+    "original": "/images/blog/scott-trento-xrBxbPiK2w8-unsplash.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/scott-trento-xrBxbPiK2w8-unsplash.webp",
+      "medium": "/images/optimized/medium/scott-trento-xrBxbPiK2w8-unsplash.webp",
+      "large": "/images/optimized/large/scott-trento-xrBxbPiK2w8-unsplash.webp",
+      "full": "/images/optimized/full/scott-trento-xrBxbPiK2w8-unsplash.webp"
+    }
+  },
+  "throttle-debounce-1.jpg": {
+    "original": "/images/blog/throttle-debounce-1.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/throttle-debounce-1.webp",
+      "medium": "/images/optimized/medium/throttle-debounce-1.webp",
+      "large": "/images/optimized/large/throttle-debounce-1.webp",
+      "full": "/images/optimized/full/throttle-debounce-1.webp"
+    }
+  },
+  "westboundary-photography-chris-gill-60180-unsplash.jpg": {
+    "original": "/images/blog/westboundary-photography-chris-gill-60180-unsplash.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/westboundary-photography-chris-gill-60180-unsplash.webp",
+      "medium": "/images/optimized/medium/westboundary-photography-chris-gill-60180-unsplash.webp",
+      "large": "/images/optimized/large/westboundary-photography-chris-gill-60180-unsplash.webp",
+      "full": "/images/optimized/full/westboundary-photography-chris-gill-60180-unsplash.webp"
+    }
+  }
+}
