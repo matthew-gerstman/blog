@@ -35,19 +35,16 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # Set base path for branch subdirectory
           VITE_BASE: /blog/previews/${{ github.ref_name }}/
         
       - name: Prepare deployment directory
         run: |
-          # Create branch-specific directory
           BRANCH_NAME="${{ github.ref_name }}"
           SAFE_BRANCH_NAME=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9-]/-/g')
           mkdir -p deploy/previews/$SAFE_BRANCH_NAME
           cp -r dist/* deploy/previews/$SAFE_BRANCH_NAME/
           
-          # Create index for previews listing
-          cat > deploy/previews/index.html << 'HTML'
+          cat > deploy/previews/index.html << 'HTMLEOF'
           <!DOCTYPE html>
           <html>
           <head>
@@ -89,7 +86,7 @@ jobs:
             </script>
           </body>
           </html>
-HTML
+          HTMLEOF
           
           echo "SAFE_BRANCH_NAME=$SAFE_BRANCH_NAME" >> $GITHUB_ENV
           
@@ -101,7 +98,6 @@ HTML
           
       - name: Update gh-pages
         run: |
-          # Copy new preview to gh-pages
           mkdir -p gh-pages-branch/previews
           cp -r deploy/previews/$SAFE_BRANCH_NAME gh-pages-branch/previews/
           cp deploy/previews/index.html gh-pages-branch/previews/
@@ -132,7 +128,6 @@ HTML
             
             [View all previews](https://${{ github.repository_owner }}.github.io/blog/previews/)`;
             
-            // Find existing comment
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
