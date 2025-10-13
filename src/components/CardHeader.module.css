@@ -1,0 +1,47 @@
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--text);
+  margin: 0;
+  flex: 1;
+}
+
+.year {
+  font-size: 0.875rem;
+  color: var(--grappa-bright);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.expandIcon {
+  font-size: 1.5rem;
+  color: var(--grappa-bright);
+  font-weight: 300;
+  line-height: 1;
+  user-select: none;
+}
+
+.role {
+  font-size: 0.875rem;
+  color: var(--grappa-bright);
+  font-weight: 500;
+  margin: 0.5rem 0 0.75rem 0;
+  font-style: italic;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--grappa-bright);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}

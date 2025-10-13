@@ -1,10 +1,13 @@
 export interface Project {
   title: string;
   year: string;
+  startYear: number;
+  endYear: number;
   description: string;
-  challenge?: string;
-  approach?: string[];
+  context?: string;
+  execution?: string[];
   impact?: string;
+  role?: string;
   technologies?: string[];
   leadership?: string[];
 }

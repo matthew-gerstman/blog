@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { talks } from '../data/talks';
+import { CardHeader } from '../components/CardHeader';
+import { TagList } from '../components/TagList';
+import { MetaInfo } from '../components/MetaInfo';
 import styles from './Talks.module.css';
 
 export function Talks() {
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-  // Get all unique tags
   const allTags = Array.from(new Set(talks.flatMap(talk => talk.tags || [])));
-
-  // Filter talks by selected tag
   const filteredTalks = selectedTag
     ? talks.filter(talk => talk.tags?.includes(selectedTag))
     : talks;
@@ -27,7 +27,6 @@ export function Talks() {
         </p>
       </header>
 
-      {/* Tag Filter */}
       <div className={styles.tagFilter}>
         <button
           className={`${styles.tagButton} ${!selectedTag ? styles.active : ''}`}
@@ -46,7 +45,6 @@ export function Talks() {
         ))}
       </div>
 
-      {/* Talks Grid */}
       <div className={styles.talksGrid}>
         {filteredTalks.map(talk => {
           const isExpanded = expandedId === talk.id;
@@ -56,7 +54,6 @@ export function Talks() {
               key={talk.id} 
               className={`${styles.talkCard} ${isExpanded ? styles.expanded : ''}`}
             >
-              {/* Thumbnail/Video */}
               <div className={styles.videoSection}>
                 {isExpanded ? (
                   <div className={styles.videoWrapper}>
@@ -77,7 +74,6 @@ export function Talks() {
                       src={`https://img.youtube.com/vi/${talk.video.split('?')[0]}/maxresdefault.jpg`}
                       alt={talk.title}
                       onError={(e) => {
-                        // Fallback to standard quality if maxres doesn't exist
                         (e.target as HTMLImageElement).src = 
                           `https://img.youtube.com/vi/${talk.video.split('?')[0]}/hqdefault.jpg`;
                       }}
@@ -92,47 +88,24 @@ export function Talks() {
                 )}
               </div>
 
-              {/* Content */}
               <div className={styles.content}>
-                <div className={styles.meta}>
-                  {talk.date && <span className={styles.date}>{talk.date}</span>}
-                  {talk.venue && (
-                    <>
-                      <span className={styles.separator}>•</span>
-                      <span className={styles.venue}>{talk.venue}</span>
-                    </>
-                  )}
-                </div>
-
-                <h2 
-                  className={styles.title}
-                  onClick={() => toggleExpand(talk.id)}
-                >
-                  {talk.title}
-                </h2>
+                <MetaInfo items={[talk.date, talk.venue]} />
                 
-                {talk.subtitle && (
-                  <div className={styles.conference}>{talk.subtitle}</div>
-                )}
+                <CardHeader
+                  title={talk.title}
+                  subtitle={talk.subtitle}
+                  hasExpand={false}
+                  onClick={() => toggleExpand(talk.id)}
+                />
 
                 <p className={styles.description}>{talk.description}</p>
 
-                {/* Tags */}
-                {talk.tags && talk.tags.length > 0 && (
-                  <div className={styles.tags}>
-                    {talk.tags.map(tag => (
-                      <span 
-                        key={tag} 
-                        className={styles.tag}
-                        onClick={() => setSelectedTag(tag)}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
+                <TagList 
+                  tags={talk.tags} 
+                  onTagClick={setSelectedTag}
+                  className={styles.tags}
+                />
 
-                {/* Watch Button */}
                 <button 
                   className={styles.watchButton}
                   onClick={() => toggleExpand(talk.id)}
