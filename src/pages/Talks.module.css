@@ -27,6 +27,7 @@
 }
 
 /* Tag Filter */
+.tagFilter {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -36,6 +37,7 @@
   border-bottom: 1px solid var(--grappa-border);
 }
 
+.tagButton {
   padding: 0.5rem 1rem;
   border-radius: 20px;
   border: 1px solid var(--grappa-border);
@@ -47,11 +49,13 @@
   font-weight: 500;
 }
 
+.tagButton:hover {
   border-color: var(--grappa-bright);
   color: var(--text);
   transform: translateY(-1px);
 }
 
+.tagButton.active {
   background: var(--grappa-bright);
   color: var(--background);
   border-color: var(--grappa-bright);
@@ -153,43 +157,6 @@
   flex: 1;
 }
 
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  color: var(--grappa-bright);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-}
-
-  color: var(--grappa-bright);
-}
-
-  opacity: 0.5;
-}
-
-  color: var(--grappa-bright);
-}
-
-  font-size: 1.375rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
-  color: var(--text);
-  cursor: pointer;
-  transition: color 0.2s;
-  margin: 0;
-}
-
-  color: var(--grappa-bright);
-}
-
-  font-size: 0.9rem;
-  color: var(--grappa-bright);
-  font-weight: 500;
-}
-
 .description {
   font-size: 0.95rem;
   line-height: 1.6;
@@ -199,27 +166,8 @@
   flex: 1;
 }
 
-/* Tags */
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.tags {
   margin-top: 0.5rem;
-}
-
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--grappa-border);
-  color: var(--grappa-bright);
-  font-size: 0.75rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-weight: 500;
-}
-
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--grappa-bright);
-  transform: translateY(-1px);
 }
 
 /* Watch Button */
