@@ -19,4 +19,6 @@ export const bannerImages: { [key: string]: string } = {
   'mary-had-a-little-lambda': '/images/blog/Lambda-Tree.jpg',
   'all-in-on-homekit': '/images/blog/01-1.jpeg',
   'redux-code-split-typecheck': '/images/blog/Redux-Trees.jpeg',
+  'migrating-from-underscore-to-lodash': '/images/blog/underscore-lodash-train.jpg',
+  'software-engineering-lifecycle-dropbox-plus': '/images/blog/dropbox-plus-mountains.jpg',
 };
