@@ -4,6 +4,7 @@ import type { Post } from '../types';
 import { calculateReadingTime, getWordCount } from '../utils/reading';
 import { bannerImages } from '../data/banners';
 import { useKeyboard } from '../hooks/useKeyboard';
+import { TwitterEmbed } from '../components/TwitterEmbed';
 import styles from './Article.module.css';
 
 interface ArticleProps {
@@ -14,6 +15,7 @@ export function Article({ posts }: ArticleProps) {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [post, setPost] = useState<Post | null>(null);
+  const [hasTwitterEmbed, setHasTwitterEmbed] = useState(false);
 
   useEffect(() => {
     if (!slug) {
@@ -28,6 +30,12 @@ export function Article({ posts }: ArticleProps) {
     }
     
     setPost(foundPost);
+    
+    // Check if post has Twitter embeds
+    const hasTwitter = foundPost.content.includes('twitter-tweet') || 
+                       foundPost.content.toLowerCase().includes('twitter.com');
+    setHasTwitterEmbed(hasTwitter);
+    
     window.scrollTo(0, 0);
     
     setTimeout(() => {
@@ -58,6 +66,28 @@ export function Article({ posts }: ArticleProps) {
       document.querySelectorAll('.article-body h2').forEach((heading, index) => {
         heading.id = `heading-${index}`;
       });
+      
+      // Make YouTube embeds responsive
+      document.querySelectorAll('.article-body iframe[src*="youtube"]').forEach((iframe) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'responsive-embed';
+        wrapper.style.position = 'relative';
+        wrapper.style.paddingBottom = '56.25%';
+        wrapper.style.height = '0';
+        wrapper.style.overflow = 'hidden';
+        wrapper.style.margin = '2rem 0';
+        wrapper.style.borderRadius = '8px';
+        
+        iframe.parentNode?.insertBefore(wrapper, iframe);
+        wrapper.appendChild(iframe);
+        
+        (iframe as HTMLIFrameElement).style.position = 'absolute';
+        (iframe as HTMLIFrameElement).style.top = '0';
+        (iframe as HTMLIFrameElement).style.left = '0';
+        (iframe as HTMLIFrameElement).style.width = '100%';
+        (iframe as HTMLIFrameElement).style.height = '100%';
+        (iframe as HTMLIFrameElement).style.border = 'none';
+      });
     }, 100);
   }, [slug, posts, navigate]);
 
@@ -78,6 +108,8 @@ export function Article({ posts }: ArticleProps) {
 
   return (
     <article className={styles.article}>
+      {hasTwitterEmbed && <TwitterEmbed />}
+      
       <header className={styles.header}>
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.metaBar}>
