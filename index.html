@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matthew Gerstman</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css" id="highlight-theme">
+    <style>
+      /* Prevent white flash - set dark mode colors immediately */
+      html {
+        background-color: #1a1a1a;
+        color: #ffffff;
+      }
+      html[data-theme="light"] {
+        background-color: #ffffff;
+        color: #1a1a1a;
+      }
+    </style>
+    <script>
+      // Set theme immediately before any content renders
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const theme = savedTheme || 'dark'; // Default to dark mode
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
     <script>
       // GitHub Pages SPA redirect handler
       (function(l) {
