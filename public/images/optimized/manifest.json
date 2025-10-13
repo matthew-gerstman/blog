@@ -278,13 +278,13 @@
       "full": "/images/optimized/full/hero-northern-lights.webp"
     }
   },
-  "hero-workspace.jpeg": {
-    "original": "/images/blog/hero-workspace.jpeg",
+  "hero-technical-interview.jpg": {
+    "original": "/images/blog/hero-technical-interview.jpg",
     "sizes": {
-      "thumbnail": "/images/optimized/thumbnail/hero-workspace.webp",
-      "medium": "/images/optimized/medium/hero-workspace.webp",
-      "large": "/images/optimized/large/hero-workspace.webp",
-      "full": "/images/optimized/full/hero-workspace.webp"
+      "thumbnail": "/images/optimized/thumbnail/hero-technical-interview.webp",
+      "medium": "/images/optimized/medium/hero-technical-interview.webp",
+      "large": "/images/optimized/large/hero-technical-interview.webp",
+      "full": "/images/optimized/full/hero-technical-interview.webp"
     }
   },
   "history-of-the-web/browser-market-share.png": {
@@ -404,6 +404,15 @@
       "full": "/images/optimized/full/how-redux-works/redux-architecture-hero.webp"
     }
   },
+  "living-room.jpeg": {
+    "original": "/images/blog/living-room.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/living-room.webp",
+      "medium": "/images/optimized/medium/living-room.webp",
+      "large": "/images/optimized/large/living-room.webp",
+      "full": "/images/optimized/full/living-room.webp"
+    }
+  },
   "map-filter-reduce/map-filter-reduce-hero.jpg": {
     "original": "/images/blog/map-filter-reduce/map-filter-reduce-hero.jpg",
     "sizes": {
@@ -440,15 +449,6 @@
       "full": "/images/optimized/full/migrating-from-underscore-to-lodash/underscore-lodash-train.webp"
     }
   },
-  "misc-01.jpeg": {
-    "original": "/images/blog/misc-01.jpeg",
-    "sizes": {
-      "thumbnail": "/images/optimized/thumbnail/misc-01.webp",
-      "medium": "/images/optimized/medium/misc-01.webp",
-      "large": "/images/optimized/large/misc-01.webp",
-      "full": "/images/optimized/full/misc-01.webp"
-    }
-  },
   "misc-1438.jpeg": {
     "original": "/images/blog/misc-1438.jpeg",
     "sizes": {
@@ -467,6 +467,15 @@
       "full": "/images/optimized/full/misc-diagram.webp"
     }
   },
+  "public-speaking.jpg": {
+    "original": "/images/blog/public-speaking.jpg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/public-speaking.webp",
+      "medium": "/images/optimized/medium/public-speaking.webp",
+      "large": "/images/optimized/large/public-speaking.webp",
+      "full": "/images/optimized/full/public-speaking.webp"
+    }
+  },
   "reduce-reduce-reduce/reduce-function-hero.jpg": {
     "original": "/images/blog/reduce-reduce-reduce/reduce-function-hero.jpg",
     "sizes": {
@@ -483,15 +492,6 @@
       "medium": "/images/optimized/medium/software-engineering-lifecycle-dropbox-plus/dropbox-plus-hero.webp",
       "large": "/images/optimized/large/software-engineering-lifecycle-dropbox-plus/dropbox-plus-hero.webp",
       "full": "/images/optimized/full/software-engineering-lifecycle-dropbox-plus/dropbox-plus-hero.webp"
-    }
-  },
-  "surviving-the-technical-interview/technical-interview-hero.jpg": {
-    "original": "/images/blog/surviving-the-technical-interview/technical-interview-hero.jpg",
-    "sizes": {
-      "thumbnail": "/images/optimized/thumbnail/surviving-the-technical-interview/technical-interview-hero.webp",
-      "medium": "/images/optimized/medium/surviving-the-technical-interview/technical-interview-hero.webp",
-      "large": "/images/optimized/large/surviving-the-technical-interview/technical-interview-hero.webp",
-      "full": "/images/optimized/full/surviving-the-technical-interview/technical-interview-hero.webp"
     }
   },
   "throttle-and-debounce/throttle-debounce-hero.jpg": {
