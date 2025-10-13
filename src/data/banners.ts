@@ -1,4 +1,4 @@
-export const banners: { [key: string]: string } = {
+export const bannerImages: { [key: string]: string } = {
   'performance-testing-anonymous-functions': '/images/blog/ahmad-dirini-F7Sive0fwIg-unsplash.jpg',
   'surviving-the-technical-interview': '/images/blog/photo-1471107340929-a87cd0f5b5f3.jpeg',
   'reduce-reduce-reduce': '/images/blog/reduce-lumber.jpg',
