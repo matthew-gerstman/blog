@@ -83,21 +83,52 @@
 }
 
 .projectImpact {
-  background: var(--surface);
-  padding: 0.75rem 1rem;
+  position: relative;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  background: linear-gradient(135deg, var(--grappa) 0%, var(--grappa-bright) 100%);
   border-radius: 8px;
-  border-left: 3px solid var(--grappa-bright);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text);
-  margin: 0.75rem 0;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  box-shadow: 0 4px 12px rgba(99, 44, 166, 0.2);
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover .projectImpact {
+  box-shadow: 0 6px 16px rgba(99, 44, 166, 0.3);
+  transform: translateY(-2px);
+}
+
+.projectImpact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  border-radius: 8px;
+  pointer-events: none;
 }
 
 .impactIcon {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  animation: pulse 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 .projectTags {
@@ -195,5 +226,14 @@
 
   .expandIcon {
     opacity: 1;
+  }
+
+  .projectImpact {
+    font-size: 0.95rem;
+    padding: 0.875rem 1rem;
+  }
+
+  .impactIcon {
+    font-size: 1.25rem;
   }
 }
