@@ -7,6 +7,7 @@ export interface Post {
   content: string;
   tags: string[];
   featureImage?: string;
+  banner_img?: string;
 }
 
 export interface Talk {

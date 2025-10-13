@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import type { Post } from '../types';
 import { searchPosts } from '../utils/search';
 import { calculateReadingTime } from '../utils/reading';
-import { bannerImages } from '../data/banners';
 import styles from './SearchModal.module.css';
 
 interface SearchModalProps {
@@ -79,7 +78,7 @@ export function SearchModal({ isOpen, onClose, posts }: SearchModalProps) {
           {!query && <div className={styles.empty}>Type to search articles...</div>}
           {query && results.length === 0 && <div className={styles.empty}>No articles found</div>}
           {results.map((post, index) => {
-            const banner = bannerImages[post.slug];
+            const banner = post.banner_img;
             const readingTime = calculateReadingTime(post.content);
             return (
               <div

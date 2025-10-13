@@ -3,7 +3,6 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import type { Post } from '../types';
 import { calculateReadingTime, getWordCount } from '../utils/reading';
-import { bannerImages } from '../data/banners';
 import { useKeyboard } from '../hooks/useKeyboard';
 import { TwitterEmbed } from '../components/TwitterEmbed';
 import { BasicDemo, ThrottleDemo, DebounceDemo } from '../demos/ThrottleDebounceDemo';
@@ -131,7 +130,7 @@ export function Article({ posts }: ArticleProps) {
 
   const readingTime = calculateReadingTime(post.content);
   const wordCount = getWordCount(post.content);
-  const banner = bannerImages[post.slug];
+  const banner = post.banner_img;
 
   return (
     <article className={styles.article}>
