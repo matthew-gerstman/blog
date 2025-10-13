@@ -1,13 +1,13 @@
 export const talks = [
   {
     id: 1,
-    title: 'TypeScript: Seeing Past the Hype',
-    subtitle: 'ReactiveConf',
-    video: 'KdvEGPiULAQ',
-    date: '2019',
-    venue: 'Prague, Czech Republic',
-    description: 'A pragmatic look at TypeScript adoption beyond the buzz. This talk explores real-world benefits, common pitfalls, and strategies for introducing static types to existing JavaScript codebases without disrupting your team\'s velocity.',
-    tags: ['TypeScript', 'JavaScript', 'Developer Experience']
+    title: 'Double Your Salary With This One Simple Trick',
+    subtitle: '',
+    video: 'm1XdasrstCc',
+    date: '2020',
+    venue: 'NYC',
+    description: 'A candid, no-BS talk about career growth in tech. Covers negotiation tactics, when to switch jobs, how to build leverage, and the uncomfortable truths about compensation that most people learn too late in their careers.',
+    tags: ['Career', 'Negotiation', 'Compensation']
   },
   {
     id: 2,
@@ -21,13 +21,13 @@ export const talks = [
   },
   {
     id: 3,
-    title: 'Building a Typesafe Code Split React-Redux Application',
-    subtitle: '',
-    video: 'Mumy5YZZ2gs',
-    date: '2018',
-    venue: 'NYC',
-    description: 'Combining TypeScript with React and Redux while maintaining code splitting presents unique challenges. This talk demonstrates patterns for achieving full type safety across async boundaries without sacrificing bundle size or load performance.',
-    tags: ['React', 'Redux', 'Code Splitting', 'TypeScript']
+    title: 'TypeScript: Seeing Past the Hype',
+    subtitle: 'ReactiveConf',
+    video: 'KdvEGPiULAQ',
+    date: '2019',
+    venue: 'Prague, Czech Republic',
+    description: 'A pragmatic look at TypeScript adoption beyond the buzz. This talk explores real-world benefits, common pitfalls, and strategies for introducing static types to existing JavaScript codebases without disrupting your team\'s velocity.',
+    tags: ['TypeScript', 'JavaScript', 'Developer Experience']
   },
   {
     id: 4,
@@ -41,13 +41,13 @@ export const talks = [
   },
   {
     id: 5,
-    title: 'Double Your Salary With This One Simple Trick',
+    title: 'Building a Typesafe Code Split React-Redux Application',
     subtitle: '',
-    video: 'm1XdasrstCc',
-    date: '2020',
-    venue: 'Online',
-    description: 'A candid, no-BS talk about career growth in tech. Covers negotiation tactics, when to switch jobs, how to build leverage, and the uncomfortable truths about compensation that most people learn too late in their careers.',
-    tags: ['Career', 'Negotiation', 'Compensation']
+    video: 'Mumy5YZZ2gs',
+    date: '2018',
+    venue: 'NYC',
+    description: 'Combining TypeScript with React and Redux while maintaining code splitting presents unique challenges. This talk demonstrates patterns for achieving full type safety across async boundaries without sacrificing bundle size or load performance.',
+    tags: ['React', 'Redux', 'Code Splitting', 'TypeScript']
   },
   {
     id: 6,
