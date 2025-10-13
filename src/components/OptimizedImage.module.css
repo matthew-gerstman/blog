@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.image.loading {
+  filter: blur(10px);
+}
+
+.image.loaded {
+  filter: blur(0);
+}
