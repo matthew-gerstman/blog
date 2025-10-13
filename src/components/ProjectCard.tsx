@@ -48,8 +48,7 @@ export function ProjectCard({
         <p className={styles.projectDescription}>{description}</p>
         {impact && (
           <div className={styles.projectImpact}>
-            
-            {impact}
+            <span className={styles.outcomeLabel}>Outcome:</span> {impact}
           </div>
         )}
         {technologies && technologies.length > 0 && (
