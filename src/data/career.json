@@ -15,24 +15,47 @@
       "projects": [
         {
           "title": "Notebooks 2.0",
-          "year": "2024",
-          "description": "Complete rebuild of collaborative data science tooling to support real-time multi-user editing and complex notebook interactions at scale.",
+          "year": "2023-2024",
+          "startYear": 2023,
+          "endYear": 2024,
+          "role": "Engineering Manager",
+          "description": "Led the complete rebuild of Datadog's collaborative notebook editor, managing a team through parallel rich text and multiplayer initiatives while maintaining a Ted Lasso-inspired leadership approach.",
+          "impact": "Shipped production collaborative editor to 100% of Datadog customers. Grew team from 0 to 4 engineers with 2 promotions. Established customer-driven release cadence that went from alpha to full GA in 9 months.",
+          "context": "Datadog's legacy notebooks were built as a list of markdown cells plus visualizations (tiledefs rendered via Univiz). The product needed real-time multiplayer collaboration and a modern rich text editing experience. Two parallel technical initiatives—rich text and multiplayer—required careful coordination while retrofitting onto legacy architecture.",
+          "execution": [
+            "Identified architectural conflict: ProseMirror and Redux competing for state management, ProseMirror and React competing for DOM control",
+            "Guided team to design fast/slow loop architecture—short loop within ProseMirror, long loop through Redux for what we called Multiplayer V0",
+            "Established weekly learning sessions covering Redux internals, type design, React fundamentals to level up the team",
+            "Mentored IC2 engineer (Danielle) toward senior promotion by having her learn concepts then teach them to the team",
+            "Coordinated parallel workstreams: multiplayer squad built Node service receiving CRDTs from clients and hitting legacy APIs; rich text squad implemented fast/slow loops and core editing features",
+            "Shipped rich text features: inlined widgets with text handling, copy/paste, toolbar, list indentation/continuation, codeblocks, comments, version history, inline tables",
+            "Ran two-week quality sprint with daily 90-minute assigned pairing sessions to maximize knowledge transfer and establish pairing culture",
+            "Turned on Multiplayer V1 for employees in Q4, handled integration bugs with focus on preventing data loss (addressed critical incident where docs overwrote with empty state)",
+            "Built customer pipeline: identified high-usage customers, coordinated with CSMs, scheduled pitch meetings, launched to Square before EOY",
+            "Established release principle: ship to someone new every week, more customers each week than the last",
+            "Responded to customer feedback mid-rollout: ran 'bring back buttons' initiative to add click interfaces on keyboard-first design, personally built print mode using knowledge from previous dashboard reports project",
+            "Built custom gating service to bypass feature flag limitations—loaded existing notebook orgs into memory, allowed instant rollout from 20% to 95% of paying customers",
+            "Leveraged markdown import/export to support API users managing notebooks via legacy cell model",
+            "Shipped to 100% of customers including API users to complete launch"
+          ],
+          "leadership": [
+            "Managed 4 direct reports with 2 promotions: Danielle (IC2→IC3, owned copy/paste and architecture refactors), Rowani (IC1→IC2, owned lists, version history, test coverage, markdown import/export), Jose (IC2, owned comments and widget editing), Anna (hired IC1, bugfixes, table implementation, emoji)",
+            "Created teaching-focused culture where engineers learned by teaching others",
+            "Established quality-first sprint methodology with structured pairing to spread system knowledge",
+            "Built customer council with shared Slack channels for rapid feedback loops",
+            "Balanced technical leadership with customer advocacy throughout launch process"
+          ],
           "technologies": [
+            "ProseMirror",
+            "Yjs",
+            "CRDTs",
+            "WebSockets",
             "TypeScript",
             "React",
+            "Redux",
+            "Node.js",
             "Real-time Collaboration"
-          ],
-          "context": "Build production-ready collaborative editing platform for data science notebooks with complex state management for multi-user scenarios.",
-          "execution": [
-            "Architected real-time collaboration system for data science notebooks",
-            "Built complex state management for multi-user editing scenarios",
-            "Implemented sophisticated UI for notebook cell interactions",
-            "Designed for performance with large datasets and visualizations",
-            "Created robust testing framework for complex UI interactions"
-          ],
-          "role": "",
-          "startYear": 2024,
-          "endYear": 2024
+          ]
         },
         {
           "title": "Dashboard Type Safety Initiative",
