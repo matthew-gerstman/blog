@@ -10,7 +10,7 @@
       "Tech",
       "react"
     ],
-    "banner_img": "/images/blog/ahmad-dirini-F7Sive0fwIg-unsplash.jpg"
+    "banner_img": "/images/blog/hero-mountains-night.jpg"
   },
   {
     "id": 16,
@@ -22,7 +22,7 @@
     "tags": [
       "Tech"
     ],
-    "banner_img": "/images/blog/photo-1471107340929-a87cd0f5b5f3.jpeg",
+    "banner_img": "/images/blog/surviving-the-technical-interview/technical-interview-hero.jpg",
     "heroImage": ""
   },
   {
@@ -36,7 +36,7 @@
       "Tech",
       "functional-programming"
     ],
-    "banner_img": "/images/blog/reduce-lumber.jpg",
+    "banner_img": "/images/blog/reduce-reduce-reduce/reduce-function-hero.jpg",
     "heroImage": ""
   },
   {
@@ -50,7 +50,7 @@
       "Tech",
       "functional-programming"
     ],
-    "banner_img": "/images/blog/map-reduce-filter.jpg",
+    "banner_img": "/images/blog/map-filter-reduce/map-filter-reduce-hero.jpg",
     "heroImage": ""
   },
   {
@@ -63,7 +63,7 @@
     "tags": [
       "Tech"
     ],
-    "banner_img": "/images/blog/throttle-debounce-1.jpg",
+    "banner_img": "/images/blog/throttle-and-debounce/throttle-debounce-hero.jpg",
     "heroImage": ""
   },
   {
@@ -79,7 +79,7 @@
       "javascript",
       "typescript"
     ],
-    "banner_img": "/images/blog/benjamin-voros-phIFdC6lA4E-unsplash.jpg",
+    "banner_img": "/images/blog/hero-northern-lights.jpg",
     "heroImage": ""
   },
   {
@@ -93,7 +93,7 @@
       "Tech",
       "redux"
     ],
-    "banner_img": "/images/blog/westboundary-photography-chris-gill-60180-unsplash.jpg"
+    "banner_img": "/images/blog/hero-mountain-valley.jpg"
   },
   {
     "id": 2,
@@ -106,7 +106,7 @@
       "Tech",
       "redux"
     ],
-    "banner_img": "/images/blog/blake-richard-verdoorn-20063-unsplash-1.jpg",
+    "banner_img": "/images/blog/how-redux-works/redux-architecture-hero.jpeg",
     "heroImage": ""
   },
   {
@@ -119,7 +119,7 @@
     "tags": [
       "Tech"
     ],
-    "banner_img": "/images/blog/hoc-snake-1.jpg",
+    "banner_img": "/images/blog/ts-tricks-higher-order-components/higher-order-components-hero.jpg",
     "heroImage": ""
   },
   {
@@ -133,7 +133,7 @@
       "Tech",
       "typescript"
     ],
-    "banner_img": "/images/blog/Type-Guards.jpg",
+    "banner_img": "/images/blog/ts-tricks-type-guards/type-guards-hero.jpg",
     "heroImage": ""
   },
   {
@@ -148,7 +148,7 @@
       "typescript",
       "redux"
     ],
-    "banner_img": "/images/blog/Reducer-Trees.jpg",
+    "banner_img": "/images/blog/ts-tricks-type-safe-reducers/type-safe-reducers-hero.jpg",
     "heroImage": ""
   },
   {
@@ -162,7 +162,7 @@
       "Tech",
       "functional-programming"
     ],
-    "banner_img": "/images/blog/FP-Wood.jpg",
+    "banner_img": "/images/blog/functional-programming-fundamentals/functional-programming-hero.jpg",
     "heroImage": ""
   },
   {
@@ -178,7 +178,7 @@
       "typescript",
       "code-splitting"
     ],
-    "banner_img": "/images/blog/Redux-Trees.jpeg"
+    "banner_img": "/images/blog/hero-mountain-lake.jpg"
   },
   {
     "id": 14,
@@ -192,7 +192,7 @@
       "Theater",
       "Travel"
     ],
-    "banner_img": "/images/blog/Apartment-1.jpeg",
+    "banner_img": "/images/blog/hello-there/bay-bridge-sf.jpg",
     "heroImage": ""
   },
   {
@@ -208,7 +208,7 @@
       "ecmascript",
       "Tech"
     ],
-    "banner_img": "/images/blog/scott-trento-xrBxbPiK2w8-unsplash.jpg"
+    "banner_img": "/images/blog/hero-mountain-sunset.jpg"
   },
   {
     "id": 20,
@@ -220,7 +220,7 @@
     "tags": [
       "Tech"
     ],
-    "banner_img": "/images/blog/01-1.jpeg",
+    "banner_img": "/images/blog/all-in-on-homekit/homekit-setup.jpg",
     "heroImage": ""
   },
   {
@@ -234,7 +234,7 @@
       "Tech",
       "functional-programming"
     ],
-    "banner_img": "/images/blog/Functor-Wood.jpg",
+    "banner_img": "/images/blog/what-the-functor/functor-hero.jpg",
     "heroImage": ""
   },
   {
@@ -248,7 +248,7 @@
       "Tech",
       "functional-programming"
     ],
-    "banner_img": "/images/blog/Lambda-Tree.jpg",
+    "banner_img": "/images/blog/mary-had-a-little-lambda/lambda-calculus-hero.jpg",
     "heroImage": ""
   },
   {
@@ -263,7 +263,7 @@
       "internship",
       "bay-area"
     ],
-    "banner_img": "/images/blog/Bay-Bridge.jpg"
+    "banner_img": "/images/blog/hello-there/bay-bridge-sf.jpg"
   },
   {
     "id": 15,
@@ -276,7 +276,7 @@
       "Tech",
       "public-speaking"
     ],
-    "banner_img": "/images/blog/Mic-Talks.jpg"
+    "banner_img": "/images/blog/surviving-the-technical-interview/technical-interview-hero.jpg"
   },
   {
     "id": 21,
@@ -304,6 +304,6 @@
       "dropbox",
       "product"
     ],
-    "banner_img": "/images/blog/dropbox-plus-mountains.jpg"
+    "banner_img": "/images/blog/software-engineering-lifecycle-dropbox-plus/dropbox-plus-hero.jpg"
   }
 ]
