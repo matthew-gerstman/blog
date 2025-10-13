@@ -295,3 +295,4 @@ export const career: { jobs: Job[] } = {
     }
   ]
 };
+export default career;
