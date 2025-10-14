@@ -73,11 +73,11 @@ export function ProjectCard({
             {belowTheFold?.map((section, index) => (
               <div key={index} className={styles.detailSection}>
                 <h5>{section.title}</h5>
-                {section.content.length === 1 && !Array.isArray(section.content) ? (
+                {section.content && section.content.length === 1 && !Array.isArray(section.content) ? (
                   <p>{section.content[0]}</p>
                 ) : (
                   <ul>
-                    {section.content.map((item, i) => (
+                    {section.content?.map((item, i) => (
                       <li key={i}>{item}</li>
                     ))}
                   </ul>
