@@ -2,7 +2,7 @@ import type { CareerData } from './types/career.types';
 
 const careerData: CareerData = {
   "hero": {
-    "title": "Project Timeline",
+    "title": "Career Timeline",
     "subtitle": "25+ years of building and learning"
   },
   "jobs": [
@@ -19,7 +19,7 @@ const careerData: CareerData = {
           "title": "Notebooks 2.0",
           "year": "2023-2024",
           "startYear": 2023,
-          "endYear": 2025,
+          "endYear": 2024,
           "role": "Engineering Manager",
           "description": "First-time engineering manager leading the rebuild of Datadog's collaborative notebook editor. Focused on team growth, customer engagement, and enabling technical excellence. Built customer council with rapid feedback loop.",
           "impact": "Shipped complete Notebooks 2.0 rebuild with rich text editing and real-time multiplayer collaboration. Grew team from 4 to 6 engineers with 2 promotions. Established customer council that accelerated feedback cycles.",
@@ -41,89 +41,6 @@ const careerData: CareerData = {
               ]
             }
           ]
-        },
-        {
-          "title": "Dashboard Reporting & PDF Export",
-          "year": "2022-2023",
-          "startYear": 2022,
-          "endYear": 2023,
-          "role": "Senior Software Engineer",
-          "description": "Built Datadog's report-printer node service from scratch\u2014offline dashboard snapshots with 98%+ widget fidelity. Designed client/server rendering handshake, chose Puppeteer, established Node.js patterns now used across 15+ services.",
-          "impact": "Shipped to all customers with 95%+ widget fidelity (up from 70%). Created new revenue stream and permanent team. Node.js foundation code became company standard.",
-          "technologies": [
-            "Node.js",
-            "Puppeteer",
-            "React",
-            "TypeScript",
-            "PDF Generation",
-            "gRPC",
-            "Queue Systems"
-          ],
-          "belowTheFold": [
-            {
-              "title": "Execution",
-              "content": [
-                "Architecture & Design - Prototyped for 6 weeks with weekly reviews; designed stateless queue-based system with heartbeat monitoring; built client/server handshake to coordinate React rendering, data fetching, viewport resizing, and snapshot timing",
-                "Rendering Engine Selection - Evaluated Selenium, Puppeteer, and Cypress; chose Puppeteer for browser-fidelity PDFs and thin Chrome wrapper; interviewed engineers about Selenium pain to inform decision",
-                "Quality & Fidelity - Created PrintModeAdapter to aggregate widget status; collaborated with Univiz team to expose fetch completion signals; solved split graph rendering bugs with proxy context providers",
-                "Service Foundation - Wrote all Node.js HTTP/gRPC communication code, tests, and documentation (pre-AI era); established patterns now foundational for 15+ services; implemented OBO token authentication with Puppeteer request interception",
-                "Performance & Constraints - Reduced dev loop from 30min to 1min; navigated security restrictions on Node.js infrastructure access; optimized print mode rendering by disabling interactivity; handled edge cases (note widgets, image security risks, file size bloat)"
-              ]
-            },
-            {
-              "title": "Leadership",
-              "content": [
-                "Built consensus through prototyping and stakeholder reviews",
-                "Mentored backend team on browser implementation",
-                "Transitioned to Notebooks management as project reached production"
-              ]
-            }
-          ]
-        },       
-        {
-          "title": "Integration Testing Framework",
-          "year": "2023",
-          "description": "Pioneered integration testing approach for complex UI interactions in dashboards.",
-          "technologies": [
-            "TypeScript",
-            "React",
-            "Testing"
-          ],
-          "role": "",
-          "startYear": 2023,
-          "endYear": 2023,
-          "belowTheFold": [
-            {
-              "title": "Execution",
-              "content": [
-                "Built testing patterns for multi-widget interactions",
-                "Created test utilities for dashboard scenarios",
-                "Established best practices for UI testing"
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Dashboard Type Safety",
-          "year": "2022",
-          "startYear": 2022,
-          "endYear": 2022,
-          "role": "Senior Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
-        },
-        {
-          "title": "TypeScript Cleanup Initiative",
-          "year": "2023",
-          "startYear": 2023,
-          "endYear": 2023,
-          "role": "Senior Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
         },
         {
           "title": "Graphing Summit",
@@ -156,21 +73,161 @@ const careerData: CareerData = {
           "startYear": 2024,
           "endYear": 2025,
           "role": "Engineering Manager",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
+          "description": "Designed and taught Datadog's first IC1 engineering class\u2014a 6-week intensive program covering career development, technical leadership, and organizational impact for early-career engineers.",
+          "impact": "Graduated 15 engineers with stronger career frameworks and clearer growth paths. Created reusable curriculum adopted by other teams. Demonstrated leadership in engineer development and organizational culture building.",
+          "technologies": [
+            "Teaching",
+            "Career Development",
+            "Technical Leadership",
+            "Curriculum Design"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Curriculum Design - Created 6-week program covering: technical decision-making, code review best practices, effective communication, project scoping, and career navigation. Balanced theory with practical exercises",
+                "Interactive Teaching - Led weekly 90-minute sessions with 15 engineers. Used real Datadog scenarios and case studies. Facilitated group discussions and peer learning",
+                "Career Framework Development - Built structured approach to career progression at IC1 level. Clarified expectations and growth paths. Provided actionable advice for advancement",
+                "Organizational Impact - Identified gap in early-career support and created solution. Collaborated with engineering leadership to align curriculum with company values. Set precedent for structured engineer development programs"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Dashboard Reporting & PDF Export",
+          "year": "2022-2023",
+          "startYear": 2022,
+          "endYear": 2023,
+          "role": "Software Engineer",
+          "description": "Built Datadog's report-printer node service from scratch\u2014offline dashboard snapshots with 98%+ widget fidelity. Designed client/server rendering handshake, chose Puppeteer, established Node.js patterns now used across 15+ services.",
+          "impact": "Shipped to all customers with 95%+ widget fidelity (up from 70%). Created new revenue stream and permanent team. Node.js foundation code became company standard.",
+          "technologies": [
+            "Node.js",
+            "Puppeteer",
+            "React",
+            "TypeScript",
+            "PDF Generation",
+            "gRPC",
+            "Queue Systems"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Architecture & Design - Prototyped for 6 weeks with weekly reviews; designed stateless queue-based system with heartbeat monitoring; built client/server handshake to coordinate React rendering, data fetching, viewport resizing, and snapshot timing",
+                "Rendering Engine Selection - Evaluated Selenium, Puppeteer, and Cypress; chose Puppeteer for browser-fidelity PDFs and thin Chrome wrapper; interviewed engineers about Selenium pain to inform decision",
+                "Quality & Fidelity - Created PrintModeAdapter to aggregate widget status; collaborated with Univiz team to expose fetch completion signals; solved split graph rendering bugs with proxy context providers",
+                "Service Foundation - Wrote all Node.js HTTP/gRPC communication code, tests, and documentation (pre-AI era); established patterns now foundational for 15+ services; implemented OBO token authentication with Puppeteer request interception",
+                "Performance & Constraints - Reduced dev loop from 30min to 1min; navigated security restrictions on Node.js infrastructure access; optimized print mode rendering by disabling interactivity; handled edge cases (note widgets, image security risks, file size bloat)"
+              ]
+            },
+            {
+              "title": "Leadership",
+              "content": [
+                "Built consensus through prototyping and stakeholder reviews",
+                "Mentored backend team on browser implementation",
+                "Transitioned to Notebooks management as project reached production"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Integration Testing Framework",
+          "year": "2023",
+          "startYear": 2023,
+          "endYear": 2023,
+          "role": "Software Engineer",
+          "description": "Pioneered integration testing framework for Datadog's dashboard platform, enabling reliable testing of complex multi-widget interactions that were previously untestable. Built comprehensive test suite covering critical user workflows and edge cases.",
+          "impact": "Caught regressions before production that unit tests missed. Enabled confident refactoring of complex dashboard code. Set standard for integration testing across frontend teams. Reduced bug escape rate for dashboard features.",
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Testing Frameworks",
+            "Integration Testing"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Framework Design - Built testing infrastructure supporting complex dashboard scenarios (widget interactions, time range changes, template variables, cross-widget dependencies)",
+                "Test Coverage - Wrote comprehensive integration tests for critical paths: dashboard loading, widget editing, template variable propagation, and multi-widget coordination",
+                "Developer Experience - Created clear patterns and documentation for writing integration tests, enabling other engineers to expand coverage. Balanced test reliability with execution speed"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Dashboard Type Safety & Documentation",
+          "year": "2022",
+          "startYear": 2022,
+          "endYear": 2022,
+          "role": "Software Engineer",
+          "description": "Led org-wide TypeScript migration and type safety improvement initiative for Datadog's dashboard codebase. Systematically eliminated any types, added proper type definitions, and established patterns for type-safe code.",
+          "impact": "Cut TypeScript any usage by 50% across Dashboards codebase. Reduced runtime type errors. Improved developer velocity through better IDE autocomplete and compile-time error catching. Set standard for TypeScript usage across frontend teams.",
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Redux",
+            "Type Systems"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Incremental Migration Strategy - Created phased approach to eliminate any types without blocking feature work. Prioritized high-impact areas (API boundaries, shared utilities, core data models)",
+                "Type System Design - Built comprehensive type definitions for dashboard domain models, widget configurations, and API responses. Established patterns for discriminated unions and type guards",
+                "Documentation & Tooling - Wrote comprehensive guides for widget development including configuration schemas, lifecycle hooks, and common patterns. Built tooling to validate widget configurations at compile time"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "TypeScript Cleanup Initiative",
+          "year": "2023",
+          "startYear": 2023,
+          "endYear": 2023,
+          "role": "Software Engineer",
+          "description": "Led systematic TypeScript type safety improvements across dashboard codebase. Eliminated unsafe type assertions and established patterns for type-safe code development.",
+          "impact": "Reduced runtime type errors. Improved developer velocity through better IDE support. Set standard for TypeScript usage across frontend teams. Made codebase more maintainable for future engineers.",
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Type Systems"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Systematic Audit - Reviewed codebase for unsafe type usage patterns. Prioritized fixes by impact and risk",
+                "Pattern Establishment - Created reusable patterns for common type-safety scenarios. Documented best practices for team",
+                "Team Enablement - Reviewed PRs to maintain type safety standards. Mentored engineers on advanced TypeScript features"
+              ]
+            }
+          ]
         },
         {
           "title": "Frontend Summit",
           "year": "2023",
           "startYear": 2023,
           "endYear": 2023,
-          "role": "Senior Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
+          "role": "Software Engineer",
+          "description": "Organized and ran Datadog's first-ever Frontend Summit\u2014a multi-day conference bringing together frontend engineers across the company. Created venue for cross-team knowledge sharing, technical deep dives, and community building.",
+          "impact": "Established precedent for frontend community events at Datadog. Built cross-org relationships and shared knowledge across previously siloed teams. Demonstrated leadership in frontend community building.",
+          "technologies": [
+            "Event Planning",
+            "Technical Leadership",
+            "Community Building"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Event Design & Logistics - Planned multi-day agenda with technical talks, workshops, and networking sessions. Coordinated speakers, venues, and schedules across distributed teams",
+                "Content Curation - Identified key technical topics (performance, architecture, testing, tooling) and recruited speakers from across frontend teams to share expertise",
+                "Community Building - Created space for informal knowledge transfer and relationship building across teams that rarely interacted. Established foundation for ongoing frontend collaboration"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -182,60 +239,31 @@ const careerData: CareerData = {
       "startDate": "2021-06",
       "endDate": "2022-09",
       "description": "Led frontend platform architecture and TypeScript migration for marketing technology platform.",
-      "color": "#003467",
+      "color": "#00254a",
       "projects": [
         {
           "title": "Frontend North Star & Architecture Modernization",
           "year": "2021-2022",
           "startYear": 2021,
           "endYear": 2022,
-          "role": "Staff Engineer / Frontend Lead",
-          "description": "Led frontend transformation at newly-minted unicorn ($1B valuation, $125M Series E). Established technical vision and modernized architecture to enable complex retail marketing workflows as company scaled from data science focus to product-led growth.",
-          "impact": "Published engineering blog defining frontend strategy. Established TypeScript-first culture across engineering org. Built foundation for next-generation product workflows serving enterprise retail customers.",
+          "role": "Staff Engineer",
+          "description": "Designed cohesive frontend platform strategy to unify fragmented architecture across product surfaces. Led TypeScript migration of component library with modern CSS architecture. Established patterns, created shared infrastructure, and coordinated cross-team adoption.",
+          "impact": "Unified frontend development practices. Modernized entire codebase with TypeScript and modern CSS. Reduced duplication and maintenance burden. Improved developer experience and velocity. Created scalable foundation for growth.",
           "technologies": [
             "TypeScript",
             "React",
-            "Modern CSS",
             "CSS Variables",
-            "Design Systems",
-            "gRPC",
-            "HTTP Transcoding",
-            "Code Generation",
-            "Accessibility"
-          ],
-          "links": [
-            {
-              "text": "Frontend North Star Blog Post",
-              "url": "https://medium.com/bluecore-engineering/bluecores-frontend-north-star-eb7d2a04167a"
-            }
+            "Component Design Systems",
+            "Architecture Patterns"
           ],
           "belowTheFold": [
             {
-              "title": "Context",
-              "content": [
-                "Bluecore had invested heavily in data science and infrastructure while building a relatively light frontend. As the company reached unicorn status and needed to enable more complex customer workflows, the frontend needed to scale both technically and organizationally. Wrote Frontend North Star to align the team around modern practices and establish technical direction."
-              ]
-            },
-            {
               "title": "Execution",
               "content": [
-                "Authored 'Bluecore's Frontend North Star' blog post establishing technical vision and principles for scaling frontend at unicorn-stage company",
-                "Led complete TypeScript migration of component library with modern CSS architecture and design system principles",
-                "Architected autogenerated API client system with gRPC/HTTP transcoding, eliminating manual client maintenance",
-                "Implemented CSS variables for theming and created responsive layout systems",
-                "Designed and taught comprehensive weekly training curriculum for entire engineering team covering TypeScript fundamentals and advanced React patterns",
-                "Improved accessibility and performance across component library",
-                "Established code generation pipeline from API definitions with type-safe clients and automatic updates",
-                "Created hands-on exercises and code review processes to upskill team"
-              ]
-            },
-            {
-              "title": "Leadership",
-              "content": [
-                "Defined frontend technical strategy for unicorn-stage company transitioning to product-led growth",
-                "Built TypeScript-first culture through teaching and hands-on mentorship",
-                "Collaborated with data science and infrastructure teams to align frontend with company mission",
-                "Published public engineering content representing company technical brand"
+                "Platform Strategy - Designed cohesive frontend platform strategy. Established architectural patterns and standards. Built bridges between legacy and modern systems",
+                "TypeScript Migration - Led migration of entire component library to TypeScript. Created type-safe patterns for common UI components. Incremental migration strategy to avoid breaking changes",
+                "Modern CSS Architecture - Standardized component library with CSS variables for theming. Implemented responsive layout systems. Improved accessibility and performance",
+                "Cross-Team Coordination - Coordinated adoption across teams. Created comprehensive documentation. Built culture of continuous learning through weekly training"
               ]
             }
           ]
@@ -252,27 +280,55 @@ const careerData: CareerData = {
           "belowTheFold": []
         },
         {
-          "title": "Autogenerated API Client",
-          "year": "2022",
-          "startYear": 2022,
+          "title": "TypeScript Adoption & Strict Types",
+          "year": "2021-2022",
+          "startYear": 2021,
           "endYear": 2022,
-          "role": "Senior Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
+          "role": "Staff Engineer",
+          "description": "Designed and taught comprehensive training curriculum on TypeScript fundamentals and advanced React patterns. Weekly classes with hands-on exercises to upskill entire engineering team on modern development practices.",
+          "impact": "Upskilled entire engineering team. Improved code quality across organization. Accelerated adoption of TypeScript and modern patterns. Built culture of continuous learning. Reduced onboarding time for new engineers.",
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Redux",
+            "Teaching"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Curriculum Design - Created comprehensive training covering TypeScript fundamentals, advanced React patterns, and best practices. Balanced theory with practical exercises",
+                "Interactive Teaching - Led weekly classes with hands-on exercises and code reviews. Created learning resources and documentation",
+                "Team Impact - Built culture of continuous learning. Improved code quality and reduced onboarding time. Enabled confident adoption of new patterns"
+              ]
+            }
+          ]
         },
         {
-          "title": "TypeScript Adoption & Strict Types",
+          "title": "Autogenerated API Client",
           "year": "2021",
           "startYear": 2021,
           "endYear": 2021,
-          "role": "Senior Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
-        },
+          "role": "Staff Engineer",
+          "description": "Architected autogenerated API client system using gRPC/HTTP transcoding. Eliminated manual API client maintenance through code generation pipeline from API definitions with type-safe client and automatic updates.",
+          "impact": "Eliminated manual API client maintenance. Reduced API-related bugs significantly. Improved frontend/backend contract clarity. Accelerated feature development velocity. Set standard for API integration across organization.",
+          "technologies": [
+            "TypeScript",
+            "gRPC",
+            "HTTP Transcoding",
+            "Code Generation"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Architecture Design - Implemented gRPC/HTTP transcoding for seamless protocol translation. Created code generation pipeline from API definitions",
+                "Type-Safe Client - Built autogenerated client with type safety and automatic updates. Designed error handling and retry logic",
+                "Developer Experience - Ensured automatic sync with backend changes. Set standard for API integration. Reduced integration bugs"
+              ]
+            }
+          ]
+        }
       ]
     },
     {
@@ -286,7 +342,7 @@ const careerData: CareerData = {
       "color": "#0061FF",
       "projects": [
         {
-          "title": "Plus Plus: Family Plans, Life Vault, & Backup",
+          "title": "Plus Plus: Family Plans & Life Vault",
           "year": "2020",
           "description": "Led end-to-end frontend architecture for new product line with complex family sharing features.",
           "impact": "Created new revenue stream",
@@ -307,30 +363,6 @@ const careerData: CareerData = {
                 "Built intuitive UI for family plan management",
                 "Coordinated cross-functional teams (design, product, backend)",
                 "Implemented Life Vault feature for important document storage"
-              ]
-            }
-          ]
-        },
-        {
-          "title": "File Viewer SDK",
-          "year": "2019",
-          "description": "Led architecture and bootstrapping of cross-platform SDK for file preview functionality.",
-          "technologies": [
-            "TypeScript",
-            "React",
-            "SDK Development"
-          ],
-          "role": "",
-          "startYear": 2018,
-          "endYear": 2018,
-          "belowTheFold": [
-            {
-              "title": "Execution",
-              "content": [
-                "Led architecture and bootstrapping of cross-platform SDK",
-                "Owned build pipeline and asset optimization",
-                "Designed API for embedding file previews",
-                "Coordinated between web and desktop teams"
               ]
             }
           ]
@@ -360,7 +392,31 @@ const careerData: CareerData = {
               ]
             }
           ]
-        },        
+        },
+        {
+          "title": "File Viewer SDK",
+          "year": "2018",
+          "description": "Led architecture and bootstrapping of cross-platform SDK for file preview functionality.",
+          "technologies": [
+            "TypeScript",
+            "React",
+            "SDK Development"
+          ],
+          "role": "",
+          "startYear": 2018,
+          "endYear": 2018,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Led architecture and bootstrapping of cross-platform SDK",
+                "Owned build pipeline and asset optimization",
+                "Designed API for embedding file previews",
+                "Coordinated between web and desktop teams"
+              ]
+            }
+          ]
+        },
         {
           "title": "Underscore \u2192 Lodash Migration",
           "year": "2018",
@@ -371,7 +427,30 @@ const careerData: CareerData = {
           "impact": "",
           "technologies": [],
           "belowTheFold": []
-        },        
+        },
+        {
+          "title": "JavaScript Guild",
+          "year": "2017-2021",
+          "description": "Founded JavaScript Guild and organized 100+ attendee technical summits for frontend engineers.",
+          "technologies": [
+            "Community",
+            "Leadership"
+          ],
+          "role": "",
+          "startYear": 2017,
+          "endYear": 2021,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Founded JavaScript Guild as community for frontend engineers",
+                "Organized regular knowledge-sharing sessions",
+                "Published newsletters with tips and updates",
+                "Coordinated multi-day technical summits"
+              ]
+            }
+          ]
+        },
         {
           "title": "Previews Mobile Web",
           "year": "2017",
@@ -404,30 +483,7 @@ const careerData: CareerData = {
           "impact": "",
           "technologies": [],
           "belowTheFold": []
-        },
-        {
-          "title": "JS Guild",
-          "year": "2017-2021",
-          "description": "Founded JavaScript Guild and organized 100+ attendee technical summits for frontend engineers.",
-          "technologies": [
-            "Community",
-            "Leadership"
-          ],
-          "role": "",
-          "startYear": 2017,
-          "endYear": 2021,
-          "belowTheFold": [
-            {
-              "title": "Execution",
-              "content": [
-                "Founded JavaScript Guild as community for frontend engineers",
-                "Organized regular knowledge-sharing sessions",
-                "Published newsletters with tips and updates",
-                "Coordinated multi-day technical summits"
-              ]
-            }
-          ]
-        },
+        }
       ]
     },
     {
@@ -525,7 +581,33 @@ const careerData: CareerData = {
       "endDate": "2015-12",
       "description": "Cloud storage platform development with rapid progression to technical leadership.",
       "color": "#FF6B35",
-      "projects": [        
+      "projects": [
+        {
+          "title": "Page Load Optimization",
+          "year": "2016",
+          "description": "Comprehensive performance profiling and systematic optimization of mobile-first theater ticketing app.",
+          "impact": "95% reduction: 8 seconds \u2192 400ms",
+          "technologies": [
+            "JavaScript",
+            "Webpack",
+            "Performance"
+          ],
+          "role": "",
+          "startYear": 2016,
+          "endYear": 2016,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Comprehensive performance profiling to identify bottlenecks",
+                "Systematic bundle strategy optimization and code splitting",
+                "Asset delivery improvements (compression, CDN, caching)",
+                "Render path performance enhancements",
+                "Critical path optimization for above-the-fold content"
+              ]
+            }
+          ]
+        },
         {
           "title": "Backbone + RESTful APIs Migration",
           "year": "2015",
@@ -656,48 +738,22 @@ const careerData: CareerData = {
           "belowTheFold": []
         },
         {
-          "title": "Page Load Optimization",
-          "year": "2014",
-          "description": "Comprehensive performance profiling and systematic optimization of mobile-first theater ticketing app.",
-          "impact": "95% reduction: 8 seconds \u2192 400ms",
-          "technologies": [
-            "JavaScript",
-            "Webpack",
-            "Performance"
-          ],
-          "role": "",
-          "startYear": 2016,
-          "endYear": 2016,
-          "belowTheFold": [
-            {
-              "title": "Execution",
-              "content": [
-                "Comprehensive performance profiling to identify bottlenecks",
-                "Systematic bundle strategy optimization and code splitting",
-                "Asset delivery improvements (compression, CDN, caching)",
-                "Render path performance enhancements",
-                "Critical path optimization for above-the-fold content"
-              ]
-            }
-          ]
-        },        
-        {
-          "title": "Release Gating",
+          "title": "Structured Logging",
           "year": "2013",
           "startYear": 2013,
           "endYear": 2013,
-          "role": "Software Engineer",
+          "role": "Engineering Intern",
           "description": "",
           "impact": "",
           "technologies": [],
           "belowTheFold": []
         },
         {
-          "title": "Structured Logging",
+          "title": "Release Gating",
           "year": "2013",
           "startYear": 2013,
           "endYear": 2013,
-          "role": "Engineering Intern",
+          "role": "Software Engineer",
           "description": "",
           "impact": "",
           "technologies": [],
