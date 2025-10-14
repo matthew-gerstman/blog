@@ -2,7 +2,7 @@ import type { CareerData } from './types/career.types';
 
 const careerData: CareerData = {
   "hero": {
-    "title": "Career Timeline",
+    "title": "Project Timeline",
     "subtitle": "25+ years of building and learning"
   },
   "jobs": [
