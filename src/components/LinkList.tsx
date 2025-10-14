@@ -1,26 +1,23 @@
-import React from 'react';
 import styles from './LinkList.module.css';
 
 interface LinkListProps {
-  links: { text: string; url: string; }[];
-  className?: string;
+  links?: { text: string; url: string; }[];
 }
 
-export function LinkList({ links, className }: LinkListProps) {
+export function LinkList({ links }: LinkListProps) {
   if (!links || links.length === 0) return null;
-
+  
   return (
-    <div className={`${styles.linkList} ${className || ''}`}>
-      {links.map((link, i) => (
+    <div className={styles.linkList}>
+      {links.map((link, index) => (
         <a 
-          key={i} 
-          href={link.url} 
-          target="_blank" 
+          key={index}
+          href={link.url}
+          target="_blank"
           rel="noopener noreferrer"
           className={styles.link}
-          onClick={(e) => e.stopPropagation()}
         >
-          {link.text} →
+          {link.text}
         </a>
       ))}
     </div>

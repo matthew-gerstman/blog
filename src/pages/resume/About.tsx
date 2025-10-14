@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { GradientText } from '../../components/GradientText';
-import type { AboutData } from '../../types/career';
+import type { AboutData } from '../../types/resume';
 import aboutData from '../../data/about';
 import styles from './About.module.css';
 

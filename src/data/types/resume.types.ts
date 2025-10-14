@@ -38,7 +38,7 @@ export interface Job {
   projects: Project[];
 }
 
-export interface CareerData {
+export interface ResumeData {
   hero: Hero;
   jobs: Job[];
 }
