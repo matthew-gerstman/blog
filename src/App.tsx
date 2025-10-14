@@ -13,11 +13,15 @@ import { About } from './pages/resume/About';
 import { useTheme } from './hooks/useTheme';
 import { useKeyboard } from './hooks/useKeyboard';
 import posts from './data/posts';
+import { projectsMap } from './data/projects';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
   const [searchOpen, setSearchOpen] = useState(false);
   const [findOpen, setFindOpen] = useState(false);
+
+  // Convert projects map to array for search
+  const projectsArray = Object.values(projectsMap);
 
   useKeyboard({
     onSearch: () => setSearchOpen(true),
@@ -36,6 +40,7 @@ function App() {
         isOpen={searchOpen}
         onClose={() => setSearchOpen(false)}
         posts={posts}
+        projects={projectsArray}
       />
       <FindInPage isOpen={findOpen} onClose={() => setFindOpen(false)} />
       <Routes>
