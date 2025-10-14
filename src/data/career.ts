@@ -773,6 +773,7 @@ const careerData: CareerData = {
           ]
         }
       ],
+    },
     {
       "id": "zetta",
       "company": "Zetta.net",
