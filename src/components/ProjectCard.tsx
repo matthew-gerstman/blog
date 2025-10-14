@@ -52,12 +52,17 @@ export function ProjectCard({
       setIsExpanded(true);
 
       if (shouldScroll && cardRef.current) {
-        // Wait for expansion animation to start, then scroll
+        // Wait for expansion animation to start, then scroll with header offset
         setTimeout(() => {
-          cardRef.current?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
+          if (cardRef.current) {
+            const elementPosition = cardRef.current.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px offset for sticky header
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth',
+            });
+          }
         }, 100);
       }
     }
