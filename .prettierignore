@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+.vite
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+.git
+*.log
+.DS_Store

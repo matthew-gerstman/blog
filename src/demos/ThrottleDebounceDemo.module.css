@@ -52,8 +52,8 @@
 
 .buttonThrottled {
   background: transparent;
-  color: #4CAF50;
-  border-color: #4CAF50;
+  color: #4caf50;
+  border-color: #4caf50;
 }
 
 .buttonThrottled:hover {
@@ -63,8 +63,8 @@
 
 .buttonDebounced {
   background: transparent;
-  color: #2196F3;
-  border-color: #2196F3;
+  color: #2196f3;
+  border-color: #2196f3;
 }
 
 .buttonDebounced:hover {

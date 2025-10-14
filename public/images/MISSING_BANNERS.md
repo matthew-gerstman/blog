@@ -21,11 +21,13 @@ The following banner images could not be downloaded from the old blog (404 or si
 - 01.jpeg
 
 These are Unsplash images. You can:
+
 1. Search for them on Unsplash by photographer name
 2. Replace with different banner images
 3. Use a default placeholder banner
 
 Working banner images:
+
 - 01-1.jpeg
 - scott-trento-xrBxbPiK2w8-unsplash.jpg
 - benjamin-voros-phIFdC6lA4E-unsplash.jpg

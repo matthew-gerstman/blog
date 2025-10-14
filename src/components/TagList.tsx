@@ -7,7 +7,7 @@ interface TagListProps {
 
 export function TagList({ tags, className = '' }: TagListProps) {
   if (!tags || tags.length === 0) return null;
-  
+
   return (
     <div className={`${styles.tagList} ${className}`}>
       {tags.map((tag, index) => (

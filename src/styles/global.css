@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-:root[data-theme="dark"] {
+:root[data-theme='dark'] {
   --grappa: #4a2c4d;
   --grappa-light: #6b4a6e;
   --grappa-bright: #9d7a9f;
@@ -18,7 +18,7 @@
   --border: rgba(255, 255, 255, 0.06);
 }
 
-:root[data-theme="light"] {
+:root[data-theme='light'] {
   --grappa: #6b4a6e;
   --grappa-light: #8a6a8d;
   --grappa-bright: #4a2c4d;
@@ -50,12 +50,15 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 ::selection {
@@ -102,7 +105,8 @@ html {
   font-size: 0.75rem;
   cursor: pointer;
   transition: all 0.2s;
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
 }
 
 .copy-button:hover {

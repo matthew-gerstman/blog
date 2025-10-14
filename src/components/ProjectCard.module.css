@@ -82,18 +82,17 @@
   margin: 0 0 0.75rem 0;
 }
 
-.projectImpact {  
+.projectImpact {
   font-size: 0.95rem;
   color: var(--text);
   margin: 0.75rem 0 0 0;
   line-height: 1.5;
 }
 
-
 .projectTags {
   display: flex;
   flex-wrap: wrap;
-  
+
   margin-top: 0.75rem;
 }
 
@@ -180,7 +179,6 @@
 
   .projectTop {
     flex-wrap: wrap;
-    
   }
 
   .expandIcon {

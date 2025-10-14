@@ -21,14 +21,14 @@ export function FindInPage({ isOpen, onClose }: FindInPageProps) {
       setMatchElements([]);
       setTimeout(() => inputRef.current?.focus(), 100);
     } else {
-      document.querySelectorAll('.find-match').forEach(el => {
+      document.querySelectorAll('.find-match').forEach((el) => {
         el.classList.remove('find-match', 'find-current');
       });
     }
   }, [isOpen]);
 
   useEffect(() => {
-    document.querySelectorAll('.find-match').forEach(el => {
+    document.querySelectorAll('.find-match').forEach((el) => {
       el.classList.remove('find-match', 'find-current');
     });
 
@@ -42,7 +42,7 @@ export function FindInPage({ isOpen, onClose }: FindInPageProps) {
     const matches = highlightMatches(query);
     setMatchElements(matches);
     setTotalMatches(matches.length);
-    
+
     if (matches.length > 0) {
       setCurrentMatch(1);
       scrollToMatch(matches, 0);
@@ -55,34 +55,39 @@ export function FindInPage({ isOpen, onClose }: FindInPageProps) {
 
     const matches: HTMLElement[] = [];
     const searchLower = searchText.toLowerCase();
-    
-    const walker = document.createTreeWalker(
-      article,
-      NodeFilter.SHOW_TEXT,
-      {
-        acceptNode: (node: Node) => {
-          const parent = (node as Text).parentElement;
-          if (parent && (parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE')) {
-            return NodeFilter.FILTER_REJECT;
-          }
-          return NodeFilter.FILTER_ACCEPT;
+
+    const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
+      acceptNode: (node: Node) => {
+        const parent = (node as Text).parentElement;
+        if (
+          parent &&
+          (parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE')
+        ) {
+          return NodeFilter.FILTER_REJECT;
         }
-      }
-    );
+        return NodeFilter.FILTER_ACCEPT;
+      },
+    });
 
     const textNodes: Text[] = [];
     let node: Node | null;
     while ((node = walker.nextNode())) {
-      if (node.textContent && node.textContent.toLowerCase().includes(searchLower)) {
+      if (
+        node.textContent &&
+        node.textContent.toLowerCase().includes(searchLower)
+      ) {
         textNodes.push(node as Text);
       }
     }
 
-    textNodes.forEach(textNode => {
+    textNodes.forEach((textNode) => {
       const parent = textNode.parentElement;
       if (!parent) return;
-      
-      if (parent.textContent && parent.textContent.toLowerCase().includes(searchLower)) {
+
+      if (
+        parent.textContent &&
+        parent.textContent.toLowerCase().includes(searchLower)
+      ) {
         if (!parent.classList.contains('find-match')) {
           parent.classList.add('find-match');
           matches.push(parent);
@@ -95,14 +100,15 @@ export function FindInPage({ isOpen, onClose }: FindInPageProps) {
 
   const scrollToMatch = (matches: HTMLElement[], index: number) => {
     if (!matches[index]) return;
-    
-    matches.forEach(el => el.classList.remove('find-current'));
+
+    matches.forEach((el) => el.classList.remove('find-current'));
     matches[index].classList.add('find-current');
-    
+
     const element = matches[index];
     const yOffset = -100;
-    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    
+    const y =
+      element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
     window.scrollTo({ top: y, behavior: 'smooth' });
     setTimeout(() => inputRef.current?.focus(), 100);
   };
@@ -146,12 +152,37 @@ export function FindInPage({ isOpen, onClose }: FindInPageProps) {
         autoComplete="off"
       />
       {totalMatches > 0 && (
-        <div className={styles.matches}>{currentMatch} / {totalMatches}</div>
+        <div className={styles.matches}>
+          {currentMatch} / {totalMatches}
+        </div>
       )}
       <div className={styles.controls}>
-        <button className={styles.button} onClick={prevMatch} disabled={totalMatches === 0} title="Previous" onMouseDown={(e) => e.preventDefault()}>↑</button>
-        <button className={styles.button} onClick={nextMatch} disabled={totalMatches === 0} title="Next" onMouseDown={(e) => e.preventDefault()}>↓</button>
-        <button className={styles.button} onClick={onClose} title="Close" onMouseDown={(e) => e.preventDefault()}>✕</button>
+        <button
+          className={styles.button}
+          onClick={prevMatch}
+          disabled={totalMatches === 0}
+          title="Previous"
+          onMouseDown={(e) => e.preventDefault()}
+        >
+          ↑
+        </button>
+        <button
+          className={styles.button}
+          onClick={nextMatch}
+          disabled={totalMatches === 0}
+          title="Next"
+          onMouseDown={(e) => e.preventDefault()}
+        >
+          ↓
+        </button>
+        <button
+          className={styles.button}
+          onClick={onClose}
+          title="Close"
+          onMouseDown={(e) => e.preventDefault()}
+        >
+          ✕
+        </button>
       </div>
     </div>
   );

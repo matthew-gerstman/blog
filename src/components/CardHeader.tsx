@@ -9,13 +9,13 @@ interface CardHeaderProps {
   isExpanded?: boolean;
 }
 
-export function CardHeader({ 
-  title, 
-  subtitle, 
-  yearDisplay, 
+export function CardHeader({
+  title,
+  subtitle,
+  yearDisplay,
   role,
-  hasExpand, 
-  isExpanded
+  hasExpand,
+  isExpanded,
 }: CardHeaderProps) {
   return (
     <>
@@ -25,8 +25,18 @@ export function CardHeader({
           <span className={styles.expandIcon}>{isExpanded ? '−' : '+'}</span>
         )}
       </div>
-      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-      {role && <div className={styles.role}>{role} - {yearDisplay}</div>}      
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        {role && (
+          <div className={styles.role}>
+            {role} - {yearDisplay}
+          </div>
+        )}
       </div>
       {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
     </>
