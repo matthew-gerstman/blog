@@ -24,13 +24,17 @@ const resumeData: ResumeData = {
           "description": "First-time engineering manager leading the rebuild of Datadog's collaborative notebook editor. Focused on team growth, customer engagement, and enabling technical excellence. Built customer council with rapid feedback loop.",
           "impact": "Shipped complete Notebooks 2.0 rebuild with rich text editing and real-time multiplayer collaboration. Grew team from 4 to 6 engineers with 2 promotions. Established customer council that accelerated feedback cycles.",
           "technologies": [
-            "ProseMirror",
-            "CRDTs (Yjs)",
-            "WebSockets",
-            "React",
-            "TypeScript",
-            "Team Leadership"
-          ],
+        "CRDTs",
+        "CRDTs (Yjs)",
+        "Markdown",
+        "ProseMirror",
+        "React",
+        "Slack",
+        "Team Leadership",
+        "TypeScript",
+        "WebSockets",
+        "Yjs"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -51,10 +55,10 @@ const resumeData: ResumeData = {
           "description": "Organized Datadog's Graphing Summit to build cohesive culture within a newly-formed graphing org from a recent reorg. Led planning with 2 co-organizers, keeping execution lean\u20141/10 the time investment of typical summits with better relationship outcomes.",
           "impact": "Transformed \"kind of knew each other\" relationships into \"really knew each other\" connections. Created foundation for cross-team collaboration in graphing org.",
           "technologies": [
-            "Event Planning",
-            "Team Building",
-            "Cross-functional Coordination"
-          ],
+        "Cross-functional Coordination",
+        "Event Planning",
+        "Team Building"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -76,11 +80,11 @@ const resumeData: ResumeData = {
           "description": "Designed and taught Datadog's first IC1 engineering class\u2014a 6-week intensive program covering career development, technical leadership, and organizational impact for early-career engineers.",
           "impact": "Graduated 15 engineers with stronger career frameworks and clearer growth paths. Created reusable curriculum adopted by other teams. Demonstrated leadership in engineer development and organizational culture building.",
           "technologies": [
-            "Teaching",
-            "Career Development",
-            "Technical Leadership",
-            "Curriculum Design"
-          ],
+        "Career Development",
+        "Curriculum Design",
+        "Teaching",
+        "Technical Leadership"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -102,14 +106,14 @@ const resumeData: ResumeData = {
           "description": "Built Datadog's report-printer node service from scratch\u2014offline dashboard snapshots with 98%+ widget fidelity. Designed client/server rendering handshake, chose Puppeteer, established Node.js patterns now used across 15+ services.",
           "impact": "Shipped to all customers with 95%+ widget fidelity (up from 70%). Created new revenue stream and permanent team. Node.js foundation code became company standard.",
           "technologies": [
-            "Node.js",
-            "Puppeteer",
-            "React",
-            "TypeScript",
-            "PDF Generation",
-            "gRPC",
-            "Queue Systems"
-          ],
+        "Node.js",
+        "PDF Generation",
+        "Puppeteer",
+        "Queue Systems",
+        "React",
+        "TypeScript",
+        "gRPC"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -140,11 +144,11 @@ const resumeData: ResumeData = {
           "description": "Pioneered integration testing framework for Datadog's dashboard platform, enabling reliable testing of complex multi-widget interactions that were previously untestable. Built comprehensive test suite covering critical user workflows and edge cases.",
           "impact": "Caught regressions before production that unit tests missed. Enabled confident refactoring of complex dashboard code. Set standard for integration testing across frontend teams. Reduced bug escape rate for dashboard features.",
           "technologies": [
-            "TypeScript",
-            "React",
-            "Testing Frameworks",
-            "Integration Testing"
-          ],
+        "Integration Testing",
+        "React",
+        "Testing Frameworks",
+        "TypeScript"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -165,11 +169,11 @@ const resumeData: ResumeData = {
           "description": "Led org-wide TypeScript migration and type safety improvement initiative for Datadog's dashboard codebase. Systematically eliminated any types, added proper type definitions, and established patterns for type-safe code.",
           "impact": "Cut TypeScript any usage by 50% across Dashboards codebase. Reduced runtime type errors. Improved developer velocity through better IDE autocomplete and compile-time error catching. Set standard for TypeScript usage across frontend teams.",
           "technologies": [
-            "TypeScript",
-            "React",
-            "Redux",
-            "Type Systems"
-          ],
+        "React",
+        "Redux",
+        "Type Systems",
+        "TypeScript"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -190,10 +194,10 @@ const resumeData: ResumeData = {
           "description": "Led systematic TypeScript type safety improvements across dashboard codebase. Eliminated unsafe type assertions and established patterns for type-safe code development.",
           "impact": "Reduced runtime type errors. Improved developer velocity through better IDE support. Set standard for TypeScript usage across frontend teams. Made codebase more maintainable for future engineers.",
           "technologies": [
-            "TypeScript",
-            "React",
-            "Type Systems"
-          ],
+        "React",
+        "Type Systems",
+        "TypeScript"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -214,10 +218,10 @@ const resumeData: ResumeData = {
           "description": "Organized and ran Datadog's first-ever Frontend Summit\u2014a multi-day conference bringing together frontend engineers across the company. Created venue for cross-team knowledge sharing, technical deep dives, and community building.",
           "impact": "Established precedent for frontend community events at Datadog. Built cross-org relationships and shared knowledge across previously siloed teams. Demonstrated leadership in frontend community building.",
           "technologies": [
-            "Event Planning",
-            "Technical Leadership",
-            "Community Building"
-          ],
+        "Community Building",
+        "Event Planning",
+        "Technical Leadership"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -250,16 +254,17 @@ const resumeData: ResumeData = {
           "description": "Led frontend transformation at newly-minted unicorn ($1B valuation, $125M Series E). Established technical vision and modernized architecture to enable complex retail marketing workflows as company scaled from data science focus to product-led growth. Wrote comprehensive RFC establishing 'composable LEGO blocks' philosophy and platform layer architecture.",
           "impact": "Published engineering blog defining frontend strategy. Established TypeScript-first culture across engineering org. Built foundation for next-generation product workflows serving enterprise retail customers.",
           "technologies": [
-            "TypeScript",
-            "React",
-            "Modern CSS",
-            "CSS Variables",
-            "Design Systems",
-            "gRPC",
-            "HTTP Transcoding",
-            "Code Generation",
-            "Accessibility"
-          ],
+        "Accessibility",
+        "CSS",
+        "CSS Variables",
+        "Code Generation",
+        "Design Systems",
+        "HTTP Transcoding",
+        "Modern CSS",
+        "React",
+        "TypeScript",
+        "gRPC"
+      ],
           "links": [
             {
               "text": "Frontend North Star Blog Post",
@@ -307,7 +312,12 @@ const resumeData: ResumeData = {
           "role": "Staff Engineer",
           "description": "Designed comprehensive frontend interview loop for Bluecore, creating structured questions, evaluation criteria, and interviewer guides. Built question bank covering system design (Design Instagram), JavaScript fundamentals (Event Emitter), and React patterns (Auto Suggest Input).",
           "impact": "Standardized frontend hiring process with consistent evaluation criteria. Improved candidate experience through well-structured, fair questions. Enabled consistent bar-raising across all frontend interviews. Created reusable interview materials for scaling frontend hiring.",
-          "technologies": ["System Design", "JavaScript", "React", "Interview Design"],
+          "technologies": [
+        "Interview Design",
+        "JavaScript",
+        "React",
+        "System Design"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -327,7 +337,15 @@ const resumeData: ResumeData = {
           "role": "Staff Engineer",
           "description": "Replaced expensive Google App Engine monolith running Python 2.7 (facing deprecation) with modern NextJS on Google Kubernetes Engine. Led technical architecture and milestone-based migration strategy.",
           "impact": "Achieved significant cost savings from GAE to GKE migration. Improved performance with server-side rendering. Enabled modern frontend development practices. Zero downtime migration from legacy Python 2.7 system.",
-          "technologies": ["Next.js", "Kubernetes", "Google Cloud", "Node.js", "Python 2.7 Migration"],
+          "technologies": [
+        "Google Cloud",
+        "Kubernetes",
+        "Next.js",
+        "Node.js",
+        "Python",
+        "Python 2.7 Migration",
+        "SSR"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -347,7 +365,13 @@ const resumeData: ResumeData = {
           "role": "Staff Engineer",
           "description": "Architected and led implementation of autogenerated API client system using gRPC with HTTP transcoding. Replaced manual Redux thunk creation for every API call with type-safe, automatically generated clients.",
           "impact": "Eliminated manual client maintenance for dozens of API endpoints. Standardized loading and error state management across application. Improved developer experience for API integration. Reduced API integration time from hours to minutes.",
-          "technologies": ["gRPC", "HTTP Transcoding", "Code Generation", "TypeScript", "Redux"],
+          "technologies": [
+        "Code Generation",
+        "HTTP Transcoding",
+        "Redux",
+        "TypeScript",
+        "gRPC"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -368,7 +392,12 @@ const resumeData: ResumeData = {
           "role": "Staff Engineer",
           "description": "Consolidated Bluecore's dual component libraries (VanillaJS and TypeScript with only 80% feature parity) into single TypeScript-based system. Led cross-functional migration effort eliminating code duplication and any type pollution from legacy components.",
           "impact": "Eliminated entire class of type safety issues from VanillaJS any injection. Reduced component maintenance burden by 50% (one library vs two). Improved developer experience with consistent component API. Enabled full TypeScript adoption across frontend.",
-          "technologies": ["TypeScript", "React", "VanillaJS Migration", "Component Libraries"],
+          "technologies": [
+        "Component Libraries",
+        "React",
+        "TypeScript",
+        "VanillaJS Migration"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -388,7 +417,11 @@ const resumeData: ResumeData = {
           "role": "Staff Engineer",
           "description": "Led organization-wide TypeScript adoption, establishing strict type checking standards and migrating existing JavaScript codebase. Created training materials and mentorship program.",
           "impact": "Achieved 100% TypeScript adoption across frontend codebase. Reduced runtime type errors significantly. Improved code maintainability and developer confidence. Established TypeScript-first culture.",
-          "technologies": ["TypeScript", "JavaScript", "Type Systems"],
+          "technologies": [
+        "JavaScript",
+        "Type Systems",
+        "TypeScript"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -408,7 +441,11 @@ const resumeData: ResumeData = {
               "role": "Staff Engineer",
               "description": "Built Time to Interactive monitoring dashboard for Campaigns and Personalization routes. Improved frontend observability and performance tracking across customer-facing features.",
               "impact": "Improved frontend observability and performance tracking. Enabled data-driven performance optimization decisions.",
-              "technologies": ["Performance Monitoring", "Time to Interactive", "Frontend Observability"],
+              "technologies": [
+        "Frontend Observability",
+        "Performance Monitoring",
+        "Time to Interactive"
+      ],
               "belowTheFold": [
                 {
                   "title": "Execution",
@@ -428,7 +465,11 @@ const resumeData: ResumeData = {
               "role": "Staff Engineer",
               "description": "Revamped Customer 360 feature on Campaigns team. Proposed long-term improvement plan and handled BFCM (Black Friday/Cyber Monday) frontend readiness.",
               "impact": "Improved Customer 360 feature performance and reliability. Successfully handled BFCM traffic spike.",
-              "technologies": ["React", "Performance Optimization", "High Traffic Events"],
+              "technologies": [
+        "High Traffic Events",
+        "Performance Optimization",
+        "React"
+      ],
               "belowTheFold": [
                 {
                   "title": "Execution",
@@ -461,7 +502,15 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "My work on Dropbox Plus followed a clear quarterly progression: I started on the Family team in Q1, then my manager and I were pulled to support the Vault team in Q2, and again to support the Backup team in Q3. By Q4, having touched all major feature areas, I joined the go-to-market integration squad. This unique progression made me the person who understood how all the product pieces fit together, enabling me to effectively coordinate across teams for a successful launch.",
           "impact": "Successfully launched a new revenue-driving product with contributions from ~150 people across teams. Delivered a sophisticated family sharing experience enabling secure, credential-free family account management. Introduced a secure Vault feature with PIN access and comprehensive management UI. Contributed to robust computer backup functionality. Published engineering lifecycle insights on the Dropbox Tech Blog, highlighting effective team integration and pragmatic decision-making.",
-          "technologies": ["React", "Redux", "TypeScript", "Rust", "Family Sharing", "Vault", "Computer Backup"],
+          "technologies": [
+        "Computer Backup",
+        "Family Sharing",
+        "React",
+        "Redux",
+        "Rust",
+        "TypeScript",
+        "Vault"
+      ],
           "links": [
             {
               "text": "Dropbox Tech Blog Post",
@@ -488,7 +537,13 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Designed and rolled out comprehensive Redux architecture with TypeScript type-safe patterns across Dropbox's frontend organization. Created reusable patterns, extensive documentation, and systematic team-by-team adoption strategy.",
           "impact": "Adopted by ~10 teams across ~25 features, becoming company standard for state management. Reduced state-related bugs significantly. Improved developer velocity and code maintainability. Created foundation for future frontend architecture decisions. Presented approach in public talk 'Building a Typesafe Code Split React-Redux Application'.",
-          "technologies": ["Redux", "TypeScript", "React", "State Management", "Architecture"],
+          "technologies": [
+        "Architecture",
+        "React",
+        "Redux",
+        "State Management",
+        "TypeScript"
+      ],
           "links": [
             {
               "text": "Building a Typesafe Code Split React-Redux Application",
@@ -514,7 +569,13 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Co-led migration of Dropbox's 10-year-old codebase from deprecated Underscore to Lodash, modernizing utility library used by millions daily. Built custom Webpack bundle, created comprehensive migration strategy, and executed phased rollout with only one production bug.",
           "impact": "Modernized entire codebase dependency serving millions of users. Maintained bundle size targets through custom builds. Only one production bug despite thousands of lines migrated. Published migration approach on Dropbox Tech Blog. Established patterns for large-scale technical migrations.",
-          "technologies": ["Lodash", "Underscore", "Webpack", "Migration", "Build Optimization"],
+          "technologies": [
+        "Build Optimization",
+        "Lodash",
+        "Migration",
+        "Underscore",
+        "Webpack"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -534,7 +595,12 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Led architecture and bootstrapping of cross-platform SDK for consistent file preview functionality across Dropbox web and desktop surfaces. Owned build pipeline, asset optimization, and API design for embedding file previews.",
           "impact": "Infrastructure used across multiple Dropbox surfaces. Consistent file preview experience across platforms. Reusable component for future products. Optimized asset delivery and performance.",
-          "technologies": ["SDK Development", "Cross-Platform", "File Preview", "Build Pipeline"],
+          "technologies": [
+        "Build Pipeline",
+        "Cross-Platform",
+        "File Preview",
+        "SDK Development"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -554,7 +620,12 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Founded JavaScript Guild as community of practice for frontend engineers across Dropbox. Organized knowledge-sharing sessions, published newsletters, coordinated cross-team initiatives, and established forum for frontend challenges.",
           "impact": "Improved frontend culture and standards organization-wide. Created lasting community of practice across teams. Facilitated knowledge transfer and collaboration. Influenced organizational frontend direction through shared learning and discussion.",
-          "technologies": ["Community Building", "Knowledge Sharing", "Frontend Culture"],
+          "technologies": [
+        "Community Building",
+        "Frontend Culture",
+        "JavaScript",
+        "Knowledge Sharing"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -574,7 +645,11 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Organized multi-day technical summits (2019-2020) bringing together frontend engineers from across remote-first organization. Curated technical talks, workshops, and collaboration sessions for deep technical discussions and relationship building.",
           "impact": "Strengthened cross-team relationships in remote-first organization. Enabled deeper technical collaboration. Created lasting organizational connections. Established model for future technical events.",
-          "technologies": ["Event Planning", "Technical Summits", "Remote Collaboration"],
+          "technologies": [
+        "Event Planning",
+        "Remote Collaboration",
+        "Technical Summits"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -594,7 +669,12 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Built mobile web file preview experience for Dropbox, creating responsive preview interface optimized for mobile browsers. Early project at Dropbox establishing frontend patterns for mobile optimization and touch interactions.",
           "impact": "Enabled file preview functionality for mobile web users without requiring app download. Improved mobile web experience for millions of users. Established mobile-first patterns for future Dropbox web features.",
-          "technologies": ["Mobile Web", "Responsive Design", "File Preview", "Touch Interactions"],
+          "technologies": [
+        "File Preview",
+        "Mobile Web",
+        "Responsive Design",
+        "Touch Interactions"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -614,7 +694,11 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Contributed to Showcase product development, enabling professionals to create portfolio presentations from Dropbox files. Built frontend components for customizable layouts, branding, and file organization into professional showcases.",
           "impact": "Enabled new use case for Dropbox files beyond storage—professional portfolio creation. Expanded Dropbox value proposition for creative professionals and freelancers.",
-          "technologies": ["React", "Product Development", "Portfolio Creation"],
+          "technologies": [
+        "Portfolio Creation",
+        "Product Development",
+        "React"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -634,7 +718,11 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Built ZIP file preview functionality allowing users to browse ZIP archive contents without downloading entire file. Created file tree navigation, preview support for contained files, and selective download capabilities.",
           "impact": "Reduced unnecessary downloads by enabling preview-before-download workflow. Improved user experience for large ZIP files where users only need specific contents. Saved bandwidth and time for millions of users.",
-          "technologies": ["File Preview", "ZIP Parsing", "File Tree UI"],
+          "technologies": [
+        "File Preview",
+        "File Tree UI",
+        "ZIP Parsing"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -665,7 +753,14 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Worked on team of 4 building greenfield React + Redux application from scratch. Learned modern React/Redux architecture and functional programming patterns by diving deep—read all of Lodash and Redux source code for fun. Built checkout flow, show landing pages, and authentication/SSR strategies. Integrated with new Swagger-based API client.",
           "impact": "Shipped production app serving real customers. Deep-dive learning approach (reading source code) established strong foundation in React/Redux patterns that influenced entire career. Created scalable architecture enabling faster feature development.",
-          "technologies": ["React", "Redux", "Lodash", "Functional Programming", "SSR", "Swagger"],
+          "technologies": [
+        "Functional Programming",
+        "Lodash",
+        "React",
+        "Redux",
+        "SSR",
+        "Swagger"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -685,7 +780,14 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Built feature converting lottery losers into buyers through personalized alternative show offers. Built APIs in a Groovy on Grails backend with complex SQL queries for offer matching, designed frontend offer selection experience, implemented business logic for eligibility.",
           "impact": "Captured revenue from users who lost lotteries and would have left empty-handed. Turned user disappointment into conversion opportunity. Demonstrated end-to-end product engineering capability.",
-          "technologies": ["Groovy on Grails", "SQL", "Backend APIs", "Frontend"],
+          "technologies": [
+        "Backend APIs",
+        "Frontend",
+        "Grails",
+        "Groovy",
+        "Groovy on Grails",
+        "SQL"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -705,7 +807,12 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Enabled same-day limited ticket purchases through new backend APIs and business logic. Built RESTful API design for rush ticket operations with complex availability and eligibility rules.",
           "impact": "Expanded business model with same-day sales capability. Demonstrated backend architecture skills and successful cross-team collaboration with mobile engineers.",
-          "technologies": ["RESTful APIs", "Backend Development", "Business Logic"],
+          "technologies": [
+        "Backend Development",
+        "Business Logic",
+        "REST",
+        "RESTful APIs"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -725,7 +832,12 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Established production error monitoring with Sentry, moving from user-reported bugs to proactive error detection. Configured alerting, monitoring, and error triage processes.",
           "impact": "Dramatically improved production visibility. Enabled proactive error detection before user reports. Reduced mean time to resolution. Established operational excellence culture.",
-          "technologies": ["Sentry", "Error Monitoring", "Alerting", "DevOps"],
+          "technologies": [
+        "Alerting",
+        "DevOps",
+        "Error Monitoring",
+        "Sentry"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -745,7 +857,13 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Automated deployment process with Ansible playbooks for Node.js applications, replacing manual error-prone deployments. Created reliable, repeatable deployment process with Sentry integration.",
           "impact": "Faster, more reliable deployments with reduced friction and errors. Enabled more frequent releases and improved team velocity.",
-          "technologies": ["Ansible", "Deployment Automation", "Node.js", "DevOps"],
+          "technologies": [
+        "Ansible",
+        "Deployment Automation",
+        "DevOps",
+        "Node.js",
+        "Sentry"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -777,7 +895,14 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Led complete backend migration to RESTful resource architecture and frontend migration to Backbone.js. Established API design standards, created documentation, and coordinated organization-wide adoption. Trained more senior engineers on REST paradigms.",
           "impact": "Modernized entire API layer. Improved maintainability and developer experience. Reduced API-related bugs. Established patterns for future development. Trained other engineers in REST paradigm.",
-          "technologies": ["Backbone.js", "RESTful APIs", "API Design", "Documentation"],
+          "technologies": [
+        "API Design",
+        "Backbone",
+        "Backbone.js",
+        "Documentation",
+        "REST",
+        "RESTful APIs"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -798,7 +923,12 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Set up continuous integration pipeline and implemented Sentry for production error tracking. Established quality standards, monitoring dashboards, and culture of observability.",
           "impact": "Caught bugs before production deployment. Improved system visibility and reliability. Reduced customer-impacting incidents. Established operational excellence practices.",
-          "technologies": ["CI/CD", "Sentry", "Error Monitoring", "DevOps"],
+          "technologies": [
+        "CI/CD",
+        "DevOps",
+        "Error Monitoring",
+        "Sentry"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -818,7 +948,12 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Planned and executed organizational migration from SVN to Git. Established branching strategies, PR processes, and code review practices. Provided hands-on training for entire team.",
           "impact": "Modernized development workflow. Improved collaboration through PR reviews. Enabled better branching and experimentation. Reduced merge conflicts.",
-          "technologies": ["Git", "SVN", "Version Control", "Code Review"],
+          "technologies": [
+        "Code Review",
+        "Git",
+        "SVN",
+        "Version Control"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -838,7 +973,11 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Built complete data restore flow enabling users to restore deleted or previous versions of data. Core revenue-driving feature (the money feature) for cloud storage product.",
           "impact": "Critical differentiator for cloud storage product. Core revenue driver. Excellent user experience for complex operation. Demonstrated product engineering capability.",
-          "technologies": ["Full-Stack", "Cloud Storage", "UX Design"],
+          "technologies": [
+        "Cloud Storage",
+        "Full-Stack",
+        "UX Design"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -858,7 +997,10 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Refactored user enrollment and onboarding flow for improved conversion and user experience. Modernized legacy enrollment code.",
           "impact": "Improved user onboarding experience. Better conversion rates. Cleaner, more maintainable enrollment code.",
-          "technologies": ["User Onboarding", "Conversion Optimization"],
+          "technologies": [
+        "Conversion Optimization",
+        "User Onboarding"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -878,7 +1020,12 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Systematically profiled and optimized web application performance, significantly reducing page load times. Simultaneously migrated the build system to Grunt, optimizing asset compilation and improving developer experience.",
           "impact": "Achieved a dramatic reduction in initial page load time from 8 seconds to 500 milliseconds. Delivered faster, more efficient builds and significantly improved developer productivity through modern tooling and optimized workflows.",
-          "technologies": ["Performance Optimization", "Grunt", "Build Systems", "Profiling"],
+          "technologies": [
+        "Build Systems",
+        "Grunt",
+        "Performance Optimization",
+        "Profiling"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -898,7 +1045,11 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Built data deletion queue system for lifecycle management and compliance. Created UI for managing deletion requests with backend job processing.",
           "impact": "Core product feature for cloud storage. Enabled compliance with data retention policies. Improved user control over storage. Demonstrated full-stack product development capability.",
-          "technologies": ["Queue Systems", "Lifecycle Management", "Compliance"],
+          "technologies": [
+        "Compliance",
+        "Lifecycle Management",
+        "Queue Systems"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -918,7 +1069,11 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Implemented structured logging system during first three months at company. Established logging standards and practices for better system observability.",
           "impact": "Improved system debugging and monitoring capabilities. Established foundation for operational excellence. Early impact as new engineer.",
-          "technologies": ["Logging", "Observability", "DevOps"],
+          "technologies": [
+        "DevOps",
+        "Logging",
+        "Observability"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -938,7 +1093,11 @@ const resumeData: ResumeData = {
           "role": "Software Engineer",
           "description": "Built release gating system to ensure quality before production deployments. Created automated checks and manual approval workflows.",
           "impact": "Improved release quality and reduced production incidents. Established quality gates for deployments.",
-          "technologies": ["Release Management", "Quality Assurance", "Automation"],
+          "technologies": [
+        "Automation",
+        "Quality Assurance",
+        "Release Management"
+      ],
           "belowTheFold": [
             {
               "title": "Execution",
@@ -967,10 +1126,10 @@ const resumeData: ResumeData = {
           "year": "2013",
           "description": "Custom tweet visualizers optimized for Jumbotron display with real-time aggregation.",
           "technologies": [
-            "Twitter API",
-            "jQuery",
-            "Real-time"
-          ],
+        "Real-time",
+        "Twitter API",
+        "jQuery"
+      ],
           "role": "",
           "startYear": 2013,
           "endYear": 2013,
@@ -991,10 +1150,10 @@ const resumeData: ResumeData = {
           "year": "2013",
           "description": "Native iOS event app with schedule, song requests, and arena map for offline-first usage.",
           "technologies": [
-            "iOS",
-            "Objective-C",
-            "Native Mobile"
-          ],
+        "Native Mobile",
+        "Objective-C",
+        "iOS"
+      ],
           "role": "",
           "startYear": 2013,
           "endYear": 2013,
@@ -1016,11 +1175,11 @@ const resumeData: ResumeData = {
           "description": "Real-life 'assassins' game with target assignment system keeping thousands engaged throughout 26.6-hour marathon.",
           "impact": "Used by thousands for 5+ years",
           "technologies": [
-            "PHP",
-            "MySQL",
-            "jQuery",
-            "Game Design"
-          ],
+        "Game Design",
+        "MySQL",
+        "PHP",
+        "jQuery"
+      ],
           "role": "",
           "startYear": 2012,
           "endYear": 2012,
@@ -1054,13 +1213,13 @@ const resumeData: ResumeData = {
           "year": "2009-2013",
           "description": "Comprehensive computer science education covering programming, algorithms, systems, and mathematics.",
           "technologies": [
-            "Java",
-            "C",
-            "PHP",
-            "MySQL",
-            "WordPress",
-            "CS Fundamentals"
-          ],
+        "C",
+        "CS Fundamentals",
+        "Java",
+        "MySQL",
+        "PHP",
+        "WordPress"
+      ],
           "role": "",
           "startYear": 2009,
           "endYear": 2013,
@@ -1082,9 +1241,9 @@ const resumeData: ResumeData = {
           "year": "2008-2009",
           "description": "First 'real' job in office environment during high school, supporting workplace users.",
           "technologies": [
-            "IT Support",
-            "QA Testing"
-          ],
+        "IT Support",
+        "QA Testing"
+      ],
           "role": "",
           "startYear": 2008,
           "endYear": 2009,
@@ -1111,9 +1270,9 @@ const resumeData: ResumeData = {
           "year": "2008",
           "description": "Programming 1 course providing deeper dive into computer science fundamentals, plus philosophy course developing critical thinking.",
           "technologies": [
-            "Computer Science Fundamentals",
-            "Philosophy"
-          ],
+        "Computer Science Fundamentals",
+        "Philosophy"
+      ],
           "role": "",
           "startYear": 2008,
           "endYear": 2008
@@ -1123,10 +1282,10 @@ const resumeData: ResumeData = {
           "year": "2006-2009",
           "description": "High school freelance work doing computer repair, virus removal, and building simple websites.",
           "technologies": [
-            "Computer Repair",
-            "Web Design",
-            "Customer Service"
-          ],
+        "Computer Repair",
+        "Customer Service",
+        "Web Design"
+      ],
           "role": "",
           "startYear": 2006,
           "endYear": 2009,
@@ -1148,10 +1307,10 @@ const resumeData: ResumeData = {
           "year": "2005",
           "description": "Programming in Pascal, hardware assembly, field support, and early security research.",
           "technologies": [
-            "Pascal",
-            "Hardware Assembly",
-            "Field Support"
-          ],
+        "Field Support",
+        "Hardware Assembly",
+        "Pascal"
+      ],
           "role": "",
           "startYear": 2005,
           "endYear": 2005,
@@ -1174,10 +1333,10 @@ const resumeData: ResumeData = {
           "year": "1999-2000",
           "description": "Started with Visual Basic guest book, then built websites with HTML and JavaScript including the legendary 'DBZ dance party site'.",
           "technologies": [
-            "Visual Basic",
-            "HTML",
-            "JavaScript"
-          ],
+        "HTML",
+        "JavaScript",
+        "Visual Basic"
+      ],
           "role": "",
           "startYear": 1999,
           "endYear": 2000,
