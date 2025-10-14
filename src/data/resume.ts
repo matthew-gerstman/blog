@@ -21,13 +21,15 @@ const resumeData: ResumeData = {
           "startYear": 2023,
           "endYear": 2024,
           "role": "Engineering Manager",
-          "description": "First-time engineering manager leading the rebuild of Datadog's collaborative notebook editor. Focused on team growth, customer engagement, and enabling technical excellence. Built customer council with rapid feedback loop.",
+          "description": "First-time engineering manager leading the rebuild of Datadog's collaborative rich text editor. Focused on team growth, customer engagement, and enabling technical excellence. Built customer council with rapid feedback loop.",
           "impact": "Shipped complete Notebooks 2.0 rebuild with rich text editing and real-time multiplayer collaboration. Grew team from 4 to 6 engineers with 2 promotions. Established customer council that accelerated feedback cycles.",
           "technologies": [
             "ProseMirror",
             "CRDTs (Yjs)",
             "WebSockets",
             "React",
+            "Rich Text Editing",
+            "Multiplayer Collaboration",            
             "TypeScript",
             "Team Leadership"
           ],
@@ -57,7 +59,8 @@ const resumeData: ResumeData = {
             "TypeScript",
             "PDF Generation",
             "gRPC",
-            "Queue Systems"
+            "Queue Systems",
+            "Smithing"
           ],
           "belowTheFold": [
             {
@@ -67,7 +70,8 @@ const resumeData: ResumeData = {
                 "Rendering Engine Selection - Evaluated Selenium, Puppeteer, and Cypress; chose Puppeteer for browser-fidelity PDFs and thin Chrome wrapper; interviewed engineers about Selenium pain to inform decision",
                 "Quality & Fidelity - Created PrintModeAdapter to aggregate widget status; collaborated with Univiz team to expose fetch completion signals; solved split graph rendering bugs with proxy context providers",
                 "Service Foundation - Wrote all Node.js HTTP/gRPC communication code, tests, and documentation (pre-AI era); established patterns now foundational for 15+ services; implemented OBO token authentication with Puppeteer request interception",
-                "Performance & Constraints - Reduced dev loop from 30min to 1min; navigated security restrictions on Node.js infrastructure access; optimized print mode rendering by disabling interactivity; handled edge cases (note widgets, image security risks, file size bloat)"
+                "Smithing - Reduced dev loop from 30min to 1min by automating tooling",
+                "Performance & Constraints - Navigated security restrictions on Node.js infrastructure access; optimized print mode rendering by disabling interactivity; handled edge cases (note widgets, image security risks, file size bloat)"
               ]
             },
             {
@@ -92,7 +96,8 @@ const resumeData: ResumeData = {
             "TypeScript",
             "React",
             "Testing Frameworks",
-            "Integration Testing"
+            "Integration Testing",
+            "Data Dense UIs",            
           ],
           "belowTheFold": [
             {
@@ -394,11 +399,12 @@ const resumeData: ResumeData = {
               "role": "Staff Engineer",
               "description": "Revamped Customer 360 feature on Campaigns team. Proposed long-term improvement plan and handled BFCM (Black Friday/Cyber Monday) frontend readiness.",
               "impact": "Improved Customer 360 feature performance and reliability. Successfully handled BFCM traffic spike.",
-              "technologies": ["React", "Performance Optimization", "High Traffic Events"],
+              "technologies": ["React", "Performance Optimization", "High Traffic Events", "DOM Virtualization"],
               "belowTheFold": [
                 {
                   "title": "Details",
                   "content": [
+                    "Added DOM virtualization to improve performance",
                     "Revamped Customer 360 feature on Campaigns team",
                     "Proposed long-term improvement plan",
                     "Handled BFCM (Black Friday/Cyber Monday) frontend readiness"
@@ -607,7 +613,8 @@ const resumeData: ResumeData = {
               "content": [
                 "Archive Parsing - Implemented ZIP file parsing to extract directory structure and file metadata without full download",
                 "Navigation Interface - Built file tree UI for browsing ZIP contents with folder expansion, file preview, and selective download",
-                "Preview Integration - Integrated with existing file preview system to support previewing files within ZIP archives before downloading"
+                "Preview Integration - Integrated with existing file preview system to support previewing files within ZIP archives before downloading",
+                "Performance Optimization - Added DOM virtualization to improve performance for large ZIP files"
               ]
             }
           ]
