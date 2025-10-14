@@ -47,13 +47,14 @@ export function ProjectCard({
       >
         <CardHeader
           title={title}
-          year={yearDisplay}
           role={role}
           hasExpand={hasDetails}
           isExpanded={isExpanded}
         />
         
-        <p className={styles.projectDescription}>{description}</p>
+        <p className={styles.projectDescription}>
+          ({yearDisplay}) {description}
+        </p>
         
         {impact && (
           <div className={styles.projectImpact}>

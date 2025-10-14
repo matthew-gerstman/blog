@@ -24,7 +24,6 @@ export function CardHeader({
     <>
       <div className={styles.top}>
         <h4 className={styles.title}>{title}</h4>
-        {year && <span className={styles.year}>{year}</span>}
         {hasExpand && (
           <span className={styles.expandIcon}>{isExpanded ? '−' : '+'}</span>
         )}
