@@ -396,6 +396,36 @@ const careerData: CareerData = {
                 "HTTP Transcoding Integration - Implemented gRPC-Web transcoding layer enabling browser-compatible API calls",
                 "Team Mentorship - Architected solution via tech design doc, then mentored team members through implementation and ensured knowledge transfer for long-term ownership"
               ]
+            },
+            {
+              "title": "TTI Dashboard & Frontend Monitoring",
+              "year": "2021-2022",
+              "startYear": 2021,
+              "endYear": 2022,
+              "role": "Staff Engineer",
+              "description": "Built Time to Interactive monitoring dashboard for Campaigns and Personalization routes. Improved frontend observability and performance tracking across customer-facing features.",
+              "impact": "Improved frontend observability and performance tracking. Enabled data-driven performance optimization decisions.",
+              "technologies": ["Performance Monitoring", "Time to Interactive", "Frontend Observability"]
+            },
+            {
+              "title": "Technical Debt Reduction",
+              "year": "2021-2022",
+              "startYear": 2021,
+              "endYear": 2022,
+              "role": "Staff Engineer",
+              "description": "Identified Bluecore UI Kit deprecation as biggest frontend technical debt. Created plan for systematic removal and migration to modern component library. Maintained 80%+ test coverage while reducing debt.",
+              "impact": "Reduced technical debt and improved codebase maintainability. Maintained high test coverage throughout migration.",
+              "technologies": ["Technical Debt", "Component Migration", "Test Coverage"]
+            },
+            {
+              "title": "Customer 360 Revamp",
+              "year": "2021",
+              "startYear": 2021,
+              "endYear": 2021,
+              "role": "Staff Engineer",
+              "description": "Revamped Customer 360 feature on Campaigns team. Proposed long-term improvement plan and handled BFCM (Black Friday/Cyber Monday) frontend readiness.",
+              "impact": "Improved Customer 360 feature performance and reliability. Successfully handled BFCM traffic spike.",
+              "technologies": ["React", "Performance Optimization", "High Traffic Events"]
             }
           ]
         }
