@@ -15,31 +15,6 @@ const careerData: CareerData = {
       "description": "Leading development of collaborative data science tooling and dashboard infrastructure.",
       "color": "#632CA6",
       "projects": [
-{
-          "title": "Graphing Summit",
-          "year": "2024-2025",
-          "startYear": 2024,
-          "endYear": 2025,
-          "role": "Engineering Manager",
-          "description": "Organized Datadog's Graphing Summit to build cohesive culture within a newly-formed graphing org from a recent reorg. Led planning with 2 co-organizers, keeping execution lean—1/10 the time investment of typical summits with better relationship outcomes.",
-          "impact": "Transformed \"kind of knew each other\" relationships into \"really knew each other\" connections. Created foundation for cross-team collaboration in graphing org.",
-          "technologies": [
-            "Event Planning",
-            "Team Building",
-            "Cross-functional Coordination"
-          ],
-          "belowTheFold": [
-            {
-              "title": "Execution",
-              "content": [
-                "Pre-Summit Relationship Building - Organized events leading up to the summit (IC1 class, org lunches, donut 1:1s) to increase relationship foundation",
-                "Lean Planning - Avoided committee bloat; 1/10 the time investment of other summits",
-                "Outcome-Focused Design - Prioritized relationships over presentations",
-                "Logistics - Managed ops, scheduling, speakers, budget, swag"
-              ]
-            }
-          ]
-        },
         {
           "title": "Notebooks 2.0",
           "year": "2023-2024",
@@ -62,31 +37,32 @@ const careerData: CareerData = {
               "content": [
                 "Team Culture & Development - Grew team from 4 to 6 engineers with 2 promotions; established daily pairing and weekly learning sessions; created environment where people wanted to work together and help each other succeed. My favorite part of the job was coach, I aspired to be Ted Lasso.",
                 "Feature Development Oversight - Oversaw development of: Rich text editor with ProseMirror; Real-time multiplayer with CRDTs (Yjs) and WebSockets; Inlined widgets; Copy/paste; Toolbar and formatting; List indentation; Code blocks with syntax highlighting; Comments and version history; Inline tables; Print mode (personally implemented); Markdown import/export for API users",
-                "Customer Engagement - Built customer council with shared Slack channels; identified high-usage customers and coordinated with CSMs. Spoke with multiple external customers per week during rollout. Rapidly implemented feedback—nothing a customer loves more than hearing their feature request was implemented in 48 hours. Product manager was focused elsewhere for 6 months; I handled prioritization and release management. Established principle: ship to someone new every week. We slowed down for customer feedback and sped up where it didn't apply. For example: released to 98% of customers while finishing API support for the remaining 2%. When a customer didn't like keyboard-first design, we paused for a week to implement \"Bring Back Buttons\" initiative."
+                "Customer Engagement - Built customer council with shared Slack channels; identified high-usage customers and coordinated with CSMs. Spoke with multiple external customers per week during rollout. Rapidly implemented feedback\u2014nothing a customer loves more than hearing their feature request was implemented in 48 hours. Product manager was focused elsewhere for 6 months; I handled prioritization and release management. Established principle: ship to someone new every week. We slowed down for customer feedback and sped up where it didn't apply. For example: released to 98% of customers while finishing API support for the remaining 2%. When a customer didn't like keyboard-first design, we paused for a week to implement \"Bring Back Buttons\" initiative."
               ]
             }
           ]
         },
         {
-          "title": "Dashboard Type Safety Initiative",
-          "year": "2023-2024",
-          "description": "Systematic TypeScript migration across dashboards codebase.",
-          "impact": "Cut TypeScript 'any' usage by 50%",
+          "title": "Graphing Summit",
+          "year": "2024-2025",
+          "startYear": 2024,
+          "endYear": 2025,
+          "role": "Engineering Manager",
+          "description": "Organized Datadog's Graphing Summit to build cohesive culture within a newly-formed graphing org from a recent reorg. Led planning with 2 co-organizers, keeping execution lean\u20141/10 the time investment of typical summits with better relationship outcomes.",
+          "impact": "Transformed \"kind of knew each other\" relationships into \"really knew each other\" connections. Created foundation for cross-team collaboration in graphing org.",
           "technologies": [
-            "TypeScript",
-            "React",
-            "Redux"
+            "Event Planning",
+            "Team Building",
+            "Cross-functional Coordination"
           ],
-          "role": "",
-          "startYear": 2023,
-          "endYear": 2024,
           "belowTheFold": [
             {
               "title": "Execution",
               "content": [
-                "Systematic audit of TypeScript type usage",
-                "Incremental migration strategy to proper typing",
-                "Created type-safe patterns for common dashboard operations"
+                "Pre-Summit Relationship Building - Organized events leading up to the summit (IC1 class, org lunches, donut 1:1s) to increase relationship foundation",
+                "Lean Planning - Avoided committee bloat; 1/10 the time investment of other summits",
+                "Outcome-Focused Design - Prioritized relationships over presentations",
+                "Logistics - Managed ops, scheduling, speakers, budget, swag"
               ]
             }
           ]
@@ -97,7 +73,7 @@ const careerData: CareerData = {
           "startYear": 2022,
           "endYear": 2023,
           "role": "Software Engineer",
-          "description": "Built Datadog's report-printer node service from scratch—offline dashboard snapshots with 98%+ widget fidelity. Designed client/server rendering handshake, chose Puppeteer, established Node.js patterns now used across 15+ services.",
+          "description": "Built Datadog's report-printer node service from scratch\u2014offline dashboard snapshots with 98%+ widget fidelity. Designed client/server rendering handshake, chose Puppeteer, established Node.js patterns now used across 15+ services.",
           "impact": "Shipped to all customers with 95%+ widget fidelity (up from 70%). Created new revenue stream and permanent team. Node.js foundation code became company standard.",
           "technologies": [
             "Node.js",
@@ -148,6 +124,30 @@ const careerData: CareerData = {
                 "Built testing patterns for multi-widget interactions",
                 "Created test utilities for dashboard scenarios",
                 "Established best practices for UI testing"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Dashboard Type Safety Initiative",
+          "year": "2023-2024",
+          "description": "Systematic TypeScript migration across dashboards codebase.",
+          "impact": "Cut TypeScript 'any' usage by 50%",
+          "technologies": [
+            "TypeScript",
+            "React",
+            "Redux"
+          ],
+          "role": "",
+          "startYear": 2023,
+          "endYear": 2024,
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Systematic audit of TypeScript type usage",
+                "Incremental migration strategy to proper typing",
+                "Created type-safe patterns for common dashboard operations"
               ]
             }
           ]
@@ -225,7 +225,7 @@ const careerData: CareerData = {
     {
       "id": "dropbox",
       "company": "Dropbox",
-      "role": "Software Engineer → Senior Software Engineer",
+      "role": "Software Engineer \u2192 Senior Software Engineer",
       "period": "June 2017 - June 2021",
       "startDate": "2017-06",
       "endDate": "2021-06",
@@ -347,7 +347,7 @@ const careerData: CareerData = {
           "title": "Page Load Optimization",
           "year": "2016",
           "description": "Comprehensive performance profiling and systematic optimization of mobile-first theater ticketing app.",
-          "impact": "95% reduction: 8 seconds → 400ms",
+          "impact": "95% reduction: 8 seconds \u2192 400ms",
           "technologies": [
             "JavaScript",
             "Webpack",
@@ -426,7 +426,7 @@ const careerData: CareerData = {
     {
       "id": "zetta",
       "company": "Zetta.net",
-      "role": "Intern → Software Engineer",
+      "role": "Intern \u2192 Software Engineer",
       "period": "June 2012 - December 2015",
       "startDate": "2012-06",
       "endDate": "2015-12",
@@ -459,7 +459,7 @@ const careerData: CareerData = {
           ]
         },
         {
-          "title": "SVN → Git Migration",
+          "title": "SVN \u2192 Git Migration",
           "year": "2015",
           "description": "Planned and executed organizational migration with team training and code review processes.",
           "technologies": [
@@ -534,7 +534,7 @@ const careerData: CareerData = {
     {
       "id": "dance-marathon",
       "company": "Dance Marathon at UF",
-      "role": "Technology Captain → Technology Overall Director",
+      "role": "Technology Captain \u2192 Technology Overall Director",
       "period": "September 2010 - April 2013",
       "startDate": "2010-09",
       "endDate": "2013-04",
