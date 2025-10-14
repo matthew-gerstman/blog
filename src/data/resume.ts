@@ -9,8 +9,8 @@ const resumeData: ResumeData = {
     {
       "id": "datadog",
       "company": "Datadog",
-      "role": "Senior Software Engineer",
-      "period": "September 2022 - Present",
+      "role": "Senior Software Engineer + Engineering Manager",
+      "period": "Aug 2022 - Sep 2022",
       "startDate": "2022-09",
       "description": "Leading development of collaborative data science tooling and dashboard infrastructure.",
       "color": "#632CA6",
@@ -33,62 +33,11 @@ const resumeData: ResumeData = {
           ],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Team Culture & Development - Grew team from 4 to 6 engineers with 2 promotions; established daily pairing and weekly learning sessions; created environment where people wanted to work together and help each other succeed. My favorite part of the job was coach, I aspired to be Ted Lasso.",
                 "Feature Development Oversight - Oversaw development of: Rich text editor with ProseMirror; Real-time multiplayer with CRDTs (Yjs) and WebSockets; Inlined widgets; Copy/paste; Toolbar and formatting; List indentation; Code blocks with syntax highlighting; Comments and version history; Inline tables; Print mode (personally implemented); Markdown import/export for API users",
                 "Customer Engagement - Built customer council with shared Slack channels; identified high-usage customers and coordinated with CSMs. Spoke with multiple external customers per week during rollout. Rapidly implemented feedback\u2014nothing a customer loves more than hearing their feature request was implemented in 48 hours. Product manager was focused elsewhere for 6 months; I handled prioritization and release management. Established principle: ship to someone new every week. We slowed down for customer feedback and sped up where it didn't apply. For example: released to 98% of customers while finishing API support for the remaining 2%. When a customer didn't like keyboard-first design, we paused for a week to implement \"Bring Back Buttons\" initiative."
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Graphing Summit",
-          "year": "2024-2025",
-          "startYear": 2024,
-          "endYear": 2025,
-          "role": "Engineering Manager",
-          "description": "Organized Datadog's Graphing Summit to build cohesive culture within a newly-formed graphing org from a recent reorg. Led planning with 2 co-organizers, keeping execution lean\u20141/10 the time investment of typical summits with better relationship outcomes.",
-          "impact": "Transformed \"kind of knew each other\" relationships into \"really knew each other\" connections. Created foundation for cross-team collaboration in graphing org.",
-          "technologies": [
-            "Event Planning",
-            "Team Building",
-            "Cross-functional Coordination"
-          ],
-          "belowTheFold": [
-            {
-              "title": "Execution",
-              "content": [
-                "Pre-Summit Relationship Building - Organized events leading up to the summit (IC1 class, org lunches, donut 1:1s) to increase relationship foundation",
-                "Lean Planning - Avoided committee bloat; 1/10 the time investment of other summits",
-                "Outcome-Focused Design - Prioritized relationships over presentations",
-                "Logistics - Managed ops, scheduling, speakers, budget, swag"
-              ]
-            }
-          ]
-        },
-        {
-          "title": "IC1 Class",
-          "year": "2024-2025",
-          "startYear": 2024,
-          "endYear": 2025,
-          "role": "Engineering Manager",
-          "description": "Designed and taught Datadog's first IC1 engineering class\u2014a 6-week intensive program covering career development, technical leadership, and organizational impact for early-career engineers.",
-          "impact": "Graduated 15 engineers with stronger career frameworks and clearer growth paths. Created reusable curriculum adopted by other teams. Demonstrated leadership in engineer development and organizational culture building.",
-          "technologies": [
-            "Teaching",
-            "Career Development",
-            "Technical Leadership",
-            "Curriculum Design"
-          ],
-          "belowTheFold": [
-            {
-              "title": "Execution",
-              "content": [
-                "Curriculum Design - Created 6-week program covering: technical decision-making, code review best practices, effective communication, project scoping, and career navigation. Balanced theory with practical exercises",
-                "Interactive Teaching - Led weekly 90-minute sessions with 15 engineers. Used real Datadog scenarios and case studies. Facilitated group discussions and peer learning",
-                "Career Framework Development - Built structured approach to career progression at IC1 level. Clarified expectations and growth paths. Provided actionable advice for advancement",
-                "Organizational Impact - Identified gap in early-career support and created solution. Collaborated with engineering leadership to align curriculum with company values. Set precedent for structured engineer development programs"
               ]
             }
           ]
@@ -112,7 +61,7 @@ const resumeData: ResumeData = {
           ],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Architecture & Design - Prototyped for 6 weeks with weekly reviews; designed stateless queue-based system with heartbeat monitoring; built client/server handshake to coordinate React rendering, data fetching, viewport resizing, and snapshot timing",
                 "Rendering Engine Selection - Evaluated Selenium, Puppeteer, and Cypress; chose Puppeteer for browser-fidelity PDFs and thin Chrome wrapper; interviewed engineers about Selenium pain to inform decision",
@@ -137,7 +86,7 @@ const resumeData: ResumeData = {
           "startYear": 2023,
           "endYear": 2023,
           "role": "Software Engineer",
-          "description": "Pioneered integration testing framework for Datadog's dashboard platform, enabling reliable testing of complex multi-widget interactions that were previously untestable. Built comprehensive test suite covering critical user workflows and edge cases.",
+          "description": "Pioneered integration testing framework for Datadog's dashboard platform, enabling reliable testing of complex multi-widget interactions (drag and drop, resizing) that were previously untestable. Built comprehensive test suite covering critical user workflows and edge cases.",
           "impact": "Caught regressions before production that unit tests missed. Enabled confident refactoring of complex dashboard code. Set standard for integration testing across frontend teams. Reduced bug escape rate for dashboard features.",
           "technologies": [
             "TypeScript",
@@ -147,7 +96,7 @@ const resumeData: ResumeData = {
           ],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Framework Design - Built testing infrastructure supporting complex dashboard scenarios (widget interactions, time range changes, template variables, cross-widget dependencies)",
                 "Test Coverage - Wrote comprehensive integration tests for critical paths: dashboard loading, widget editing, template variable propagation, and multi-widget coordination",
@@ -155,32 +104,7 @@ const resumeData: ResumeData = {
               ]
             }
           ]
-        },
-        {
-          "title": "Dashboard Type Safety & Documentation",
-          "year": "2022",
-          "startYear": 2022,
-          "endYear": 2022,
-          "role": "Software Engineer",
-          "description": "Led org-wide TypeScript migration and type safety improvement initiative for Datadog's dashboard codebase. Systematically eliminated any types, added proper type definitions, and established patterns for type-safe code.",
-          "impact": "Cut TypeScript any usage by 50% across Dashboards codebase. Reduced runtime type errors. Improved developer velocity through better IDE autocomplete and compile-time error catching. Set standard for TypeScript usage across frontend teams.",
-          "technologies": [
-            "TypeScript",
-            "React",
-            "Redux",
-            "Type Systems"
-          ],
-          "belowTheFold": [
-            {
-              "title": "Execution",
-              "content": [
-                "Incremental Migration Strategy - Created phased approach to eliminate any types without blocking feature work. Prioritized high-impact areas (API boundaries, shared utilities, core data models)",
-                "Type System Design - Built comprehensive type definitions for dashboard domain models, widget configurations, and API responses. Established patterns for discriminated unions and type guards",
-                "Documentation & Tooling - Wrote comprehensive guides for widget development including configuration schemas, lifecycle hooks, and common patterns. Built tooling to validate widget configurations at compile time"
-              ]
-            }
-          ]
-        },
+        },    
         {
           "title": "TypeScript Cleanup Initiative",
           "year": "2023",
@@ -196,7 +120,7 @@ const resumeData: ResumeData = {
           ],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Systematic Audit - Reviewed codebase for unsafe type usage patterns. Prioritized fixes by impact and risk",
                 "Pattern Establishment - Created reusable patterns for common type-safety scenarios. Documented best practices for team",
@@ -206,28 +130,70 @@ const resumeData: ResumeData = {
           ]
         },
         {
+          "title": "Graphing Summit",
+          "year": "2024-2025",
+          "startYear": 2024,
+          "endYear": 2025,
+          "role": "Engineering Manager",
+          "description": "Organized Datadog's Graphing Summit to build cohesive culture within a newly-formed graphing org from a recent reorg. Led planning with 2 co-organizers, keeping execution lean\u20141/10 the time investment of typical summits with better relationship outcomes.",
+          "impact": "Transformed \"kind of knew each other\" relationships into \"really knew each other\" connections. Created foundation for cross-team collaboration in graphing org.",
+          "technologies": [
+            "Event Planning",
+            "Team Building",
+            "Cross-functional Coordination"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Details",
+              "content": [
+                "Pre-Summit Relationship Building - Organized events leading up to the summit (IC1 class, org lunches, donut 1:1s) to increase relationship foundation",
+                "Lean Planning - Avoided committee bloat; 1/10 the time investment of other summits",
+                "Outcome-Focused Design - Prioritized relationships over presentations",
+                "Logistics - Managed CFP, ops, scheduling, speakers, budget, swag"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "IC1 Class",
+          "year": "2024-2025",
+          "startYear": 2024,
+          "endYear": 2025,
+          "role": "Engineering Manager",
+          "description": "Designed and taught Datadog's first IC1 engineering class\u2014a covering career development, technical leadership, and organizational impact for early-career engineers.",
+          "impact": "Graduated 12 engineers with stronger career frameworks and clearer growth paths. Created reusable curriculum adopted by other teams. Demonstrated leadership in engineer development and organizational culture building.",
+          "technologies": [
+            "Teaching",
+            "Career Development",
+            "Technical Leadership",
+            "Curriculum Design"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Details",
+              "content": [
+                "Curriculum Design - Created 6-week program covering: technical decision-making, code review best practices, effective communication, project scoping, and career navigation. Balanced theory with practical exercises",
+                "Interactive Teaching - Led weekly 90-minute sessions with 15 engineers. Used real Datadog scenarios and case studies. Facilitated group discussions and peer learning",
+                "Career Framework Development - Built structured approach to career progression at IC1 level. Clarified expectations and growth paths. Provided actionable advice for advancement",
+                "Organizational Impact - Identified gap in early-career support and created solution. Collaborated with engineering leadership to align curriculum with company values. Set precedent for structured engineer development programs"
+              ]
+            }
+          ]
+        },
+        
+        {
           "title": "Frontend Summit",
           "year": "2023",
           "startYear": 2023,
           "endYear": 2023,
           "role": "Software Engineer",
           "description": "Organized and ran Datadog's first-ever Frontend Summit\u2014a multi-day conference bringing together frontend engineers across the company. Created venue for cross-team knowledge sharing, technical deep dives, and community building.",
-          "impact": "Established precedent for frontend community events at Datadog. Built cross-org relationships and shared knowledge across previously siloed teams. Demonstrated leadership in frontend community building.",
+          "impact": "Established myself as a leader in the frontend community early in my tenure at the company",
           "technologies": [
             "Event Planning",
             "Technical Leadership",
             "Community Building"
-          ],
-          "belowTheFold": [
-            {
-              "title": "Execution",
-              "content": [
-                "Event Design & Logistics - Planned multi-day agenda with technical talks, workshops, and networking sessions. Coordinated speakers, venues, and schedules across distributed teams",
-                "Content Curation - Identified key technical topics (performance, architecture, testing, tooling) and recruited speakers from across frontend teams to share expertise",
-                "Community Building - Created space for informal knowledge transfer and relationship building across teams that rarely interacted. Established foundation for ongoing frontend collaboration"
-              ]
-            }
-          ]
+          ],          
         }
       ]
     },
@@ -274,7 +240,7 @@ const resumeData: ResumeData = {
               ]
             },
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Authored 'Bluecore's Frontend North Star' blog post establishing technical vision and principles for scaling frontend at unicorn-stage company",
                 "Wrote comprehensive RFC covering design system specifications, reusable components with embedded business logic, and API interface requirements with code generation",
@@ -310,7 +276,7 @@ const resumeData: ResumeData = {
           "technologies": ["System Design", "JavaScript", "React", "Interview Design"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Question Design - Created three comprehensive interview questions: system design (Instagram feed with infinite scroll, image optimization, caching), JavaScript fundamentals (Event Emitter with edge cases), and React practical (Auto Suggest with debouncing, accessibility)",
                 "Evaluation Framework - Built detailed rubrics for each question covering technical depth, problem-solving approach, communication, and trade-off analysis. Included follow-up questions and extension scenarios",
@@ -330,7 +296,7 @@ const resumeData: ResumeData = {
           "technologies": ["Next.js", "Kubernetes", "Google Cloud", "Node.js", "Python 2.7 Migration"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Milestone-Based Development - Created phased rollout strategy: M0 (prototype validation), M1 (QA infrastructure), M2 (internal tools), M3 (first customer route), M4 (complete migration). Enabled incremental validation and risk reduction",
                 "Architecture & Infrastructure - Designed NextJS server on Google Kubernetes Engine with Node.js runtime. Worked with DevOps on deployment strategy, scaling configuration, and production optimization",
@@ -350,7 +316,7 @@ const resumeData: ResumeData = {
           "technologies": ["gRPC", "HTTP Transcoding", "Code Generation", "TypeScript", "Redux"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Code Generation Pipeline - Designed system to automatically generate TypeScript clients from gRPC definitions with full type safety",
                 "HTTP Transcoding Integration - Implemented gRPC-Web transcoding layer enabling browser-compatible API calls",
@@ -371,7 +337,7 @@ const resumeData: ResumeData = {
           "technologies": ["TypeScript", "React", "VanillaJS Migration", "Component Libraries"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Migration Strategy - Created parallelization approach enabling multiple product teams to work simultaneously on different components without blocking each other",
                 "Cross-Team Coordination - Coordinated migration across product teams, establishing shared timeline and success criteria. Ensured consistent migration patterns",
@@ -391,7 +357,7 @@ const resumeData: ResumeData = {
           "technologies": ["TypeScript", "JavaScript", "Type Systems"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Migration Strategy - Designed incremental migration path from JavaScript to TypeScript with strict mode enabled",
                 "Training & Education - Created comprehensive weekly training curriculum covering TypeScript fundamentals through advanced patterns",
@@ -411,7 +377,7 @@ const resumeData: ResumeData = {
               "technologies": ["Performance Monitoring", "Time to Interactive", "Frontend Observability"],
               "belowTheFold": [
                 {
-                  "title": "Execution",
+                  "title": "Details",
                   "content": [
                     "Built Time to Interactive monitoring dashboard for Campaigns and Personalization routes",
                     "Improved frontend observability and performance tracking across customer-facing features",
@@ -431,7 +397,7 @@ const resumeData: ResumeData = {
               "technologies": ["React", "Performance Optimization", "High Traffic Events"],
               "belowTheFold": [
                 {
-                  "title": "Execution",
+                  "title": "Details",
                   "content": [
                     "Revamped Customer 360 feature on Campaigns team",
                     "Proposed long-term improvement plan",
@@ -470,7 +436,7 @@ const resumeData: ResumeData = {
           ],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Family Plans (Q1) - Joined the Family team, where I built the credential-free family sharing experience and the family account management UI. I established 1:1s with the team (engineers, PM, designer) and shipped my first feature within two weeks. Navigated remote work transition during COVID",
                 "Vault (Q2) - My manager and I were pulled in to support the Vault team. Led Vault web frontend development, mentoring another engineer through setup flow, PIN access system, and management interface implementation. I proposed team coding standards for consistency across five engineers",
@@ -497,7 +463,7 @@ const resumeData: ResumeData = {
           ],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Architecture Design - Built comprehensive Redux patterns with TypeScript type safety, covering common state operations and establishing best practices for complex state management",
                 "Organizational Rollout - Created extensive documentation and training materials. Systematic team-by-team adoption with direct support and code review guidelines",
@@ -517,7 +483,7 @@ const resumeData: ResumeData = {
           "technologies": ["Lodash", "Underscore", "Webpack", "Migration", "Build Optimization"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Research & Alignment - Wrote Web Enhancement Proposal (WEP) to build organizational consensus. Analyzed codebase to identify all Underscore usage and map to Lodash equivalents. Evaluated migration approaches and chose hybrid automated codemod + manual review strategy",
                 "Custom Build Optimization - Created custom Webpack Lodash bundle containing only needed functions to maintain bundle size. Built separate typings and treeshaking configs to optimize for production while preserving developer experience",
@@ -537,7 +503,7 @@ const resumeData: ResumeData = {
           "technologies": ["SDK Development", "Cross-Platform", "File Preview", "Build Pipeline"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Cross-Platform Architecture - Designed SDK architecture supporting both web and desktop platforms with consistent API surface",
                 "Build Pipeline - Owned build pipeline and asset optimization for efficient file preview delivery",
@@ -557,7 +523,7 @@ const resumeData: ResumeData = {
           "technologies": ["Community Building", "Knowledge Sharing", "Frontend Culture"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Community Building - Founded and nurtured frontend community across growing engineering organization with no centralized frontend coordination",
                 "Knowledge Sharing - Organized regular sessions and published newsletters with tips, updates, and best practices",
@@ -577,7 +543,7 @@ const resumeData: ResumeData = {
           "technologies": ["Event Planning", "Technical Summits", "Remote Collaboration"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Event Design - Planned multi-day summits with curated technical content, workshops, and collaboration time",
                 "Community Connection - Created space for in-person connection and relationship building in remote-first company",
@@ -597,7 +563,7 @@ const resumeData: ResumeData = {
           "technologies": ["Mobile Web", "Responsive Design", "File Preview", "Touch Interactions"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Mobile Optimization - Designed responsive preview interface optimized for mobile viewports, touch interactions, and varying network conditions",
                 "Performance Focus - Implemented progressive loading and optimized asset delivery for mobile bandwidth constraints",
@@ -617,7 +583,7 @@ const resumeData: ResumeData = {
           "technologies": ["React", "Product Development", "Portfolio Creation"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Component Development - Built frontend components for showcase creation, customization, and viewing experience",
                 "File Integration - Integrated with Dropbox file system to enable seamless file selection and organization into showcases",
@@ -637,7 +603,7 @@ const resumeData: ResumeData = {
           "technologies": ["File Preview", "ZIP Parsing", "File Tree UI"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Archive Parsing - Implemented ZIP file parsing to extract directory structure and file metadata without full download",
                 "Navigation Interface - Built file tree UI for browsing ZIP contents with folder expansion, file preview, and selective download",
@@ -668,7 +634,7 @@ const resumeData: ResumeData = {
           "technologies": ["React", "Redux", "Lodash", "Functional Programming", "SSR", "Swagger"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Deep Learning - Learned React/Redux architecture through hands-on building and reading Lodash and Redux source code. Heavy functional programming focus shaped technical approach",
                 "Feature Ownership - Built checkout flow (core revenue path), show landing pages, and authentication/server-side rendering strategies. Integrated with new Swagger-based API client",
@@ -688,7 +654,7 @@ const resumeData: ResumeData = {
           "technologies": ["Groovy on Grails", "SQL", "Backend APIs", "Frontend"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Backend Development - Built APIs in Groovy on Grails with complex SQL queries for matching alternative show offers based on user preferences and availability",
                 "Frontend Experience - Designed and implemented offer selection interface for lottery losers to browse and purchase alternative shows",
@@ -708,7 +674,7 @@ const resumeData: ResumeData = {
           "technologies": ["RESTful APIs", "Backend Development", "Business Logic"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "API Design - Built RESTful APIs for rush ticket operations including availability checks, purchase flow, and eligibility verification",
                 "Business Rules - Implemented complex availability and eligibility logic for same-day limited ticket sales",
@@ -728,7 +694,7 @@ const resumeData: ResumeData = {
           "technologies": ["Sentry", "Error Monitoring", "Alerting", "DevOps"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Monitoring Setup - Configured Sentry for production error tracking with appropriate sampling and alert thresholds",
                 "Process Establishment - Created error triage processes and alerting workflows for team response",
@@ -748,7 +714,7 @@ const resumeData: ResumeData = {
           "technologies": ["Ansible", "Deployment Automation", "Node.js", "DevOps"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Automation - Created Ansible playbooks for Node.js application deployments replacing manual processes",
                 "Reliability - Built repeatable deployment process reducing errors and deployment time",
@@ -780,7 +746,7 @@ const resumeData: ResumeData = {
           "technologies": ["Backbone.js", "RESTful APIs", "API Design", "Documentation"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "API Architecture - Led complete backend migration to RESTful resource architecture with proper HTTP verbs and status codes",
                 "Frontend Migration - Migrated frontend to Backbone.js with proper MVC patterns and data binding",
@@ -801,7 +767,7 @@ const resumeData: ResumeData = {
           "technologies": ["CI/CD", "Sentry", "Error Monitoring", "DevOps"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "CI Pipeline - Set up continuous integration pipeline for automated testing and quality checks",
                 "Error Monitoring - Implemented Sentry for production error tracking and alerting",
@@ -821,7 +787,7 @@ const resumeData: ResumeData = {
           "technologies": ["Git", "SVN", "Version Control", "Code Review"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Migration Planning - Planned and executed organizational migration from SVN to Git with minimal disruption",
                 "Process Establishment - Established branching strategies, PR processes, and code review practices",
@@ -841,7 +807,7 @@ const resumeData: ResumeData = {
           "technologies": ["Full-Stack", "Cloud Storage", "UX Design"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Full-Stack Development - Built complete restore flow from file selection UI to backend restore operations",
                 "UX Design - Designed intuitive user experience for complex operations including version history and conflict resolution",
@@ -861,7 +827,7 @@ const resumeData: ResumeData = {
           "technologies": ["User Onboarding", "Conversion Optimization"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Flow Refactor - Refactored user enrollment and onboarding flow for improved conversion",
                 "Code Modernization - Modernized legacy enrollment code for better maintainability",
@@ -881,7 +847,7 @@ const resumeData: ResumeData = {
           "technologies": ["Performance Optimization", "Grunt", "Build Systems", "Profiling"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Build System Migration to Grunt - Migrated the legacy build system to Grunt, implementing optimized asset compilation, bundling, and minification",
                 "Page Load Optimization - Performed systematic profiling and refactoring of critical paths, including asset loading, rendering, and data fetching, to drastically reduce initial page load times",
@@ -901,7 +867,7 @@ const resumeData: ResumeData = {
           "technologies": ["Queue Systems", "Lifecycle Management", "Compliance"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Queue System - Built data deletion queue with lifecycle management and scheduling",
                 "Full-Stack Implementation - Created UI for deletion requests and backend job processing",
@@ -921,7 +887,7 @@ const resumeData: ResumeData = {
           "technologies": ["Logging", "Observability", "DevOps"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Logging System - Implemented structured logging system for better observability",
                 "Standards - Established logging standards and practices across codebase",
@@ -941,7 +907,7 @@ const resumeData: ResumeData = {
           "technologies": ["Release Management", "Quality Assurance", "Automation"],
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Gating System - Built release gating system with automated quality checks",
                 "Approval Workflows - Created manual approval workflows for production releases",
@@ -976,7 +942,7 @@ const resumeData: ResumeData = {
           "endYear": 2013,
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Built custom tweet visualizers optimized for Jumbotron display",
                 "Implemented real-time tweet aggregation via Twitter API",
@@ -1000,7 +966,7 @@ const resumeData: ResumeData = {
           "endYear": 2013,
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Built native iOS event app (pre-widespread adoption era)",
                 "Implemented event schedule and timing features",
@@ -1026,7 +992,7 @@ const resumeData: ResumeData = {
           "endYear": 2012,
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Designed real-life 'assassins' game with target assignment system",
                 "Built pin verification system for 'hits'",
@@ -1066,7 +1032,7 @@ const resumeData: ResumeData = {
           "endYear": 2013,
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Core CS: Data Structures, Algorithms, Operating Systems, Networks, Databases",
                 "Systems: Computer Organization, Digital Logic, Circuits",
@@ -1090,7 +1056,7 @@ const resumeData: ResumeData = {
           "endYear": 2009,
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Supported systems people depended on for their jobs",
                 "Learned professional work skills",
@@ -1132,7 +1098,7 @@ const resumeData: ResumeData = {
           "endYear": 2009,
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Computer repair and troubleshooting",
                 "Virus removal during 'era of constant malware'",
@@ -1157,7 +1123,7 @@ const resumeData: ResumeData = {
           "endYear": 2005,
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "Wrote programs for fun in Pascal classes",
                 "Built command line interactive Periodic Table for science project",
@@ -1183,7 +1149,7 @@ const resumeData: ResumeData = {
           "endYear": 2000,
           "belowTheFold": [
             {
-              "title": "Execution",
+              "title": "Details",
               "content": [
                 "First program: Generic guest book using Visual Basic 5",
                 "Built websites to show classmates at school",
