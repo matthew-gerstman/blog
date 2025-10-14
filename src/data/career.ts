@@ -405,7 +405,17 @@ const careerData: CareerData = {
               "role": "Staff Engineer",
               "description": "Built Time to Interactive monitoring dashboard for Campaigns and Personalization routes. Improved frontend observability and performance tracking across customer-facing features.",
               "impact": "Improved frontend observability and performance tracking. Enabled data-driven performance optimization decisions.",
-              "technologies": ["Performance Monitoring", "Time to Interactive", "Frontend Observability"]
+              "technologies": ["Performance Monitoring", "Time to Interactive", "Frontend Observability"],
+              "belowTheFold": [
+                {
+                  "title": "Execution",
+                  "content": [
+                    "Built Time to Interactive monitoring dashboard for Campaigns and Personalization routes",
+                    "Improved frontend observability and performance tracking across customer-facing features",
+                    "Enabled data-driven performance optimization decisions"
+                  ]
+                }
+              ]
             },
             {
               "title": "Technical Debt Reduction",
@@ -415,7 +425,17 @@ const careerData: CareerData = {
               "role": "Staff Engineer",
               "description": "Identified Bluecore UI Kit deprecation as biggest frontend technical debt. Created plan for systematic removal and migration to modern component library. Maintained 80%+ test coverage while reducing debt.",
               "impact": "Reduced technical debt and improved codebase maintainability. Maintained high test coverage throughout migration.",
-              "technologies": ["Technical Debt", "Component Migration", "Test Coverage"]
+              "technologies": ["Technical Debt", "Component Migration", "Test Coverage"],
+              "belowTheFold": [
+                {
+                  "title": "Execution",
+                  "content": [
+                    "Identified Bluecore UI Kit deprecation as biggest frontend technical debt",
+                    "Created plan for systematic removal and migration to modern component library",
+                    "Maintained 80%+ test coverage while reducing debt"
+                  ]
+                }
+              ]
             },
             {
               "title": "Customer 360 Revamp",
@@ -425,7 +445,17 @@ const careerData: CareerData = {
               "role": "Staff Engineer",
               "description": "Revamped Customer 360 feature on Campaigns team. Proposed long-term improvement plan and handled BFCM (Black Friday/Cyber Monday) frontend readiness.",
               "impact": "Improved Customer 360 feature performance and reliability. Successfully handled BFCM traffic spike.",
-              "technologies": ["React", "Performance Optimization", "High Traffic Events"]
+              "technologies": ["React", "Performance Optimization", "High Traffic Events"],
+              "belowTheFold": [
+                {
+                  "title": "Execution",
+                  "content": [
+                    "Revamped Customer 360 feature on Campaigns team",
+                    "Proposed long-term improvement plan",
+                    "Handled BFCM (Black Friday/Cyber Monday) frontend readiness"
+                  ]
+                }
+              ]
             }
           ]
         }
