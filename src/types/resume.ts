@@ -36,7 +36,7 @@ export interface Job {
   endDate?: string;
   description: string;
   color: string;
-  projects: string[]; // Array of project keys from projectsMap
+  projects: Project[];
 }
 
 export interface ResumeData {
