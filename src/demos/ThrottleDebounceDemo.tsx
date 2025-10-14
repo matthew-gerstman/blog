@@ -61,31 +61,3 @@ export function DebounceDemo() {
     </div>
   );
 }
-
-export function AllDemo() {
-  const [numSpells, setNumSpells] = useState(0);
-  const castSpell = useCallback(() => setNumSpells((n) => n + 1), []);
-  const castSpellThrottled = useCallback(throttle(castSpell, TIMEOUT), [
-    castSpell,
-  ]);
-  const castSpellDebounced = useCallback(debounce(castSpell, TIMEOUT), [
-    castSpell,
-  ]);
-
-  return (
-    <div className={styles.demo}>
-      <div className={styles.counter}>{numSpells} Spells Cast!</div>
-      <div className={styles.buttons}>
-        <button onClick={castSpell} className={styles.button}>
-          Cast Spell!
-        </button>
-        <button onClick={castSpellThrottled} className={styles.buttonThrottled}>
-          Cast Spell Throttled!
-        </button>
-        <button onClick={castSpellDebounced} className={styles.buttonDebounced}>
-          Cast Spell Debounced!
-        </button>
-      </div>
-    </div>
-  );
-}

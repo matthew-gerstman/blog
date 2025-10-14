@@ -10,13 +10,6 @@ export interface Post {
   banner_img?: string;
 }
 
-export interface Talk {
-  id: number;
-  title: string;
-  subtitle: string;
-  video: string;
-}
-
 export interface TOCItem {
   id: string;
   text: string;
