@@ -5,6 +5,7 @@ This project uses ESLint, Prettier, and Husky to maintain code quality and consi
 ## Tools
 
 ### ESLint
+
 - **Purpose**: Identifies and reports code patterns and potential errors
 - **Config**: `eslint.config.js` (modern flat config)
 - **Plugins**:
@@ -15,6 +16,7 @@ This project uses ESLint, Prettier, and Husky to maintain code quality and consi
   - `eslint-plugin-prettier` - Prettier integration
 
 ### Prettier
+
 - **Purpose**: Automatic code formatting
 - **Config**: `.prettierrc`
 - **Style**:
@@ -25,6 +27,7 @@ This project uses ESLint, Prettier, and Husky to maintain code quality and consi
   - Trailing commas (ES5)
 
 ### Husky + lint-staged
+
 - **Purpose**: Git hooks for pre-commit checks
 - **Behavior**: Automatically lints and formats staged files before commit
 - **Config**: `.husky/pre-commit` + `lint-staged` in `package.json`
@@ -58,11 +61,14 @@ When you commit code, the following happens automatically:
 ## IDE Integration
 
 ### VS Code
+
 Install these extensions for the best experience:
+
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 Recommended `.vscode/settings.json`:
+
 ```json
 {
   "editor.formatOnSave": true,
@@ -82,6 +88,7 @@ Recommended `.vscode/settings.json`:
 ## Bypassing Checks
 
 In rare cases where you need to commit without running checks:
+
 ```bash
 git commit --no-verify -m "your message"
 ```
@@ -91,11 +98,13 @@ git commit --no-verify -m "your message"
 ## Configuration Details
 
 ### ESLint Rules
+
 - **TypeScript**: Strict type checking, no unused vars (except `_` prefix)
 - **React**: Hooks rules enforced, JSX scope check disabled (new transform)
 - **General**: No `console.log` (except warn/error), prefer const, no var
 
 ### Prettier Rules
+
 - Single quotes for strings
 - Semicolons required
 - 2-space indentation
@@ -106,22 +115,26 @@ git commit --no-verify -m "your message"
 ## Troubleshooting
 
 ### Husky not running
+
 ```bash
 npm run prepare
 ```
 
 ### ESLint errors after pull
+
 ```bash
 npm install
 npm run lint:fix
 ```
 
 ### Prettier conflicts with ESLint
+
 The `eslint-config-prettier` plugin is configured to disable conflicting rules.
 
 ## Current Warnings
 
 The codebase has some intentional `any` types in:
+
 - `TwitterEmbed.tsx` - Third-party Twitter API types
 - `throttle-debounce.ts` - Generic utility functions
 - `Article.tsx` - Dynamic content handling
