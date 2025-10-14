@@ -465,35 +465,34 @@ const careerData: CareerData = {
     {
       "id": "dropbox",
       "company": "Dropbox",
-      "role": "Software Engineer \u2192 Senior Software Engineer",
-      "period": "June 2017 - June 2021",
-      "startDate": "2017-06",
-      "endDate": "2021-06",
-      "description": "Architected state management systems and founded JavaScript Guild for organizational best practices.",
-      "color": "#0061FF",
+      "logo": "/images/dropbox.png",
+      "location": "San Francisco, CA (Remote)",
+      "startYear": 2017,
+      "endYear": 2020,
       "projects": [
         {
           "title": "Plus Plus: Family Plans & Life Vault",
           "year": "2020",
-          "description": "Led end-to-end frontend architecture for new product line with complex family sharing features.",
-          "impact": "Created new revenue stream",
-          "technologies": [
-            "TypeScript",
-            "React",
-            "Redux"
-          ],
-          "role": "",
           "startYear": 2020,
           "endYear": 2020,
+          "role": "Software Engineer",
+          "description": "My work on Dropbox Plus followed a clear quarterly progression: I started on the Family team in Q1, then my manager and I were pulled to support the Vault team in Q2, and again to support the Backup team in Q3. By Q4, having touched all major feature areas, I joined the go-to-market integration squad. This unique progression made me the person who understood how all the product pieces fit together, enabling me to effectively coordinate across teams for a successful launch.",
+          "impact": "Successfully launched a new revenue-driving product with contributions from ~150 people across teams. Delivered a sophisticated family sharing experience enabling secure, credential-free family account management. Introduced a secure Vault feature with PIN access and comprehensive management UI. Contributed to robust computer backup functionality. Published engineering lifecycle insights on the Dropbox Tech Blog, highlighting effective team integration and pragmatic decision-making.",
+          "technologies": ["React", "Redux", "TypeScript", "Rust", "Family Sharing", "Vault", "Computer Backup"],
+          "links": [
+            {
+              "text": "Dropbox Tech Blog Post",
+              "url": "https://dropbox.tech/frontend/building-a-living-styleguide-at-dropbox"
+            }
+          ],
           "belowTheFold": [
             {
               "title": "Execution",
               "content": [
-                "Led end-to-end frontend architecture from ideation to launch",
-                "Designed complex state management for family account relationships",
-                "Built intuitive UI for family plan management",
-                "Coordinated cross-functional teams (design, product, backend)",
-                "Implemented Life Vault feature for important document storage"
+                "Family Plans (Q1) - Joined the Family team, where I built the credential-free family sharing experience and the family account management UI. I established 1:1s with the team (engineers, PM, designer) and shipped my first feature within two weeks. Navigated remote work transition during COVID",
+                "Vault (Q2) - My manager and I were pulled in to support the Vault team. Led Vault web frontend development, mentoring another engineer through setup flow, PIN access system, and management interface implementation. I proposed team coding standards for consistency across five engineers",
+                "Computer Backup (Q3) - My manager and I were again pulled to support the Backup team. Built backup feature frontend and contributed to backend, including small change to Rust sync engine",
+                "Go-to-Market Integration (Q4) - Because I had touched all major feature areas (Family Plans, Vault, and Computer Backup), I became responsible for cross-functional coordination. I worked with approximately 150 people across various teams (engineering, product, design, marketing, legal) to successfully launch this new revenue-driving product. I also published engineering lifecycle insights on the Dropbox Tech Blog, sharing lessons learned from this large-scale product launch"
               ]
             }
           ]
@@ -501,25 +500,45 @@ const careerData: CareerData = {
         {
           "title": "Redux State Management System",
           "year": "2018",
-          "description": "Designed comprehensive Redux architecture with TypeScript type-safe patterns adopted across the organization.",
-          "impact": "Adopted by ~10 teams across ~25 features",
-          "technologies": [
-            "TypeScript",
-            "Redux",
-            "React"
-          ],
-          "role": "",
           "startYear": 2018,
           "endYear": 2018,
+          "role": "Software Engineer",
+          "description": "Designed and rolled out comprehensive Redux architecture with TypeScript type-safe patterns across Dropbox's frontend organization. Created reusable patterns, extensive documentation, and systematic team-by-team adoption strategy.",
+          "impact": "Adopted by ~10 teams across ~25 features, becoming company standard for state management. Reduced state-related bugs significantly. Improved developer velocity and code maintainability. Created foundation for future frontend architecture decisions. Presented approach in public talk 'Building a Typesafe Code Split React-Redux Application'.",
+          "technologies": ["Redux", "TypeScript", "React", "State Management", "Architecture"],
+          "links": [
+            {
+              "text": "Building a Typesafe Code Split React-Redux Application",
+              "url": "https://www.matthewgerstman.com/talks/"
+            }
+          ],
           "belowTheFold": [
             {
               "title": "Execution",
               "content": [
-                "Designed comprehensive Redux architecture with TypeScript",
-                "Created reusable patterns for common state operations",
-                "Built extensive documentation and training materials",
-                "Systematic rollout across organization with team support",
-                "Established best practices and code review guidelines"
+                "Architecture Design - Built comprehensive Redux patterns with TypeScript type safety, covering common state operations and establishing best practices for complex state management",
+                "Organizational Rollout - Created extensive documentation and training materials. Systematic team-by-team adoption with direct support and code review guidelines",
+                "Standards Establishment - Set company-wide patterns for state management that influenced frontend direction across organization"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Underscore → Lodash Migration",
+          "year": "2018",
+          "startYear": 2018,
+          "endYear": 2018,
+          "role": "Software Engineer",
+          "description": "Co-led migration of Dropbox's 10-year-old codebase from deprecated Underscore to Lodash, modernizing utility library used by millions daily. Built custom Webpack bundle, created comprehensive migration strategy, and executed phased rollout with only one production bug.",
+          "impact": "Modernized entire codebase dependency serving millions of users. Maintained bundle size targets through custom builds. Only one production bug despite thousands of lines migrated. Published migration approach on Dropbox Tech Blog. Established patterns for large-scale technical migrations.",
+          "technologies": ["Lodash", "Underscore", "Webpack", "Migration", "Build Optimization"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Research & Alignment - Wrote Web Enhancement Proposal (WEP) to build organizational consensus. Analyzed codebase to identify all Underscore usage and map to Lodash equivalents. Evaluated migration approaches and chose hybrid automated codemod + manual review strategy",
+                "Custom Build Optimization - Created custom Webpack Lodash bundle containing only needed functions to maintain bundle size. Built separate typings and treeshaking configs to optimize for production while preserving developer experience",
+                "Phased Migration - Split into four phases: direct 1:1 mappings, functions requiring modifications, edge cases, and final Underscore removal. Deployed each phase separately to catch issues incrementally. Thorough testing caught subtle differences (e.g., _.compact empty array handling)"
               ]
             }
           ]
@@ -527,57 +546,59 @@ const careerData: CareerData = {
         {
           "title": "File Viewer SDK",
           "year": "2018",
-          "description": "Led architecture and bootstrapping of cross-platform SDK for file preview functionality.",
-          "technologies": [
-            "TypeScript",
-            "React",
-            "SDK Development"
-          ],
-          "role": "",
           "startYear": 2018,
           "endYear": 2018,
+          "role": "Software Engineer",
+          "description": "Led architecture and bootstrapping of cross-platform SDK for consistent file preview functionality across Dropbox web and desktop surfaces. Owned build pipeline, asset optimization, and API design for embedding file previews.",
+          "impact": "Infrastructure used across multiple Dropbox surfaces. Consistent file preview experience across platforms. Reusable component for future products. Optimized asset delivery and performance.",
+          "technologies": ["SDK Development", "Cross-Platform", "File Preview", "Build Pipeline"],
           "belowTheFold": [
             {
               "title": "Execution",
               "content": [
-                "Led architecture and bootstrapping of cross-platform SDK",
-                "Owned build pipeline and asset optimization",
-                "Designed API for embedding file previews",
-                "Coordinated between web and desktop teams"
+                "Cross-Platform Architecture - Designed SDK architecture supporting both web and desktop platforms with consistent API surface",
+                "Build Pipeline - Owned build pipeline and asset optimization for efficient file preview delivery",
+                "Extensibility - Built system for easily adding new file type support, enabling future expansion"
               ]
             }
           ]
         },
         {
-          "title": "Underscore \u2192 Lodash Migration",
-          "year": "2018",
-          "startYear": 2018,
-          "endYear": 2018,
-          "role": "Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
-        },
-        {
           "title": "JavaScript Guild",
-          "year": "2017-2021",
-          "description": "Founded JavaScript Guild and organized 100+ attendee technical summits for frontend engineers.",
-          "technologies": [
-            "Community",
-            "Leadership"
-          ],
-          "role": "",
+          "year": "2017-2020",
           "startYear": 2017,
-          "endYear": 2021,
+          "endYear": 2020,
+          "role": "Software Engineer",
+          "description": "Founded JavaScript Guild as community of practice for frontend engineers across Dropbox. Organized knowledge-sharing sessions, published newsletters, coordinated cross-team initiatives, and established forum for frontend challenges.",
+          "impact": "Improved frontend culture and standards organization-wide. Created lasting community of practice across teams. Facilitated knowledge transfer and collaboration. Influenced organizational frontend direction through shared learning and discussion.",
+          "technologies": ["Community Building", "Knowledge Sharing", "Frontend Culture"],
           "belowTheFold": [
             {
               "title": "Execution",
               "content": [
-                "Founded JavaScript Guild as community for frontend engineers",
-                "Organized regular knowledge-sharing sessions",
-                "Published newsletters with tips and updates",
-                "Coordinated multi-day technical summits"
+                "Community Building - Founded and nurtured frontend community across growing engineering organization with no centralized frontend coordination",
+                "Knowledge Sharing - Organized regular sessions and published newsletters with tips, updates, and best practices",
+                "Cross-Team Coordination - Created forum for discussing frontend challenges and coordinating initiatives across teams"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "JavaScript Guild Summit",
+          "year": "2019-2020",
+          "startYear": 2019,
+          "endYear": 2020,
+          "role": "Software Engineer",
+          "description": "Organized multi-day technical summits (2019-2020) bringing together frontend engineers from across remote-first organization. Curated technical talks, workshops, and collaboration sessions for deep technical discussions and relationship building.",
+          "impact": "Strengthened cross-team relationships in remote-first organization. Enabled deeper technical collaboration. Created lasting organizational connections. Established model for future technical events.",
+          "technologies": ["Event Planning", "Technical Summits", "Remote Collaboration"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Event Design - Planned multi-day summits with curated technical content, workshops, and collaboration time",
+                "Community Connection - Created space for in-person connection and relationship building in remote-first company",
+                "Knowledge Transfer - Facilitated deep technical discussions and cross-team learning"
               ]
             }
           ]
@@ -588,10 +609,19 @@ const careerData: CareerData = {
           "startYear": 2017,
           "endYear": 2017,
           "role": "Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
+          "description": "Built mobile web file preview experience for Dropbox, creating responsive preview interface optimized for mobile browsers. Early project at Dropbox establishing frontend patterns for mobile optimization and touch interactions.",
+          "impact": "Enabled file preview functionality for mobile web users without requiring app download. Improved mobile web experience for millions of users. Established mobile-first patterns for future Dropbox web features.",
+          "technologies": ["Mobile Web", "Responsive Design", "File Preview", "Touch Interactions"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Mobile Optimization - Designed responsive preview interface optimized for mobile viewports, touch interactions, and varying network conditions",
+                "Performance Focus - Implemented progressive loading and optimized asset delivery for mobile bandwidth constraints",
+                "Cross-Browser Support - Ensured consistent experience across mobile browsers (Safari, Chrome, Firefox) with varying capabilities"
+              ]
+            }
+          ]
         },
         {
           "title": "Showcase",
@@ -599,10 +629,19 @@ const careerData: CareerData = {
           "startYear": 2017,
           "endYear": 2017,
           "role": "Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
+          "description": "Contributed to Showcase product development, enabling professionals to create portfolio presentations from Dropbox files. Built frontend components for customizable layouts, branding, and file organization into professional showcases.",
+          "impact": "Enabled new use case for Dropbox files beyond storage—professional portfolio creation. Expanded Dropbox value proposition for creative professionals and freelancers.",
+          "technologies": ["React", "Product Development", "Portfolio Creation"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Component Development - Built frontend components for showcase creation, customization, and viewing experience",
+                "File Integration - Integrated with Dropbox file system to enable seamless file selection and organization into showcases",
+                "Presentation Layer - Created polished viewing experience for showcase recipients with responsive layouts and branding options"
+              ]
+            }
+          ]
         },
         {
           "title": "ZIP File Previews",
@@ -610,15 +649,23 @@ const careerData: CareerData = {
           "startYear": 2017,
           "endYear": 2017,
           "role": "Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
+          "description": "Built ZIP file preview functionality allowing users to browse ZIP archive contents without downloading entire file. Created file tree navigation, preview support for contained files, and selective download capabilities.",
+          "impact": "Reduced unnecessary downloads by enabling preview-before-download workflow. Improved user experience for large ZIP files where users only need specific contents. Saved bandwidth and time for millions of users.",
+          "technologies": ["File Preview", "ZIP Parsing", "File Tree UI"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Archive Parsing - Implemented ZIP file parsing to extract directory structure and file metadata without full download",
+                "Navigation Interface - Built file tree UI for browsing ZIP contents with folder expansion, file preview, and selective download",
+                "Preview Integration - Integrated with existing file preview system to support previewing files within ZIP archives before downloading"
+              ]
+            }
+          ]
         }
-      ]
+      ],
     },
-    {
-      "id": "todaytix",
+    {"id": "todaytix",
       "company": "TodayTix",
       "role": "Software Engineer",
       "period": "January 2016 - June 2017",
