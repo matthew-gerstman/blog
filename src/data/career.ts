@@ -667,89 +667,112 @@ const careerData: CareerData = {
     },
     {"id": "todaytix",
       "company": "TodayTix",
-      "role": "Software Engineer",
-      "period": "January 2016 - June 2017",
-      "startDate": "2016-01",
-      "endDate": "2017-06",
-      "description": "Full-stack development for theater ticketing platform with dramatic performance improvements.",
-      "color": "#E2231A",
+      "logo": "/images/todaytix.png",
+      "location": "New York, NY",
+      "startYear": 2015,
+      "endYear": 2017,
       "projects": [
         {
-          "title": "Ansible Deployment Automation",
-          "year": "2017",
-          "startYear": 2017,
-          "endYear": 2017,
-          "role": "Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
-        },
-        {
           "title": "Web 2.0: React + Redux Rebuild",
-          "year": "2016",
-          "description": "Built production-ready React + Redux application from scratch with comprehensive component library.",
-          "technologies": [
-            "React",
-            "Redux",
-            "Node.js",
-            "ES6+"
-          ],
-          "role": "",
+          "year": "Q3-Q4 2016",
           "startYear": 2016,
           "endYear": 2016,
+          "role": "Software Engineer",
+          "description": "Worked on team of 4 building greenfield React + Redux application from scratch. Learned modern React/Redux architecture and functional programming patterns by diving deep—read all of Lodash and Redux source code for fun. Built checkout flow, show landing pages, and authentication/SSR strategies. Integrated with new Swagger-based API client.",
+          "impact": "Shipped production app serving real customers. Deep-dive learning approach (reading source code) established strong foundation in React/Redux patterns that influenced entire career. Created scalable architecture enabling faster feature development.",
+          "technologies": ["React", "Redux", "Lodash", "Functional Programming", "SSR", "Swagger"],
           "belowTheFold": [
             {
               "title": "Execution",
               "content": [
-                "Complete application architecture design",
-                "Built comprehensive component library",
-                "Implemented Redux state management patterns",
-                "Created Node.js authentication layer",
-                "Designed and built checkout flow"
+                "Deep Learning - Learned React/Redux architecture through hands-on building and reading Lodash and Redux source code. Heavy functional programming focus shaped technical approach",
+                "Feature Ownership - Built checkout flow (core revenue path), show landing pages, and authentication/server-side rendering strategies. Integrated with new Swagger-based API client",
+                "Greenfield Architecture - Collaborated with team of 4 on greenfield architecture decisions, component patterns, and state management approach for production application"
               ]
             }
           ]
         },
         {
           "title": "Special Offers Feature",
-          "year": "2016",
-          "description": "End-to-end feature design converting users who lost lottery into alternative sales.",
-          "impact": "New revenue stream from lost sales",
-          "technologies": [
-            "Groovy",
-            "React",
-            "SQL",
-            "Full-Stack"
-          ],
-          "role": "",
+          "year": "Q2 2016",
           "startYear": 2016,
           "endYear": 2016,
+          "role": "Software Engineer",
+          "description": "Built feature converting lottery losers into buyers through personalized alternative show offers. Built APIs in a Groovy on Grails backend with complex SQL queries for offer matching, designed frontend offer selection experience, implemented business logic for eligibility.",
+          "impact": "Captured revenue from users who lost lotteries and would have left empty-handed. Turned user disappointment into conversion opportunity. Demonstrated end-to-end product engineering capability.",
+          "technologies": ["Groovy on Grails", "SQL", "Backend APIs", "Frontend"],
           "belowTheFold": [
             {
               "title": "Execution",
               "content": [
-                "End-to-end feature design from user research to implementation",
-                "Built Groovy APIs with complex SQL queries for offer matching",
-                "Designed frontend experience for offer selection",
-                "Implemented business logic for offer eligibility"
+                "Backend Development - Built APIs in Groovy on Grails with complex SQL queries for matching alternative show offers based on user preferences and availability",
+                "Frontend Experience - Designed and implemented offer selection interface for lottery losers to browse and purchase alternative shows",
+                "Business Logic - Implemented eligibility rules and offer matching algorithms to personalize recommendations"
               ]
             }
           ]
         },
         {
           "title": "Rush Ticketing",
-          "year": "2016",
+          "year": "Q1 2016",
           "startYear": 2016,
           "endYear": 2016,
           "role": "Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
+          "description": "Enabled same-day limited ticket purchases through new backend APIs and business logic. Built RESTful API design for rush ticket operations with complex availability and eligibility rules.",
+          "impact": "Expanded business model with same-day sales capability. Demonstrated backend architecture skills and successful cross-team collaboration with mobile engineers.",
+          "technologies": ["RESTful APIs", "Backend Development", "Business Logic"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "API Design - Built RESTful APIs for rush ticket operations including availability checks, purchase flow, and eligibility verification",
+                "Business Rules - Implemented complex availability and eligibility logic for same-day limited ticket sales",
+                "Cross-Team Collaboration - Worked with mobile engineers to ensure consistent API behavior across platforms"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Sentry Rollout",
+          "year": "Q4 2016",
+          "startYear": 2016,
+          "endYear": 2016,
+          "role": "Software Engineer",
+          "description": "Established production error monitoring with Sentry, moving from user-reported bugs to proactive error detection. Configured alerting, monitoring, and error triage processes.",
+          "impact": "Dramatically improved production visibility. Enabled proactive error detection before user reports. Reduced mean time to resolution. Established operational excellence culture.",
+          "technologies": ["Sentry", "Error Monitoring", "Alerting", "DevOps"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Monitoring Setup - Configured Sentry for production error tracking with appropriate sampling and alert thresholds",
+                "Process Establishment - Created error triage processes and alerting workflows for team response",
+                "Operational Excellence - Shifted culture from reactive user-reported bugs to proactive error detection and resolution"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Ansible Deployment Automation",
+          "year": "Q1 2017",
+          "startYear": 2017,
+          "endYear": 2017,
+          "role": "Software Engineer",
+          "description": "Automated deployment process with Ansible playbooks for Node.js applications, replacing manual error-prone deployments. Created reliable, repeatable deployment process with Sentry integration.",
+          "impact": "Faster, more reliable deployments with reduced friction and errors. Enabled more frequent releases and improved team velocity.",
+          "technologies": ["Ansible", "Deployment Automation", "Node.js", "DevOps"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Automation - Created Ansible playbooks for Node.js application deployments replacing manual processes",
+                "Reliability - Built repeatable deployment process reducing errors and deployment time",
+                "Integration - Integrated deployment automation with Sentry for immediate error detection post-deploy"
+              ]
+            }
+          ]
         }
-      ]
-    },
+      ],
     {
       "id": "zetta",
       "company": "Zetta.net",
