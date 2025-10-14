@@ -14,6 +14,7 @@ export interface BelowTheFoldSection {
 }
 
 export interface Project {
+  key: string; // Unique project identifier: {jobId}-{title-slug}
   title: string;
   year: string;
   startYear: number;
@@ -35,7 +36,7 @@ export interface Job {
   endDate?: string;
   description: string;
   color: string;
-  projects: Project[];
+  projects: string[]; // Array of project keys from projectsMap
 }
 
 export interface ResumeData {
