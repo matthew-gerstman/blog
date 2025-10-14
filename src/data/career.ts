@@ -760,83 +760,28 @@ const careerData: CareerData = {
     {
       "id": "zetta",
       "company": "Zetta.net",
-      "role": "Intern \u2192 Software Engineer",
-      "period": "June 2012 - December 2015",
-      "startDate": "2012-06",
-      "endDate": "2015-12",
-      "description": "Cloud storage platform development with rapid progression to technical leadership.",
-      "color": "#FF6B35",
+      "logo": "/images/zetta.png",
+      "location": "San Francisco, CA",
+      "startYear": 2013,
+      "endYear": 2015,
       "projects": [
-        {
-          "title": "Page Load Optimization",
-          "year": "2016",
-          "description": "Comprehensive performance profiling and systematic optimization of mobile-first theater ticketing app.",
-          "impact": "95% reduction: 8 seconds \u2192 400ms",
-          "technologies": [
-            "JavaScript",
-            "Webpack",
-            "Performance"
-          ],
-          "role": "",
-          "startYear": 2016,
-          "endYear": 2016,
-          "belowTheFold": [
-            {
-              "title": "Execution",
-              "content": [
-                "Comprehensive performance profiling to identify bottlenecks",
-                "Systematic bundle strategy optimization and code splitting",
-                "Asset delivery improvements (compression, CDN, caching)",
-                "Render path performance enhancements",
-                "Critical path optimization for above-the-fold content"
-              ]
-            }
-          ]
-        },
         {
           "title": "Backbone + RESTful APIs Migration",
           "year": "2015",
-          "description": "Led complete backend migration to RESTful architecture and frontend migration to Backbone.js.",
-          "impact": "First major technical leadership role",
-          "technologies": [
-            "Backbone.js",
-            "RESTful APIs",
-            "JavaScript"
-          ],
-          "role": "",
           "startYear": 2015,
           "endYear": 2015,
+          "role": "Software Engineer",
+          "description": "Led complete backend migration to RESTful resource architecture and frontend migration to Backbone.js. Established API design standards, created documentation, and coordinated organization-wide adoption. Trained more senior engineers on REST paradigms.",
+          "impact": "Modernized entire API layer. Improved maintainability and developer experience. Reduced API-related bugs. Established patterns for future development. Trained other engineers in REST paradigm.",
+          "technologies": ["Backbone.js", "RESTful APIs", "API Design", "Documentation"],
           "belowTheFold": [
             {
               "title": "Execution",
               "content": [
-                "Led complete backend migration to RESTful resource architecture",
-                "Migrated frontend to Backbone.js for better structure",
-                "Established API design standards and conventions",
-                "Created documentation and training materials"
-              ]
-            }
-          ]
-        },
-        {
-          "title": "SVN \u2192 Git Migration",
-          "year": "2015",
-          "description": "Planned and executed organizational migration with team training and code review processes.",
-          "technologies": [
-            "Git",
-            "Version Control"
-          ],
-          "role": "",
-          "startYear": 2015,
-          "endYear": 2015,
-          "belowTheFold": [
-            {
-              "title": "Leadership",
-              "content": [
-                "Planned and executed organizational migration from SVN to Git",
-                "Established branching strategies and PR processes",
-                "Created Git training materials and documentation",
-                "Provided hands-on training for team members"
+                "API Architecture - Led complete backend migration to RESTful resource architecture with proper HTTP verbs and status codes",
+                "Frontend Migration - Migrated frontend to Backbone.js with proper MVC patterns and data binding",
+                "Standards & Documentation - Established API design standards and created comprehensive documentation for organization-wide adoption",
+                "Training - Trained more senior engineers on REST paradigms and best practices"
               ]
             }
           ]
@@ -844,22 +789,39 @@ const careerData: CareerData = {
         {
           "title": "CI + Sentry Implementation",
           "year": "2015",
-          "description": "Set up continuous integration pipeline and Sentry for production error tracking.",
-          "technologies": [
-            "CI/CD",
-            "Sentry",
-            "Testing"
-          ],
-          "role": "",
           "startYear": 2015,
           "endYear": 2015,
+          "role": "Software Engineer",
+          "description": "Set up continuous integration pipeline and implemented Sentry for production error tracking. Established quality standards, monitoring dashboards, and culture of observability.",
+          "impact": "Caught bugs before production deployment. Improved system visibility and reliability. Reduced customer-impacting incidents. Established operational excellence practices.",
+          "technologies": ["CI/CD", "Sentry", "Error Monitoring", "DevOps"],
           "belowTheFold": [
             {
               "title": "Execution",
               "content": [
-                "Set up continuous integration pipeline",
-                "Implemented Sentry for production error tracking",
-                "Established quality standards and gates"
+                "CI Pipeline - Set up continuous integration pipeline for automated testing and quality checks",
+                "Error Monitoring - Implemented Sentry for production error tracking and alerting",
+                "Observability Culture - Established monitoring dashboards and culture of observability across team"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "SVN to Git Migration",
+          "year": "2015",
+          "startYear": 2015,
+          "endYear": 2015,
+          "role": "Software Engineer",
+          "description": "Planned and executed organizational migration from SVN to Git. Established branching strategies, PR processes, and code review practices. Provided hands-on training for entire team.",
+          "impact": "Modernized development workflow. Improved collaboration through PR reviews. Enabled better branching and experimentation. Reduced merge conflicts.",
+          "technologies": ["Git", "SVN", "Version Control", "Code Review"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Migration Planning - Planned and executed organizational migration from SVN to Git with minimal disruption",
+                "Process Establishment - Established branching strategies, PR processes, and code review practices",
+                "Training - Provided hands-on training for entire team on Git workflows"
               ]
             }
           ]
@@ -867,24 +829,19 @@ const careerData: CareerData = {
         {
           "title": "Data Restore Flow",
           "year": "2014",
-          "description": "Built complete data restore flow with intuitive UI for version history and conflict resolution.",
-          "impact": "Core revenue-driving feature",
-          "technologies": [
-            "Full-Stack",
-            "UI/UX",
-            "Product Engineering"
-          ],
-          "role": "",
           "startYear": 2014,
           "endYear": 2014,
+          "role": "Software Engineer",
+          "description": "Built complete data restore flow enabling users to restore deleted or previous versions of data. Core revenue-driving feature (the money feature) for cloud storage product.",
+          "impact": "Critical differentiator for cloud storage product. Core revenue driver. Excellent user experience for complex operation. Demonstrated product engineering capability.",
+          "technologies": ["Full-Stack", "Cloud Storage", "UX Design"],
           "belowTheFold": [
             {
               "title": "Execution",
               "content": [
-                "Built complete data restore flow",
-                "Created file selection and restoration UI",
-                "Integrated backend restore operations",
-                "Designed user experience for complex operations"
+                "Full-Stack Development - Built complete restore flow from file selection UI to backend restore operations",
+                "UX Design - Designed intuitive user experience for complex operations including version history and conflict resolution",
+                "Backend Integration - Integrated backend restore operations with proper error handling and edge cases"
               ]
             }
           ]
@@ -894,44 +851,80 @@ const careerData: CareerData = {
           "year": "2014",
           "startYear": 2014,
           "endYear": 2014,
-          "role": "Fullstack Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
+          "role": "Software Engineer",
+          "description": "Refactored user enrollment and onboarding flow for improved conversion and user experience. Modernized legacy enrollment code.",
+          "impact": "Improved user onboarding experience. Better conversion rates. Cleaner, more maintainable enrollment code.",
+          "technologies": ["User Onboarding", "Conversion Optimization"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Flow Refactor - Refactored user enrollment and onboarding flow for improved conversion",
+                "Code Modernization - Modernized legacy enrollment code for better maintainability",
+                "UX Improvements - Enhanced user experience throughout enrollment process"
+              ]
+            }
+          ]
         },
         {
-          "title": "Performance Refactor & Grunt Build System",
+          "title": "Performance Optimization & Grunt Build System",
           "year": "2014",
           "startYear": 2014,
           "endYear": 2014,
-          "role": "Fullstack Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
+          "role": "Software Engineer",
+          "description": "Systematically profiled and optimized web application performance, significantly reducing page load times. Simultaneously migrated the build system to Grunt, optimizing asset compilation and improving developer experience.",
+          "impact": "Achieved a dramatic reduction in initial page load time from 8 seconds to 500 milliseconds. Delivered faster, more efficient builds and significantly improved developer productivity through modern tooling and optimized workflows.",
+          "technologies": ["Performance Optimization", "Grunt", "Build Systems", "Profiling"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Build System Migration to Grunt - Migrated the legacy build system to Grunt, implementing optimized asset compilation, bundling, and minification",
+                "Page Load Optimization - Performed systematic profiling and refactoring of critical paths, including asset loading, rendering, and data fetching, to drastically reduce initial page load times",
+                "Developer Experience Improvements - Enhanced the overall development workflow with faster builds, modern tooling, and a more efficient build pipeline"
+              ]
+            }
+          ]
         },
         {
           "title": "Data Deletion Queue",
           "year": "2014",
           "startYear": 2014,
           "endYear": 2014,
-          "role": "Fullstack Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
+          "role": "Software Engineer",
+          "description": "Built data deletion queue system for lifecycle management and compliance. Created UI for managing deletion requests with backend job processing.",
+          "impact": "Core product feature for cloud storage. Enabled compliance with data retention policies. Improved user control over storage. Demonstrated full-stack product development capability.",
+          "technologies": ["Queue Systems", "Lifecycle Management", "Compliance"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Queue System - Built data deletion queue with lifecycle management and scheduling",
+                "Full-Stack Implementation - Created UI for deletion requests and backend job processing",
+                "Edge Cases - Handled error scenarios and edge cases for reliable deletion"
+              ]
+            }
+          ]
         },
         {
           "title": "Structured Logging",
           "year": "2013",
           "startYear": 2013,
           "endYear": 2013,
-          "role": "Engineering Intern",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
+          "role": "Software Engineer",
+          "description": "Implemented structured logging system during first three months at company. Established logging standards and practices for better system observability.",
+          "impact": "Improved system debugging and monitoring capabilities. Established foundation for operational excellence. Early impact as new engineer.",
+          "technologies": ["Logging", "Observability", "DevOps"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Logging System - Implemented structured logging system for better observability",
+                "Standards - Established logging standards and practices across codebase",
+                "Early Impact - Delivered significant infrastructure improvement in first three months"
+              ]
+            }
+          ]
         },
         {
           "title": "Release Gating",
@@ -939,10 +932,19 @@ const careerData: CareerData = {
           "startYear": 2013,
           "endYear": 2013,
           "role": "Software Engineer",
-          "description": "",
-          "impact": "",
-          "technologies": [],
-          "belowTheFold": []
+          "description": "Built release gating system to ensure quality before production deployments. Created automated checks and manual approval workflows.",
+          "impact": "Improved release quality and reduced production incidents. Established quality gates for deployments.",
+          "technologies": ["Release Management", "Quality Assurance", "Automation"],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Gating System - Built release gating system with automated quality checks",
+                "Approval Workflows - Created manual approval workflows for production releases",
+                "Quality Improvement - Reduced production incidents through systematic quality gates"
+              ]
+            }
+          ]
         }
       ]
     },
