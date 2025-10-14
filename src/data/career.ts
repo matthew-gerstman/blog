@@ -1,19 +1,19 @@
 import type { CareerData } from './types/career.types';
 
 const careerData: CareerData = {
-  "hero": {
+  hero: {
     title: "Career Timeline",
-    "subtitle": "25+ years of building and learning"
+    subtitle: "25+ years of building and learning"
   },
-  "jobs": [
+  jobs: [
     {
-      "id": "datadog",
+      id: "datadog",
       company: "Datadog",
       role: "Senior Software Engineer",
-      "period": "September 2022 - Present",
-      "startDate": "2022-09",
+      period: "September 2022 - Present",
+      startDate: "2022-09",
       description: "Leading development of collaborative data science tooling and dashboard infrastructure.",
-      "color": "#632CA6",
+      color: "#632CA6",
       projects: [
                 {
           title: "Graphing Summit",
@@ -213,14 +213,14 @@ const careerData: CareerData = {
       ]
     },
     {
-      "id": "bluecore",
+      id: "bluecore",
       company: "Bluecore",
       role: "Staff Engineer",
-      "period": "June 2021 - September 2022",
-      "startDate": "2021-06",
-      "endDate": "2022-09",
+      period: "June 2021 - September 2022",
+      startDate: "2021-06",
+      endDate: "2022-09",
       description: "Led frontend platform architecture and TypeScript migration for marketing technology platform.",
-      "color": "#00254a",
+      color: "#00254a",
       projects: [
         {
           title: "Frontend North Star & Architecture Modernization",
@@ -241,10 +241,10 @@ const careerData: CareerData = {
             "Code Generation",
             "Accessibility"
           ],
-          "links": [
+          links: [
             {
-              "text": "Frontend North Star Blog Post",
-              "url": "https://medium.com/bluecore-engineering/bluecores-frontend-north-star-eb7d2a04167a"
+              text: "Frontend North Star Blog Post",
+              url: "https://medium.com/bluecore-engineering/bluecores-frontend-north-star-eb7d2a04167a"
             }
           ],
           belowTheFold: [
@@ -281,14 +281,14 @@ const careerData: CareerData = {
       ]
     },
     {
-      "id": "dropbox",
+      id: "dropbox",
       company: "Dropbox",
       role: "Software Engineer → Senior Software Engineer",
-      "period": "June 2017 - June 2021",
-      "startDate": "2017-06",
-      "endDate": "2021-06",
+      period: "June 2017 - June 2021",
+      startDate: "2017-06",
+      endDate: "2021-06",
       description: "Architected state management systems and founded JavaScript Guild for organizational best practices.",
-      "color": "#0061FF",
+      color: "#0061FF",
       projects: [
         {
           title: "JavaScript Guild",
@@ -392,14 +392,14 @@ const careerData: CareerData = {
       ]
     },
     {
-      "id": "todaytix",
+      id: "todaytix",
       company: "TodayTix",
       role: "Software Engineer",
-      "period": "January 2016 - June 2017",
-      "startDate": "2016-01",
-      "endDate": "2017-06",
+      period: "January 2016 - June 2017",
+      startDate: "2016-01",
+      endDate: "2017-06",
       description: "Full-stack development for theater ticketing platform with dramatic performance improvements.",
-      "color": "#E2231A",
+      color: "#E2231A",
       projects: [
         {
           title: "Page Load Optimization",
@@ -482,14 +482,14 @@ const careerData: CareerData = {
       ]
     },
     {
-      "id": "zetta",
+      id: "zetta",
       company: "Zetta.net",
       role: "Intern → Software Engineer",
-      "period": "June 2012 - December 2015",
-      "startDate": "2012-06",
-      "endDate": "2015-12",
+      period: "June 2012 - December 2015",
+      startDate: "2012-06",
+      endDate: "2015-12",
       description: "Cloud storage platform development with rapid progression to technical leadership.",
-      "color": "#FF6B35",
+      color: "#FF6B35",
       projects: [
         {
           title: "Backbone + RESTful APIs Migration",
@@ -590,14 +590,14 @@ const careerData: CareerData = {
       ]
     },
     {
-      "id": "dance-marathon",
+      id: "dance-marathon",
       company: "Dance Marathon at UF",
       role: "Technology Captain → Technology Overall Director",
-      "period": "September 2010 - April 2013",
-      "startDate": "2010-09",
-      "endDate": "2013-04",
+      period: "September 2010 - April 2013",
+      startDate: "2010-09",
+      endDate: "2013-04",
       description: "Led technology strategy for one of the largest student-run philanthropies.",
-      "color": "#FFD93D",
+      color: "#FFD93D",
       projects: [
         {
           title: "Tweet Two Screens",
@@ -677,14 +677,14 @@ const careerData: CareerData = {
       ]
     },
     {
-      "id": "early-programming",
+      id: "early-programming",
       company: "Early Programming & Education",
       role: "Student & Freelance Developer",
-      "period": "1999 - 2013",
-      "startDate": "1999",
-      "endDate": "2013",
+      period: "1999 - 2013",
+      startDate: "1999",
+      endDate: "2013",
       description: "From first Visual Basic program at age 11 to computer science degree, building websites, fixing computers, and developing deep technical foundations.",
-      "color": "#95E1D3",
+      color: "#95E1D3",
       projects: [
         {
           title: "University of Florida - Computer Science Degree",
