@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { GradientText } from '../../components/GradientText';
 import { ProjectCard } from '../../components/ProjectCard';
@@ -10,17 +10,8 @@ const data = resumeData as ResumeData;
 
 export const Resume: React.FC = () => {
   const [searchParams] = useSearchParams();
-  const [targetProject, setTargetProject] = useState<string | null>(null);
-
-  useEffect(() => {
-    const projectKey = searchParams.get('project');
-    if (projectKey) {
-      setTargetProject(projectKey);
-      // Clear the target after a delay to allow re-triggering if needed
-      const timer = setTimeout(() => setTargetProject(null), 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [searchParams]);
+  const expandAll = searchParams.has('expandAll');
+  const targetProject = searchParams.get('project');
 
   return (
     <div className={styles.container}>
@@ -60,7 +51,7 @@ export const Resume: React.FC = () => {
                     technologies={project.technologies || []}
                     role={project.role}
                     links={project.links || []}
-                    shouldExpand={isTargetProject}
+                    shouldExpand={isTargetProject || expandAll}
                     shouldScroll={isTargetProject}
                   />
                 );
