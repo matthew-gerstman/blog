@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import styles from './OptimizedImage.module.css';
 
 // Import the manifest at build time
@@ -12,12 +12,12 @@ interface OptimizedImageProps {
   loading?: 'lazy' | 'eager';
 }
 
-export function OptimizedImage({ 
-  src, 
-  alt, 
+export function OptimizedImage({
+  src,
+  alt,
   size = 'large',
   className = '',
-  loading = 'lazy'
+  loading = 'lazy',
 }: OptimizedImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentSrc, setCurrentSrc] = useState<string>('');
@@ -52,14 +52,7 @@ export function OptimizedImage({
 
   if (!imageData) {
     // Fallback to original image if not in manifest
-    return (
-      <img 
-        src={src} 
-        alt={alt} 
-        className={className}
-        loading={loading}
-      />
-    );
+    return <img src={src} alt={alt} className={className} loading={loading} />;
   }
 
   return (

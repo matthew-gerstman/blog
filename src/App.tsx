@@ -25,29 +25,33 @@ function App() {
       setSearchOpen(false);
       setFindOpen(false);
     },
-    onFindInPage: () => setFindOpen(true)
+    onFindInPage: () => setFindOpen(true),
   });
 
   return (
     <BrowserRouter basename="/">
       <ProgressBar />
       <Header theme={theme} onToggleTheme={toggleTheme} />
-      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} posts={posts} />
+      <SearchModal
+        isOpen={searchOpen}
+        onClose={() => setSearchOpen(false)}
+        posts={posts}
+      />
       <FindInPage isOpen={findOpen} onClose={() => setFindOpen(false)} />
       <Routes>
         <Route path="/" element={<Resume />} />
         <Route path="/writing" element={<Home posts={posts} />} />
         <Route path="/writing/:slug" element={<Article posts={posts} />} />
-        
+
         {/* Redirect /tech to /writing */}
         <Route path="/tech" element={<Navigate to="/writing" replace />} />
-        
+
         {/* Redirect /tech/* to /writing/* */}
         <Route path="/tech/:slug" element={<TechRedirect />} />
-        
+
         {/* Redirect /hello-there to homepage */}
         <Route path="/hello-there" element={<Navigate to="/" replace />} />
-        
+
         <Route path="/talks" element={<Talks />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/about" element={<About />} />

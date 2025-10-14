@@ -7,6 +7,14 @@ interface GradientTextProps {
   className?: string;
 }
 
-export function GradientText({ children, as: Component = 'span', className = '' }: GradientTextProps) {
-  return <Component className={`${styles.gradientText} ${className}`}>{children}</Component>;
+export function GradientText({
+  children,
+  as: Component = 'span',
+  className = '',
+}: GradientTextProps) {
+  return (
+    <Component className={`${styles.gradientText} ${className}`}>
+      {children}
+    </Component>
+  );
 }

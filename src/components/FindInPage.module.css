@@ -24,10 +24,21 @@
   outline: none;
 }
 
-.input:focus { border-color: var(--grappa-bright); }
-.input::placeholder { color: var(--text-dim); }
-.matches { font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; }
-.controls { display: flex; gap: 0.25rem; }
+.input:focus {
+  border-color: var(--grappa-bright);
+}
+.input::placeholder {
+  color: var(--text-dim);
+}
+.matches {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.controls {
+  display: flex;
+  gap: 0.25rem;
+}
 
 .button {
   width: 28px;
@@ -50,4 +61,7 @@
   color: var(--text);
 }
 
-.button:disabled { opacity: 0.3; cursor: not-allowed; }
+.button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
