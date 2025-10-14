@@ -50,10 +50,11 @@ export function ProjectCard({
           role={role}
           hasExpand={hasDetails}
           isExpanded={isExpanded}
+          yearDisplay={yearDisplay}
         />
         
         <p className={styles.projectDescription}>
-          ({yearDisplay}) {description}
+          {description}
         </p>
         
         {impact && (

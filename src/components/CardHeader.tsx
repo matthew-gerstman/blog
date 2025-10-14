@@ -4,7 +4,7 @@ import styles from './CardHeader.module.css';
 interface CardHeaderProps {
   title: string;
   subtitle?: string;
-  year?: string;
+  yearDisplay?: string;
   role?: string;
   hasExpand?: boolean;
   isExpanded?: boolean;
@@ -14,7 +14,7 @@ interface CardHeaderProps {
 export function CardHeader({ 
   title, 
   subtitle, 
-  year, 
+  yearDisplay, 
   role,
   hasExpand, 
   isExpanded,
@@ -28,7 +28,9 @@ export function CardHeader({
           <span className={styles.expandIcon}>{isExpanded ? '−' : '+'}</span>
         )}
       </div>
-      {role && <div className={styles.role}>{role}</div>}
+      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+      {role && <div className={styles.role}>{role} - {yearDisplay}</div>}      
+      </div>
       {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
     </>
   );
