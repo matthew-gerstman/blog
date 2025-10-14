@@ -7,8 +7,8 @@ import { FindInPage } from './components/FindInPage';
 import { Home } from './pages/Home';
 import { Article } from './pages/Article';
 import { Talks } from './pages/Talks';
-import { Career } from './pages/career/Career';
-import { About } from './pages/career/About';
+import { Resume } from './pages/resume/Resume';
+import { About } from './pages/resume/About';
 import { useTheme } from './hooks/useTheme';
 import { useKeyboard } from './hooks/useKeyboard';
 import posts from './data/posts';
@@ -34,12 +34,13 @@ function App() {
       <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} posts={posts} />
       <FindInPage isOpen={findOpen} onClose={() => setFindOpen(false)} />
       <Routes>
-        <Route path="/" element={<Home posts={posts} />} />
+        <Route path="/" element={<Resume />} />
+        <Route path="/writing" element={<Home posts={posts} />} />
         <Route path="/tech/:slug" element={<Article posts={posts} />} />
         <Route path="/talks" element={<Talks />} />
-        <Route path="/career" element={<Career />} />
+        <Route path="/resume" element={<Resume />} />
         <Route path="/about" element={<About />} />
-        <Route path="*" element={<Home posts={posts} />} />
+        <Route path="*" element={<Resume />} />
       </Routes>
     </BrowserRouter>
   );

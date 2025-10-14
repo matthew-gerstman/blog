@@ -3,16 +3,22 @@ export interface BelowTheFoldSection {
   content: string[];
 }
 
+export interface Link {
+  text: string;
+  url: string;
+}
+
 export interface Project {
   title: string;
   year: string;
   startYear: number;
-  endYear: number;
+  endYear?: number;
   description: string;
   belowTheFold?: BelowTheFoldSection[];
   impact?: string;
   role?: string;
   technologies?: string[];
+  links?: Link[];
 }
 
 export interface Job {
@@ -27,7 +33,7 @@ export interface Job {
   color?: string;
 }
 
-export interface CareerData {
+export interface ResumeData {
   hero: {
     title: string;
     subtitle: string;

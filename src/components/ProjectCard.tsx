@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 import { CardHeader } from './CardHeader';
 import { TagList } from './TagList';
 import { LinkList } from './LinkList';
@@ -13,13 +13,13 @@ interface ProjectCardProps {
   title: string;
   year: string;
   startYear: number;
-  endYear: number;
+  endYear?: number;
   description: string;
   belowTheFold?: BelowTheFoldSection[];
   impact?: string;
   role?: string;
-  technologies?: string[];
-  links?: { text: string; url: string; }[];
+  technologies: string[];
+  links: { text: string; url: string; }[];
 }
 
 export function ProjectCard({ 

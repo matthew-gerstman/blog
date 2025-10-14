@@ -1,13 +1,13 @@
 import React from 'react';
 import { GradientText } from '../../components/GradientText';
 import { ProjectCard } from '../../components/ProjectCard';
-import type { CareerData } from '../../types/career';
-import careerData from '../../data/career';
-import styles from './Career.module.css';
+import type { ResumeData } from '../../types/resume';
+import resumeData from '../../data/resume';
+import styles from './Resume.module.css';
 
-const data = careerData as CareerData;
+const data = resumeData as ResumeData;
 
-export const Career: React.FC = () => {
+export const Resume: React.FC = () => {
   return (
     <div className={styles.container}>
       <header className={styles.hero}>
@@ -36,8 +36,9 @@ export const Career: React.FC = () => {
                   description={project.description}
                   belowTheFold={project.belowTheFold}
                   impact={project.impact}
-                  technologies={project.technologies}
+                  technologies={project.technologies || []}
                   role={project.role}
+                  links={project.links || []}
                 />
               ))}
             </div>

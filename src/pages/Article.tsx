@@ -48,7 +48,7 @@ export function Article({ posts }: ArticleProps) {
           if (!block.className && (text.includes('$ ') || text.includes('Matthew at '))) {
             block.classList.add('language-bash');
           }
-          window.hljs.highlightElement(block);
+          (window.hljs as any).highlightElement(block);
           
           const pre = block.parentElement;
           if (pre && !pre.querySelector('.copy-button')) {

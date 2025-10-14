@@ -1,6 +1,6 @@
-import type { CareerData } from './types/career.types';
+import type { ResumeData } from './types/resume.types';
 
-const careerData: CareerData = {
+const resumeData: ResumeData = {
   "hero": {
     "title": "Career Timeline",
     "subtitle": "25+ years of building and learning"
@@ -650,10 +650,12 @@ const careerData: CareerData = {
     },
     {"id": "todaytix",
       "company": "TodayTix",
-      "logo": "/images/todaytix.png",
-      "location": "New York, NY",
-      "startYear": 2015,
-      "endYear": 2017,
+      "role": "Senior Software Engineer",
+      "period": "2015 - 2017",
+      "startDate": "2015-01",
+      "endDate": "2017-12",
+      "description": "Led frontend development and architecture.",
+      "color": "#E94C89",
       "projects": [
         {
           "title": "Web 2.0: React + Redux Rebuild",
@@ -760,10 +762,12 @@ const careerData: CareerData = {
     {
       "id": "zetta",
       "company": "Zetta.net",
-      "logo": "/images/zetta.png",
-      "location": "San Francisco, CA",
-      "startYear": 2013,
-      "endYear": 2015,
+      "role": "Software Engineer",
+      "period": "2013 - 2015",
+      "startDate": "2013-01",
+      "endDate": "2015-12",
+      "description": "Full-stack web development.",
+      "color": "#4A90E2",
       "projects": [
         {
           "title": "Backbone + RESTful APIs Migration",
@@ -1194,5 +1198,5 @@ const careerData: CareerData = {
   ]
 };
 
-export default careerData;
+export default resumeData;
 

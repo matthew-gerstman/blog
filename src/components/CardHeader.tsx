@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './CardHeader.module.css';
 
 interface CardHeaderProps {
@@ -8,7 +7,6 @@ interface CardHeaderProps {
   role?: string;
   hasExpand?: boolean;
   isExpanded?: boolean;
-  onClick?: () => void;
 }
 
 export function CardHeader({ 
@@ -17,8 +15,7 @@ export function CardHeader({
   yearDisplay, 
   role,
   hasExpand, 
-  isExpanded,
-  onClick 
+  isExpanded
 }: CardHeaderProps) {
   return (
     <>

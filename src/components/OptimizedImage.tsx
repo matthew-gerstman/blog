@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import styles from './OptimizedImage.module.css';
 
 // Import the manifest at build time
