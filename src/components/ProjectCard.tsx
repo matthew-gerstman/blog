@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { CardHeader } from './CardHeader';
 import { TagList } from './TagList';
 import { LinkList } from './LinkList';
@@ -20,6 +20,9 @@ interface ProjectCardProps {
   role?: string;
   technologies: string[];
   links: { text: string; url: string }[];
+  projectKey?: string;
+  shouldExpand?: boolean;
+  shouldScroll?: boolean;
 }
 
 export function ProjectCard({
@@ -32,15 +35,38 @@ export function ProjectCard({
   role,
   technologies,
   links,
+  projectKey,
+  shouldExpand = false,
+  shouldScroll = false,
 }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const hasDetails = belowTheFold && belowTheFold.length > 0;
   const yearDisplay =
     startYear === endYear ? `${endYear}` : `${startYear}–${endYear}`;
 
+  // Handle external expansion and scrolling from URL parameters
+  useEffect(() => {
+    if (shouldExpand && hasDetails) {
+      setIsExpanded(true);
+
+      if (shouldScroll && cardRef.current) {
+        // Wait for expansion animation to start, then scroll
+        setTimeout(() => {
+          cardRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }, 100);
+      }
+    }
+  }, [shouldExpand, shouldScroll, hasDetails]);
+
   return (
     <div
+      ref={cardRef}
+      data-project-key={projectKey}
       className={`${styles.projectCard} ${isExpanded ? styles.expanded : ''}`}
     >
       <div

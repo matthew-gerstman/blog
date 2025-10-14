@@ -49,13 +49,13 @@ export function SearchModal({
     const filteredPosts = searchPosts(posts, query).slice(0, 5);
     const filteredProjects = searchProjects(projects, query).slice(0, 5);
 
-    // Combine results with type tags
+    // Combine results with PROJECTS FIRST, then articles
     const combined: SearchResult[] = [
-      ...filteredPosts.map((post) => ({ type: 'post' as const, item: post })),
       ...filteredProjects.map((project) => ({
         type: 'project' as const,
         item: project,
       })),
+      ...filteredPosts.map((post) => ({ type: 'post' as const, item: post })),
     ].slice(0, 8);
 
     setResults(combined);
