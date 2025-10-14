@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { Post } from '../types';
-import { searchPosts } from '../utils/search';
+import type { Project } from '../data/types/resume.types';
+import { searchPosts, searchProjects } from '../utils/search';
 import { calculateReadingTime } from '../utils/reading';
 import styles from './SearchModal.module.css';
 
@@ -9,11 +10,21 @@ interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;
   posts: Post[];
+  projects?: Project[];
 }
 
-export function SearchModal({ isOpen, onClose, posts }: SearchModalProps) {
+type SearchResult =
+  | { type: 'post'; item: Post }
+  | { type: 'project'; item: Project };
+
+export function SearchModal({
+  isOpen,
+  onClose,
+  posts,
+  projects = [],
+}: SearchModalProps) {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<Post[]>([]);
+  const [results, setResults] = useState<SearchResult[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -33,10 +44,23 @@ export function SearchModal({ isOpen, onClose, posts }: SearchModalProps) {
       setSelectedIndex(0);
       return;
     }
-    const filtered = searchPosts(posts, query).slice(0, 8);
-    setResults(filtered);
+
+    // Search both posts and projects
+    const filteredPosts = searchPosts(posts, query).slice(0, 5);
+    const filteredProjects = searchProjects(projects, query).slice(0, 5);
+
+    // Combine results with PROJECTS FIRST, then articles
+    const combined: SearchResult[] = [
+      ...filteredProjects.map((project) => ({
+        type: 'project' as const,
+        item: project,
+      })),
+      ...filteredPosts.map((post) => ({ type: 'post' as const, item: post })),
+    ].slice(0, 8);
+
+    setResults(combined);
     setSelectedIndex(0);
-  }, [query, posts]);
+  }, [query, posts, projects]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'ArrowDown') {
@@ -47,15 +71,24 @@ export function SearchModal({ isOpen, onClose, posts }: SearchModalProps) {
       setSelectedIndex((prev) => Math.max(prev - 1, 0));
     } else if (e.key === 'Enter' && results[selectedIndex]) {
       e.preventDefault();
-      navigate(`/tech/${results[selectedIndex].slug}`);
+      const result = results[selectedIndex];
+      if (result.type === 'post') {
+        navigate(`/tech/${result.item.slug}`);
+      } else {
+        navigate(`/resume?project=${result.item.key}`);
+      }
       onClose();
     } else if (e.key === 'Escape') {
       onClose();
     }
   };
 
-  const handleSelect = (post: Post) => {
-    navigate(`/tech/${post.slug}`);
+  const handleSelect = (result: SearchResult) => {
+    if (result.type === 'post') {
+      navigate(`/tech/${result.item.slug}`);
+    } else {
+      navigate(`/resume?project=${result.item.key}`);
+    }
     onClose();
   };
 
@@ -68,7 +101,7 @@ export function SearchModal({ isOpen, onClose, posts }: SearchModalProps) {
           ref={inputRef}
           type="text"
           className={styles.input}
-          placeholder="Search articles..."
+          placeholder="Search articles and projects..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKeyDown}
@@ -76,35 +109,78 @@ export function SearchModal({ isOpen, onClose, posts }: SearchModalProps) {
         />
         <div className={styles.results}>
           {!query && (
-            <div className={styles.empty}>Type to search articles...</div>
+            <div className={styles.empty}>
+              Type to search articles and projects...
+            </div>
           )}
           {query && results.length === 0 && (
-            <div className={styles.empty}>No articles found</div>
+            <div className={styles.empty}>No results found</div>
           )}
-          {results.map((post, index) => {
-            const banner = post.banner_img;
-            const readingTime = calculateReadingTime(post.content);
-            return (
-              <div
-                key={post.id}
-                className={`${styles.resultItem} ${index === selectedIndex ? styles.selected : ''}`}
-                onClick={() => handleSelect(post)}
-              >
-                {banner ? (
-                  <img src={banner} alt={post.title} className={styles.icon} />
-                ) : (
-                  <div className={`${styles.icon} ${styles.placeholder}`}>
-                    📝
-                  </div>
-                )}
-                <div className={styles.content}>
-                  <div className={styles.title}>{post.title}</div>
-                  <div className={styles.meta}>
-                    {post.date} · {readingTime} min read
+          {results.map((result, index) => {
+            if (result.type === 'post') {
+              const post = result.item;
+              const banner = post.banner_img;
+              const readingTime = calculateReadingTime(post.content);
+              return (
+                <div
+                  key={`post-${post.id}`}
+                  className={`${styles.resultItem} ${index === selectedIndex ? styles.selected : ''}`}
+                  onClick={() => handleSelect(result)}
+                >
+                  {banner ? (
+                    <img
+                      src={banner}
+                      alt={post.title}
+                      className={styles.icon}
+                    />
+                  ) : (
+                    <div className={`${styles.icon} ${styles.placeholder}`}>
+                      📝
+                    </div>
+                  )}
+                  <div className={styles.content}>
+                    <div className={styles.title}>{post.title}</div>
+                    <div className={styles.meta}>
+                      Article · {post.date} · {readingTime} min read
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
+              );
+            } else {
+              const project = result.item;
+              // Use project image if available, otherwise use emoji, otherwise default icon
+              const iconContent = project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={styles.icon}
+                />
+              ) : project.emoji ? (
+                <div className={`${styles.icon} ${styles.placeholder}`}>
+                  {project.emoji}
+                </div>
+              ) : (
+                <div className={`${styles.icon} ${styles.placeholder}`}>💼</div>
+              );
+
+              return (
+                <div
+                  key={`project-${project.key}`}
+                  className={`${styles.resultItem} ${index === selectedIndex ? styles.selected : ''}`}
+                  onClick={() => handleSelect(result)}
+                >
+                  {iconContent}
+                  <div className={styles.content}>
+                    <div className={styles.title}>{project.title}</div>
+                    <div className={styles.meta}>
+                      Project · {project.year}
+                      {project.technologies.length > 0 &&
+                        ` · ${project.technologies.slice(0, 3).join(', ')}`}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
           })}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import type { Post, FuzzyMatchResult } from '../types';
+import type { Project } from '../data/types/resume.types';
 
 export function fuzzyMatch(pattern: string, str: string): FuzzyMatchResult {
   pattern = pattern.toLowerCase();
@@ -54,4 +55,53 @@ export function searchPosts(posts: Post[], searchTerm: string): Post[] {
     .filter((r): r is ScoredResult => r.matched)
     .sort((a, b) => b.score - a.score)
     .map((r) => r.post);
+}
+
+export function searchProjects(
+  projects: Project[],
+  searchTerm: string
+): Project[] {
+  if (!searchTerm) return projects;
+
+  interface ScoredResult {
+    project: Project;
+    matched: boolean;
+    score: number;
+  }
+
+  return projects
+    .map((project): ScoredResult => {
+      // Search in title (highest weight)
+      const titleMatch = fuzzyMatch(searchTerm, project.title);
+
+      // Search in technologies/tags (medium weight)
+      const techMatches = project.technologies.map((tech) =>
+        fuzzyMatch(searchTerm, tech)
+      );
+      const bestTechMatch = techMatches.reduce(
+        (best, current) => (current.score > best.score ? current : best),
+        { matched: false, score: 0 }
+      );
+
+      // Search in description (lower weight)
+      const descMatch = project.description
+        ? fuzzyMatch(searchTerm, project.description)
+        : { matched: false, score: 0 };
+
+      // Calculate total score with weights
+      const totalScore =
+        (titleMatch.matched ? titleMatch.score * 3 : 0) +
+        (bestTechMatch.matched ? bestTechMatch.score * 2 : 0) +
+        (descMatch.matched ? descMatch.score : 0);
+
+      return {
+        project,
+        matched:
+          titleMatch.matched || bestTechMatch.matched || descMatch.matched,
+        score: totalScore,
+      };
+    })
+    .filter((r): r is ScoredResult => r.matched)
+    .sort((a, b) => b.score - a.score)
+    .map((r) => r.project);
 }
