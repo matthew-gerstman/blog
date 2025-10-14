@@ -14,6 +14,7 @@ export interface BelowTheFoldSection {
 }
 
 export interface Project {
+  key: string; // Unique project identifier: {jobId}-{title-slug}
   title: string;
   year: string;
   startYear: number;

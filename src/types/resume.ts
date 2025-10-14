@@ -1,6 +1,6 @@
-export interface BelowTheFoldSection {
+export interface Hero {
   title: string;
-  content: string[];
+  subtitle: string;
 }
 
 export interface Link {
@@ -8,17 +8,23 @@ export interface Link {
   url: string;
 }
 
+export interface BelowTheFoldSection {
+  title: string;
+  content: string[];
+}
+
 export interface Project {
+  key: string; // Unique project identifier: {jobId}-{title-slug}
   title: string;
   year: string;
   startYear: number;
   endYear?: number;
-  description: string;
-  belowTheFold?: BelowTheFoldSection[];
-  impact?: string;
   role?: string;
-  technologies?: string[];
+  description: string;
+  impact?: string;
+  technologies: string[];
   links?: Link[];
+  belowTheFold?: BelowTheFoldSection[];
 }
 
 export interface Job {
@@ -29,15 +35,12 @@ export interface Job {
   startDate: string;
   endDate?: string;
   description: string;
+  color: string;
   projects: Project[];
-  color?: string;
 }
 
 export interface ResumeData {
-  hero: {
-    title: string;
-    subtitle: string;
-  };
+  hero: Hero;
   jobs: Job[];
 }
 
