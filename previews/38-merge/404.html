@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // GitHub Pages redirect handler
+    (function() {
+      var path = window.location.pathname;
+      
+      // Redirect /tech/* to /writing/*
+      if (path.startsWith('/tech/')) {
+        var newPath = path.replace('/tech/', '/writing/');
+        window.location.replace(newPath + window.location.search + window.location.hash);
+        return;
+      }
+      
+      // Redirect /hello-there to homepage
+      if (path === '/hello-there' || path === '/hello-there/') {
+        window.location.replace('/' + window.location.search + window.location.hash);
+        return;
+      }
+      
+      // Standard GitHub Pages SPA handling
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== window.location.href) {
+        window.history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
