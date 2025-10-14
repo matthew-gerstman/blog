@@ -70,7 +70,9 @@
   padding: 1.5rem;
   border-radius: 12px;
   margin-bottom: 1.5rem;
-  transition: border-color 0.2s, transform 0.2s;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
 }
 
 .projectCard:hover {
@@ -102,7 +104,9 @@
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
   margin-top: 1rem;
 }
 
@@ -145,7 +149,7 @@
 }
 
 .strengths li::before {
-  content: "✓ ";
+  content: '✓ ';
   color: var(--grappa-bright);
   font-weight: bold;
   margin-right: 0.5rem;
@@ -175,11 +179,11 @@
   .hero h1 {
     font-size: 2rem;
   }
-  
+
   .subtitle {
     font-size: 1.25rem;
   }
-  
+
   .techGrid {
     grid-template-columns: 1fr;
   }

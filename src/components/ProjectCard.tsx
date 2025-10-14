@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import { CardHeader } from './CardHeader';
 import { TagList } from './TagList';
 import { LinkList } from './LinkList';
@@ -19,28 +19,31 @@ interface ProjectCardProps {
   impact?: string;
   role?: string;
   technologies: string[];
-  links: { text: string; url: string; }[];
+  links: { text: string; url: string }[];
 }
 
-export function ProjectCard({ 
-  title, 
+export function ProjectCard({
+  title,
   startYear,
   endYear,
-  description, 
+  description,
   belowTheFold,
   impact,
   role,
   technologies,
-  links
+  links,
 }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  
+
   const hasDetails = belowTheFold && belowTheFold.length > 0;
-  const yearDisplay = startYear === endYear ? `${endYear}` : `${startYear}–${endYear}`;
+  const yearDisplay =
+    startYear === endYear ? `${endYear}` : `${startYear}–${endYear}`;
 
   return (
-    <div className={`${styles.projectCard} ${isExpanded ? styles.expanded : ''}`}>
-      <div 
+    <div
+      className={`${styles.projectCard} ${isExpanded ? styles.expanded : ''}`}
+    >
+      <div
         className={styles.projectHeader}
         onClick={() => hasDetails && setIsExpanded(!isExpanded)}
         style={{ cursor: hasDetails ? 'pointer' : 'default' }}
@@ -52,17 +55,15 @@ export function ProjectCard({
           isExpanded={isExpanded}
           yearDisplay={yearDisplay}
         />
-        
-        <p className={styles.projectDescription}>
-          {description}
-        </p>
-        
+
+        <p className={styles.projectDescription}>{description}</p>
+
         {impact && (
           <div className={styles.projectImpact}>
             <span className={styles.outcomeLabel}>Outcome:</span> {impact}
           </div>
         )}
-        
+
         <LinkList links={links} />
         <TagList tags={technologies} className={styles.projectTags} />
       </div>
@@ -73,7 +74,9 @@ export function ProjectCard({
             {belowTheFold?.map((section, index) => (
               <div key={index} className={styles.detailSection}>
                 <h5>{section.title}</h5>
-                {section.content && section.content.length === 1 && !Array.isArray(section.content) ? (
+                {section.content &&
+                section.content.length === 1 &&
+                !Array.isArray(section.content) ? (
                   <p>{section.content[0]}</p>
                 ) : (
                   <ul>

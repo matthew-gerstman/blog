@@ -6,15 +6,15 @@
   margin: 2rem 0;
 }
 
-.container[data-aspect="16/9"] {
+.container[data-aspect='16/9'] {
   padding-bottom: 56.25%; /* 16:9 */
 }
 
-.container[data-aspect="4/3"] {
+.container[data-aspect='4/3'] {
   padding-bottom: 75%; /* 4:3 */
 }
 
-.container[data-aspect="1/1"] {
+.container[data-aspect='1/1'] {
   padding-bottom: 100%; /* 1:1 */
 }
 

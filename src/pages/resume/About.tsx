@@ -18,7 +18,7 @@ export const About: React.FC = () => {
       <section className={styles.section}>
         <h2>Professional Summary</h2>
         <p>{data.professionalSummary.description}</p>
-        
+
         <div className={styles.strengths}>
           <h3>Core Strengths</h3>
           <ul>
@@ -46,7 +46,9 @@ export const About: React.FC = () => {
         {data.featuredProjects.map((project, index) => (
           <div key={index} className={styles.projectCard}>
             <h3>{project.title}</h3>
-            <p className={styles.projectCompany}>{project.company}, {project.year}</p>
+            <p className={styles.projectCompany}>
+              {project.company}, {project.year}
+            </p>
             <p>{project.description}</p>
           </div>
         ))}

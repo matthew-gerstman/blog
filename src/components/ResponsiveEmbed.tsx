@@ -6,7 +6,10 @@ interface ResponsiveEmbedProps {
   aspectRatio?: '16/9' | '4/3' | '1/1';
 }
 
-export function ResponsiveEmbed({ children, aspectRatio = '16/9' }: ResponsiveEmbedProps) {
+export function ResponsiveEmbed({
+  children,
+  aspectRatio = '16/9',
+}: ResponsiveEmbedProps) {
   return (
     <div className={styles.container} data-aspect={aspectRatio}>
       {children}

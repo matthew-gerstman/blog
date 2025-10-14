@@ -6,7 +6,7 @@ const TIMEOUT = 250;
 
 export function BasicDemo() {
   const [numSpells, setNumSpells] = useState(0);
-  const castSpell = useCallback(() => setNumSpells(n => n + 1), []);
+  const castSpell = useCallback(() => setNumSpells((n) => n + 1), []);
 
   return (
     <div className={styles.demo}>
@@ -20,8 +20,10 @@ export function BasicDemo() {
 
 export function ThrottleDemo() {
   const [numSpells, setNumSpells] = useState(0);
-  const castSpell = useCallback(() => setNumSpells(n => n + 1), []);
-  const castSpellThrottled = useCallback(throttle(castSpell, TIMEOUT), [castSpell]);
+  const castSpell = useCallback(() => setNumSpells((n) => n + 1), []);
+  const castSpellThrottled = useCallback(throttle(castSpell, TIMEOUT), [
+    castSpell,
+  ]);
 
   return (
     <div className={styles.demo}>
@@ -40,8 +42,10 @@ export function ThrottleDemo() {
 
 export function DebounceDemo() {
   const [numSpells, setNumSpells] = useState(0);
-  const castSpell = useCallback(() => setNumSpells(n => n + 1), []);
-  const castSpellDebounced = useCallback(debounce(castSpell, TIMEOUT), [castSpell]);
+  const castSpell = useCallback(() => setNumSpells((n) => n + 1), []);
+  const castSpellDebounced = useCallback(debounce(castSpell, TIMEOUT), [
+    castSpell,
+  ]);
 
   return (
     <div className={styles.demo}>
@@ -60,9 +64,13 @@ export function DebounceDemo() {
 
 export function AllDemo() {
   const [numSpells, setNumSpells] = useState(0);
-  const castSpell = useCallback(() => setNumSpells(n => n + 1), []);
-  const castSpellThrottled = useCallback(throttle(castSpell, TIMEOUT), [castSpell]);
-  const castSpellDebounced = useCallback(debounce(castSpell, TIMEOUT), [castSpell]);
+  const castSpell = useCallback(() => setNumSpells((n) => n + 1), []);
+  const castSpellThrottled = useCallback(throttle(castSpell, TIMEOUT), [
+    castSpell,
+  ]);
+  const castSpellDebounced = useCallback(debounce(castSpell, TIMEOUT), [
+    castSpell,
+  ]);
 
   return (
     <div className={styles.demo}>
