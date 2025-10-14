@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Header } from './components/Header';
 import { ProgressBar } from './components/ProgressBar';
 import { SearchModal } from './components/SearchModal';
 import { FindInPage } from './components/FindInPage';
+import { TechRedirect } from './components/TechRedirect';
 import { Home } from './pages/Home';
 import { Article } from './pages/Article';
 import { Talks } from './pages/Talks';
@@ -36,7 +37,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Resume />} />
         <Route path="/writing" element={<Home posts={posts} />} />
-        <Route path="/tech/:slug" element={<Article posts={posts} />} />
+        <Route path="/writing/:slug" element={<Article posts={posts} />} />
+        
+        {/* Redirect /tech to /writing */}
+        <Route path="/tech" element={<Navigate to="/writing" replace />} />
+        
+        {/* Redirect /tech/* to /writing/* */}
+        <Route path="/tech/:slug" element={<TechRedirect />} />
+        
+        {/* Redirect /hello-there to homepage */}
+        <Route path="/hello-there" element={<Navigate to="/" replace />} />
+        
         <Route path="/talks" element={<Talks />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/about" element={<About />} />
