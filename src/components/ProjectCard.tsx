@@ -56,7 +56,7 @@ export function ProjectCard({
         setTimeout(() => {
           if (cardRef.current) {
             const elementPosition = cardRef.current.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px offset for sticky header
+            const offsetPosition = elementPosition + window.pageYOffset - 125; //  offset for sticky header
 
             window.scrollTo({
               top: offsetPosition,
