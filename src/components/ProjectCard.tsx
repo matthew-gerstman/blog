@@ -2,11 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 import { CardHeader } from './CardHeader';
 import { TagList } from './TagList';
 import { LinkList } from './LinkList';
+import type { ContentItem } from '../data/types/resume.types';
 import styles from './ProjectCard.module.css';
 
 interface BelowTheFoldSection {
   title: string;
-  content: string[];
+  content: ContentItem[];
 }
 
 interface ProjectCardProps {
@@ -56,7 +57,7 @@ export function ProjectCard({
         setTimeout(() => {
           if (cardRef.current) {
             const elementPosition = cardRef.current.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - 125; //  offset for sticky header
+            const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px offset for sticky header
 
             window.scrollTo({
               top: offsetPosition,
@@ -67,6 +68,24 @@ export function ProjectCard({
       }
     }
   }, [shouldExpand, shouldScroll, hasDetails]);
+
+  const renderContentItem = (item: ContentItem) => {
+    if (typeof item === 'string') {
+      return item;
+    }
+
+    return (
+      <>
+        {item.prefix && (
+          <>
+            <span className={styles.contentPrefix}>{item.prefix}</span>
+            {' — '}
+          </>
+        )}
+        {item.text}
+      </>
+    );
+  };
 
   return (
     <div
@@ -107,12 +126,12 @@ export function ProjectCard({
                 <h5>{section.title}</h5>
                 {section.content &&
                 section.content.length === 1 &&
-                !Array.isArray(section.content) ? (
+                typeof section.content[0] === 'string' ? (
                   <p>{section.content[0]}</p>
                 ) : (
                   <ul>
                     {section.content?.map((item, i) => (
-                      <li key={i}>{item}</li>
+                      <li key={i}>{renderContentItem(item)}</li>
                     ))}
                   </ul>
                 )}

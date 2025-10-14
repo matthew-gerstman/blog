@@ -3,9 +3,12 @@ export interface Link {
   url: string;
 }
 
+// Content item can be a string or an object with optional prefix
+export type ContentItem = string | { prefix?: string; text: string };
+
 export interface BelowTheFoldSection {
   title: string;
-  content: string[];
+  content: ContentItem[];
 }
 
 export interface Project {

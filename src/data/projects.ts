@@ -30,9 +30,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Team Culture & Development - Grew team from 4 to 6 engineers with 2 promotions; established daily pairing and weekly learning sessions; created environment where people wanted to work together and help each other succeed. My favorite part of the job was coach, I aspired to be Ted Lasso.',
-          'Feature Development Oversight - Oversaw development of: Rich text editor with ProseMirror; Real-time multiplayer with CRDTs (Yjs) and WebSockets; Inlined widgets; Copy/paste; Toolbar and formatting; List indentation; Code blocks with syntax highlighting; Comments and version history; Inline tables; Print mode (personally implemented); Markdown import/export for API users',
-          'Customer Engagement - Built customer council with shared Slack channels; identified high-usage customers and coordinated with CSMs. Spoke with multiple external customers per week during rollout. Rapidly implemented feedback—nothing a customer loves more than hearing their feature request was implemented in 48 hours. Product manager was focused elsewhere for 6 months; I handled prioritization and release management. Established principle: ship to someone new every week. We slowed down for customer feedback and sped up where it didn\'t apply. For example: released to 98% of customers while finishing API support for the remaining 2%. When a customer didn\'t like keyboard-first design, we paused for a week to implement "Bring Back Buttons" initiative.',
+          {
+            prefix: 'Team Culture & Development',
+            text: 'Grew team from 4 to 6 engineers with 2 promotions; established daily pairing and weekly learning sessions; created environment where people wanted to work together and help each other succeed. My favorite part of the job was coach, I aspired to be Ted Lasso.',
+          },
+          {
+            prefix: 'Feature Development Oversight',
+            text: 'Oversaw development of: Rich text editor with ProseMirror; Real-time multiplayer with CRDTs (Yjs) and WebSockets; Inlined widgets; Copy/paste; Toolbar and formatting; List indentation; Code blocks with syntax highlighting; Comments and version history; Inline tables; Print mode (personally implemented); Markdown import/export for API users',
+          },
+          {
+            prefix: 'Customer Engagement',
+            text: 'Built customer council with shared Slack channels; identified high-usage customers and coordinated with CSMs. Spoke with multiple external customers per week during rollout. Rapidly implemented feedback—nothing a customer loves more than hearing their feature request was implemented in 48 hours. Product manager was focused elsewhere for 6 months; I handled prioritization and release management. Established principle: ship to someone new every week. We slowed down for customer feedback and sped up where it didn\'t apply. For example: released to 98% of customers while finishing API support for the remaining 2%. When a customer didn\'t like keyboard-first design, we paused for a week to implement "Bring Back Buttons" initiative.',
+          },
         ],
       },
     ],
@@ -64,12 +73,30 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Architecture & Design - Prototyped for 6 weeks with weekly reviews; designed stateless queue-based system with heartbeat monitoring; built client/server handshake to coordinate React rendering, data fetching, viewport resizing, and snapshot timing',
-          'Rendering Engine Selection - Evaluated Selenium, Puppeteer, and Cypress; chose Puppeteer for browser-fidelity PDFs and thin Chrome wrapper; interviewed engineers about Selenium pain to inform decision',
-          'Quality & Fidelity - Created PrintModeAdapter to aggregate widget status; collaborated with Univiz team to expose fetch completion signals; solved split graph rendering bugs with proxy context providers',
-          'Service Foundation - Wrote all Node.js HTTP/gRPC communication code, tests, and documentation (pre-AI era); established patterns now foundational for 15+ services; implemented OBO token authentication with Puppeteer request interception',
-          'Smithing - Reduced dev loop from 30min to 1min by automating tooling',
-          'Performance & Constraints - Navigated security restrictions on Node.js infrastructure access; optimized print mode rendering by disabling interactivity; handled edge cases (note widgets, image security risks, file size bloat)',
+          {
+            prefix: 'Architecture & Design',
+            text: 'Prototyped for 6 weeks with weekly reviews; designed stateless queue-based system with heartbeat monitoring; built client/server handshake to coordinate React rendering, data fetching, viewport resizing, and snapshot timing',
+          },
+          {
+            prefix: 'Rendering Engine Selection',
+            text: 'Evaluated Selenium, Puppeteer, and Cypress; chose Puppeteer for browser-fidelity PDFs and thin Chrome wrapper; interviewed engineers about Selenium pain to inform decision',
+          },
+          {
+            prefix: 'Quality & Fidelity',
+            text: 'Created PrintModeAdapter to aggregate widget status; collaborated with Univiz team to expose fetch completion signals; solved split graph rendering bugs with proxy context providers',
+          },
+          {
+            prefix: 'Service Foundation',
+            text: 'Wrote all Node.js HTTP/gRPC communication code, tests, and documentation (pre-AI era); established patterns now foundational for 15+ services; implemented OBO token authentication with Puppeteer request interception',
+          },
+          {
+            prefix: 'Smithing',
+            text: 'Reduced dev loop from 30min to 1min by automating tooling',
+          },
+          {
+            prefix: 'Performance & Constraints',
+            text: 'Navigated security restrictions on Node.js infrastructure access; optimized print mode rendering by disabling interactivity; handled edge cases (note widgets, image security risks, file size bloat)',
+          },
         ],
       },
       {
@@ -106,9 +133,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Framework Design - Built testing infrastructure supporting complex dashboard scenarios (widget interactions, time range changes, template variables, cross-widget dependencies)',
-          'Test Coverage - Wrote comprehensive integration tests for critical paths: dashboard loading, widget editing, template variable propagation, and multi-widget coordination',
-          'Developer Experience - Created clear patterns and documentation for writing integration tests, enabling other engineers to expand coverage. Balanced test reliability with execution speed',
+          {
+            prefix: 'Framework Design',
+            text: 'Built testing infrastructure supporting complex dashboard scenarios (widget interactions, time range changes, template variables, cross-widget dependencies)',
+          },
+          {
+            prefix: 'Test Coverage',
+            text: 'Wrote comprehensive integration tests for critical paths: dashboard loading, widget editing, template variable propagation, and multi-widget coordination',
+          },
+          {
+            prefix: 'Developer Experience',
+            text: 'Created clear patterns and documentation for writing integration tests, enabling other engineers to expand coverage. Balanced test reliability with execution speed',
+          },
         ],
       },
     ],
@@ -131,9 +167,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Systematic Audit - Reviewed codebase for unsafe type usage patterns. Prioritized fixes by impact and risk',
-          'Pattern Establishment - Created reusable patterns for common type-safety scenarios. Documented best practices for team',
-          'Team Enablement - Reviewed PRs to maintain type safety standards. Mentored engineers on advanced TypeScript features',
+          {
+            prefix: 'Systematic Audit',
+            text: 'Reviewed codebase for unsafe type usage patterns. Prioritized fixes by impact and risk',
+          },
+          {
+            prefix: 'Pattern Establishment',
+            text: 'Created reusable patterns for common type-safety scenarios. Documented best practices for team',
+          },
+          {
+            prefix: 'Team Enablement',
+            text: 'Reviewed PRs to maintain type safety standards. Mentored engineers on advanced TypeScript features',
+          },
         ],
       },
     ],
@@ -161,9 +206,15 @@ export const projectsMap: Record<string, Project> = {
         title: 'Details',
         content: [
           'Pre-Summit Relationship Building - Organized events leading up to the summit (IC1 class, org lunches, donut 1:1s) to increase relationship foundation',
-          'Lean Planning - Avoided committee bloat; 1/10 the time investment of other summits',
+          {
+            prefix: 'Lean Planning',
+            text: 'Avoided committee bloat; 1/10 the time investment of other summits',
+          },
           'Outcome-Focused Design - Prioritized relationships over presentations',
-          'Logistics - Managed CFP, ops, scheduling, speakers, budget, swag',
+          {
+            prefix: 'Logistics',
+            text: 'Managed CFP, ops, scheduling, speakers, budget, swag',
+          },
         ],
       },
     ],
@@ -191,10 +242,22 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Curriculum Design - Created 6-week program covering: technical decision-making, code review best practices, effective communication, project scoping, and career navigation. Balanced theory with practical exercises',
-          'Interactive Teaching - Led weekly 90-minute sessions with 15 engineers. Used real Datadog scenarios and case studies. Facilitated group discussions and peer learning',
-          'Career Framework Development - Built structured approach to career progression at IC1 level. Clarified expectations and growth paths. Provided actionable advice for advancement',
-          'Organizational Impact - Identified gap in early-career support and created solution. Collaborated with engineering leadership to align curriculum with company values. Set precedent for structured engineer development programs',
+          {
+            prefix: 'Curriculum Design',
+            text: 'Created 6-week program covering: technical decision-making, code review best practices, effective communication, project scoping, and career navigation. Balanced theory with practical exercises',
+          },
+          {
+            prefix: 'Interactive Teaching',
+            text: 'Led weekly 90-minute sessions with 15 engineers. Used real Datadog scenarios and case studies. Facilitated group discussions and peer learning',
+          },
+          {
+            prefix: 'Career Framework Development',
+            text: 'Built structured approach to career progression at IC1 level. Clarified expectations and growth paths. Provided actionable advice for advancement',
+          },
+          {
+            prefix: 'Organizational Impact',
+            text: 'Identified gap in early-career support and created solution. Collaborated with engineering leadership to align curriculum with company values. Set precedent for structured engineer development programs',
+          },
         ],
       },
     ],
@@ -299,9 +362,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Question Design - Created three comprehensive interview questions: system design (Instagram feed with infinite scroll, image optimization, caching), JavaScript fundamentals (Event Emitter with edge cases), and React practical (Auto Suggest with debouncing, accessibility)',
-          'Evaluation Framework - Built detailed rubrics for each question covering technical depth, problem-solving approach, communication, and trade-off analysis. Included follow-up questions and extension scenarios',
-          'Interviewer Enablement - Documented complete interviewer guides with question flow, evaluation criteria, common pitfalls, and calibration guidance. Enabled consistent interview quality across team',
+          {
+            prefix: 'Question Design',
+            text: 'Created three comprehensive interview questions: system design (Instagram feed with infinite scroll, image optimization, caching), JavaScript fundamentals (Event Emitter with edge cases), and React practical (Auto Suggest with debouncing, accessibility)',
+          },
+          {
+            prefix: 'Evaluation Framework',
+            text: 'Built detailed rubrics for each question covering technical depth, problem-solving approach, communication, and trade-off analysis. Included follow-up questions and extension scenarios',
+          },
+          {
+            prefix: 'Interviewer Enablement',
+            text: 'Documented complete interviewer guides with question flow, evaluation criteria, common pitfalls, and calibration guidance. Enabled consistent interview quality across team',
+          },
         ],
       },
     ],
@@ -331,8 +403,14 @@ export const projectsMap: Record<string, Project> = {
         title: 'Details',
         content: [
           'Milestone-Based Development - Created phased rollout strategy: M0 (prototype validation), M1 (QA infrastructure), M2 (internal tools), M3 (first customer route), M4 (complete migration). Enabled incremental validation and risk reduction',
-          'Architecture & Infrastructure - Designed NextJS server on Google Kubernetes Engine with Node.js runtime. Worked with DevOps on deployment strategy, scaling configuration, and production optimization',
-          'Legacy Integration - Managed transition from Python 2.7 App Engine monolith while maintaining API compatibility and zero downtime for customer-facing features',
+          {
+            prefix: 'Architecture & Infrastructure',
+            text: 'Designed NextJS server on Google Kubernetes Engine with Node.js runtime. Worked with DevOps on deployment strategy, scaling configuration, and production optimization',
+          },
+          {
+            prefix: 'Legacy Integration',
+            text: 'Managed transition from Python 2.7 App Engine monolith while maintaining API compatibility and zero downtime for customer-facing features',
+          },
         ],
       },
     ],
@@ -361,9 +439,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Code Generation Pipeline - Designed system to automatically generate TypeScript clients from gRPC definitions with full type safety',
-          'HTTP Transcoding Integration - Implemented gRPC-Web transcoding layer enabling browser-compatible API calls',
-          'Team Mentorship - Architected solution via tech design doc, then mentored team members through implementation and ensured knowledge transfer for long-term ownership',
+          {
+            prefix: 'Code Generation Pipeline',
+            text: 'Designed system to automatically generate TypeScript clients from gRPC definitions with full type safety',
+          },
+          {
+            prefix: 'HTTP Transcoding Integration',
+            text: 'Implemented gRPC-Web transcoding layer enabling browser-compatible API calls',
+          },
+          {
+            prefix: 'Team Mentorship',
+            text: 'Architected solution via tech design doc, then mentored team members through implementation and ensured knowledge transfer for long-term ownership',
+          },
         ],
       },
     ],
@@ -391,7 +478,10 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Migration Strategy - Created parallelization approach enabling multiple product teams to work simultaneously on different components without blocking each other',
+          {
+            prefix: 'Migration Strategy',
+            text: 'Created parallelization approach enabling multiple product teams to work simultaneously on different components without blocking each other',
+          },
           'Cross-Team Coordination - Coordinated migration across product teams, establishing shared timeline and success criteria. Ensured consistent migration patterns',
           'Detail-Oriented Execution - Methodical component-by-component migration ensuring type safety and feature parity. Validated each component before deprecating VanillaJS version',
         ],
@@ -416,9 +506,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Migration Strategy - Designed incremental migration path from JavaScript to TypeScript with strict mode enabled',
-          'Training & Education - Created comprehensive weekly training curriculum covering TypeScript fundamentals through advanced patterns',
-          'Tooling & Standards - Established linting rules, type checking standards, and best practices documentation',
+          {
+            prefix: 'Migration Strategy',
+            text: 'Designed incremental migration path from JavaScript to TypeScript with strict mode enabled',
+          },
+          {
+            prefix: 'Training & Education',
+            text: 'Created comprehensive weekly training curriculum covering TypeScript fundamentals through advanced patterns',
+          },
+          {
+            prefix: 'Tooling & Standards',
+            text: 'Established linting rules, type checking standards, and best practices documentation',
+          },
         ],
       },
     ],
@@ -553,9 +652,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Architecture Design - Built comprehensive Redux patterns with TypeScript type safety, covering common state operations and establishing best practices for complex state management',
-          'Organizational Rollout - Created extensive documentation and training materials. Systematic team-by-team adoption with direct support and code review guidelines',
-          'Standards Establishment - Set company-wide patterns for state management that influenced frontend direction across organization',
+          {
+            prefix: 'Architecture Design',
+            text: 'Built comprehensive Redux patterns with TypeScript type safety, covering common state operations and establishing best practices for complex state management',
+          },
+          {
+            prefix: 'Organizational Rollout',
+            text: 'Created extensive documentation and training materials. Systematic team-by-team adoption with direct support and code review guidelines',
+          },
+          {
+            prefix: 'Standards Establishment',
+            text: 'Set company-wide patterns for state management that influenced frontend direction across organization',
+          },
         ],
       },
     ],
@@ -584,9 +692,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Research & Alignment - Wrote Web Enhancement Proposal (WEP) to build organizational consensus. Analyzed codebase to identify all Underscore usage and map to Lodash equivalents. Evaluated migration approaches and chose hybrid automated codemod + manual review strategy',
-          'Custom Build Optimization - Created custom Webpack Lodash bundle containing only needed functions to maintain bundle size. Built separate typings and treeshaking configs to optimize for production while preserving developer experience',
-          'Phased Migration - Split into four phases: direct 1:1 mappings, functions requiring modifications, edge cases, and final Underscore removal. Deployed each phase separately to catch issues incrementally. Thorough testing caught subtle differences (e.g., _.compact empty array handling)',
+          {
+            prefix: 'Research & Alignment',
+            text: 'Wrote Web Enhancement Proposal (WEP) to build organizational consensus. Analyzed codebase to identify all Underscore usage and map to Lodash equivalents. Evaluated migration approaches and chose hybrid automated codemod + manual review strategy',
+          },
+          {
+            prefix: 'Custom Build Optimization',
+            text: 'Created custom Webpack Lodash bundle containing only needed functions to maintain bundle size. Built separate typings and treeshaking configs to optimize for production while preserving developer experience',
+          },
+          {
+            prefix: 'Phased Migration',
+            text: 'Split into four phases: direct 1:1 mappings, functions requiring modifications, edge cases, and final Underscore removal. Deployed each phase separately to catch issues incrementally. Thorough testing caught subtle differences (e.g., _.compact empty array handling)',
+          },
         ],
       },
     ],
@@ -615,8 +732,14 @@ export const projectsMap: Record<string, Project> = {
         title: 'Details',
         content: [
           'Cross-Platform Architecture - Designed SDK architecture supporting both web and desktop platforms with consistent API surface',
-          'Build Pipeline - Owned build pipeline and asset optimization for efficient file preview delivery',
-          'Extensibility - Built system for easily adding new file type support, enabling future expansion',
+          {
+            prefix: 'Build Pipeline',
+            text: 'Owned build pipeline and asset optimization for efficient file preview delivery',
+          },
+          {
+            prefix: 'Extensibility',
+            text: 'Built system for easily adding new file type support, enabling future expansion',
+          },
         ],
       },
     ],
@@ -643,8 +766,14 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Community Building - Founded and nurtured frontend community across growing engineering organization with no centralized frontend coordination',
-          'Knowledge Sharing - Organized regular sessions and published newsletters with tips, updates, and best practices',
+          {
+            prefix: 'Community Building',
+            text: 'Founded and nurtured frontend community across growing engineering organization with no centralized frontend coordination',
+          },
+          {
+            prefix: 'Knowledge Sharing',
+            text: 'Organized regular sessions and published newsletters with tips, updates, and best practices',
+          },
           'Cross-Team Coordination - Created forum for discussing frontend challenges and coordinating initiatives across teams',
         ],
       },
@@ -672,9 +801,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Event Design - Planned multi-day summits with curated technical content, workshops, and collaboration time',
-          'Community Connection - Created space for in-person connection and relationship building in remote-first company',
-          'Knowledge Transfer - Facilitated deep technical discussions and cross-team learning',
+          {
+            prefix: 'Event Design',
+            text: 'Planned multi-day summits with curated technical content, workshops, and collaboration time',
+          },
+          {
+            prefix: 'Community Connection',
+            text: 'Created space for in-person connection and relationship building in remote-first company',
+          },
+          {
+            prefix: 'Knowledge Transfer',
+            text: 'Facilitated deep technical discussions and cross-team learning',
+          },
         ],
       },
     ],
@@ -702,8 +840,14 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Mobile Optimization - Designed responsive preview interface optimized for mobile viewports, touch interactions, and varying network conditions',
-          'Performance Focus - Implemented progressive loading and optimized asset delivery for mobile bandwidth constraints',
+          {
+            prefix: 'Mobile Optimization',
+            text: 'Designed responsive preview interface optimized for mobile viewports, touch interactions, and varying network conditions',
+          },
+          {
+            prefix: 'Performance Focus',
+            text: 'Implemented progressive loading and optimized asset delivery for mobile bandwidth constraints',
+          },
           'Cross-Browser Support - Ensured consistent experience across mobile browsers (Safari, Chrome, Firefox) with varying capabilities',
         ],
       },
@@ -727,9 +871,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Component Development - Built frontend components for showcase creation, customization, and viewing experience',
-          'File Integration - Integrated with Dropbox file system to enable seamless file selection and organization into showcases',
-          'Presentation Layer - Created polished viewing experience for showcase recipients with responsive layouts and branding options',
+          {
+            prefix: 'Component Development',
+            text: 'Built frontend components for showcase creation, customization, and viewing experience',
+          },
+          {
+            prefix: 'File Integration',
+            text: 'Integrated with Dropbox file system to enable seamless file selection and organization into showcases',
+          },
+          {
+            prefix: 'Presentation Layer',
+            text: 'Created polished viewing experience for showcase recipients with responsive layouts and branding options',
+          },
         ],
       },
     ],
@@ -752,10 +905,22 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Archive Parsing - Implemented ZIP file parsing to extract directory structure and file metadata without full download',
-          'Navigation Interface - Built file tree UI for browsing ZIP contents with folder expansion, file preview, and selective download',
-          'Preview Integration - Integrated with existing file preview system to support previewing files within ZIP archives before downloading',
-          'Performance Optimization - Added DOM virtualization to improve performance for large ZIP files',
+          {
+            prefix: 'Archive Parsing',
+            text: 'Implemented ZIP file parsing to extract directory structure and file metadata without full download',
+          },
+          {
+            prefix: 'Navigation Interface',
+            text: 'Built file tree UI for browsing ZIP contents with folder expansion, file preview, and selective download',
+          },
+          {
+            prefix: 'Preview Integration',
+            text: 'Integrated with existing file preview system to support previewing files within ZIP archives before downloading',
+          },
+          {
+            prefix: 'Performance Optimization',
+            text: 'Added DOM virtualization to improve performance for large ZIP files',
+          },
         ],
       },
     ],
@@ -785,9 +950,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Deep Learning - Learned React/Redux architecture through hands-on building and reading Lodash and Redux source code. Heavy functional programming focus shaped technical approach',
-          'Feature Ownership - Built checkout flow (core revenue path), show landing pages, and authentication/server-side rendering strategies. Integrated with new Swagger-based API client',
-          'Greenfield Architecture - Collaborated with team of 4 on greenfield architecture decisions, component patterns, and state management approach for production application',
+          {
+            prefix: 'Deep Learning',
+            text: 'Learned React/Redux architecture through hands-on building and reading Lodash and Redux source code. Heavy functional programming focus shaped technical approach',
+          },
+          {
+            prefix: 'Feature Ownership',
+            text: 'Built checkout flow (core revenue path), show landing pages, and authentication/server-side rendering strategies. Integrated with new Swagger-based API client',
+          },
+          {
+            prefix: 'Greenfield Architecture',
+            text: 'Collaborated with team of 4 on greenfield architecture decisions, component patterns, and state management approach for production application',
+          },
         ],
       },
     ],
@@ -810,9 +984,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Backend Development - Built APIs in Groovy on Grails with complex SQL queries for matching alternative show offers based on user preferences and availability',
-          'Frontend Experience - Designed and implemented offer selection interface for lottery losers to browse and purchase alternative shows',
-          'Business Logic - Implemented eligibility rules and offer matching algorithms to personalize recommendations',
+          {
+            prefix: 'Backend Development',
+            text: 'Built APIs in Groovy on Grails with complex SQL queries for matching alternative show offers based on user preferences and availability',
+          },
+          {
+            prefix: 'Frontend Experience',
+            text: 'Designed and implemented offer selection interface for lottery losers to browse and purchase alternative shows',
+          },
+          {
+            prefix: 'Business Logic',
+            text: 'Implemented eligibility rules and offer matching algorithms to personalize recommendations',
+          },
         ],
       },
     ],
@@ -835,8 +1018,14 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'API Design - Built RESTful APIs for rush ticket operations including availability checks, purchase flow, and eligibility verification',
-          'Business Rules - Implemented complex availability and eligibility logic for same-day limited ticket sales',
+          {
+            prefix: 'API Design',
+            text: 'Built RESTful APIs for rush ticket operations including availability checks, purchase flow, and eligibility verification',
+          },
+          {
+            prefix: 'Business Rules',
+            text: 'Implemented complex availability and eligibility logic for same-day limited ticket sales',
+          },
           'Cross-Team Collaboration - Worked with mobile engineers to ensure consistent API behavior across platforms',
         ],
       },
@@ -860,9 +1049,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Monitoring Setup - Configured Sentry for production error tracking with appropriate sampling and alert thresholds',
-          'Process Establishment - Created error triage processes and alerting workflows for team response',
-          'Operational Excellence - Shifted culture from reactive user-reported bugs to proactive error detection and resolution',
+          {
+            prefix: 'Monitoring Setup',
+            text: 'Configured Sentry for production error tracking with appropriate sampling and alert thresholds',
+          },
+          {
+            prefix: 'Process Establishment',
+            text: 'Created error triage processes and alerting workflows for team response',
+          },
+          {
+            prefix: 'Operational Excellence',
+            text: 'Shifted culture from reactive user-reported bugs to proactive error detection and resolution',
+          },
         ],
       },
     ],
@@ -885,9 +1083,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Automation - Created Ansible playbooks for Node.js application deployments replacing manual processes',
-          'Reliability - Built repeatable deployment process reducing errors and deployment time',
-          'Integration - Integrated deployment automation with Sentry for immediate error detection post-deploy',
+          {
+            prefix: 'Automation',
+            text: 'Created Ansible playbooks for Node.js application deployments replacing manual processes',
+          },
+          {
+            prefix: 'Reliability',
+            text: 'Built repeatable deployment process reducing errors and deployment time',
+          },
+          {
+            prefix: 'Integration',
+            text: 'Integrated deployment automation with Sentry for immediate error detection post-deploy',
+          },
         ],
       },
     ],
@@ -915,10 +1122,22 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'API Architecture - Led complete backend migration to RESTful resource architecture with proper HTTP verbs and status codes',
-          'Frontend Migration - Migrated frontend to Backbone.js with proper MVC patterns and data binding',
-          'Standards & Documentation - Established API design standards and created comprehensive documentation for organization-wide adoption',
-          'Training - Trained more senior engineers on REST paradigms and best practices',
+          {
+            prefix: 'API Architecture',
+            text: 'Led complete backend migration to RESTful resource architecture with proper HTTP verbs and status codes',
+          },
+          {
+            prefix: 'Frontend Migration',
+            text: 'Migrated frontend to Backbone.js with proper MVC patterns and data binding',
+          },
+          {
+            prefix: 'Standards & Documentation',
+            text: 'Established API design standards and created comprehensive documentation for organization-wide adoption',
+          },
+          {
+            prefix: 'Training',
+            text: 'Trained more senior engineers on REST paradigms and best practices',
+          },
         ],
       },
     ],
@@ -941,9 +1160,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'CI Pipeline - Set up continuous integration pipeline for automated testing and quality checks',
-          'Error Monitoring - Implemented Sentry for production error tracking and alerting',
-          'Observability Culture - Established monitoring dashboards and culture of observability across team',
+          {
+            prefix: 'CI Pipeline',
+            text: 'Set up continuous integration pipeline for automated testing and quality checks',
+          },
+          {
+            prefix: 'Error Monitoring',
+            text: 'Implemented Sentry for production error tracking and alerting',
+          },
+          {
+            prefix: 'Observability Culture',
+            text: 'Established monitoring dashboards and culture of observability across team',
+          },
         ],
       },
     ],
@@ -966,9 +1194,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Migration Planning - Planned and executed organizational migration from SVN to Git with minimal disruption',
-          'Process Establishment - Established branching strategies, PR processes, and code review practices',
-          'Training - Provided hands-on training for entire team on Git workflows',
+          {
+            prefix: 'Migration Planning',
+            text: 'Planned and executed organizational migration from SVN to Git with minimal disruption',
+          },
+          {
+            prefix: 'Process Establishment',
+            text: 'Established branching strategies, PR processes, and code review practices',
+          },
+          {
+            prefix: 'Training',
+            text: 'Provided hands-on training for entire team on Git workflows',
+          },
         ],
       },
     ],
@@ -992,8 +1229,14 @@ export const projectsMap: Record<string, Project> = {
         title: 'Details',
         content: [
           'Full-Stack Development - Built complete restore flow from file selection UI to backend restore operations',
-          'UX Design - Designed intuitive user experience for complex operations including version history and conflict resolution',
-          'Backend Integration - Integrated backend restore operations with proper error handling and edge cases',
+          {
+            prefix: 'UX Design',
+            text: 'Designed intuitive user experience for complex operations including version history and conflict resolution',
+          },
+          {
+            prefix: 'Backend Integration',
+            text: 'Integrated backend restore operations with proper error handling and edge cases',
+          },
         ],
       },
     ],
@@ -1016,9 +1259,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Flow Refactor - Refactored user enrollment and onboarding flow for improved conversion',
-          'Code Modernization - Modernized legacy enrollment code for better maintainability',
-          'UX Improvements - Enhanced user experience throughout enrollment process',
+          {
+            prefix: 'Flow Refactor',
+            text: 'Refactored user enrollment and onboarding flow for improved conversion',
+          },
+          {
+            prefix: 'Code Modernization',
+            text: 'Modernized legacy enrollment code for better maintainability',
+          },
+          {
+            prefix: 'UX Improvements',
+            text: 'Enhanced user experience throughout enrollment process',
+          },
         ],
       },
     ],
@@ -1046,9 +1298,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Build System Migration to Grunt - Migrated the legacy build system to Grunt, implementing optimized asset compilation, bundling, and minification',
-          'Page Load Optimization - Performed systematic profiling and refactoring of critical paths, including asset loading, rendering, and data fetching, to drastically reduce initial page load times',
-          'Developer Experience Improvements - Enhanced the overall development workflow with faster builds, modern tooling, and a more efficient build pipeline',
+          {
+            prefix: 'Build System Migration to Grunt',
+            text: 'Migrated the legacy build system to Grunt, implementing optimized asset compilation, bundling, and minification',
+          },
+          {
+            prefix: 'Page Load Optimization',
+            text: 'Performed systematic profiling and refactoring of critical paths, including asset loading, rendering, and data fetching, to drastically reduce initial page load times',
+          },
+          {
+            prefix: 'Developer Experience Improvements',
+            text: 'Enhanced the overall development workflow with faster builds, modern tooling, and a more efficient build pipeline',
+          },
         ],
       },
     ],
@@ -1071,9 +1332,15 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Queue System - Built data deletion queue with lifecycle management and scheduling',
+          {
+            prefix: 'Queue System',
+            text: 'Built data deletion queue with lifecycle management and scheduling',
+          },
           'Full-Stack Implementation - Created UI for deletion requests and backend job processing',
-          'Edge Cases - Handled error scenarios and edge cases for reliable deletion',
+          {
+            prefix: 'Edge Cases',
+            text: 'Handled error scenarios and edge cases for reliable deletion',
+          },
         ],
       },
     ],
@@ -1096,9 +1363,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Logging System - Implemented structured logging system for better observability',
-          'Standards - Established logging standards and practices across codebase',
-          'Early Impact - Delivered significant infrastructure improvement in first three months',
+          {
+            prefix: 'Logging System',
+            text: 'Implemented structured logging system for better observability',
+          },
+          {
+            prefix: 'Standards',
+            text: 'Established logging standards and practices across codebase',
+          },
+          {
+            prefix: 'Early Impact',
+            text: 'Delivered significant infrastructure improvement in first three months',
+          },
         ],
       },
     ],
@@ -1121,9 +1397,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Gating System - Built release gating system with automated quality checks',
-          'Approval Workflows - Created manual approval workflows for production releases',
-          'Quality Improvement - Reduced production incidents through systematic quality gates',
+          {
+            prefix: 'Gating System',
+            text: 'Built release gating system with automated quality checks',
+          },
+          {
+            prefix: 'Approval Workflows',
+            text: 'Created manual approval workflows for production releases',
+          },
+          {
+            prefix: 'Quality Improvement',
+            text: 'Reduced production incidents through systematic quality gates',
+          },
         ],
       },
     ],
