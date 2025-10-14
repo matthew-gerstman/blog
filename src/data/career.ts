@@ -664,8 +664,8 @@ const careerData: CareerData = {
           ]
         }
       ],
-    {
-      "id": "todaytix",
+    },
+    {"id": "todaytix",
       "company": "TodayTix",
       "role": "Software Engineer",
       "period": "January 2016 - June 2017",
