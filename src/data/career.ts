@@ -15,32 +15,58 @@ const careerData: CareerData = {
       "description": "Leading development of collaborative data science tooling and dashboard infrastructure.",
       "color": "#632CA6",
       "projects": [
-        {
+                {
+          "title": "Graphing Summit",
+          "year": "2024-2025",
+          "startYear": 2024,
+          "endYear": 2025,
+          "role": "Engineering Manager",
+          "description": "Organized Datadog's Graphing Summit to build cohesive culture within a newly-formed graphing org from a recent reorg. Led planning with 2 co-organizers, keeping execution lean—1/10 the time investment of typical summits with better relationship outcomes.",
+          "impact": "Transformed \"kind of knew each other\" relationships into \"really knew each other\" connections. Created foundation for cross-team collaboration in graphing org.",
+          "technologies": [
+            "Event Planning",
+            "Team Building",
+            "Cross-functional Coordination"
+          ],
+          "belowTheFold": [
+            {
+              "title": "Execution",
+              "content": [
+                "Pre-Summit Relationship Building - Organized events leading up to the summit (IC1 class, org lunches, donut 1:1s) to increase relationship foundation",
+                "Lean Planning - Avoided committee bloat; 1/10 the time investment of other summits",
+                "Outcome-Focused Design - Prioritized relationships over presentations",
+                "Logistics - Managed ops, scheduling, speakers, budget, swag"
+              ]
+            }
+          ]
+        },
+{
           "title": "Notebooks 2.0",
           "year": "2023-2024",
           "startYear": 2023,
           "endYear": 2024,
-          "role": "Engineering Manager aspiring to be Ted Lasso",
-          "description": "Led the complete rebuild of Datadog's collaborative notebook editor, managing a team through parallel rich text and multiplayer initiatives while maintaining a Ted Lasso-inspired leadership approach.",
-          "impact": "Shipped production collaborative editor to 100% of Datadog customers. Grew team from 0 to 4 engineers with 2 promotions. Established customer-driven release cadence that went from alpha to full GA in 9 months.",
+          "role": "Engineering Manager",
+          "description": "First-time engineering manager leading the rebuild of Datadog's collaborative notebook editor. Focused on team growth, customer engagement, and enabling technical excellence. Built customer council with rapid feedback loop.",
+          "impact": "Shipped complete Notebooks 2.0 rebuild with rich text editing and real-time multiplayer collaboration. Grew team from 4 to 6 engineers with 2 promotions. Established customer council that accelerated feedback cycles.",
           "technologies": [
             "ProseMirror",
-            "Yjs",
-            "CRDTs",
+            "CRDTs (Yjs)",
             "WebSockets",
-            "TypeScript",
             "React",
-            "Redux",
-            "Node.js",
-            "Real-time Collaboration"
+            "TypeScript",
+            "Team Leadership"
           ],
           "belowTheFold": [
             {
-              "title": "Context",
+              "title": "Execution",
               "content": [
-                "Datadog's legacy notebooks were built as a list of markdown cells plus visualizations (tiledefs rendered via Univiz). The product needed real-time multiplayer collaboration and a modern rich text editing experience. Two parallel technical initiatives—rich text and multiplayer—required careful coordination while retrofitting onto legacy architecture."
+                "Team Culture & Development - Grew team from 4 to 6 engineers with 2 promotions; established daily pairing and weekly learning sessions; created environment where people wanted to work together and help each other succeed. My favorite part of the job was coach, I aspired to be Ted Lasso.",
+                "Feature Development Oversight - Oversaw development of: Rich text editor with ProseMirror; Real-time multiplayer with CRDTs (Yjs) and WebSockets; Inlined widgets; Copy/paste; Toolbar and formatting; List indentation; Code blocks with syntax highlighting; Comments and version history; Inline tables; Print mode (personally implemented); Markdown import/export for API users",
+                "Customer Engagement - Built customer council with shared Slack channels; identified high-usage customers and coordinated with CSMs. Spoke with multiple external customers per week during rollout. Rapidly implemented feedback—nothing a customer loves more than hearing their feature request was implemented in 48 hours. Product manager was focused elsewhere for 6 months; I handled prioritization and release management. Established principle: ship to someone new every week. We slowed down for customer feedback and sped up where it didn't apply. For example: released to 98% of customers while finishing API support for the remaining 2%. When a customer didn't like keyboard-first design, we paused for a week to implement \"Bring Back Buttons\" initiative."
               ]
-            },
+            }
+          ]
+        },
             {
               "title": "Execution",
               "content": [
@@ -92,32 +118,42 @@ const careerData: CareerData = {
         },
         {
           "title": "Dashboard Reporting & PDF Export",
-          "year": "2023",
-          "startYear": 2023,
+          "year": "2022-2023",
+          "startYear": 2022,
           "endYear": 2023,
-          "role": "Staff Engineer / Tech Lead",
-          "description": "Architected and built Datadog's PDF reporting system from scratch, enabling offline dashboard snapshots with 95%+ widget fidelity. Led technical design, prototyping, and implementation of novel client/server handshake for complex dashboard rendering.",
-          "impact": "Shipped production PDF reporting to all customers, improving widget fidelity from 70% to 95%+. Established Node.js foundation code now used by 15+ services. Generated new revenue stream and became heavily-used customer feature with permanent team support.",
+          "role": "Software Engineer",
+          "description": "Built Datadog's report-printer node service from scratch—offline dashboard snapshots with 98%+ widget fidelity. Designed client/server rendering handshake, chose Puppeteer, established Node.js patterns now used across 15+ services.",
+          "impact": "Shipped to all customers with 95%+ widget fidelity (up from 70%). Created new revenue stream and permanent team. Node.js foundation code became company standard.",
           "technologies": [
             "Node.js",
             "Puppeteer",
-            "Chrome DevTools Protocol",
             "React",
             "TypeScript",
             "PDF Generation",
-            "HTTP/gRPC",
-            "Docker",
-            "Python",
-            "Univiz",
-            "Authentication (OBO tokens)"
+            "gRPC",
+            "Queue Systems"
           ],
           "belowTheFold": [
             {
-              "title": "Context",
+              "title": "Execution",
               "content": [
-                "Legacy reporting emailed unorganized widget snapshots with 70% success rate. Customers needed offline dashboard access without Datadog credentials. Technical constraints: 50+ widget types, complex data fetching, virtualized rendering, dashboards with 10,000+ widgets. Node.js was nascent at Datadog—historically banned by leadership until another team won political battle for isomorphic code."
+                "Architecture & Design - Prototyped for 6 weeks with weekly reviews; designed stateless queue-based system with heartbeat monitoring; built client/server handshake to coordinate React rendering, data fetching, viewport resizing, and snapshot timing",
+                "Rendering Engine Selection - Evaluated Selenium, Puppeteer, and Cypress; chose Puppeteer for browser-fidelity PDFs and thin Chrome wrapper; interviewed engineers about Selenium pain to inform decision",
+                "Quality & Fidelity - Created PrintModeAdapter to aggregate widget status; collaborated with Univiz team to expose fetch completion signals; solved split graph rendering bugs with proxy context providers",
+                "Service Foundation - Wrote all Node.js HTTP/gRPC communication code, tests, and documentation (pre-AI era); established patterns now foundational for 15+ services; implemented OBO token authentication with Puppeteer request interception",
+                "Performance & Constraints - Reduced dev loop from 30min to 1min; navigated security restrictions on Node.js infrastructure access; optimized print mode rendering by disabling interactivity; handled edge cases (note widgets, image security risks, file size bloat)"
               ]
             },
+            {
+              "title": "Leadership",
+              "content": [
+                "Built consensus through prototyping and stakeholder reviews",
+                "Mentored backend team on browser implementation",
+                "Transitioned to Notebooks management as project reached production"
+              ]
+            }
+          ]
+        },
             {
               "title": "Execution",
               "content": [
