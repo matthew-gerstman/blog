@@ -1,8 +1,3 @@
-export interface Hero {
-  title: string;
-  subtitle: string;
-}
-
 export interface Link {
   text: string;
   url: string;
@@ -25,6 +20,8 @@ export interface Project {
   technologies: string[];
   links?: Link[];
   belowTheFold?: BelowTheFoldSection[];
+  emoji?: string; // Optional emoji for visual identification
+  image?: string; // Optional image URL for visual identification
 }
 
 export interface Job {
@@ -37,6 +34,11 @@ export interface Job {
   description: string;
   color: string;
   projects: Project[];
+}
+
+export interface Hero {
+  title: string;
+  subtitle: string;
 }
 
 export interface ResumeData {

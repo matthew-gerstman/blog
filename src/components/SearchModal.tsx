@@ -148,15 +148,28 @@ export function SearchModal({
               );
             } else {
               const project = result.item;
+              // Use project image if available, otherwise use emoji, otherwise default icon
+              const iconContent = project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={styles.icon}
+                />
+              ) : project.emoji ? (
+                <div className={`${styles.icon} ${styles.placeholder}`}>
+                  {project.emoji}
+                </div>
+              ) : (
+                <div className={`${styles.icon} ${styles.placeholder}`}>💼</div>
+              );
+
               return (
                 <div
                   key={`project-${project.key}`}
                   className={`${styles.resultItem} ${index === selectedIndex ? styles.selected : ''}`}
                   onClick={() => handleSelect(result)}
                 >
-                  <div className={`${styles.icon} ${styles.placeholder}`}>
-                    💼
-                  </div>
+                  {iconContent}
                   <div className={styles.content}>
                     <div className={styles.title}>{project.title}</div>
                     <div className={styles.meta}>
