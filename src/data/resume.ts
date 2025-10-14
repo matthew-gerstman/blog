@@ -42,10 +42,11 @@ const resumeData: ResumeData = {
               content: [
                 'Team Culture & Development - Grew team from 4 to 6 engineers with 2 promotions; established daily pairing and weekly learning sessions; created environment where people wanted to work together and help each other succeed. My favorite part of the job was coach, I aspired to be Ted Lasso.',
                 'Feature Development Oversight - Oversaw development of: Rich text editor with ProseMirror; Real-time multiplayer with CRDTs (Yjs) and WebSockets; Inlined widgets; Copy/paste; Toolbar and formatting; List indentation; Code blocks with syntax highlighting; Comments and version history; Inline tables; Print mode (personally implemented); Markdown import/export for API users',
-                'Customer Engagement - Built customer council with shared Slack channels; identified high-usage customers and coordinated with CSMs. Spoke with multiple external customers per week during rollout. Rapidly implemented feedback\u2014nothing a customer loves more than hearing their feature request was implemented in 48 hours. Product manager was focused elsewhere for 6 months; I handled prioritization and release management. Established principle: ship to someone new every week. We slowed down for customer feedback and sped up where it didn\'t apply. For example: released to 98% of customers while finishing API support for the remaining 2%. When a customer didn\'t like keyboard-first design, we paused for a week to implement "Bring Back Buttons" initiative.',
+                'Customer Engagement - Built customer council with shared Slack channels; identified high-usage customers and coordinated with CSMs. Spoke with multiple external customers per week during rollout. Rapidly implemented feedback—nothing a customer loves more than hearing their feature request was implemented in 48 hours. Product manager was focused elsewhere for 6 months; I handled prioritization and release management. Established principle: ship to someone new every week. We slowed down for customer feedback and sped up where it didn\'t apply. For example: released to 98% of customers while finishing API support for the remaining 2%. When a customer didn\'t like keyboard-first design, we paused for a week to implement "Bring Back Buttons" initiative.',
               ],
             },
           ],
+          key: 'datadog-notebooks-2-0',
         },
         {
           title: 'Dashboard Reporting & PDF Export',
@@ -54,7 +55,7 @@ const resumeData: ResumeData = {
           endYear: 2023,
           role: 'Software Engineer',
           description:
-            "Built Datadog's report-printer node service from scratch\u2014offline dashboard snapshots with 98%+ widget fidelity. Designed client/server rendering handshake, chose Puppeteer, established Node.js patterns now used across 15+ services.",
+            "Built Datadog's report-printer node service from scratch—offline dashboard snapshots with 98%+ widget fidelity. Designed client/server rendering handshake, chose Puppeteer, established Node.js patterns now used across 15+ services.",
           impact:
             'Shipped to all customers with 95%+ widget fidelity (up from 70%). Created new revenue stream and permanent team. Node.js foundation code became company standard.',
           technologies: [
@@ -88,6 +89,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'datadog-dashboard-reporting-pdf-export',
         },
         {
           title: 'Integration Testing Framework',
@@ -116,6 +118,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'datadog-integration-testing-framework',
         },
         {
           title: 'TypeScript Cleanup Initiative',
@@ -138,6 +141,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'datadog-typescript-cleanup-initiative',
         },
         {
           title: 'Graphing Summit',
@@ -146,7 +150,7 @@ const resumeData: ResumeData = {
           endYear: 2025,
           role: 'Engineering Manager',
           description:
-            "Organized Datadog's Graphing Summit to build cohesive culture within a newly-formed graphing org from a recent reorg. Led planning with 2 co-organizers, keeping execution lean\u20141/10 the time investment of typical summits with better relationship outcomes.",
+            "Organized Datadog's Graphing Summit to build cohesive culture within a newly-formed graphing org from a recent reorg. Led planning with 2 co-organizers, keeping execution lean—1/10 the time investment of typical summits with better relationship outcomes.",
           impact:
             'Transformed "kind of knew each other" relationships into "really knew each other" connections. Created foundation for cross-team collaboration in graphing org.',
           technologies: [
@@ -165,6 +169,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'datadog-graphing-summit',
         },
         {
           title: 'IC1 Class',
@@ -173,7 +178,7 @@ const resumeData: ResumeData = {
           endYear: 2025,
           role: 'Engineering Manager',
           description:
-            "Designed and taught Datadog's first IC1 engineering class\u2014a covering career development, technical leadership, and organizational impact for early-career engineers.",
+            "Designed and taught Datadog's first IC1 engineering class—a covering career development, technical leadership, and organizational impact for early-career engineers.",
           impact:
             'Graduated 12 engineers with stronger career frameworks and clearer growth paths. Created reusable curriculum adopted by other teams. Demonstrated leadership in engineer development and organizational culture building.',
           technologies: [
@@ -193,8 +198,8 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'datadog-ic1-class',
         },
-
         {
           title: 'Frontend Summit',
           year: '2023',
@@ -202,7 +207,7 @@ const resumeData: ResumeData = {
           endYear: 2023,
           role: 'Software Engineer',
           description:
-            "Organized and ran Datadog's first-ever Frontend Summit\u2014a multi-day conference bringing together frontend engineers across the company. Created venue for cross-team knowledge sharing, technical deep dives, and community building.",
+            "Organized and ran Datadog's first-ever Frontend Summit—a multi-day conference bringing together frontend engineers across the company. Created venue for cross-team knowledge sharing, technical deep dives, and community building.",
           impact:
             'Established myself as a leader in the frontend community early in my tenure at the company',
           technologies: [
@@ -210,6 +215,7 @@ const resumeData: ResumeData = {
             'Technical Leadership',
             'Community Building',
           ],
+          key: 'datadog-frontend-summit',
         },
       ],
     },
@@ -283,6 +289,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'bluecore-frontend-north-star-architecture-modernization',
         },
         {
           title: 'Frontend Interview Loop Design',
@@ -310,6 +317,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'bluecore-frontend-interview-loop-design',
         },
         {
           title: 'NextServer (Next.js on Kubernetes)',
@@ -338,6 +346,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'bluecore-nextserver-next-js-on-kubernetes',
         },
         {
           title: 'Autogenerated API Client',
@@ -366,6 +375,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'bluecore-autogenerated-api-client',
         },
         {
           title: 'Component Library Consolidation',
@@ -393,6 +403,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'bluecore-component-library-consolidation',
         },
         {
           title: 'TypeScript Adoption & Strict Types',
@@ -415,6 +426,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'bluecore-typescript-adoption-strict-types',
         },
         {
           title: 'TTI Dashboard & Frontend Monitoring',
@@ -441,6 +453,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'bluecore-tti-dashboard-frontend-monitoring',
         },
         {
           title: 'Customer 360 Revamp',
@@ -469,6 +482,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'bluecore-customer-360-revamp',
         },
       ],
     },
@@ -478,7 +492,7 @@ const resumeData: ResumeData = {
       startDate: 'April 2017',
       endDate: 'April 2021',
       period: 'April 2017 - April 2021',
-      role: 'Software Engineer \u2192 Senior Software Engineer',
+      role: 'Software Engineer → Senior Software Engineer',
       description:
         'Architected state management systems and founded JavaScript Guild for organizational best practices.',
       color: '#0061FF',
@@ -519,6 +533,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'dropbox-plus-plus-family-plans-life-vault',
         },
         {
           title: 'Redux State Management System',
@@ -553,6 +568,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'dropbox-redux-state-management-system',
         },
         {
           title: 'Underscore → Lodash Migration',
@@ -581,6 +597,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'dropbox-underscore-lodash-migration',
         },
         {
           title: 'File Viewer SDK',
@@ -608,6 +625,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'dropbox-file-viewer-sdk',
         },
         {
           title: 'JavaScript Guild',
@@ -634,6 +652,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'dropbox-javascript-guild',
         },
         {
           title: 'JavaScript Guild Summit',
@@ -660,6 +679,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'dropbox-javascript-guild-summit',
         },
         {
           title: 'Previews Mobile Web',
@@ -687,6 +707,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'dropbox-previews-mobile-web',
         },
         {
           title: 'Showcase',
@@ -709,6 +730,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'dropbox-showcase',
         },
         {
           title: 'ZIP File Previews',
@@ -732,6 +754,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'dropbox-zip-file-previews',
         },
       ],
     },
@@ -773,6 +796,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'todaytix-web-2-0-react-redux-rebuild',
         },
         {
           title: 'Special Offers Feature',
@@ -795,6 +819,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'todaytix-special-offers-feature',
         },
         {
           title: 'Rush Ticketing',
@@ -821,6 +846,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'todaytix-rush-ticketing',
         },
         {
           title: 'Sentry Rollout',
@@ -843,6 +869,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'todaytix-sentry-rollout',
         },
         {
           title: 'Ansible Deployment Automation',
@@ -870,6 +897,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'todaytix-ansible-deployment-automation',
         },
       ],
     },
@@ -910,6 +938,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'zetta-backbone-restful-apis-migration',
         },
         {
           title: 'CI + Sentry Implementation',
@@ -932,6 +961,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'zetta-ci-sentry-implementation',
         },
         {
           title: 'SVN to Git Migration',
@@ -954,6 +984,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'zetta-svn-to-git-migration',
         },
         {
           title: 'Data Restore Flow',
@@ -976,6 +1007,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'zetta-data-restore-flow',
         },
         {
           title: 'User Enrollment Flow Refactor',
@@ -998,6 +1030,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'zetta-user-enrollment-flow-refactor',
         },
         {
           title: 'Performance Optimization & Grunt Build System',
@@ -1025,6 +1058,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'zetta-performance-optimization-grunt-build-system',
         },
         {
           title: 'Data Deletion Queue',
@@ -1047,6 +1081,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'zetta-data-deletion-queue',
         },
         {
           title: 'Structured Logging',
@@ -1069,6 +1104,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'zetta-structured-logging',
         },
         {
           title: 'Release Gating',
@@ -1095,13 +1131,14 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'zetta-release-gating',
         },
       ],
     },
     {
       id: 'dance-marathon',
       company: 'Dance Marathon at UF',
-      role: 'Technology Captain \u2192 Technology Overall Director',
+      role: 'Technology Captain → Technology Overall Director',
       period: 'September 2010 - April 2013',
       startDate: '2010-09',
       endDate: '2013-04',
@@ -1129,6 +1166,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'dance-marathon-tweet-two-screens',
         },
         {
           title: 'DMatUF iPhone App',
@@ -1150,6 +1188,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'dance-marathon-dmatuf-iphone-app',
         },
         {
           title: 'DMAssassins',
@@ -1173,6 +1212,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'dance-marathon-dmassassins',
         },
       ],
     },
@@ -1215,6 +1255,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'early-programming-university-of-florida-computer-science-degree',
         },
         {
           title: 'Body Logic MD - IT Support',
@@ -1242,6 +1283,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'early-programming-body-logic-md-it-support',
         },
         {
           title: 'Johns Hopkins Summer Program',
@@ -1252,6 +1294,7 @@ const resumeData: ResumeData = {
           role: '',
           startYear: 2008,
           endYear: 2008,
+          key: 'early-programming-johns-hopkins-summer-program',
         },
         {
           title: 'Freelance Computer Repair & Web Design',
@@ -1274,6 +1317,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'early-programming-freelance-computer-repair-web-design',
         },
         {
           title: 'Don Estridge High Tech Middle School',
@@ -1297,6 +1341,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'early-programming-don-estridge-high-tech-middle-school',
         },
         {
           title: 'First Programs & Websites',
@@ -1318,6 +1363,7 @@ const resumeData: ResumeData = {
               ],
             },
           ],
+          key: 'early-programming-first-programs-websites',
         },
       ],
     },
