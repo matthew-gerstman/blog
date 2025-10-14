@@ -182,7 +182,7 @@ const careerData: CareerData = {
       "startDate": "2021-06",
       "endDate": "2022-09",
       "description": "Led frontend platform architecture and TypeScript migration for marketing technology platform.",
-      "color": "#00254a",
+      "color": "#003467",
       "projects": [
         {
           "title": "Frontend North Star & Architecture Modernization",
