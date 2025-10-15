@@ -10,6 +10,158 @@ interface TalkModalProps {
 }
 
 export function TalkModal({ talk, onClose }: TalkModalProps) {
+  useModalKeyboardAndScroll(onClose);
+
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
+  return (
+    <div className={styles.overlay} onClick={handleBackdropClick}>
+      <div className={styles.modal}>
+        <CloseButton onClose={onClose} />
+        <VideoEmbed video={talk.video} title={talk.title} />
+        <TalkContent talk={talk} />
+      </div>
+    </div>
+  );
+}
+
+// Components
+function CloseButton({ onClose }: { onClose: () => void }) {
+  return (
+    <button
+      className={styles.closeButton}
+      onClick={onClose}
+      aria-label="Close modal"
+    >
+      <CloseIcon />
+    </button>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  );
+}
+
+function VideoEmbed({ video, title }: { video: string; title: string }) {
+  return (
+    <div className={styles.videoWrapper}>
+      <iframe
+        src={`https://www.youtube.com/embed/${video}`}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        title={title}
+      />
+    </div>
+  );
+}
+
+function TalkContent({ talk }: { talk: Talk }) {
+  return (
+    <div className={styles.content}>
+      <div className={styles.header}>
+        <TalkHeaderLeft talk={talk} />
+        {(talk.slidesUrl || talk.demoUrl) && <TalkLinks talk={talk} />}
+      </div>
+    </div>
+  );
+}
+
+function TalkHeaderLeft({ talk }: { talk: Talk }) {
+  return (
+    <div className={styles.headerLeft}>
+      <MetaInfo items={[talk.date, talk.venue]} />
+      <CardHeader title={talk.title} hasExpand={false} />
+    </div>
+  );
+}
+
+function TalkLinks({ talk }: { talk: Talk }) {
+  return (
+    <div className={styles.links}>
+      {talk.slidesUrl && (
+        <TalkLink href={talk.slidesUrl} icon={<SlidesIcon />} label="Slides" />
+      )}
+      {talk.demoUrl && (
+        <TalkLink href={talk.demoUrl} icon={<DemoIcon />} label="Demo" />
+      )}
+    </div>
+  );
+}
+
+function TalkLink({
+  href,
+  icon,
+  label,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.link}
+    >
+      {icon}
+      {label}
+    </a>
+  );
+}
+
+function SlidesIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <rect x="2" y="3" width="20" height="14" rx="2" />
+      <line x1="8" y1="21" x2="16" y2="21" />
+      <line x1="12" y1="17" x2="12" y2="21" />
+    </svg>
+  );
+}
+
+function DemoIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <polygon points="10 8 16 12 10 16 10 8" />
+    </svg>
+  );
+}
+
+// Custom Hooks
+function useModalKeyboardAndScroll(onClose: () => void) {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -25,101 +177,4 @@ export function TalkModal({ talk, onClose }: TalkModalProps) {
       document.body.style.overflow = 'unset';
     };
   }, [onClose]);
-
-  const handleBackdropClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
-  return (
-    <div className={styles.overlay} onClick={handleBackdropClick}>
-      <div className={styles.modal}>
-        <button
-          className={styles.closeButton}
-          onClick={onClose}
-          aria-label="Close modal"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-
-        <div className={styles.videoWrapper}>
-          <iframe
-            src={`https://www.youtube.com/embed/${talk.video}`}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title={talk.title}
-          />
-        </div>
-
-        <div className={styles.content}>
-          <div className={styles.header}>
-            <div className={styles.headerLeft}>
-              <MetaInfo items={[talk.date, talk.venue]} />
-              <CardHeader title={talk.title} hasExpand={false} />
-            </div>
-
-            {(talk.slidesUrl || talk.demoUrl) && (
-              <div className={styles.links}>
-                {talk.slidesUrl && (
-                  <a
-                    href={talk.slidesUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.link}
-                  >
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <rect x="2" y="3" width="20" height="14" rx="2" />
-                      <line x1="8" y1="21" x2="16" y2="21" />
-                      <line x1="12" y1="17" x2="12" y2="21" />
-                    </svg>
-                    Slides
-                  </a>
-                )}
-                {talk.demoUrl && (
-                  <a
-                    href={talk.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.link}
-                  >
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <polygon points="10 8 16 12 10 16 10 8" />
-                    </svg>
-                    Demo
-                  </a>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
 }
