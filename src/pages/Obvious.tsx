@@ -138,14 +138,31 @@ export const Obvious: React.FC = () => {
 
       <section className={styles.personalStatement}>
         <p className={styles.statementText}>
-          I've been following Obvious since the early days, and I'm genuinely
-          excited about what you're building. The vision of AI-native
-          collaborative workspaces that actually understand context and
-          intent—not just automate tasks—is exactly the kind of product I want
-          to help shape. I've spent my career building the complex, real-time,
-          performance-critical frontend systems that power products like this,
-          and I'm ready to bring that experience to a team that's pushing the
-          boundaries of what's possible.
+          I knew Obvious had a culture of excellence before I knew it was
+          Obvious. The Flatfile API docs made that clear—the quality, the
+          attention to detail, the respect for craft. That impression stuck.
+        </p>
+        <p className={styles.statementText}>
+          I've spent 40+ hours using Obvious in the past week because I couldn't
+          stop. The product is thoughtfully designed and genuinely useful.
+        </p>
+        <p className={styles.statementText}>
+          I bring the technical depth and leadership this role needs. At
+          Datadog, I managed Notebooks 2.0—a highly collaborative real-time
+          editing product—and built the dashboard reporting service from
+          scratch. At Bluecore, I picked the frontend technologies that took the
+          company to unicorn status and led the transformation. At Dropbox, I
+          designed Redux patterns that became the org standard and co-led a
+          massive utility library migration with one production bug.
+        </p>
+        <p className={styles.statementText}>
+          Beyond the code, I've built the connective tissue that makes teams
+          better: founding JavaScript guilds, organizing technical summits,
+          designing interview loops, teaching IC1 classes.
+        </p>
+        <p className={styles.statementText}>
+          I want to work on Obvious because you're building something ambitious
+          with rigor and craft. I want to be part of that.
         </p>
       </section>
 
