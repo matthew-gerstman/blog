@@ -24,12 +24,6 @@ export function ProjectGridCard({
         {project.title}
       </h3>
 
-      {project.role && (
-        <p className={styles.role} style={{ color: companyColor }}>
-          {project.role}
-        </p>
-      )}
-
       <p className={styles.description}>{project.description}</p>
 
       {project.technologies && project.technologies.length > 0 && (
