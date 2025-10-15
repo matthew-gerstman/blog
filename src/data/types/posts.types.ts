@@ -8,6 +8,7 @@ export interface Post {
   tags: string[];
   banner_img: string;
   heroImage?: string;
+  externalLink?: string; // Optional field for linking to arbitrary pages
 }
 
 export type PostsData = Post[];
