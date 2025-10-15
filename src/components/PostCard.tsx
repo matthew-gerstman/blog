@@ -10,16 +10,19 @@ interface PostCardProps {
 }
 
 export function PostCard({ post, index }: PostCardProps) {
-  const readingTime = calculateReadingTime(post.content);
-  const wordCount = getWordCount(post.content);
+  const wordCount = post.wordCount || getWordCount(post.content);
+  const readingTime = calculateReadingTime(wordCount);
   const banner = post.banner_img;
+
+  // Use externalLink if available, otherwise default to blog post slug
+  const linkTo = post.externalLink || `/writing/${post.slug}`;
 
   return (
     <article
       className={styles.card}
       style={{ animationDelay: `${Math.min(index * 0.05, 0.3)}s` }}
     >
-      <Link to={`/writing/${post.slug}`} className={styles.link}>
+      <Link to={linkTo} className={styles.link}>
         {banner && (
           <OptimizedImage
             src={banner}
