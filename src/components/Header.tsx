@@ -35,16 +35,9 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <div className={styles.nameSection}>
-          <Link to="/" className={styles.logo}>
-            Matthew Gerstman
-          </Link>
-          {stickyJobTitle && (
-            <span className={`${styles.stickyTitle} ${styles.visible}`}>
-              {stickyJobTitle}
-            </span>
-          )}
-        </div>
+        <Link to="/" className={styles.logo}>
+          Matthew Gerstman
+        </Link>
         <nav className={styles.nav}>
           <Link
             to="/resume"
@@ -76,6 +69,11 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
             </span>
           </button>
         </nav>
+        {stickyJobTitle && (
+          <div className={`${styles.stickyTitle} ${styles.visible}`}>
+            {stickyJobTitle}
+          </div>
+        )}
       </div>
     </header>
   );
