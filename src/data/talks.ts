@@ -83,5 +83,7 @@ export const talks: Talk[] = [
     description:
       'Introduction to functional programming concepts for JavaScript developers. Covers immutability, pure functions, composition, and higher-order functions through practical examples that you can apply immediately in your daily work.',
     tags: ['Functional Programming', 'JavaScript', 'Fundamentals'],
+    slidesUrl:
+      'https://www.dropbox.com/scl/fi/okj4pkxtb94bk19a0spv9/Functional-Programming-Fundamentals.paper?rlkey=0jbu7mra246ortssb3nopr4e7&dl=0',
   },
 ];
