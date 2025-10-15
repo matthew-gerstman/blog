@@ -89,7 +89,7 @@ const resumeData: ResumeData = {
       startDate: '2013-01',
       endDate: '2015-12',
       description: 'Full-stack web development.',
-      color: '#4A90E2',
+      color: '#EA6A47',
       projects: [
         projectsMap['zetta-backbone-restful-apis-migration'],
         projectsMap['zetta-ci-sentry-implementation'],
