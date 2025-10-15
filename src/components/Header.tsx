@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import type { Theme } from '../types';
 import styles from './Header.module.css';
 
@@ -8,12 +8,30 @@ interface HeaderProps {
 }
 
 export function Header({ theme, onToggleTheme }: HeaderProps) {
+  const location = useLocation();
+  
+  const getPageTitle = () => {
+    const path = location.pathname;
+    if (path === '/' || path === '/resume') return 'Resume';
+    if (path === '/writing') return 'Writing';
+    if (path === '/talks') return 'Talks';
+    if (path === '/about') return 'About';
+    return null;
+  };
+
+  const pageTitle = getPageTitle();
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <Link to="/" className={styles.logo}>
-          Matthew Gerstman
-        </Link>
+        <div className={styles.leftSection}>
+          <Link to="/" className={styles.logo}>
+            Matthew Gerstman
+          </Link>
+          {pageTitle && (
+            <span className={styles.pageTitle}>{pageTitle}</span>
+          )}
+        </div>
         <nav className={styles.nav}>
           <Link to="/resume">Resume</Link>
           <Link to="/writing">Writing</Link>
