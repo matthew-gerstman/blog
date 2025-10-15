@@ -49,19 +49,17 @@ function App() {
         <Route path="/writing" element={<Home posts={posts} />} />
         <Route path="/writing/:slug" element={<Article posts={posts} />} />
 
+        <Route path="/talks" element={<Talks />} />
+        <Route path="/talks/:talkId" element={<Talks />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/hello-there" element={<About />} />
+
         {/* Redirect /tech to /writing */}
         <Route path="/tech" element={<Navigate to="/writing" replace />} />
 
         {/* Redirect /tech/* to /writing/* */}
         <Route path="/tech/:slug" element={<TechRedirect />} />
-
-        {/* Redirect /hello-there to homepage */}
-        <Route path="/hello-there" element={<Navigate to="/" replace />} />
-
-        <Route path="/talks" element={<Talks />} />
-        <Route path="/talks/:talkId" element={<Talks />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/about" element={<About />} />
 
         {/* Catch-all for potential blog post slugs at root level */}
         <Route path="/:slug" element={<BlogPostRedirect />} />
