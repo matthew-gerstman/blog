@@ -64,15 +64,15 @@ export function TalkModal({ talk, onClose }: TalkModalProps) {
         </div>
 
         <div className={styles.content}>
-          <MetaInfo items={[talk.date, talk.venue]} />
+          <div className={styles.header}>
+            <MetaInfo items={[talk.date, talk.venue]} />
 
-          <CardHeader
-            title={talk.title}
-            subtitle={talk.subtitle}
-            hasExpand={false}
-          />
-
-          <p className={styles.description}>{talk.description}</p>
+            <CardHeader
+              title={talk.title}
+              subtitle={talk.subtitle}
+              hasExpand={false}
+            />
+          </div>
 
           {(talk.slidesUrl || talk.demoUrl) && (
             <div className={styles.links}>
@@ -84,8 +84,8 @@ export function TalkModal({ talk, onClose }: TalkModalProps) {
                   className={styles.link}
                 >
                   <svg
-                    width="20"
-                    height="20"
+                    width="18"
+                    height="18"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -106,8 +106,8 @@ export function TalkModal({ talk, onClose }: TalkModalProps) {
                   className={styles.link}
                 >
                   <svg
-                    width="20"
-                    height="20"
+                    width="18"
+                    height="18"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
