@@ -19,28 +19,22 @@
 }
 
 :root[data-theme='light'] {
-  /* Light blue color scheme */
-  --grappa: #2563eb;
-  --grappa-light: #60a5fa;
-  --grappa-bright: #1e40af;
-  --grappa-subtle: rgba(37, 99, 235, 0.08);
-  --grappa-border: rgba(37, 99, 235, 0.18);
-  /* Subtle blue tint to background */
-  --bg: #f8fafc;
-  /* Slightly blue-tinted surface */
-  --surface: #f1f5f9;
+  /* Keep grappa purple for all accents */
+  --grappa: #7b4f7e;
+  --grappa-light: #9d6fa0;
+  --grappa-bright: #6b3d6e;
+  --grappa-subtle: rgba(123, 79, 126, 0.08);
+  --grappa-border: rgba(123, 79, 126, 0.18);
+  /* Light blue background */
+  --bg: #e0f2fe;
+  /* Slightly darker blue-tinted surface */
+  --surface: #bae6fd;
   /* Text colors */
   --text: #1e293b;
   --text-muted: #475569;
   --text-dim: #64748b;
-  /* More visible borders */
-  --border: rgba(37, 99, 235, 0.12);
-  
-  /* Additional colorful accent variables */
-  --accent-blue: #3b82f6;
-  --accent-cyan: #06b6d4;
-  --accent-sky: #0ea5e9;
-  --accent-indigo: #6366f1;
+  /* Purple borders */
+  --border: rgba(123, 79, 126, 0.12);
 }
 
 ::-webkit-scrollbar {

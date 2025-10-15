@@ -9,7 +9,8 @@
 }
 
 :root[data-theme='light'] .header {
-  background: rgba(248, 250, 252, 0.85);
+  background: rgba(224, 242, 254, 0.85);
+  backdrop-filter: blur(20px);
   border-bottom: 2px solid var(--grappa-border);
 }
 
@@ -119,8 +120,8 @@
 
 :root[data-theme='light'] .themeToggle {
   background: linear-gradient(135deg, 
-    rgba(37, 99, 235, 0.1) 0%, 
-    rgba(96, 165, 250, 0.1) 100%);
+    rgba(123, 79, 126, 0.1) 0%, 
+    rgba(157, 111, 160, 0.1) 100%);
   border: 2px solid var(--grappa-border);
 }
 
@@ -131,8 +132,8 @@
 
 :root[data-theme='light'] .themeToggle:hover {
   background: linear-gradient(135deg, 
-    rgba(37, 99, 235, 0.2) 0%, 
-    rgba(96, 165, 250, 0.2) 100%);
+    rgba(123, 79, 126, 0.2) 0%, 
+    rgba(157, 111, 160, 0.2) 100%);
   border-color: var(--grappa);
 }
 
