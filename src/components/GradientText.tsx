@@ -1,20 +1,22 @@
-import React from 'react';
 import styles from './GradientText.module.css';
 
 interface GradientTextProps {
   children: React.ReactNode;
-  as?: 'h1' | 'h2' | 'h3' | 'span';
-  className?: string;
+  gradient?: string;
 }
 
 export function GradientText({
   children,
-  as: Component = 'span',
-  className = '',
+  gradient = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
 }: GradientTextProps) {
   return (
-    <Component className={`${styles.gradientText} ${className}`}>
+    <span
+      className={styles.gradientText}
+      style={{
+        backgroundImage: gradient,
+      }}
+    >
       {children}
-    </Component>
+    </span>
   );
 }

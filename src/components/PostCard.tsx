@@ -13,8 +13,6 @@ export function PostCard({ post, index }: PostCardProps) {
   const wordCount = post.wordCount || getWordCount(post.content);
   const readingTime = calculateReadingTime(wordCount);
   const banner = post.banner_img;
-
-  // Use externalLink if available, otherwise default to blog post slug
   const linkTo = post.externalLink || `/writing/${post.slug}`;
 
   return (
@@ -24,26 +22,59 @@ export function PostCard({ post, index }: PostCardProps) {
     >
       <Link to={linkTo} className={styles.link}>
         {banner && (
-          <OptimizedImage
-            src={banner}
-            alt={post.title}
-            size="large"
-            className={styles.banner}
-            loading="lazy"
-          />
+          <PostBanner banner={banner} title={post.title} />
         )}
-        <div className={styles.content}>
-          <h2 className={styles.title}>{post.title}</h2>
-          <div className={styles.metaBar}>
-            <span className={styles.date}>{post.date}</span>
-            <span className={styles.badge}>{readingTime} min read</span>
-            <span className={styles.badge}>
-              {wordCount.toLocaleString()} words
-            </span>
-          </div>
-          {post.excerpt && <p className={styles.excerpt}>{post.excerpt}</p>}
-        </div>
+        <PostContent post={post} readingTime={readingTime} wordCount={wordCount} />
       </Link>
     </article>
+  );
+}
+
+// Components
+function PostBanner({ banner, title }: { banner: string; title: string }) {
+  return (
+    <OptimizedImage
+      src={banner}
+      alt={title}
+      size="large"
+      className={styles.banner}
+      loading="lazy"
+    />
+  );
+}
+
+function PostContent({
+  post,
+  readingTime,
+  wordCount,
+}: {
+  post: Post;
+  readingTime: number;
+  wordCount: number;
+}) {
+  return (
+    <div className={styles.content}>
+      <h2 className={styles.title}>{post.title}</h2>
+      <MetaBar date={post.date} readingTime={readingTime} wordCount={wordCount} />
+      {post.excerpt && <p className={styles.excerpt}>{post.excerpt}</p>}
+    </div>
+  );
+}
+
+function MetaBar({
+  date,
+  readingTime,
+  wordCount,
+}: {
+  date: string;
+  readingTime: number;
+  wordCount: number;
+}) {
+  return (
+    <div className={styles.metaBar}>
+      <span className={styles.date}>{date}</span>
+      <span className={styles.badge}>{readingTime} min read</span>
+      <span className={styles.badge}>{wordCount.toLocaleString()} words</span>
+    </div>
   );
 }

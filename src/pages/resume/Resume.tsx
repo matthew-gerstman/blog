@@ -15,23 +15,45 @@ export const Resume: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      {data.hero && (
-        <header className={styles.hero}>
-          <GradientText as="h1">{data.hero.title}</GradientText>
-          <p className={styles.subtitle}>{data.hero.subtitle}</p>
-        </header>
-      )}
-
-      <div className={styles.timeline}>
-        {data.jobs.map((job) => (
-          <JobCard
-            key={job.id}
-            job={job}
-            expandAll={expandAll}
-            targetProject={targetProject}
-          />
-        ))}
-      </div>
+      {data.hero && <ResumeHero hero={data.hero} />}
+      <JobTimeline
+        jobs={data.jobs}
+        expandAll={expandAll}
+        targetProject={targetProject}
+      />
     </div>
   );
 };
+
+// Components
+function ResumeHero({ hero }: { hero: { title: string; subtitle: string } }) {
+  return (
+    <header className={styles.hero}>
+      <GradientText as="h1">{hero.title}</GradientText>
+      <p className={styles.subtitle}>{hero.subtitle}</p>
+    </header>
+  );
+}
+
+function JobTimeline({
+  jobs,
+  expandAll,
+  targetProject,
+}: {
+  jobs: ResumeData['jobs'];
+  expandAll: boolean;
+  targetProject: string | null;
+}) {
+  return (
+    <div className={styles.timeline}>
+      {jobs.map((job) => (
+        <JobCard
+          key={job.id}
+          job={job}
+          expandAll={expandAll}
+          targetProject={targetProject}
+        />
+      ))}
+    </div>
+  );
+}
