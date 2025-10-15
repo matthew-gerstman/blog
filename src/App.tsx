@@ -1,13 +1,6 @@
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-  useLocation,
-} from 'react-router-dom';
 import { Header } from './components/Header';
-import { ProgressBar } from './components/ProgressBar';
 import { SearchModal } from './components/SearchModal';
 import { FindInPage } from './components/FindInPage';
 import { TechRedirect } from './components/TechRedirect';
@@ -30,16 +23,17 @@ function ScrollToTop() {
 
   useEffect(() => {
     // Smooth scroll to top on route change
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [location.pathname]);
 
   return null;
 }
 
-function AppContent() {
+function App() {
   const { theme, toggleTheme } = useTheme();
   const [searchOpen, setSearchOpen] = useState(false);
   const [findOpen, setFindOpen] = useState(false);
+  const location = useLocation();
 
   // Track page views on route changes
   useAnalytics();
@@ -47,19 +41,24 @@ function AppContent() {
   // Convert projects map to array for search
   const projectsArray = Object.values(projectsMap);
 
+  // Only enable find-in-page (/) on article pages
+  const isArticlePage = location.pathname.startsWith('/writing/') && 
+                        location.pathname !== '/writing' &&
+                        location.pathname !== '/writing/';
+
   useKeyboard({
     onSearch: () => setSearchOpen(true),
     onEscape: () => {
       setSearchOpen(false);
       setFindOpen(false);
     },
-    onFindInPage: () => setFindOpen(true),
+    // Only enable slash shortcut on article pages
+    onFindInPage: isArticlePage ? () => setFindOpen(true) : undefined,
   });
 
   return (
     <>
       <ScrollToTop />
-      <ProgressBar />
       <Header theme={theme} onToggleTheme={toggleTheme} />
       <SearchModal
         isOpen={searchOpen}
@@ -91,14 +90,6 @@ function AppContent() {
         <Route path="/:slug" element={<BlogPostRedirect />} />
       </Routes>
     </>
-  );
-}
-
-function App() {
-  return (
-    <BrowserRouter basename="/">
-      <AppContent />
-    </BrowserRouter>
   );
 }
 
