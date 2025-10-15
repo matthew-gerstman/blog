@@ -15,6 +15,7 @@ export function CodeBlock({ code, language }: CodeBlockProps) {
     setTimeout(() => setCopied(false), 2000);
   };
   
+  // Preserve newlines and empty lines
   const lines = code.split('\n');
   const showLineNumbers = lines.length > 3;
   
@@ -41,7 +42,7 @@ export function CodeBlock({ code, language }: CodeBlockProps) {
               <div className={styles.codeContent}>
                 {lines.map((line, i) => (
                   <div key={i} className={styles.line}>
-                    {line || '\n'}
+                    {line.length === 0 ? '\u00A0' : line}
                   </div>
                 ))}
               </div>
