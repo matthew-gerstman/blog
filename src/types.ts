@@ -8,6 +8,8 @@ export interface Post {
   tags: string[];
   featureImage?: string;
   banner_img?: string;
+  externalLink?: string;
+  wordCount?: number;
 }
 
 export interface Talk {
