@@ -30,7 +30,7 @@ const resumeData: ResumeData = {
       startDate: '2021-06',
       endDate: '2022-09',
       description: 'Owned the frontend platform.',
-      color: '#00254a',
+      color: '#0A7EA4',
       projects: [
         projectsMap['bluecore-frontend-north-star-architecture-modernization'],
         projectsMap['bluecore-frontend-interview-loop-design'],
