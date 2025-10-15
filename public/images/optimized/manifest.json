@@ -206,6 +206,15 @@
       "full": "/images/optimized/full/functional-programming-fundamentals/functional-programming-hero.webp"
     }
   },
+  "hello-there/banner.jpeg": {
+    "original": "/images/blog/hello-there/banner.jpeg",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/hello-there/banner.webp",
+      "medium": "/images/optimized/medium/hello-there/banner.webp",
+      "large": "/images/optimized/large/hello-there/banner.webp",
+      "full": "/images/optimized/full/hello-there/banner.webp"
+    }
+  },
   "hello-there/bay-bridge-sf.jpg": {
     "original": "/images/blog/hello-there/bay-bridge-sf.jpg",
     "sizes": {
