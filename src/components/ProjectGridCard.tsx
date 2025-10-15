@@ -24,18 +24,20 @@ export function ProjectGridCard({
   return (
     <div className={styles.card} onClick={onClick}>
       <div className={styles.cardHeader}>
-        <div
-          className={styles.companyBadge}
-          style={{ borderColor: companyColor }}
-        >
-          <span style={{ color: companyColor }}>{companyName}</span>
-        </div>
         <span className={styles.year}>{yearDisplay}</span>
       </div>
 
-      <h3 className={styles.title}>{project.title}</h3>
+      <h3 className={styles.title} style={{ color: companyColor }}>
+        <span className={styles.companyName}>{companyName}</span>
+        {' — '}
+        {project.title}
+      </h3>
 
-      {project.role && <p className={styles.role}>{project.role}</p>}
+      {project.role && (
+        <p className={styles.role} style={{ color: companyColor }}>
+          {project.role}
+        </p>
+      )}
 
       <p className={styles.description}>{project.description}</p>
 

@@ -1,12 +1,12 @@
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
 
 .hero {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .subtitle {
@@ -15,49 +15,37 @@
   margin-top: 1rem;
 }
 
-.requirements {
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background: var(--card-bg);
-  border-radius: 12px;
-  border: 1px solid var(--border);
+.requirementsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.requirements h2 {
-  color: var(--grappa-bright);
-  margin-bottom: 1rem;
+.requirementSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.requirementTitle {
+  color: var(--text);
   font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--grappa-bright);
 }
 
-.requirementsList {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 0.75rem;
-}
-
-.requirementsList li {
-  padding: 0.75rem 1rem;
-  background: var(--bg);
-  border-radius: 8px;
-  border-left: 3px solid var(--grappa-bright);
-  color: var(--text);
-}
-
-.projectsSection {
-  margin-bottom: 3rem;
-}
-
-.projectsSection h2 {
-  color: var(--text);
-  margin-bottom: 2rem;
-  font-size: 1.75rem;
-}
-
-.projectGrid {
+.projectsRow {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.5rem;
+  gap: 1.25rem;
+}
+
+@media (max-width: 1200px) {
+  .projectsRow {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
@@ -65,12 +53,24 @@
     padding: 1.5rem 1rem;
   }
 
-  .projectGrid {
-    grid-template-columns: 1fr;
+  .hero {
+    margin-bottom: 3rem;
+  }
+
+  .requirementsContainer {
+    gap: 2.5rem;
+  }
+
+  .requirementSection {
     gap: 1rem;
   }
 
-  .requirements {
-    padding: 1.5rem;
+  .requirementTitle {
+    font-size: 1.25rem;
+  }
+
+  .projectsRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }

@@ -6,13 +6,53 @@ import type { Project } from '../data/types/resume.types';
 import { projectsMap } from '../data/projects';
 import styles from './Obvious.module.css';
 
-// Requirements will be filtered here
-const REQUIREMENTS = [
-  'Requirement 1',
-  'Requirement 2',
-  'Requirement 3',
-  'Requirement 4',
-  'Requirement 5',
+// Requirements with their matched project keys
+interface Requirement {
+  text: string;
+  projectKeys: string[];
+}
+
+const REQUIREMENTS: Requirement[] = [
+  {
+    text: 'Requirement 1',
+    projectKeys: [
+      'datadog-frontend-platform',
+      'dropbox-desktop-client',
+      'bluecore-email-builder',
+    ],
+  },
+  {
+    text: 'Requirement 2',
+    projectKeys: [
+      'datadog-ci-visibility',
+      'todaytix-mobile-web',
+      'dropbox-capture',
+    ],
+  },
+  {
+    text: 'Requirement 3',
+    projectKeys: [
+      'datadog-frontend-platform',
+      'bluecore-email-builder',
+      'todaytix-mobile-web',
+    ],
+  },
+  {
+    text: 'Requirement 4',
+    projectKeys: [
+      'dropbox-desktop-client',
+      'datadog-ci-visibility',
+      'bluecore-email-builder',
+    ],
+  },
+  {
+    text: 'Requirement 5',
+    projectKeys: [
+      'datadog-frontend-platform',
+      'dropbox-capture',
+      'todaytix-mobile-web',
+    ],
+  },
 ];
 
 export const Obvious: React.FC = () => {
@@ -22,16 +62,17 @@ export const Obvious: React.FC = () => {
     companyColor: string;
   } | null>(null);
 
-  // For now, we'll show all projects - will filter based on requirements later
-  const relevantProjects = Object.entries(projectsMap).map(
-    ([key, project]) => ({
-      key,
+  const getProjectData = (projectKey: string) => {
+    const project = projectsMap[projectKey];
+    if (!project) return null;
+
+    return {
+      key: projectKey,
       project,
-      // Extract company info from the key or project data
-      companyName: getCompanyName(key),
-      companyColor: getCompanyColor(key),
-    })
-  );
+      companyName: getCompanyName(projectKey),
+      companyColor: getCompanyColor(projectKey),
+    };
+  };
 
   return (
     <div className={styles.container}>
@@ -42,33 +83,33 @@ export const Obvious: React.FC = () => {
         </p>
       </header>
 
-      <section className={styles.requirements}>
-        <h2>Key Requirements</h2>
-        <ul className={styles.requirementsList}>
-          {REQUIREMENTS.map((req, index) => (
-            <li key={index}>{req}</li>
-          ))}
-        </ul>
-      </section>
+      <div className={styles.requirementsContainer}>
+        {REQUIREMENTS.map((requirement, index) => {
+          const projects = requirement.projectKeys
+            .map(getProjectData)
+            .filter((p): p is NonNullable<typeof p> => p !== null);
 
-      <section className={styles.projectsSection}>
-        <h2>Relevant Projects</h2>
-        <div className={styles.projectGrid}>
-          {relevantProjects.map(
-            ({ key, project, companyName, companyColor }) => (
-              <ProjectGridCard
-                key={key}
-                project={project}
-                companyName={companyName}
-                companyColor={companyColor}
-                onClick={() =>
-                  setSelectedProject({ project, companyName, companyColor })
-                }
-              />
-            )
-          )}
-        </div>
-      </section>
+          return (
+            <section key={index} className={styles.requirementSection}>
+              <h2 className={styles.requirementTitle}>{requirement.text}</h2>
+
+              <div className={styles.projectsRow}>
+                {projects.map(({ key, project, companyName, companyColor }) => (
+                  <ProjectGridCard
+                    key={key}
+                    project={project}
+                    companyName={companyName}
+                    companyColor={companyColor}
+                    onClick={() =>
+                      setSelectedProject({ project, companyName, companyColor })
+                    }
+                  />
+                ))}
+              </div>
+            </section>
+          );
+        })}
+      </div>
 
       {selectedProject && (
         <ProjectModal
