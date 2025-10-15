@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import type { Theme } from '../types';
+import { onStickyJobTitle, type StickyJobData } from '../utils/stickyJobTitle';
 import styles from './Header.module.css';
 
 interface HeaderProps {
@@ -8,25 +9,16 @@ interface HeaderProps {
   onToggleTheme: () => void;
 }
 
-interface StickyJobData {
-  title: string;
-  color: string;
-  visible: boolean;
-}
-
 export function Header({ theme, onToggleTheme }: HeaderProps) {
   const location = useLocation();
   const [stickyJob, setStickyJob] = useState<StickyJobData | null>(null);
 
   useEffect(() => {
-    // Listen for sticky job title events from JobCard
-    const handleStickyJob = (event: CustomEvent<StickyJobData>) => {
-      setStickyJob(event.detail.visible ? event.detail : null);
-    };
+    const cleanup = onStickyJobTitle((data) => {
+      setStickyJob(data.visible ? data : null);
+    });
 
-    window.addEventListener('stickyJobTitle' as any, handleStickyJob);
-    return () =>
-      window.removeEventListener('stickyJobTitle' as any, handleStickyJob);
+    return cleanup;
   }, []);
 
   const isActive = (path: string) => {

@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ProjectCard } from './ProjectCard';
 import type { Job } from '../types/resume';
+import {
+  emitStickyJobTitle,
+  clearStickyJobTitle,
+} from '../utils/stickyJobTitle';
 import styles from './JobCard.module.css';
 
 interface JobCardProps {
@@ -23,15 +27,11 @@ export function JobCard({
         const stuck = entry.intersectionRatio < 1;
         setIsSticky(stuck);
 
-        // Emit custom event for header to listen to
-        const event = new CustomEvent('stickyJobTitle', {
-          detail: {
-            title: job.company,
-            color: job.color,
-            visible: stuck,
-          },
+        emitStickyJobTitle({
+          title: job.company,
+          color: job.color,
+          visible: stuck,
         });
-        window.dispatchEvent(event);
       },
       {
         threshold: [1],
@@ -47,11 +47,7 @@ export function JobCard({
       if (jobInfoRef.current) {
         observer.unobserve(jobInfoRef.current);
       }
-      // Clear sticky title when unmounting
-      const event = new CustomEvent('stickyJobTitle', {
-        detail: { title: '', color: '', visible: false },
-      });
-      window.dispatchEvent(event);
+      clearStickyJobTitle();
     };
   }, [job.company, job.color]);
 
