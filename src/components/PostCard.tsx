@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { Post } from '../types';
 import { calculateReadingTime, getWordCount } from '../utils/reading';
+import { OptimizedImage } from './OptimizedImage';
 import styles from './PostCard.module.css';
 
 interface PostCardProps {
@@ -18,6 +19,9 @@ export function PostCard({ post, index }: PostCardProps) {
     ? post.pageUrl 
     : `/writing/${post.slug}`;
 
+  // Check if banner is an external URL (starts with http/https)
+  const isExternalImage = banner?.startsWith('http://') || banner?.startsWith('https://');
+
   return (
     <article
       className={styles.card}
@@ -25,7 +29,17 @@ export function PostCard({ post, index }: PostCardProps) {
     >
       <Link to={linkUrl} className={styles.link}>
         {banner && (
-          <img src={banner} alt={post.title} className={styles.banner} />
+          isExternalImage ? (
+            <img src={banner} alt={post.title} className={styles.banner} />
+          ) : (
+            <OptimizedImage 
+              src={banner} 
+              alt={post.title} 
+              size="medium"
+              className={styles.banner}
+              loading={index < 3 ? 'eager' : 'lazy'}
+            />
+          )
         )}
         <div className={styles.content}>
           <h2 className={styles.title}>{post.title}</h2>

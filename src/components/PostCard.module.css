@@ -36,15 +36,25 @@
   height: 100%;
 }
 
-.banner {
+/* Handle both regular img and OptimizedImage container */
+.banner,
+.banner :global(.container) {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.banner img,
+.banner :global(.image) {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  object-position: top; /* Changed from center to top */
+  object-position: top;
   transition: transform 0.3s;
 }
 
-.card:hover .banner {
+.card:hover .banner img,
+.card:hover .banner :global(.image) {
   transform: scale(1.05);
 }
 
@@ -107,7 +117,13 @@
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  .banner {
+  .banner,
+  .banner :global(.container) {
+    height: 160px;
+  }
+
+  .banner img,
+  .banner :global(.image) {
     height: 160px;
   }
 
