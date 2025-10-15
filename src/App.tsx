@@ -5,6 +5,7 @@ import { ProgressBar } from './components/ProgressBar';
 import { SearchModal } from './components/SearchModal';
 import { FindInPage } from './components/FindInPage';
 import { TechRedirect } from './components/TechRedirect';
+import { BlogPostRedirect } from './components/BlogPostRedirect';
 import { Home } from './pages/Home';
 import { Article } from './pages/Article';
 import { Talks } from './pages/Talks';
@@ -61,7 +62,9 @@ function App() {
         <Route path="/talks/:talkId" element={<Talks />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/about" element={<About />} />
-        <Route path="*" element={<Resume />} />
+
+        {/* Catch-all for potential blog post slugs at root level */}
+        <Route path="/:slug" element={<BlogPostRedirect />} />
       </Routes>
     </BrowserRouter>
   );
