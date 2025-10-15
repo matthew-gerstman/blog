@@ -201,12 +201,18 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Pre-Summit Relationship Building - Organized events leading up to the summit (IC1 class, org lunches, donut 1:1s) to increase relationship foundation',
+          {
+            prefix: 'Pre-Summit Relationship Building',
+            text: 'Organized events leading up to the summit (IC1 class, org lunches, donut 1:1s) to increase relationship foundation',
+          },
           {
             prefix: 'Lean Planning',
             text: 'Avoided committee bloat; 1/10 the time investment of other summits',
           },
-          'Outcome-Focused Design - Prioritized relationships over presentations',
+          {
+            prefix: 'Outcome-Focused Design',
+            text: 'Prioritized relationships over presentations',
+          },
           {
             prefix: 'Logistics',
             text: 'Managed CFP, ops, scheduling, speakers, budget, swag',
@@ -393,7 +399,10 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Milestone-Based Development - Created phased rollout strategy: M0 (prototype validation), M1 (QA infrastructure), M2 (internal tools), M3 (first customer route), M4 (complete migration). Enabled incremental validation and risk reduction',
+          {
+            prefix: 'Milestone-Based Development',
+            text: 'Created phased rollout strategy: M0 (prototype validation), M1 (QA infrastructure), M2 (internal tools), M3 (first customer route), M4 (complete migration). Enabled incremental validation and risk reduction',
+          },
           {
             prefix: 'Architecture & Infrastructure',
             text: 'Designed NextJS server on Google Kubernetes Engine with Node.js runtime. Worked with DevOps on deployment strategy, scaling configuration, and production optimization',
@@ -471,8 +480,14 @@ export const projectsMap: Record<string, Project> = {
             prefix: 'Migration Strategy',
             text: 'Created parallelization approach enabling multiple product teams to work simultaneously on different components without blocking each other',
           },
-          'Cross-Team Coordination - Coordinated migration across product teams, establishing shared timeline and success criteria. Ensured consistent migration patterns',
-          'Detail-Oriented Execution - Methodical component-by-component migration ensuring type safety and feature parity. Validated each component before deprecating VanillaJS version',
+          {
+            prefix: 'Cross-Team Coordination',
+            text: 'Coordinated migration across product teams, establishing shared timeline and success criteria. Ensured consistent migration patterns',
+          },
+          {
+            prefix: 'Detail-Oriented Execution',
+            text: 'Methodical component-by-component migration ensuring type safety and feature parity. Validated each component before deprecating VanillaJS version',
+          },
         ],
       },
     ],
@@ -599,10 +614,22 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Family Plans (Q1) - Joined the Family team, where I built the credential-free family sharing experience and the family account management UI. I established 1:1s with the team (engineers, PM, designer) and shipped my first feature within two weeks. Navigated remote work transition during COVID',
-          'Vault (Q2) - My manager and I were pulled in to support the Vault team. Led Vault web frontend development, mentoring another engineer through setup flow, PIN access system, and management interface implementation. I proposed team coding standards for consistency across five engineers',
-          'Computer Backup (Q3) - My manager and I were again pulled to support the Backup team. Built backup feature frontend and contributed to backend, including small change to Rust sync engine',
-          'Go-to-Market Integration (Q4) - Because I had touched all major feature areas (Family Plans, Vault, and Computer Backup), I became responsible for cross-functional coordination. I worked with approximately 150 people across various teams (engineering, product, design, marketing, legal) to successfully launch this new revenue-driving product. I also published engineering lifecycle insights on the Dropbox Tech Blog, sharing lessons learned from this large-scale product launch',
+          {
+            prefix: 'Family Plans (Q1)',
+            text: 'Joined the Family team, where I built the credential-free family sharing experience and the family account management UI. I established 1:1s with the team (engineers, PM, designer) and shipped my first feature within two weeks. Navigated remote work transition during COVID',
+          },
+          {
+            prefix: 'Vault (Q2)',
+            text: 'My manager and I were pulled in to support the Vault team. Led Vault web frontend development, mentoring another engineer through setup flow, PIN access system, and management interface implementation. I proposed team coding standards for consistency across five engineers',
+          },
+          {
+            prefix: 'Computer Backup (Q3)',
+            text: 'My manager and I were again pulled to support the Backup team. Built backup feature frontend and contributed to backend, including small change to Rust sync engine',
+          },
+          {
+            prefix: 'Go-to-Market Integration (Q4)',
+            text: 'Because I had touched all major feature areas (Family Plans, Vault, and Computer Backup), I became responsible for cross-functional coordination. I worked with approximately 150 people across various teams (engineering, product, design, marketing, legal) to successfully launch this new revenue-driving product. I also published engineering lifecycle insights on the Dropbox Tech Blog, sharing lessons learned from this large-scale product launch',
+          },
         ],
       },
     ],
@@ -713,7 +740,10 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Cross-Platform Architecture - Designed SDK architecture supporting both web and desktop platforms with consistent API surface',
+          {
+            prefix: 'Cross-Platform Architecture',
+            text: 'Designed SDK architecture supporting both web and desktop platforms with consistent API surface',
+          },
           {
             prefix: 'Build Pipeline',
             text: 'Owned build pipeline and asset optimization for efficient file preview delivery',
@@ -755,7 +785,10 @@ export const projectsMap: Record<string, Project> = {
             prefix: 'Knowledge Sharing',
             text: 'Organized regular sessions and published newsletters with tips, updates, and best practices',
           },
-          'Cross-Team Coordination - Created forum for discussing frontend challenges and coordinating initiatives across teams',
+          {
+            prefix: 'Cross-Team Coordination',
+            text: 'Created forum for discussing frontend challenges and coordinating initiatives across teams',
+          },
         ],
       },
     ],
@@ -827,7 +860,10 @@ export const projectsMap: Record<string, Project> = {
             prefix: 'Performance Focus',
             text: 'Implemented progressive loading and optimized asset delivery for mobile bandwidth constraints',
           },
-          'Cross-Browser Support - Ensured consistent experience across mobile browsers (Safari, Chrome, Firefox) with varying capabilities',
+          {
+            prefix: 'Cross-Browser Support',
+            text: 'Ensured consistent experience across mobile browsers (Safari, Chrome, Firefox) with varying capabilities',
+          },
         ],
       },
     ],
@@ -1000,7 +1036,10 @@ export const projectsMap: Record<string, Project> = {
             prefix: 'Business Rules',
             text: 'Implemented complex availability and eligibility logic for same-day limited ticket sales',
           },
-          'Cross-Team Collaboration - Worked with mobile engineers to ensure consistent API behavior across platforms',
+          {
+            prefix: 'Cross-Team Collaboration',
+            text: 'Worked with mobile engineers to ensure consistent API behavior across platforms',
+          },
         ],
       },
     ],
@@ -1196,7 +1235,10 @@ export const projectsMap: Record<string, Project> = {
       {
         title: 'Details',
         content: [
-          'Full-Stack Development - Built complete restore flow from file selection UI to backend restore operations',
+          {
+            prefix: 'Full-Stack Development',
+            text: 'Built complete restore flow from file selection UI to backend restore operations',
+          },
           {
             prefix: 'UX Design',
             text: 'Designed intuitive user experience for complex operations including version history and conflict resolution',
@@ -1301,7 +1343,10 @@ export const projectsMap: Record<string, Project> = {
             prefix: 'Queue System',
             text: 'Built data deletion queue with lifecycle management and scheduling',
           },
-          'Full-Stack Implementation - Created UI for deletion requests and backend job processing',
+          {
+            prefix: 'Full-Stack Implementation',
+            text: 'Created UI for deletion requests and backend job processing',
+          },
           {
             prefix: 'Edge Cases',
             text: 'Handled error scenarios and edge cases for reliable deletion',
