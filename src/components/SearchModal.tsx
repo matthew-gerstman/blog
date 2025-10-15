@@ -71,6 +71,20 @@ export function SearchModal({
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  // Random witty empty state messages
+  const emptyStateMessages = [
+    "Start typing... I promise I'm faster than Cmd+F",
+    "Your search begins here... no pressure though",
+    "Type something. Anything. I'm not picky.",
+    "Waiting patiently for your keystrokes...",
+    "Go ahead, I've indexed everything. Try me.",
+    "Nothing to see here... yet.",
+  ];
+  
+  const [emptyMessage] = useState(() => 
+    emptyStateMessages[Math.floor(Math.random() * emptyStateMessages.length)]
+  );
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -214,7 +228,7 @@ export function SearchModal({
         <div className={styles.results}>
           {!query && (
             <div className={styles.empty}>
-              Start typing... I promise I'm faster than Cmd+F
+              {emptyMessage}
             </div>
           )}
           {query && results.length === 0 && (
