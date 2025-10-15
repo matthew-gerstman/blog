@@ -143,3 +143,11 @@ const resumeData: ResumeData = {
 };
 
 export default resumeData;
+
+export const jobsMap = resumeData.jobs.reduce(
+  (acc, job) => {
+    acc[job.id] = job;
+    return acc;
+  },
+  {} as Record<string, (typeof resumeData.jobs)[number]>
+);
