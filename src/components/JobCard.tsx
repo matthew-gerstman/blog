@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ProjectCard } from './ProjectCard';
 import type { Job } from '../types/resume';
 import {
