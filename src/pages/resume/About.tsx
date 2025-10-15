@@ -57,15 +57,15 @@ export const About: React.FC = () => {
         >
           The Screen Savers
         </a>{' '}
-        and even called in a few times. I saw Kevin Mitnick{' '}
+        and even called in a few times. I saw Kevin Mitnick talk about{' '}
         <a
           href="https://en.wikipedia.org/wiki/The_Art_of_Deception"
           target="_blank"
           rel="noopener noreferrer"
         >
-          talked about
+          the art of deception
         </a>{' '}
-        the art of deception and how social engineering works. I watched{' '}
+        and how social engineering works. I watched{' '}
         <a
           href="https://en.wikipedia.org/wiki/Pirates_of_Silicon_Valley"
           target="_blank"
