@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matthew Gerstman</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css" id="highlight-theme">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNX7NS4QMW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SNX7NS4QMW');
+    </script>
+    
+    <style>
+      /* Prevent white flash - set dark mode colors immediately */
+      html {
+        background-color: #1a1a1a;
+        color: #ffffff;
+      }
+      html[data-theme="light"] {
+        background-color: #ffffff;
+        color: #1a1a1a;
+      }
+    </style>
+    <script>
+      // Set theme immediately before any content renders
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const theme = savedTheme || 'dark'; // Default to dark mode
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    <script>
+      // GitHub Pages SPA redirect handler
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <script type="module" crossorigin src="/assets/index-2ukEtmOk.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Oy-jv1wE.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+  </body>
+</html>
