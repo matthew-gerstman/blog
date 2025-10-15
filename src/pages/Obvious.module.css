@@ -1,46 +1,98 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 3rem 1.5rem;
 }
 
 .hero {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .subtitle {
   font-size: 1.35rem;
   color: var(--text-muted);
   margin-top: 1rem;
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 .personalStatement {
-  margin-bottom: 4rem;
-  padding: 2rem 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto 5rem;
+  padding: 3rem 3.5rem;
   background: linear-gradient(
     135deg,
     rgba(157, 122, 159, 0.08) 0%,
-    rgba(157, 122, 159, 0.03) 100%
+    rgba(157, 122, 159, 0.02) 100%
   );
-  border-radius: 12px;
-  border: 1px solid var(--grappa);
+  border-radius: 20px;
+  border: 2px solid rgba(157, 122, 159, 0.15);
+  box-shadow: 0 8px 32px rgba(157, 122, 159, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.personalStatement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--grappa-bright) 0%,
+    var(--grappa) 50%,
+    var(--grappa-bright) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
 }
 
 .statementText {
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-size: 1.2rem;
+  line-height: 1.85;
   color: var(--text);
-  margin: 0;
-  text-align: center;
+  margin: 0 0 1.5rem 0;
   font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.statementText:last-child {
+  margin-bottom: 0;
+}
+
+.statementText:first-child {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--grappa-bright);
+  line-height: 1.75;
 }
 
 .requirementsContainer {
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 2.5rem 0;
+  text-align: center;
+  letter-spacing: -0.02em;
 }
 
 .requirementSection {
@@ -57,11 +109,12 @@
 
 .requirementTitle {
   color: var(--text);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   margin: 0;
-  padding-bottom: 0.625rem;
+  padding-bottom: 0.75rem;
   border-bottom: 3px solid var(--grappa-bright);
+  letter-spacing: -0.01em;
 }
 
 .requirementDescription {
@@ -86,11 +139,11 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 1.5rem 1rem;
+    padding: 2rem 1rem;
   }
 
   .hero {
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
   }
 
   .subtitle {
@@ -98,13 +151,24 @@
   }
 
   .personalStatement {
-    padding: 1.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
+    padding: 2rem 1.75rem;
+    border-radius: 16px;
   }
 
   .statementText {
-    font-size: 1rem;
-    text-align: left;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .statementText:first-child {
+    font-size: 1.15rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .requirementsContainer {
@@ -116,7 +180,8 @@
   }
 
   .requirementTitle {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    padding-bottom: 0.625rem;
   }
 
   .requirementDescription {

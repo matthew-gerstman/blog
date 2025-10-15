@@ -4,6 +4,7 @@ import { ProjectGridCard } from '../components/ProjectGridCard';
 import { ProjectModal } from '../components/ProjectModal';
 import type { Project } from '../data/types/resume.types';
 import { projectsMap } from '../data/projects';
+import { jobsMap } from '../data/resume';
 import styles from './Obvious.module.css';
 
 // Requirements with their matched project keys
@@ -20,9 +21,8 @@ const REQUIREMENTS: Requirement[] = [
       'Virtualized tables/lists, drag-and-drop editors, real-time collaborative cursors, rich text co-authoring, and low-latency conflict-aware UX',
     projectKeys: [
       'datadog-notebooks-2-0',
-      'bluecore-customer-360-revamp',
-      'dropbox-showcase',
-      'todaytix-web-2-0-react-redux-rebuild',
+      'datadog-dashboard-reporting-pdf-export',
+      'dropbox-zip-file-previews',
     ],
   },
   {
@@ -31,9 +31,8 @@ const REQUIREMENTS: Requirement[] = [
       'Bundle strategy, render paths, memoization, concurrent features, asset pipelines, code-splitting, hydration strategies, and profiling',
     projectKeys: [
       'bluecore-frontend-north-star-architecture-modernization',
-      'bluecore-tti-dashboard-frontend-monitoring',
-      'dropbox-redux-state-management-system',
-      'todaytix-web-2-0-react-redux-rebuild',
+      'dropbox-underscore-lodash-migration',
+      'zetta-performance-optimization-grunt-build-system',
     ],
   },
   {
@@ -41,9 +40,8 @@ const REQUIREMENTS: Requirement[] = [
     description:
       'End-to-end ownership from conception to deployment, talking directly to users, and driving key product initiatives',
     projectKeys: [
-      'datadog-notebooks-2-0',
       'datadog-dashboard-reporting-pdf-export',
-      'dropbox-showcase',
+      'dropbox-plus-plus-family-plans-life-vault',
       'todaytix-special-offers-feature',
     ],
   },
@@ -52,11 +50,9 @@ const REQUIREMENTS: Requirement[] = [
     description:
       'Deep expertise in TypeScript, JavaScript, React, CSS (modern layout, animations, variables), and scalable web applications',
     projectKeys: [
-      'bluecore-frontend-north-star-architecture-modernization',
       'bluecore-typescript-adoption-strict-types',
       'dropbox-redux-state-management-system',
       'todaytix-web-2-0-react-redux-rebuild',
-      'datadog-typescript-cleanup-initiative',
     ],
   },
   {
@@ -66,8 +62,7 @@ const REQUIREMENTS: Requirement[] = [
     projectKeys: [
       'datadog-integration-testing-framework',
       'dropbox-previews-mobile-web',
-      'todaytix-web-2-0-react-redux-rebuild',
-      'bluecore-tti-dashboard-frontend-monitoring',
+      'todaytix-sentry-rollout',
     ],
   },
   {
@@ -75,10 +70,9 @@ const REQUIREMENTS: Requirement[] = [
     description:
       'Raising the bar for technical standards, performance, reliability, and influencing decisions across the organization',
     projectKeys: [
-      'datadog-notebooks-2-0',
-      'bluecore-frontend-north-star-architecture-modernization',
+      'datadog-graphing-summit',
       'dropbox-javascript-guild',
-      'bluecore-typescript-adoption-strict-types',
+      'bluecore-frontend-interview-loop-design',
     ],
   },
   {
@@ -86,10 +80,9 @@ const REQUIREMENTS: Requirement[] = [
     description:
       'Operating at an unreasonable pace, doing large amounts of meaningful work quickly with little oversight, and defaulting to simple designs that scale',
     projectKeys: [
-      'datadog-dashboard-reporting-pdf-export',
-      'todaytix-special-offers-feature',
-      'dropbox-zip-file-previews',
+      'datadog-typescript-cleanup-initiative',
       'bluecore-component-library-consolidation',
+      'todaytix-ansible-deployment-automation',
     ],
   },
   {
@@ -98,9 +91,8 @@ const REQUIREMENTS: Requirement[] = [
       'Sweating the details (type, motion, density, affordances, empty states), collaborating on design, and protecting quality',
     projectKeys: [
       'datadog-notebooks-2-0',
-      'bluecore-customer-360-revamp',
-      'dropbox-showcase',
-      'todaytix-web-2-0-react-redux-rebuild',
+      'dropbox-file-viewer-sdk',
+      'zetta-user-enrollment-flow-refactor',
     ],
   },
 ];
@@ -130,17 +122,16 @@ export const Obvious: React.FC = () => {
   return (
     <div className={styles.container}>
       <header className={styles.hero}>
-        <GradientText as="h1">Why I'm Right for Obvious</GradientText>
+        <GradientText as="h1">Why Obvious</GradientText>
         <p className={styles.subtitle}>
-          Matching my experience to what you're looking for
+          Building ambitious products with rigor and craft
         </p>
       </header>
 
       <section className={styles.personalStatement}>
         <p className={styles.statementText}>
           I knew Obvious had a culture of excellence before I knew it was
-          Obvious. The Flatfile API docs made that clear—the quality, the
-          attention to detail, the respect for craft. That impression stuck.
+          Obvious. The Flatfile API docs made that clear.
         </p>
         <p className={styles.statementText}>
           I've spent 40+ hours using Obvious in the past week because I couldn't
@@ -148,7 +139,7 @@ export const Obvious: React.FC = () => {
         </p>
         <p className={styles.statementText}>
           I bring the technical depth and leadership this role needs. At
-          Datadog, I managed Notebooks 2.0—a highly collaborative real-time
+          Datadog, I managed Notebooks 2.0 — a highly collaborative real-time
           editing product—and built the dashboard reporting service from
           scratch. At Bluecore, I picked the frontend technologies that took the
           company to unicorn status and led the transformation. At Dropbox, I
@@ -161,12 +152,16 @@ export const Obvious: React.FC = () => {
           designing interview loops, teaching IC1 classes.
         </p>
         <p className={styles.statementText}>
-          I want to work on Obvious because you're building something ambitious
-          with rigor and craft. I want to be part of that.
+          I want to work on Obvious because you're building something that
+          matters. This is the coolest product I've seen in a very long time. I
+          want to be part of that.
         </p>
       </section>
 
       <div className={styles.requirementsContainer}>
+        <h2 className={styles.sectionTitle}>
+          Experience Mapped to Requirements
+        </h2>
         {REQUIREMENTS.map((requirement, index) => {
           const projects = requirement.projectKeys
             .map(getProjectData)
@@ -175,7 +170,7 @@ export const Obvious: React.FC = () => {
           return (
             <section key={index} className={styles.requirementSection}>
               <div className={styles.requirementHeader}>
-                <h2 className={styles.requirementTitle}>{requirement.title}</h2>
+                <h3 className={styles.requirementTitle}>{requirement.title}</h3>
                 <p className={styles.requirementDescription}>
                   {requirement.description}
                 </p>
@@ -213,21 +208,22 @@ export const Obvious: React.FC = () => {
 
 // Helper functions to extract company info from project keys
 function getCompanyName(projectKey: string): string {
-  if (projectKey.startsWith('datadog-')) return 'Datadog';
-  if (projectKey.startsWith('bluecore-')) return 'Bluecore';
-  if (projectKey.startsWith('dropbox-')) return 'Dropbox';
-  if (projectKey.startsWith('todaytix-')) return 'TodayTix';
-  if (projectKey.startsWith('zetta-')) return 'Zetta.net';
-  if (projectKey.startsWith('dance-marathon-')) return 'Dance Marathon';
-  return 'Other';
+  const jobId = getJobIdFromProjectKey(projectKey);
+  return jobId ? jobsMap[jobId]?.company : 'Other';
 }
 
 function getCompanyColor(projectKey: string): string {
-  if (projectKey.startsWith('datadog-')) return '#632CA6';
-  if (projectKey.startsWith('bluecore-')) return '#00254a';
-  if (projectKey.startsWith('dropbox-')) return '#0061FF';
-  if (projectKey.startsWith('todaytix-')) return '#FF6B6B';
-  if (projectKey.startsWith('zetta-')) return '#4A90E2';
-  if (projectKey.startsWith('dance-marathon-')) return '#FFD700';
-  return '#666666';
+  const jobId = getJobIdFromProjectKey(projectKey);
+  return jobId ? jobsMap[jobId]?.color : '#666666';
+}
+
+function getJobIdFromProjectKey(projectKey: string): string | null {
+  if (projectKey.startsWith('datadog-')) return 'datadog';
+  if (projectKey.startsWith('bluecore-')) return 'bluecore';
+  if (projectKey.startsWith('dropbox-')) return 'dropbox';
+  if (projectKey.startsWith('todaytix-')) return 'todaytix';
+  if (projectKey.startsWith('zetta-')) return 'zetta';
+  if (projectKey.startsWith('dance-marathon-')) return 'dance-marathon';
+  if (projectKey.startsWith('early-programming-')) return 'early-programming';
+  return null;
 }
