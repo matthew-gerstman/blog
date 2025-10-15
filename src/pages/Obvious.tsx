@@ -130,43 +130,72 @@ export const Obvious: React.FC = () => {
   return (
     <div className={styles.container}>
       <header className={styles.hero}>
-        <GradientText as="h1">Why I'm Right for Obvious</GradientText>
+        <GradientText as="h1">Why Obvious</GradientText>
         <p className={styles.subtitle}>
-          Matching my experience to what you're looking for
+          Building ambitious products with rigor and craft
         </p>
       </header>
 
       <section className={styles.personalStatement}>
-        <p className={styles.statementText}>
-          I knew Obvious had a culture of excellence before I knew it was
-          Obvious. The Flatfile API docs made that clear—the quality, the
-          attention to detail, the respect for craft. That impression stuck.
-        </p>
-        <p className={styles.statementText}>
-          I've spent 40+ hours using Obvious in the past week because I couldn't
-          stop. The product is thoughtfully designed and genuinely useful.
-        </p>
-        <p className={styles.statementText}>
-          I bring the technical depth and leadership this role needs. At
-          Datadog, I managed Notebooks 2.0—a highly collaborative real-time
-          editing product—and built the dashboard reporting service from
-          scratch. At Bluecore, I picked the frontend technologies that took the
-          company to unicorn status and led the transformation. At Dropbox, I
-          designed Redux patterns that became the org standard and co-led a
-          massive utility library migration with one production bug.
-        </p>
-        <p className={styles.statementText}>
-          Beyond the code, I've built the connective tissue that makes teams
-          better: founding JavaScript guilds, organizing technical summits,
-          designing interview loops, teaching IC1 classes.
-        </p>
-        <p className={styles.statementText}>
-          I want to work on Obvious because you're building something ambitious
-          with rigor and craft. I want to be part of that.
-        </p>
+        <div className={styles.statementBlock}>
+          <p className={styles.statementText}>
+            I knew Obvious had a culture of excellence before I knew it was
+            Obvious. The Flatfile API docs made that clear—the quality, the
+            attention to detail, the respect for craft.
+          </p>
+        </div>
+
+        <div className={styles.highlightMetrics}>
+          <div className={styles.metric}>
+            <span className={styles.metricValue}>40+</span>
+            <span className={styles.metricLabel}>hours using Obvious</span>
+          </div>
+          <div className={styles.metric}>
+            <span className={styles.metricValue}>3</span>
+            <span className={styles.metricLabel}>unicorn companies</span>
+          </div>
+          <div className={styles.metric}>
+            <span className={styles.metricValue}>1</span>
+            <span className={styles.metricLabel}>production bug</span>
+          </div>
+        </div>
+
+        <div className={styles.experienceHighlights}>
+          <div className={styles.highlight}>
+            <h3 className={styles.highlightTitle}>Real-Time Collaboration</h3>
+            <p className={styles.highlightText}>
+              Managed Notebooks 2.0 at Datadog—a highly collaborative real-time
+              editing product with ProseMirror, CRDTs, and multiplayer features
+            </p>
+          </div>
+          <div className={styles.highlight}>
+            <h3 className={styles.highlightTitle}>Technology Leadership</h3>
+            <p className={styles.highlightText}>
+              Picked the frontend technologies that took Bluecore to unicorn
+              status and led the transformation
+            </p>
+          </div>
+          <div className={styles.highlight}>
+            <h3 className={styles.highlightTitle}>Systems Architecture</h3>
+            <p className={styles.highlightText}>
+              Designed Redux patterns at Dropbox that became the org standard
+              and co-led a massive utility library migration
+            </p>
+          </div>
+          <div className={styles.highlight}>
+            <h3 className={styles.highlightTitle}>Culture Building</h3>
+            <p className={styles.highlightText}>
+              Founded JavaScript guilds, organized technical summits, designed
+              interview loops, taught IC1 classes
+            </p>
+          </div>
+        </div>
       </section>
 
       <div className={styles.requirementsContainer}>
+        <h2 className={styles.sectionTitle}>
+          Experience Mapped to Requirements
+        </h2>
         {REQUIREMENTS.map((requirement, index) => {
           const projects = requirement.projectKeys
             .map(getProjectData)
@@ -175,7 +204,7 @@ export const Obvious: React.FC = () => {
           return (
             <section key={index} className={styles.requirementSection}>
               <div className={styles.requirementHeader}>
-                <h2 className={styles.requirementTitle}>{requirement.title}</h2>
+                <h3 className={styles.requirementTitle}>{requirement.title}</h3>
                 <p className={styles.requirementDescription}>
                   {requirement.description}
                 </p>
