@@ -58,12 +58,15 @@ function App() {
         {/* Redirect /hello-there to homepage */}
         <Route path="/hello-there" element={<Navigate to="/" replace />} />
 
+        {/* Talks routes - must come before catch-all */}
         <Route path="/talks" element={<Talks />} />
         <Route path="/talks/:talkId" element={<Talks />} />
+
+        {/* Resume and About routes - must come before catch-all */}
         <Route path="/resume" element={<Resume />} />
         <Route path="/about" element={<About />} />
 
-        {/* Catch-all for potential blog post slugs at root level */}
+        {/* Catch-all for potential blog post slugs at root level - MUST BE LAST */}
         <Route path="/:slug" element={<BlogPostRedirect />} />
       </Routes>
     </BrowserRouter>
