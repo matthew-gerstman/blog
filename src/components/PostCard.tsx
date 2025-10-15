@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { Post } from '../types';
 import { calculateReadingTime, getWordCount } from '../utils/reading';
+import { OptimizedImage } from './OptimizedImage';
 import styles from './PostCard.module.css';
 
 interface PostCardProps {
@@ -13,17 +14,20 @@ export function PostCard({ post, index }: PostCardProps) {
   const wordCount = getWordCount(post.content);
   const banner = post.banner_img;
 
-  // Use externalLink if available, otherwise default to blog post slug
-  const linkTo = post.externalLink || `/writing/${post.slug}`;
-
   return (
     <article
       className={styles.card}
       style={{ animationDelay: `${Math.min(index * 0.05, 0.3)}s` }}
     >
-      <Link to={linkTo} className={styles.link}>
+      <Link to={`/writing/${post.slug}`} className={styles.link}>
         {banner && (
-          <img src={banner} alt={post.title} className={styles.banner} />
+          <OptimizedImage
+            src={banner}
+            alt={post.title}
+            size="large"
+            className={styles.banner}
+            loading="lazy"
+          />
         )}
         <div className={styles.content}>
           <h2 className={styles.title}>{post.title}</h2>
