@@ -6,12 +6,28 @@ export function fuzzyMatch(pattern: string, str: string): FuzzyMatchResult {
   pattern = pattern.toLowerCase();
   str = str.toLowerCase();
 
+  // For very short patterns, require substring match or word boundary match
+  if (pattern.length <= 3) {
+    if (str.includes(pattern)) {
+      // Exact substring found - high score
+      const index = str.indexOf(pattern);
+      // Bonus for word boundary
+      const atWordBoundary = index === 0 || /\s/.test(str[index - 1]);
+      return { 
+        matched: true, 
+        score: 100 * (atWordBoundary ? 2 : 1) / (index + 1)
+      };
+    }
+    // For short patterns, no fuzzy matching - too many false positives
+    return { matched: false, score: 0 };
+  }
+
   let patternIdx = 0;
   let strIdx = 0;
   let score = 0;
   let consecutiveMatches = 0;
   let lastMatchIdx = -1;
-  const maxGap = 3; // Maximum allowed gap between characters
+  const maxGap = 2; // Reduced from 3 - characters must be very close
 
   while (patternIdx < pattern.length && strIdx < str.length) {
     if (pattern[patternIdx] === str[strIdx]) {
