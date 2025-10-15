@@ -7,10 +7,7 @@ interface HomeProps {
 }
 
 export function Home({ posts }: HomeProps) {
-  // Sort posts by newest first
-  const sortedPosts = [...posts].sort((a, b) => {
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  });
+  const sortedPosts = useSortedPosts(posts);
 
   return (
     <div className={styles.container}>
@@ -21,4 +18,11 @@ export function Home({ posts }: HomeProps) {
       </main>
     </div>
   );
+}
+
+// Custom Hooks
+function useSortedPosts(posts: Post[]): Post[] {
+  return [...posts].sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
 }
