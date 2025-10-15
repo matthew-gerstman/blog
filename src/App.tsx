@@ -17,6 +17,7 @@ import { Article } from './pages/Article';
 import { Talks } from './pages/Talks';
 import { Resume } from './pages/resume/Resume';
 import { About } from './pages/resume/About';
+import { Obvious } from './pages/Obvious';
 import { useTheme } from './hooks/useTheme';
 import { useKeyboard } from './hooks/useKeyboard';
 import { useAnalytics } from './hooks/useAnalytics';
@@ -77,6 +78,7 @@ function AppContent() {
         <Route path="/talks/:talkId" element={<Talks />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/about" element={<About />} />
+        <Route path="/obvious" element={<Obvious />} />
         <Route path="/hello-there" element={<About />} />
 
         {/* Redirect /tech to /writing */}
