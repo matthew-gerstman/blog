@@ -23,12 +23,29 @@
   white-space: nowrap;
 }
 
+:root[data-theme='light'] .year {
+  color: var(--grappa);
+  font-weight: 700;
+  background: linear-gradient(135deg, 
+    rgba(123, 79, 126, 0.12) 0%, 
+    rgba(157, 111, 160, 0.12) 100%);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--grappa-border);
+}
+
 .expandIcon {
   font-size: 1.5rem;
   color: var(--grappa-bright);
   font-weight: 300;
   line-height: 1;
   user-select: none;
+  transition: color 0.2s;
+}
+
+:root[data-theme='light'] .expandIcon {
+  color: var(--grappa);
+  font-weight: 400;
 }
 
 .role {
@@ -38,9 +55,23 @@
   font-weight: 800;
 }
 
+:root[data-theme='light'] .role {
+  color: var(--grappa);
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--grappa) 0%, var(--grappa-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .subtitle {
   font-size: 0.9rem;
   color: var(--grappa-bright);
   font-weight: 500;
   margin-bottom: 0.5rem;
+}
+
+:root[data-theme='light'] .subtitle {
+  color: var(--grappa);
+  font-weight: 600;
 }

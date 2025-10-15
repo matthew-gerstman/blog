@@ -20,12 +20,38 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
+}
+
+/* Subtle gradient overlay in light mode */
+:root[data-theme='light'] .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(123, 79, 126, 0.02) 0%, 
+    rgba(157, 111, 160, 0.03) 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 0;
+}
+
+:root[data-theme='light'] .card:hover::before {
+  opacity: 1;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 40px rgba(123, 79, 126, 0.15);
   border-color: var(--grappa-bright);
+}
+
+:root[data-theme='light'] .card:hover {
+  box-shadow: 0 12px 40px rgba(123, 79, 126, 0.2);
 }
 
 .link {
@@ -34,6 +60,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .banner {
@@ -81,7 +109,12 @@
   font-size: 0.8125rem;
   color: var(--grappa-bright);
   font-variant-numeric: tabular-nums;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+:root[data-theme='light'] .date {
+  color: var(--grappa);
+  font-weight: 700;
 }
 
 .badge {
@@ -91,6 +124,21 @@
   background: var(--surface);
   border-radius: 10px;
   border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+:root[data-theme='light'] .badge {
+  background: linear-gradient(135deg, 
+    rgba(123, 79, 126, 0.08) 0%, 
+    rgba(157, 111, 160, 0.08) 100%);
+  border-color: var(--grappa-border);
+  color: var(--grappa-bright);
+  font-weight: 600;
+}
+
+.card:hover .badge {
+  background: var(--grappa-subtle);
+  border-color: var(--grappa);
 }
 
 .excerpt {

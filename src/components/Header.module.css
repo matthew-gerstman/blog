@@ -9,7 +9,9 @@
 }
 
 :root[data-theme='light'] .header {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(224, 242, 254, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 2px solid var(--grappa-border);
 }
 
 .inner {
@@ -26,25 +28,24 @@
 .logo {
   font-size: 1rem;
   font-weight: 600;
-  background: linear-gradient(
-    90deg,
-    var(--grappa-bright) 0%,
-    var(--text) 50%,
-    var(--grappa-bright) 100%
-  );
-  background-size: 200% 100%;
-  background-position: 0% 0%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
   text-decoration: none;
   letter-spacing: -0.01em;
-  transition: background-position 0.6s ease;
+  transition: color 0.3s ease;
   white-space: nowrap;
 }
 
+:root[data-theme='light'] .logo {
+  color: var(--grappa-bright);
+  font-weight: 700;
+}
+
 .logo:hover {
-  background-position: 100% 0%;
+  color: var(--grappa-bright);
+}
+
+:root[data-theme='light'] .logo:hover {
+  color: var(--grappa);
 }
 
 .nav {
@@ -59,11 +60,21 @@
   font-size: 0.9rem;
   transition: color 0.15s ease;
   position: relative;
+  font-weight: 500;
+}
+
+:root[data-theme='light'] .nav a {
+  font-weight: 600;
 }
 
 .nav a.active {
   color: var(--text);
   font-weight: 600;
+}
+
+:root[data-theme='light'] .nav a.active {
+  color: var(--grappa-bright);
+  font-weight: 700;
 }
 
 .nav a::after {
@@ -78,8 +89,17 @@
   transition: width 0.2s ease;
 }
 
+:root[data-theme='light'] .nav a::after {
+  height: 3px;
+  background: linear-gradient(90deg, var(--grappa) 0%, var(--grappa-light) 100%);
+}
+
 .nav a:hover {
   color: var(--grappa-bright);
+}
+
+:root[data-theme='light'] .nav a:hover {
+  color: var(--grappa);
 }
 
 .nav a:hover::after,
@@ -98,13 +118,31 @@
   transition: all 0.15s ease;
 }
 
+:root[data-theme='light'] .themeToggle {
+  background: linear-gradient(135deg, 
+    rgba(123, 79, 126, 0.1) 0%, 
+    rgba(157, 111, 160, 0.1) 100%);
+  border: 2px solid var(--grappa-border);
+}
+
 .themeToggle:hover {
   border-color: var(--grappa-bright);
   transform: scale(1.05);
 }
 
+:root[data-theme='light'] .themeToggle:hover {
+  background: linear-gradient(135deg, 
+    rgba(123, 79, 126, 0.2) 0%, 
+    rgba(157, 111, 160, 0.2) 100%);
+  border-color: var(--grappa);
+}
+
 .themeIcon {
   font-size: 1rem;
+}
+
+:root[data-theme='light'] .themeIcon {
+  color: var(--grappa);
 }
 
 .stickyTitle {
