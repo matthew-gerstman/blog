@@ -5,6 +5,7 @@ import type { Post } from '../types';
 import { calculateReadingTime, getWordCount } from '../utils/reading';
 import { useKeyboard } from '../hooks/useKeyboard';
 import { TwitterEmbed } from '../components/TwitterEmbed';
+import { CodeBlock } from '../components/CodeBlock';
 import {
   BasicDemo,
   ThrottleDemo,
@@ -46,32 +47,48 @@ export function Article({ posts }: ArticleProps) {
     window.scrollTo(0, 0);
 
     setTimeout(() => {
-      // Syntax highlighting
+      // Replace code blocks with React component
+      document.querySelectorAll('pre code').forEach((block) => {
+        const pre = block.parentElement;
+        if (!pre || pre.querySelector('[data-code-block-processed]')) return;
+        
+        const code = block.textContent || '';
+        const languageMatch = block.className.match(/language-(\w+)/);
+        const language = languageMatch ? languageMatch[1] : undefined;
+        
+        // Auto-detect bash
+        if (!language && (code.includes('$ ') || code.includes('Matthew at '))) {
+          const detectedLanguage = 'bash';
+          
+          // Create wrapper for React component
+          const wrapper = document.createElement('div');
+          wrapper.setAttribute('data-code-block-processed', 'true');
+          pre.parentNode?.insertBefore(wrapper, pre);
+          
+          const root = createRoot(wrapper);
+          root.render(<CodeBlock code={code} language={detectedLanguage} />);
+          
+          pre.remove();
+        } else {
+          // Create wrapper for React component
+          const wrapper = document.createElement('div');
+          wrapper.setAttribute('data-code-block-processed', 'true');
+          pre.parentNode?.insertBefore(wrapper, pre);
+          
+          const root = createRoot(wrapper);
+          root.render(<CodeBlock code={code} language={language} />);
+          
+          pre.remove();
+        }
+      });
+      
+      // Apply syntax highlighting to rendered code blocks
       if (window.hljs) {
-        document.querySelectorAll('pre code').forEach((block) => {
-          const text = block.textContent || '';
-          if (
-            !block.className &&
-            (text.includes('$ ') || text.includes('Matthew at '))
-          ) {
-            block.classList.add('language-bash');
-          }
-          (window.hljs as any).highlightElement(block);
-
-          const pre = block.parentElement;
-          if (pre && !pre.querySelector('.copy-button')) {
-            const button = document.createElement('button');
-            button.className = 'copy-button';
-            button.textContent = 'Copy';
-            button.onclick = () => {
-              navigator.clipboard.writeText(block.textContent || '');
-              button.textContent = 'Copied!';
-              setTimeout(() => (button.textContent = 'Copy'), 2000);
-            };
-            pre.style.position = 'relative';
-            pre.insertBefore(button, pre.firstChild);
-          }
-        });
+        setTimeout(() => {
+          document.querySelectorAll('[data-code-block-processed] code').forEach((block) => {
+            (window.hljs as any).highlightElement(block);
+          });
+        }, 50);
       }
 
       // Heading IDs
