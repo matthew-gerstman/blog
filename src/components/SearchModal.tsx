@@ -82,8 +82,8 @@ export function SearchModal({
     "Nothing to see here... yet.",
   ];
   
-  const [emptyMessage] = useState(() => 
-    emptyStateMessages[Math.floor(Math.random() * emptyStateMessages.length)]
+  const [emptyMessage, setEmptyMessage] = useState(
+    emptyStateMessages[0]
   );
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -94,6 +94,7 @@ export function SearchModal({
       setQuery('');
       setResults([]);
       setSelectedIndex(0);
+      setEmptyMessage(emptyStateMessages[Math.floor(Math.random() * emptyStateMessages.length)]);
       setTimeout(() => inputRef.current?.focus(), 100);
     }
   }, [isOpen]);
