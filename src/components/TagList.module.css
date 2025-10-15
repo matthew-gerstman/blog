@@ -2,21 +2,49 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .tag {
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--grappa-border);
-  color: var(--grappa-bright);
-  font-size: 0.75rem;
-  font-weight: 500;
+  padding: 0.25rem 0.625rem;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
   transition: all 0.2s;
+  opacity: 0.75;
 }
 
 .tag:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--grappa-bright);
-  transform: translateY(-1px);
+  opacity: 1;
+  border-color: var(--grappa-border);
+  color: var(--grappa-bright);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .tag {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme='dark'] .tag:hover {
+  border-color: var(--grappa-border);
+  color: var(--grappa-bright);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Light mode adjustments */
+[data-theme='light'] .tag {
+  border-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme='light'] .tag:hover {
+  border-color: var(--grappa-border);
+  color: var(--grappa-bright);
+  background: rgba(0, 0, 0, 0.03);
 }
