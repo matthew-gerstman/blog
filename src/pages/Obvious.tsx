@@ -19,10 +19,10 @@ const REQUIREMENTS: Requirement[] = [
     description:
       'Virtualized tables/lists, drag-and-drop editors, real-time collaborative cursors, rich text co-authoring, and low-latency conflict-aware UX',
     projectKeys: [
-      'bluecore-email-builder',
-      'dropbox-capture',
-      'datadog-ci-visibility',
-      'todaytix-mobile-web',
+      'datadog-notebooks-2-0',
+      'bluecore-customer-360-revamp',
+      'dropbox-showcase',
+      'todaytix-web-2-0-react-redux-rebuild',
     ],
   },
   {
@@ -30,10 +30,10 @@ const REQUIREMENTS: Requirement[] = [
     description:
       'Bundle strategy, render paths, memoization, concurrent features, asset pipelines, code-splitting, hydration strategies, and profiling',
     projectKeys: [
-      'datadog-frontend-platform',
-      'dropbox-desktop-client',
-      'todaytix-mobile-web',
-      'bluecore-platform-migration',
+      'bluecore-frontend-north-star-architecture-modernization',
+      'bluecore-tti-dashboard-frontend-monitoring',
+      'dropbox-redux-state-management-system',
+      'todaytix-web-2-0-react-redux-rebuild',
     ],
   },
   {
@@ -41,10 +41,10 @@ const REQUIREMENTS: Requirement[] = [
     description:
       'End-to-end ownership from conception to deployment, talking directly to users, and driving key product initiatives',
     projectKeys: [
-      'datadog-ci-visibility',
-      'bluecore-email-builder',
-      'dropbox-capture',
-      'todaytix-group-ticketing',
+      'datadog-notebooks-2-0',
+      'datadog-dashboard-reporting-pdf-export',
+      'dropbox-showcase',
+      'todaytix-special-offers-feature',
     ],
   },
   {
@@ -52,11 +52,11 @@ const REQUIREMENTS: Requirement[] = [
     description:
       'Deep expertise in TypeScript, JavaScript, React, CSS (modern layout, animations, variables), and scalable web applications',
     projectKeys: [
-      'datadog-frontend-platform',
-      'bluecore-email-builder',
-      'dropbox-desktop-client',
-      'todaytix-mobile-web',
-      'bluecore-platform-migration',
+      'bluecore-frontend-north-star-architecture-modernization',
+      'bluecore-typescript-adoption-strict-types',
+      'dropbox-redux-state-management-system',
+      'todaytix-web-2-0-react-redux-rebuild',
+      'datadog-typescript-cleanup-initiative',
     ],
   },
   {
@@ -64,10 +64,10 @@ const REQUIREMENTS: Requirement[] = [
     description:
       'Establishing state-of-the-art testing, operational excellence, and making experiences "just work" every time',
     projectKeys: [
-      'datadog-frontend-platform',
-      'todaytix-mobile-web',
-      'dropbox-desktop-client',
-      'datadog-ci-visibility',
+      'datadog-integration-testing-framework',
+      'dropbox-previews-mobile-web',
+      'todaytix-web-2-0-react-redux-rebuild',
+      'bluecore-tti-dashboard-frontend-monitoring',
     ],
   },
   {
@@ -75,10 +75,10 @@ const REQUIREMENTS: Requirement[] = [
     description:
       'Raising the bar for technical standards, performance, reliability, and influencing decisions across the organization',
     projectKeys: [
-      'datadog-frontend-platform',
-      'bluecore-platform-migration',
-      'dropbox-desktop-client',
-      'todaytix-mobile-web',
+      'datadog-notebooks-2-0',
+      'bluecore-frontend-north-star-architecture-modernization',
+      'dropbox-javascript-guild',
+      'bluecore-typescript-adoption-strict-types',
     ],
   },
   {
@@ -86,10 +86,10 @@ const REQUIREMENTS: Requirement[] = [
     description:
       'Operating at an unreasonable pace, doing large amounts of meaningful work quickly with little oversight, and defaulting to simple designs that scale',
     projectKeys: [
-      'datadog-ci-visibility',
-      'bluecore-email-builder',
-      'todaytix-group-ticketing',
-      'dropbox-capture',
+      'datadog-dashboard-reporting-pdf-export',
+      'todaytix-special-offers-feature',
+      'dropbox-zip-file-previews',
+      'bluecore-component-library-consolidation',
     ],
   },
   {
@@ -97,10 +97,10 @@ const REQUIREMENTS: Requirement[] = [
     description:
       'Sweating the details (type, motion, density, affordances, empty states), collaborating on design, and protecting quality',
     projectKeys: [
-      'bluecore-email-builder',
-      'dropbox-capture',
-      'todaytix-mobile-web',
-      'datadog-ci-visibility',
+      'datadog-notebooks-2-0',
+      'bluecore-customer-360-revamp',
+      'dropbox-showcase',
+      'todaytix-web-2-0-react-redux-rebuild',
     ],
   },
 ];
@@ -114,7 +114,10 @@ export const Obvious: React.FC = () => {
 
   const getProjectData = (projectKey: string) => {
     const project = projectsMap[projectKey];
-    if (!project) return null;
+    if (!project) {
+      console.warn(`Project not found: ${projectKey}`);
+      return null;
+    }
 
     return {
       key: projectKey,
