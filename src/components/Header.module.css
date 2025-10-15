@@ -57,7 +57,7 @@
   color: var(--text-muted);
   text-decoration: none;
   font-size: 0.9rem;
-  transition: color 0.2s;
+  transition: color 0.15s ease;
   position: relative;
 }
 
@@ -70,11 +70,12 @@
   content: '';
   position: absolute;
   bottom: -2px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 2px;
   background: var(--grappa-bright);
-  transition: width 0.3s ease;
+  transition: width 0.2s ease;
 }
 
 .nav a:hover {
@@ -94,11 +95,12 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
 }
 
 .themeToggle:hover {
-  border-color: var(--grappa-border);
+  border-color: var(--grappa-bright);
+  transform: scale(1.05);
 }
 
 .themeIcon {

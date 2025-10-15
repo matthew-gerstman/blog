@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { ProgressBar } from './components/ProgressBar';
 import { SearchModal } from './components/SearchModal';
@@ -16,6 +16,17 @@ import { useKeyboard } from './hooks/useKeyboard';
 import { useAnalytics } from './hooks/useAnalytics';
 import posts from './data/posts';
 import { projectsMap } from './data/projects';
+
+function ScrollToTop() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Smooth scroll to top on route change
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
+
+  return null;
+}
 
 function AppContent() {
   const { theme, toggleTheme } = useTheme();
@@ -39,6 +50,7 @@ function AppContent() {
 
   return (
     <>
+      <ScrollToTop />
       <ProgressBar />
       <Header theme={theme} onToggleTheme={toggleTheme} />
       <SearchModal
