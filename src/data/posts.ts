@@ -2,6 +2,30 @@ import type { PostsData } from './types/posts.types';
 
 const postsData: PostsData = [
   {
+    id: 20,
+    slug: 'about',
+    title: 'Hello There',
+    date: 'October 14, 2025',
+    excerpt: 'Learn about my journey from building websites as a kid to working at companies like Dropbox and Datadog.',
+    content: '',
+    tags: ['About'],
+    banner_img: 'https://alpha-api.obvious.ai/prepare/files/link/fl_1mGU0Xet/IMG_8010.jpeg',
+    type: 'page',
+    pageUrl: '/resume/about'
+  },
+  {
+    id: 20,
+    slug: 'about',
+    title: 'Hello There',
+    date: 'October 14, 2025',
+    excerpt: 'Learn about my journey from building websites as a kid to working at companies like Dropbox and Datadog.',
+    content: '',
+    tags: ['About'],
+    banner_img: 'https://alpha-api.obvious.ai/prepare/files/link/fl_1mGU0Xet/IMG_8010.jpeg',
+    type: 'page',
+    pageUrl: '/resume/about'
+  },
+  {
     id: 17,
     slug: 'performance-testing-anonymous-functions',
     title: 'Performance Testing React With Anonymous Functions',
