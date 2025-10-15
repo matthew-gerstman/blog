@@ -2,6 +2,120 @@
   command = "npm run build"
   publish = "dist"
 
+# Redirect /tech to /writing (302 temporary redirect)
+[[redirects]]
+  from = "/tech"
+  to = "/writing"
+  status = 302
+
+# Redirect /tech/:slug to /writing/:slug (302 temporary redirect)
+[[redirects]]
+  from = "/tech/*"
+  to = "/writing/:splat"
+  status = 302
+
+# Redirect old blog post URLs from root to /writing/:slug (302 temporary redirect)
+[[redirects]]
+  from = "/performance-testing-anonymous-functions"
+  to = "/writing/performance-testing-anonymous-functions"
+  status = 302
+
+[[redirects]]
+  from = "/surviving-the-technical-interview"
+  to = "/writing/surviving-the-technical-interview"
+  status = 302
+
+[[redirects]]
+  from = "/reduce-reduce-reduce"
+  to = "/writing/reduce-reduce-reduce"
+  status = 302
+
+[[redirects]]
+  from = "/map-filter-reduce"
+  to = "/writing/map-filter-reduce"
+  status = 302
+
+[[redirects]]
+  from = "/throttle-and-debounce"
+  to = "/writing/throttle-and-debounce"
+  status = 302
+
+[[redirects]]
+  from = "/history-of-the-web"
+  to = "/writing/history-of-the-web"
+  status = 302
+
+[[redirects]]
+  from = "/how-redux-works-2"
+  to = "/writing/how-redux-works-2"
+  status = 302
+
+[[redirects]]
+  from = "/how-redux-works"
+  to = "/writing/how-redux-works"
+  status = 302
+
+[[redirects]]
+  from = "/ts-tricks-higher-order-components"
+  to = "/writing/ts-tricks-higher-order-components"
+  status = 302
+
+[[redirects]]
+  from = "/ts-tricks-type-guards"
+  to = "/writing/ts-tricks-type-guards"
+  status = 302
+
+[[redirects]]
+  from = "/ts-tricks-type-safe-reducers"
+  to = "/writing/ts-tricks-type-safe-reducers"
+  status = 302
+
+[[redirects]]
+  from = "/functional-programming-fundamentals"
+  to = "/writing/functional-programming-fundamentals"
+  status = 302
+
+[[redirects]]
+  from = "/redux-code-split-typecheck"
+  to = "/writing/redux-code-split-typecheck"
+  status = 302
+
+[[redirects]]
+  from = "/hello-there"
+  to = "/writing/hello-there"
+  status = 302
+
+[[redirects]]
+  from = "/es-everything"
+  to = "/writing/es-everything"
+  status = 302
+
+[[redirects]]
+  from = "/all-in-on-homekit"
+  to = "/writing/all-in-on-homekit"
+  status = 302
+
+[[redirects]]
+  from = "/what-the-functor"
+  to = "/writing/what-the-functor"
+  status = 302
+
+[[redirects]]
+  from = "/mary-had-a-little-lambda"
+  to = "/writing/mary-had-a-little-lambda"
+  status = 302
+
+[[redirects]]
+  from = "/everything-i-wish-i-knew-before-my-first-bay-area-internship"
+  to = "/writing/everything-i-wish-i-knew-before-my-first-bay-area-internship"
+  status = 302
+
+[[redirects]]
+  from = "/how-i-prepare-a-talk"
+  to = "/writing/how-i-prepare-a-talk"
+  status = 302
+
+# SPA fallback - must be last (200 status for client-side routing)
 [[redirects]]
   from = "/*"
   to = "/index.html"
