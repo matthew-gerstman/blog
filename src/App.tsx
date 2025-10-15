@@ -58,6 +58,7 @@ function App() {
         <Route path="/hello-there" element={<Navigate to="/" replace />} />
 
         <Route path="/talks" element={<Talks />} />
+        <Route path="/talks/:talkId" element={<Talks />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Resume />} />
