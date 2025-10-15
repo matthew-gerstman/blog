@@ -26,41 +26,6 @@
   line-height: 1.6;
 }
 
-/* Tag Filter */
-.tagFilter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--grappa-border);
-}
-
-.tagButton {
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  border: 1px solid var(--grappa-border);
-  background: transparent;
-  color: var(--grappa-bright);
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-weight: 500;
-}
-
-.tagButton:hover {
-  border-color: var(--grappa-bright);
-  color: var(--text);
-  transform: translateY(-1px);
-}
-
-.tagButton.active {
-  background: var(--grappa-bright);
-  color: var(--background);
-  border-color: var(--grappa-bright);
-}
-
 /* Talks Grid */
 .talksGrid {
   display: grid;
@@ -82,13 +47,6 @@
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
   border-color: var(--grappa-bright);
-}
-
-.talkCard.expanded {
-  grid-column: 1 / -1;
-  max-width: 900px;
-  margin: 0 auto;
-  width: 100%;
 }
 
 /* Video Section */
@@ -133,21 +91,6 @@
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-.videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 /* Content */
 .content {
   padding: 1.5rem;
@@ -164,10 +107,6 @@
   opacity: 0.85;
   margin: 0;
   flex: 1;
-}
-
-.tags {
-  margin-top: 0.5rem;
 }
 
 /* Watch Button */
@@ -192,28 +131,6 @@
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
-/* No Results */
-.noResults {
-  text-align: center;
-  padding: 4rem 2rem;
-  color: var(--grappa-bright);
-  font-size: 1.125rem;
-}
-
-.noResults button {
-  margin-left: 0.5rem;
-  color: var(--text);
-  text-decoration: underline;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: inherit;
-}
-
-.noResults button:hover {
-  color: var(--grappa-bright);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .container {
@@ -231,9 +148,5 @@
   .talksGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-  }
-
-  .tagFilter {
-    justify-content: flex-start;
   }
 }
