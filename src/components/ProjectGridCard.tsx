@@ -16,17 +16,8 @@ export function ProjectGridCard({
   companyColor,
   onClick,
 }: ProjectGridCardProps) {
-  const yearDisplay =
-    project.startYear === project.endYear
-      ? `${project.endYear}`
-      : `${project.startYear}–${project.endYear}`;
-
   return (
     <div className={styles.card} onClick={onClick}>
-      <div className={styles.cardHeader}>
-        <span className={styles.year}>{yearDisplay}</span>
-      </div>
-
       <h3 className={styles.title} style={{ color: companyColor }}>
         <span className={styles.companyName}>{companyName}</span>
         {' — '}
@@ -40,12 +31,6 @@ export function ProjectGridCard({
       )}
 
       <p className={styles.description}>{project.description}</p>
-
-      {project.impact && (
-        <div className={styles.impact}>
-          <span className={styles.impactLabel}>Impact:</span> {project.impact}
-        </div>
-      )}
 
       {project.technologies && project.technologies.length > 0 && (
         <TagList tags={project.technologies} className={styles.tags} />
