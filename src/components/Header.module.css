@@ -183,3 +183,10 @@
     font-size: 0.8rem;
   }
 }
+
+/* Hide sticky title on desktop */
+@media (min-width: 769px) {
+  .stickyTitle {
+    display: none;
+  }
+}
