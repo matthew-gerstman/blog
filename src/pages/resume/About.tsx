@@ -173,8 +173,8 @@ export const About: React.FC = () => {
         career. I woke up at 5 AM every day to do practice problems in Cracking
         the Coding Interview. This was the whiteboard era, so I did them by hand
         in a notebook. Around 8AM I would take an east coast interview, and then
-        head to my dayjob. I spoke to 50 companies in I got myself to New York
-        in 3 months.
+        head to my dayjob. I spoke to 50 companies over the phone, planned a
+        week with 6 onsites, and moved myself to New York within 3 months.
       </p>
 
       <h2 className={`${styles.sectionTitle} ${styles.todaytix}`}>TodayTix</h2>
