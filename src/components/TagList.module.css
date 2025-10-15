@@ -37,21 +37,21 @@
   background: rgba(255, 255, 255, 0.05);
 }
 
-/* Light mode adjustments - more colorful! */
+/* Light mode adjustments - colorful blue! */
 [data-theme='light'] .tag {
   border-color: var(--grappa-border);
   color: var(--grappa);
   font-weight: 600;
   background: linear-gradient(135deg, 
-    rgba(123, 79, 126, 0.08) 0%, 
-    rgba(156, 39, 176, 0.08) 100%);
+    rgba(37, 99, 235, 0.08) 0%, 
+    rgba(96, 165, 250, 0.08) 100%);
 }
 
 [data-theme='light'] .tag:hover {
   border-color: var(--grappa);
   color: var(--grappa-bright);
   background: linear-gradient(135deg, 
-    rgba(123, 79, 126, 0.15) 0%, 
-    rgba(156, 39, 176, 0.15) 100%);
+    rgba(37, 99, 235, 0.15) 0%, 
+    rgba(96, 165, 250, 0.15) 100%);
   transform: translateY(-1px);
 }

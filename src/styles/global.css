@@ -19,28 +19,28 @@
 }
 
 :root[data-theme='light'] {
-  /* More vibrant purple tones */
-  --grappa: #7b4f7e;
-  --grappa-light: #9d6fa0;
-  --grappa-bright: #6b3d6e;
-  --grappa-subtle: rgba(123, 79, 126, 0.08);
-  --grappa-border: rgba(123, 79, 126, 0.18);
-  /* Subtle lavender tint to background */
-  --bg: #faf8fb;
-  /* Slightly purple-tinted surface */
-  --surface: #f3f0f5;
-  /* Warmer text colors */
-  --text: #2a2a2a;
-  --text-muted: #5a5a5a;
-  --text-dim: #7a7a7a;
+  /* Light blue color scheme */
+  --grappa: #2563eb;
+  --grappa-light: #60a5fa;
+  --grappa-bright: #1e40af;
+  --grappa-subtle: rgba(37, 99, 235, 0.08);
+  --grappa-border: rgba(37, 99, 235, 0.18);
+  /* Subtle blue tint to background */
+  --bg: #f8fafc;
+  /* Slightly blue-tinted surface */
+  --surface: #f1f5f9;
+  /* Text colors */
+  --text: #1e293b;
+  --text-muted: #475569;
+  --text-dim: #64748b;
   /* More visible borders */
-  --border: rgba(123, 79, 126, 0.12);
+  --border: rgba(37, 99, 235, 0.12);
   
   /* Additional colorful accent variables */
-  --accent-pink: #e91e63;
-  --accent-purple: #9c27b0;
-  --accent-blue: #2196f3;
-  --accent-teal: #009688;
+  --accent-blue: #3b82f6;
+  --accent-cyan: #06b6d4;
+  --accent-sky: #0ea5e9;
+  --accent-indigo: #6366f1;
 }
 
 ::-webkit-scrollbar {

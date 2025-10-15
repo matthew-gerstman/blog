@@ -32,8 +32,8 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, 
-    rgba(123, 79, 126, 0.02) 0%, 
-    rgba(156, 39, 176, 0.03) 100%);
+    rgba(37, 99, 235, 0.02) 0%, 
+    rgba(96, 165, 250, 0.03) 100%);
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;
@@ -46,12 +46,12 @@
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(123, 79, 126, 0.15);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.15);
   border-color: var(--grappa-bright);
 }
 
 :root[data-theme='light'] .card:hover {
-  box-shadow: 0 12px 40px rgba(123, 79, 126, 0.2);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.2);
 }
 
 .link {
@@ -129,8 +129,8 @@
 
 :root[data-theme='light'] .badge {
   background: linear-gradient(135deg, 
-    rgba(123, 79, 126, 0.08) 0%, 
-    rgba(156, 39, 176, 0.08) 100%);
+    rgba(37, 99, 235, 0.08) 0%, 
+    rgba(96, 165, 250, 0.08) 100%);
   border-color: var(--grappa-border);
   color: var(--grappa-bright);
   font-weight: 600;
