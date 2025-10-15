@@ -10,6 +10,7 @@ interface OptimizedImageProps {
   size?: 'thumbnail' | 'medium' | 'large' | 'full';
   className?: string;
   loading?: 'lazy' | 'eager';
+  style?: React.CSSProperties;
 }
 
 export function OptimizedImage({
@@ -18,6 +19,7 @@ export function OptimizedImage({
   size = 'large',
   className = '',
   loading = 'lazy',
+  style,
 }: OptimizedImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentSrc, setCurrentSrc] = useState<string>('');
@@ -52,16 +54,25 @@ export function OptimizedImage({
 
   if (!imageData) {
     // Fallback to original image if not in manifest
-    return <img src={src} alt={alt} className={className} loading={loading} />;
+    return (
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        loading={loading}
+        style={style}
+      />
+    );
   }
 
   return (
-    <div className={`${styles.container} ${className}`}>
+    <div className={styles.container}>
       <img
         src={currentSrc}
         alt={alt}
         loading={loading}
-        className={`${styles.image} ${isLoaded ? styles.loaded : styles.loading}`}
+        className={`${styles.image} ${isLoaded ? styles.loaded : styles.loading} ${className}`}
+        style={style}
       />
     </div>
   );

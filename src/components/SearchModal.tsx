@@ -1,335 +1,190 @@
-import { useState, useEffect, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import type { Post } from '../types';
-import type { Project } from '../data/types/resume.types';
-import type { Talk } from '../data/talks';
-import { searchPosts, searchProjects, searchTalks } from '../utils/search';
-import { calculateReadingTime } from '../utils/reading';
+import { useEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import type { Post } from '../data/types/posts.types';
+import { OptimizedImage } from './OptimizedImage';
 import styles from './SearchModal.module.css';
 
 interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;
   posts: Post[];
-  projects?: Project[];
-  talks?: Talk[];
 }
 
-interface TopLevelPage {
-  title: string;
-  path: string;
-  icon: string;
-  description: string;
-}
-
-const TOP_LEVEL_PAGES: TopLevelPage[] = [
-  {
-    title: 'Resume',
-    path: '/resume',
-    icon: '💼',
-    description: 'Experience, projects, and skills',
-  },
-  {
-    title: 'Writing',
-    path: '/writing',
-    icon: '✍️',
-    description: 'Technical articles and blog posts',
-  },
-  {
-    title: 'Talks',
-    path: '/talks',
-    icon: '🎤',
-    description: 'Conference talks and presentations',
-  },
-  {
-    title: 'About',
-    path: '/about',
-    icon: '👋',
-    description: 'About me and contact information',
-  },
-];
-
-type SearchResult =
-  | { type: 'page'; item: TopLevelPage }
-  | { type: 'post'; item: Post }
-  | { type: 'project'; item: Project }
-  | { type: 'talk'; item: Talk };
-
-function getYouTubeThumbnail(videoId: string): string {
-  // Remove any query parameters or timestamps from the video ID
-  const cleanId = videoId.split('?')[0];
-  return `https://img.youtube.com/vi/${cleanId}/hqdefault.jpg`;
-}
-
-export function SearchModal({
-  isOpen,
-  onClose,
-  posts,
-  projects = [],
-  talks = [],
-}: SearchModalProps) {
+export function SearchModal({ isOpen, onClose, posts }: SearchModalProps) {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<SearchResult[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
-  const location = useLocation();
+
+  const filteredPosts = posts.filter((post) => {
+    const searchText = query.toLowerCase();
+    return (
+      post.title.toLowerCase().includes(searchText) ||
+      post.excerpt.toLowerCase().includes(searchText) ||
+      post.tags.some((tag) => tag.toLowerCase().includes(searchText))
+    );
+  });
 
   useEffect(() => {
     if (isOpen) {
+      inputRef.current?.focus();
       setQuery('');
-      setResults([]);
       setSelectedIndex(0);
-      setTimeout(() => inputRef.current?.focus(), 100);
     }
   }, [isOpen]);
 
   useEffect(() => {
-    if (!query) {
-      setResults([]);
-      setSelectedIndex(0);
-      return;
-    }
-
-    // Search top-level pages
-    const filteredPages = TOP_LEVEL_PAGES.filter(
-      (page) =>
-        page.title.toLowerCase().includes(query.toLowerCase()) ||
-        page.description.toLowerCase().includes(query.toLowerCase())
-    );
-
-    // Determine current page context
-    const isWritingPage = location.pathname.startsWith('/writing');
-    const isTalksPage = location.pathname.startsWith('/talks');
-
-    // Search all content types
-    const filteredPosts = searchPosts(posts, query);
-    const filteredProjects = searchProjects(projects, query);
-    const filteredTalks = searchTalks(talks, query);
-
-    // Create result arrays with type information
-    const pageResults: SearchResult[] = filteredPages.map((page) => ({
-      type: 'page' as const,
-      item: page,
-    }));
-    const postResults: SearchResult[] = filteredPosts.map((post) => ({
-      type: 'post' as const,
-      item: post,
-    }));
-    const projectResults: SearchResult[] = filteredProjects.map((project) => ({
-      type: 'project' as const,
-      item: project,
-    }));
-    const talkResults: SearchResult[] = filteredTalks.map((talk) => ({
-      type: 'talk' as const,
-      item: talk,
-    }));
-
-    // Prioritize based on current page context
-    let combined: SearchResult[];
-    if (isWritingPage) {
-      // Prioritize articles on writing page
-      combined = [
-        ...pageResults,
-        ...postResults.slice(0, 5),
-        ...talkResults.slice(0, 2),
-        ...projectResults.slice(0, 2),
-      ];
-    } else if (isTalksPage) {
-      // Prioritize talks on talks page
-      combined = [
-        ...pageResults,
-        ...talkResults.slice(0, 5),
-        ...postResults.slice(0, 2),
-        ...projectResults.slice(0, 2),
-      ];
-    } else {
-      // Default: prioritize projects everywhere else
-      combined = [
-        ...pageResults,
-        ...projectResults.slice(0, 5),
-        ...postResults.slice(0, 2),
-        ...talkResults.slice(0, 2),
-      ];
-    }
-
-    // Limit to 8 total results
-    setResults(combined.slice(0, 8));
     setSelectedIndex(0);
-  }, [query, posts, projects, talks, location.pathname]);
+  }, [query]);
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      setSelectedIndex((prev) => Math.min(prev + 1, results.length - 1));
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      setSelectedIndex((prev) => Math.max(prev - 1, 0));
-    } else if (e.key === 'Enter' && results[selectedIndex]) {
-      e.preventDefault();
-      const result = results[selectedIndex];
-      if (result.type === 'page') {
-        navigate(result.item.path);
-      } else if (result.type === 'post') {
-        navigate(`/writing/${result.item.slug}`);
-      } else if (result.type === 'project') {
-        navigate(`/resume?project=${result.item.key}`);
-      } else if (result.type === 'talk') {
-        navigate(`/talks/${result.item.id}`);
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isOpen) return;
+
+      if (e.key === 'Escape') {
+        onClose();
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setSelectedIndex((prev) =>
+          Math.min(prev + 1, filteredPosts.length - 1)
+        );
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setSelectedIndex((prev) => Math.max(prev - 1, 0));
+      } else if (e.key === 'Enter' && filteredPosts[selectedIndex]) {
+        e.preventDefault();
+        const post = filteredPosts[selectedIndex];
+        const linkTo = post.externalLink || `/writing/${post.slug}`;
+        navigate(linkTo);
+        onClose();
       }
-      onClose();
-    } else if (e.key === 'Escape') {
-      onClose();
-    }
-  };
+    };
 
-  const handleSelect = (result: SearchResult) => {
-    if (result.type === 'page') {
-      navigate(result.item.path);
-    } else if (result.type === 'post') {
-      navigate(`/writing/${result.item.slug}`);
-    } else if (result.type === 'project') {
-      navigate(`/resume?project=${result.item.key}`);
-    } else if (result.type === 'talk') {
-      navigate(`/talks/${result.item.id}`);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, selectedIndex, filteredPosts, navigate, onClose]);
+
+  useEffect(() => {
+    if (resultsRef.current) {
+      const selectedElement = resultsRef.current.children[
+        selectedIndex
+      ] as HTMLElement;
+      if (selectedElement) {
+        selectedElement.scrollIntoView({
+          block: 'nearest',
+          behavior: 'smooth',
+        });
+      }
     }
-    onClose();
-  };
+  }, [selectedIndex]);
 
   if (!isOpen) return null;
 
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <input
-          ref={inputRef}
-          type="text"
-          className={styles.input}
-          placeholder="Search pages, articles, talks, and projects..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onKeyDown={handleKeyDown}
-          autoComplete="off"
-        />
-        <div className={styles.results}>
-          {!query && (
-            <div className={styles.empty}>
-              Type to search pages, articles, talks, and projects...
+    <div className={styles.overlay} onClick={handleBackdropClick}>
+      <div className={styles.modal}>
+        <div className={styles.searchBox}>
+          <svg
+            className={styles.searchIcon}
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+          <input
+            ref={inputRef}
+            type="text"
+            placeholder="Search posts..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className={styles.input}
+          />
+          <button onClick={onClose} className={styles.closeButton}>
+            <kbd className={styles.kbd}>ESC</kbd>
+          </button>
+        </div>
+
+        <div className={styles.results} ref={resultsRef}>
+          {filteredPosts.length === 0 ? (
+            <div className={styles.noResults}>
+              <p>No posts found</p>
             </div>
-          )}
-          {query && results.length === 0 && (
-            <div className={styles.empty}>No results found</div>
-          )}
-          {results.map((result, index) => {
-            if (result.type === 'page') {
-              const page = result.item;
-              return (
-                <div
-                  key={`page-${page.path}`}
-                  className={`${styles.resultItem} ${index === selectedIndex ? styles.selected : ''}`}
-                  onClick={() => handleSelect(result)}
-                >
-                  <div className={`${styles.icon} ${styles.placeholder}`}>
-                    {page.icon}
-                  </div>
-                  <div className={styles.content}>
-                    <div className={styles.title}>{page.title}</div>
-                    <div className={styles.meta}>Page · {page.description}</div>
-                  </div>
-                </div>
-              );
-            } else if (result.type === 'post') {
-              const post = result.item;
+          ) : (
+            filteredPosts.map((post, index) => {
+              const wordCount = post.wordCount || 0;
+              const readingTime = Math.max(1, Math.ceil(wordCount / 200));
               const banner = post.banner_img;
-              const readingTime = calculateReadingTime(post.content);
-              return (
-                <div
-                  key={`post-${post.id}`}
-                  className={`${styles.resultItem} ${index === selectedIndex ? styles.selected : ''}`}
-                  onClick={() => handleSelect(result)}
-                >
-                  {banner ? (
-                    <img
-                      src={banner}
-                      alt={post.title}
-                      className={styles.icon}
-                    />
-                  ) : (
-                    <div className={`${styles.icon} ${styles.placeholder}`}>
-                      📝
-                    </div>
-                  )}
-                  <div className={styles.content}>
-                    <div className={styles.title}>{post.title}</div>
-                    <div className={styles.meta}>
-                      Article · {post.date} · {readingTime} min read
-                    </div>
-                  </div>
-                </div>
-              );
-            } else if (result.type === 'talk') {
-              const talk = result.item;
-              const thumbnail = getYouTubeThumbnail(talk.video);
-              return (
-                <div
-                  key={`talk-${talk.id}`}
-                  className={`${styles.resultItem} ${index === selectedIndex ? styles.selected : ''}`}
-                  onClick={() => handleSelect(result)}
-                >
-                  <img
-                    src={thumbnail}
-                    alt={talk.title}
-                    className={styles.icon}
-                  />
-                  <div className={styles.content}>
-                    <div className={styles.title}>
-                      {talk.title}
-                      {talk.subtitle && ` - ${talk.subtitle}`}
-                    </div>
-                    <div className={styles.meta}>
-                      Talk · {talk.date} · {talk.venue}
-                      {talk.tags.length > 0 &&
-                        ` · ${talk.tags.slice(0, 2).join(', ')}`}
-                    </div>
-                  </div>
-                </div>
-              );
-            } else {
-              const project = result.item;
-              // Use project image if available, otherwise use emoji, otherwise default icon
-              const iconContent = project.image ? (
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className={styles.icon}
-                />
-              ) : project.emoji ? (
-                <div className={`${styles.icon} ${styles.placeholder}`}>
-                  {project.emoji}
-                </div>
-              ) : (
-                <div className={`${styles.icon} ${styles.placeholder}`}>💼</div>
-              );
+              const bannerPosition = post.banner_position || 'center';
+              const linkTo = post.externalLink || `/writing/${post.slug}`;
 
               return (
-                <div
-                  key={`project-${project.key}`}
-                  className={`${styles.resultItem} ${index === selectedIndex ? styles.selected : ''}`}
-                  onClick={() => handleSelect(result)}
+                <button
+                  key={post.id}
+                  className={`${styles.result} ${
+                    index === selectedIndex ? styles.selected : ''
+                  }`}
+                  onClick={() => {
+                    navigate(linkTo);
+                    onClose();
+                  }}
+                  onMouseEnter={() => setSelectedIndex(index)}
                 >
-                  {iconContent}
-                  <div className={styles.content}>
-                    <div className={styles.title}>{project.title}</div>
-                    <div className={styles.meta}>
-                      Project · {project.year}
-                      {project.technologies.length > 0 &&
-                        ` · ${project.technologies.slice(0, 3).join(', ')}`}
+                  {banner ? (
+                    <OptimizedImage
+                      src={banner}
+                      alt={post.title}
+                      size="small"
+                      className={styles.thumbnail}
+                      style={{ objectPosition: bannerPosition }}
+                    />
+                  ) : (
+                    <div className={styles.placeholderThumbnail} />
+                  )}
+                  <div className={styles.resultContent}>
+                    <h3 className={styles.resultTitle}>{post.title}</h3>
+                    <div className={styles.resultMeta}>
+                      <span>{post.date}</span>
+                      <span>•</span>
+                      <span>{readingTime} min read</span>
                     </div>
+                    {post.excerpt && (
+                      <p className={styles.resultExcerpt}>{post.excerpt}</p>
+                    )}
                   </div>
-                </div>
+                </button>
               );
-            }
-          })}
+            })
+          )}
+        </div>
+
+        <div className={styles.footer}>
+          <div className={styles.shortcuts}>
+            <span>
+              <kbd className={styles.kbd}>↑</kbd>
+              <kbd className={styles.kbd}>↓</kbd>
+              Navigate
+            </span>
+            <span>
+              <kbd className={styles.kbd}>↵</kbd>
+              Select
+            </span>
+            <span>
+              <kbd className={styles.kbd}>ESC</kbd>
+              Close
+            </span>
+          </div>
         </div>
       </div>
     </div>

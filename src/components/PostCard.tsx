@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import type { Post } from '../types';
-import { calculateReadingTime, getWordCount } from '../utils/reading';
 import { OptimizedImage } from './OptimizedImage';
+import type { Post } from '../data/types/posts.types';
 import styles from './PostCard.module.css';
 
 interface PostCardProps {
@@ -10,9 +9,10 @@ interface PostCardProps {
 }
 
 export function PostCard({ post, index }: PostCardProps) {
-  const wordCount = post.wordCount || getWordCount(post.content);
-  const readingTime = calculateReadingTime(wordCount);
+  const wordCount = post.wordCount || 0;
+  const readingTime = Math.max(1, Math.ceil(wordCount / 200));
   const banner = post.banner_img;
+  const bannerPosition = post.banner_position || 'center';
 
   // Use externalLink if available, otherwise default to blog post slug
   const linkTo = post.externalLink || `/writing/${post.slug}`;
@@ -30,6 +30,7 @@ export function PostCard({ post, index }: PostCardProps) {
             size="large"
             className={styles.banner}
             loading="lazy"
+            style={{ objectPosition: bannerPosition }}
           />
         )}
         <div className={styles.content}>
