@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ProjectCard } from './ProjectCard';
 import type { Job } from '../types/resume';
 import styles from './JobCard.module.css';
@@ -14,9 +14,52 @@ export function JobCard({
   expandAll = false,
   targetProject,
 }: JobCardProps) {
+  const jobInfoRef = useRef<HTMLDivElement>(null);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const stuck = entry.intersectionRatio < 1;
+        setIsSticky(stuck);
+
+        // Emit custom event for header to listen to
+        const event = new CustomEvent('stickyJobTitle', {
+          detail: {
+            title: `${job.role} @ ${job.company}`,
+            visible: stuck,
+          },
+        });
+        window.dispatchEvent(event);
+      },
+      {
+        threshold: [1],
+        rootMargin: '-100px 0px 0px 0px', // Account for header height
+      }
+    );
+
+    if (jobInfoRef.current) {
+      observer.observe(jobInfoRef.current);
+    }
+
+    return () => {
+      if (jobInfoRef.current) {
+        observer.unobserve(jobInfoRef.current);
+      }
+      // Clear sticky title when unmounting
+      const event = new CustomEvent('stickyJobTitle', {
+        detail: { title: '', visible: false },
+      });
+      window.dispatchEvent(event);
+    };
+  }, [job.company, job.role]);
+
   return (
     <div className={styles.timelineItem}>
-      <div className={styles.jobInfo}>
+      <div
+        ref={jobInfoRef}
+        className={`${styles.jobInfo} ${isSticky ? styles.sticky : ''}`}
+      >
         <h2 className={styles.companyName} style={{ color: job.color }}>
           {job.company}
         </h2>
