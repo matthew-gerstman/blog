@@ -67,11 +67,7 @@ export function TalkModal({ talk, onClose }: TalkModalProps) {
           <div className={styles.header}>
             <div className={styles.headerLeft}>
               <MetaInfo items={[talk.date, talk.venue]} />
-              <CardHeader
-                title={talk.title}
-                subtitle={talk.subtitle}
-                hasExpand={false}
-              />
+              <CardHeader title={talk.title} hasExpand={false} />
             </div>
 
             {(talk.slidesUrl || talk.demoUrl) && (

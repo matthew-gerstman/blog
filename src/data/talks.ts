@@ -15,12 +15,12 @@ export const talks: Talk[] = [
   {
     id: 'functional-programming-fundamentals',
     title: 'Functional Programming Fundamentals',
-    subtitle: '',
+    subtitle: 'React NYC Meetup',
     video: 'kkRyjXDpYqg',
     date: '2018',
     venue: 'NYC',
     description:
-      'Introduction to functional programming concepts for JavaScript developers. Covers immutability, pure functions, composition, and higher-order functions through practical examples that you can apply immediately in your daily work.',
+      'This was my first public tech talk. It was an introduction to functional programming concepts for JavaScript developers. I covered immutability, pure functions, composition, and higher-order functions',
     tags: ['Functional Programming', 'JavaScript', 'Fundamentals'],
     slidesUrl:
       'https://www.dropbox.com/scl/fi/okj4pkxtb94bk19a0spv9/Functional-Programming-Fundamentals.paper?rlkey=0jbu7mra246ortssb3nopr4e7&dl=0',
@@ -33,7 +33,7 @@ export const talks: Talk[] = [
     date: '2019',
     venue: 'Prague, Czech Republic',
     description:
-      "A pragmatic look at TypeScript adoption beyond the buzz. This talk explores real-world benefits, common pitfalls, and strategies for introducing static types to existing JavaScript codebases without disrupting your team's velocity.",
+      "I gave this talk after I fell in love with TypeScript. It's meant to be a pragmatic look at TypeScript adoption beyond the buzz. This talk explores real-world benefits, common pitfalls, and strategies for introducing static types to existing JavaScript codebases without disrupting your team's velocity.",
     tags: ['TypeScript', 'JavaScript', 'Developer Experience'],
     slidesUrl: 'http://typescript.matthewgerstman.com/',
   },
@@ -45,7 +45,7 @@ export const talks: Talk[] = [
     date: '2018',
     venue: 'NYC',
     description:
-      'Combining TypeScript with React and Redux while maintaining code splitting presents unique challenges. This talk demonstrates patterns for achieving full type safety across async boundaries without sacrificing bundle size or load performance.',
+      "This talk covers the work I did building out Dropbox's state management platform. Combining TypeScript with React and Redux while maintaining code splitting presents unique challenges. This talk demonstrates patterns for achieving full type safety across async boundaries without sacrificing bundle size or load performance.",
     tags: ['React', 'Redux', 'Code Splitting', 'TypeScript'],
     slidesUrl: 'https://slides.slytherin.dev/#0',
     demoUrl: 'https://slytherin.dev/',
@@ -69,8 +69,7 @@ export const talks: Talk[] = [
     video: 'm1XdasrstCc',
     date: '2020',
     venue: 'NYC',
-    description:
-      'A candid, no-BS talk about career growth in tech. Covers negotiation tactics, when to switch jobs, how to build leverage, and the uncomfortable truths about compensation that most people learn too late in their careers.',
+    description: "This is probably the most popular talk I've ever given.",
     tags: ['Career', 'Negotiation', 'Compensation'],
     slidesUrl: 'http://salary.matthewgerstman.com/',
   },
@@ -82,8 +81,21 @@ export const talks: Talk[] = [
     date: '2019',
     venue: 'Chicago, IL',
     description:
-      'An earlier iteration of the TypeScript adoption talk, tailored for React developers. Focuses on practical migration strategies, common React patterns in TypeScript, and how static types improve component APIs and refactoring confidence.',
+      'An earlier iteration of the TypeScript adoption talk. I usually recomend the Prague version.',
     tags: ['TypeScript', 'React', 'Migration'],
     slidesUrl: 'http://typescript.matthewgerstman.com/',
+  },
+  {
+    id: 'functional-programming-fundamentals-tlv',
+    title: 'Functional Programming Fundamentals',
+    subtitle: '',
+    video: 'Pjc1AnBLG8c',
+    date: '2018',
+    venue: 'Tel Aviv, Israel',
+    description:
+      'Introduction to functional programming concepts for JavaScript developers. The original version of this talk was filled with Taylor Swift references but I replaced them with Natalie Portman for an Israeli audience.',
+    tags: ['Functional Programming', 'JavaScript', 'Fundamentals'],
+    slidesUrl:
+      'https://www.dropbox.com/scl/fi/acxjzwodxgbuw3iwtq675/.paper?rlkey=c9fufxxd9wpuqli3ty0zfn73l&dl=0',
   },
 ];
