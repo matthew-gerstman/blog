@@ -1,19 +1,5 @@
-export interface Post {
-  id: number;
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  content: string;
-  tags: string[];
-  featureImage?: string;
-  banner_img?: string;
-  externalLink?: string;
-  wordCount?: number;
-}
-
 export interface Talk {
-  id: number;
+  id: string;
   title: string;
   subtitle: string;
   video: string;
@@ -33,9 +19,8 @@ export interface FuzzyMatchResult {
 export type Theme = 'dark' | 'light';
 
 export interface KeyboardHandlers {
-  onSearch?: () => void;
   onEscape?: () => void;
-  onFindInPage?: () => void;
-  onNext?: () => void;
-  onPrevious?: () => void;
+  onEnter?: () => void;
+  onArrowUp?: () => void;
+  onArrowDown?: () => void;
 }

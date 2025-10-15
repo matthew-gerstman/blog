@@ -10,11 +10,9 @@ export function Talks() {
   const navigate = useNavigate();
   const { talkId } = useParams<{ talkId: string }>();
 
-  const selectedTalk = talkId
-    ? talks.find((talk) => talk.id === parseInt(talkId, 10))
-    : null;
+  const selectedTalk = talkId ? talks.find((talk) => talk.id === talkId) : null;
 
-  const openTalk = (id: number) => {
+  const openTalk = (id: string) => {
     navigate(`/talks/${id}`);
   };
 
@@ -73,13 +71,6 @@ export function Talks() {
                 <p className={styles.description}>{talk.description}</p>
 
                 <div className={styles.actions}>
-                  <button
-                    className={styles.watchButton}
-                    onClick={() => openTalk(talk.id)}
-                  >
-                    Watch Talk
-                  </button>
-
                   {(talk.slidesUrl || talk.demoUrl) && (
                     <div className={styles.cardLinks}>
                       {talk.slidesUrl && (
@@ -105,6 +96,7 @@ export function Talks() {
                           Slides
                         </a>
                       )}
+
                       {talk.demoUrl && (
                         <a
                           href={talk.demoUrl}
@@ -129,6 +121,12 @@ export function Talks() {
                       )}
                     </div>
                   )}
+                  <button
+                    className={styles.watchButton}
+                    onClick={() => openTalk(talk.id)}
+                  >
+                    Watch Talk
+                  </button>
                 </div>
               </div>
             </div>
