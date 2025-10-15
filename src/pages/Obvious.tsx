@@ -136,6 +136,19 @@ export const Obvious: React.FC = () => {
         </p>
       </header>
 
+      <section className={styles.personalStatement}>
+        <p className={styles.statementText}>
+          I've been following Obvious since the early days, and I'm genuinely
+          excited about what you're building. The vision of AI-native
+          collaborative workspaces that actually understand context and
+          intent—not just automate tasks—is exactly the kind of product I want
+          to help shape. I've spent my career building the complex, real-time,
+          performance-critical frontend systems that power products like this,
+          and I'm ready to bring that experience to a team that's pushing the
+          boundaries of what's possible.
+        </p>
+      </section>
+
       <div className={styles.requirementsContainer}>
         {REQUIREMENTS.map((requirement, index) => {
           const projects = requirement.projectKeys
