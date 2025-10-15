@@ -30,7 +30,7 @@ const resumeData: ResumeData = {
       startDate: '2021-06',
       endDate: '2022-09',
       description: 'Owned the frontend platform.',
-      color: '#00254a',
+      color: '#7B68EE',
       projects: [
         projectsMap['bluecore-frontend-north-star-architecture-modernization'],
         projectsMap['bluecore-frontend-interview-loop-design'],
@@ -89,7 +89,7 @@ const resumeData: ResumeData = {
       startDate: '2013-01',
       endDate: '2015-12',
       description: 'Full-stack web development.',
-      color: '#4A90E2',
+      color: '#D2734A',
       projects: [
         projectsMap['zetta-backbone-restful-apis-migration'],
         projectsMap['zetta-ci-sentry-implementation'],
@@ -143,3 +143,11 @@ const resumeData: ResumeData = {
 };
 
 export default resumeData;
+
+export const jobsMap = resumeData.jobs.reduce(
+  (acc, job) => {
+    acc[job.id] = job;
+    return acc;
+  },
+  {} as Record<string, (typeof resumeData.jobs)[number]>
+);
