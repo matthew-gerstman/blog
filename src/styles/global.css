@@ -70,6 +70,56 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Typography Polish */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* Better line height for different screen sizes */
+@media (max-width: 768px) {
+  body {
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3 {
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 769px) {
+  h1, h2, h3 {
+    line-height: 1.3;
+  }
+}
+
+/* Enhanced Focus States */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--grappa-bright);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--grappa-bright);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px var(--grappa-subtle);
+}
+
+/* Page Transition Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -78,6 +128,33 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Apply fade-in to main content areas */
+main {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Smooth scroll restoration */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
   }
 }
 
@@ -112,4 +189,9 @@ html {
 .copy-button:hover {
   background: var(--grappa);
   color: var(--text);
+}
+
+.copy-button:focus-visible {
+  outline: 2px solid var(--grappa-bright);
+  outline-offset: 2px;
 }
