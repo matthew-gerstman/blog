@@ -19,21 +19,28 @@
 }
 
 :root[data-theme='light'] {
-  --grappa: #6b4a6e;
-  --grappa-light: #8a6a8d;
-  --grappa-bright: #4a2c4d;
-  --grappa-subtle: rgba(74, 44, 77, 0.06);
-  --grappa-border: rgba(74, 44, 77, 0.12);
-  /* Softer, warmer background - off-white with slight warmth */
-  --bg: #fafaf8;
-  /* Slightly darker surface for better contrast */
-  --surface: #f0f0ed;
-  /* Slightly softer text colors */
+  /* More vibrant purple tones */
+  --grappa: #7b4f7e;
+  --grappa-light: #9d6fa0;
+  --grappa-bright: #6b3d6e;
+  --grappa-subtle: rgba(123, 79, 126, 0.08);
+  --grappa-border: rgba(123, 79, 126, 0.18);
+  /* Subtle lavender tint to background */
+  --bg: #faf8fb;
+  /* Slightly purple-tinted surface */
+  --surface: #f3f0f5;
+  /* Warmer text colors */
   --text: #2a2a2a;
   --text-muted: #5a5a5a;
   --text-dim: #7a7a7a;
-  /* Softer border */
-  --border: rgba(0, 0, 0, 0.08);
+  /* More visible borders */
+  --border: rgba(123, 79, 126, 0.12);
+  
+  /* Additional colorful accent variables */
+  --accent-pink: #e91e63;
+  --accent-purple: #9c27b0;
+  --accent-blue: #2196f3;
+  --accent-teal: #009688;
 }
 
 ::-webkit-scrollbar {
@@ -67,7 +74,7 @@ body {
 
 ::selection {
   background: var(--grappa);
-  color: var(--text);
+  color: white;
 }
 
 html {
@@ -192,7 +199,7 @@ main {
 
 .copy-button:hover {
   background: var(--grappa);
-  color: var(--text);
+  color: white;
 }
 
 .copy-button:focus-visible {
