@@ -13,12 +13,15 @@ export function PostCard({ post, index }: PostCardProps) {
   const wordCount = getWordCount(post.content);
   const banner = post.banner_img;
 
+  // Use externalLink if available, otherwise default to blog post slug
+  const linkTo = post.externalLink || `/writing/${post.slug}`;
+
   return (
     <article
       className={styles.card}
       style={{ animationDelay: `${Math.min(index * 0.05, 0.3)}s` }}
     >
-      <Link to={`/writing/${post.slug}`} className={styles.link}>
+      <Link to={linkTo} className={styles.link}>
         {banner && (
           <img src={banner} alt={post.title} className={styles.banner} />
         )}
