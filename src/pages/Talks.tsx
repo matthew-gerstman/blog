@@ -11,10 +11,10 @@ export function Talks() {
   const { talkId } = useParams<{ talkId: string }>();
 
   const selectedTalk = talkId
-    ? talks.find((talk) => talk.id === parseInt(talkId, 10))
+    ? talks.find((talk) => talk.id === talkId)
     : null;
 
-  const openTalk = (id: number) => {
+  const openTalk = (id: string) => {
     navigate(`/talks/${id}`);
   };
 

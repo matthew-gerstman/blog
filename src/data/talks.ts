@@ -1,5 +1,5 @@
 export interface Talk {
-  id: number;
+  id: string;
   title: string;
   subtitle: string;
   video: string;
@@ -13,7 +13,7 @@ export interface Talk {
 
 export const talks: Talk[] = [
   {
-    id: 1,
+    id: 'double-your-salary',
     title: 'Double Your Salary With This One Simple Trick',
     subtitle: '',
     video: 'm1XdasrstCc',
@@ -25,7 +25,7 @@ export const talks: Talk[] = [
     slidesUrl: 'http://salary.matthewgerstman.com/',
   },
   {
-    id: 2,
+    id: 'nothing-generic-about-it',
     title: 'Nothing Generic About It',
     subtitle: 'Advanced TypeScript',
     video: '1YWrc21Uv9g?start=530',
@@ -37,7 +37,7 @@ export const talks: Talk[] = [
     slidesUrl: 'https://generics.matthewgerstman.com/',
   },
   {
-    id: 3,
+    id: 'typescript-seeing-past-the-hype-reactiveconf',
     title: 'TypeScript: Seeing Past the Hype',
     subtitle: 'ReactiveConf',
     video: 'KdvEGPiULAQ',
@@ -49,7 +49,7 @@ export const talks: Talk[] = [
     slidesUrl: 'http://typescript.matthewgerstman.com/',
   },
   {
-    id: 4,
+    id: 'typescript-seeing-past-the-hype-react-loop',
     title: 'TypeScript: Seeing Past the Hype',
     subtitle: 'React Loop',
     video: 'veXkJq0Z2Qk',
@@ -61,7 +61,7 @@ export const talks: Talk[] = [
     slidesUrl: 'http://typescript.matthewgerstman.com/',
   },
   {
-    id: 5,
+    id: 'typesafe-code-split-react-redux',
     title: 'Building a Typesafe Code Split React-Redux Application',
     subtitle: '',
     video: 'Mumy5YZZ2gs',
@@ -74,7 +74,7 @@ export const talks: Talk[] = [
     demoUrl: 'https://slytherin.dev/',
   },
   {
-    id: 6,
+    id: 'functional-programming-fundamentals',
     title: 'Functional Programming Fundamentals',
     subtitle: '',
     video: 'kkRyjXDpYqg',
