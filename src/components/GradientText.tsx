@@ -12,8 +12,13 @@ export function GradientText({
   as: Component = 'span',
   className = '',
 }: GradientTextProps) {
+  const textContent = typeof children === 'string' ? children : '';
+  
   return (
-    <Component className={`${styles.gradientText} ${className}`}>
+    <Component 
+      className={`${styles.text} ${className}`}
+      data-text={textContent}
+    >
       {children}
     </Component>
   );

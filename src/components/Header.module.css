@@ -2,46 +2,50 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(26, 26, 26, 0.8);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--grappa-border);
-  transition: background-color 0.3s;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(10px);
+  background-color: rgba(var(--color-background-rgb), 0.8);
 }
 
-:root[data-theme='light'] .header {
-  background: rgba(255, 255, 255, 0.8);
-}
-
-.inner {
-  max-width: 720px;
+.container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1rem;
-  font-weight: 600;
-  background: linear-gradient(
-    90deg,
-    var(--grappa-bright) 0%,
-    var(--text) 50%,
-    var(--grappa-bright) 100%
-  );
-  background-size: 200% 100%;
-  background-position: 0% 0%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
   text-decoration: none;
-  letter-spacing: -0.01em;
-  transition: background-position 0.6s ease;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-grappa-400), var(--color-grappa-600));
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 2px;
+}
+
+.logo:hover::after {
+  width: 100%;
 }
 
 .logo:hover {
-  background-position: 100% 0%;
+  color: var(--color-grappa-400);
+  transform: translateY(-2px);
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
 }
 
 .nav {
@@ -50,48 +54,112 @@
   align-items: center;
 }
 
-.nav a {
-  color: var(--text-muted);
+.navLink {
+  color: var(--color-text-secondary);
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
+  padding: 0.5rem 0;
 }
 
-.nav a::after {
+.navLink::before {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
+  bottom: 0;
+  left: 50%;
   width: 0;
   height: 2px;
-  background: var(--grappa-bright);
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, transparent, var(--color-grappa-400), transparent);
+  transform: translateX(-50%);
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 2px;
 }
 
-.nav a:hover {
-  color: var(--grappa-bright);
+.navLink:hover::before {
+  width: 120%;
 }
 
-.nav a:hover::after {
-  width: 100%;
+.navLink::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.1), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.navLink:hover::after {
+  opacity: 1;
+}
+
+.navLink:hover {
+  color: var(--color-grappa-400);
+  transform: translateY(-2px);
+}
+
+.navLink.active {
+  color: var(--color-grappa-500);
+  font-weight: 600;
 }
 
 .themeToggle {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 0.5rem;
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  transition: all 0.2s;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.themeToggle::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-grappa-400), var(--color-grappa-600));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.themeToggle:hover::before {
+  opacity: 0.2;
 }
 
 .themeToggle:hover {
-  border-color: var(--grappa-border);
+  transform: rotate(180deg) scale(1.2);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
 }
 
-.themeIcon {
-  font-size: 1rem;
+.themeToggle:active {
+  transform: rotate(180deg) scale(1.1);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-text-primary);
+  transition: color 0.3s ease;
+}
+
+.themeToggle:hover .icon {
+  color: var(--color-grappa-400);
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.6));
+}
+
+@media (max-width: 768px) {
+  .nav {
+    gap: 1rem;
+  }
+  
+  .navLink {
+    font-size: 0.875rem;
+  }
 }
