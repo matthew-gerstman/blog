@@ -15,33 +15,36 @@
   font-weight: 400;
   letter-spacing: 0.01em;
   transition: all 0.2s;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .tag:hover {
   opacity: 1;
   border-color: var(--grappa-border);
-  color: var(--text-muted);
+  color: var(--grappa-bright);
+  background: rgba(255, 255, 255, 0.03);
 }
 
-/* Dark mode subtle adjustments */
+/* Dark mode adjustments */
 [data-theme='dark'] .tag {
-  border-color: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 [data-theme='dark'] .tag:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.6);
+  border-color: var(--grappa-border);
+  color: var(--grappa-bright);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-/* Light mode subtle adjustments */
+/* Light mode adjustments */
 [data-theme='light'] .tag {
-  border-color: rgba(0, 0, 0, 0.08);
-  color: rgba(0, 0, 0, 0.4);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 [data-theme='light'] .tag:hover {
-  border-color: rgba(0, 0, 0, 0.15);
-  color: rgba(0, 0, 0, 0.6);
+  border-color: var(--grappa-border);
+  color: var(--grappa-bright);
+  background: rgba(0, 0, 0, 0.03);
 }
