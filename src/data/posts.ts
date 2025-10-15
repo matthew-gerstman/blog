@@ -11,6 +11,7 @@ const postsData: PostsData = [
     wordCount: 1165,
     tags: ['About'],
     banner_img: '/images/blog/hero-library-cats.png',
+    banner_position: 'center',
     externalLink: '/about',
   },
 
