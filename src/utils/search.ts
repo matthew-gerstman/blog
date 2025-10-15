@@ -10,11 +10,19 @@ export function fuzzyMatch(pattern: string, str: string): FuzzyMatchResult {
   let strIdx = 0;
   let score = 0;
   let consecutiveMatches = 0;
+  let lastMatchIdx = -1;
+  const maxGap = 3; // Maximum allowed gap between characters
 
   while (patternIdx < pattern.length && strIdx < str.length) {
     if (pattern[patternIdx] === str[strIdx]) {
+      // Check if gap is too large (unless this is the first match)
+      if (lastMatchIdx !== -1 && strIdx - lastMatchIdx > maxGap + 1) {
+        return { matched: false, score: 0 };
+      }
+      
       score += 1 + consecutiveMatches;
       consecutiveMatches++;
+      lastMatchIdx = strIdx;
       patternIdx++;
     } else {
       consecutiveMatches = 0;
@@ -25,6 +33,10 @@ export function fuzzyMatch(pattern: string, str: string): FuzzyMatchResult {
   if (patternIdx !== pattern.length) {
     return { matched: false, score: 0 };
   }
+
+  // Penalize matches based on how spread out they are
+  const spreadPenalty = str.length / pattern.length;
+  score = score / Math.max(1, spreadPenalty * 0.5);
 
   return { matched: true, score };
 }
