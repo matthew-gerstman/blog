@@ -45,6 +45,6 @@ export interface Hero {
 }
 
 export interface ResumeData {
-  hero: Hero;
+  hero?: Hero;
   jobs: Job[];
 }

@@ -2,19 +2,15 @@ import type { ResumeData } from './types/resume.types';
 import { projectsMap } from './projects';
 
 const resumeData: ResumeData = {
-  hero: {
-    title: 'Career Timeline',
-    subtitle: '25+ years of building and learning',
-  },
   jobs: [
     {
       id: 'datadog',
       company: 'Datadog',
-      role: 'Senior Software Engineer + Engineering Manager',
-      period: 'Aug 2022 - Sep 2022',
+      role: 'Senior Software Engineer \n Engineering Manager',
+      period: 'Aug 2022 - Sep 2025',
       startDate: '2022-09',
       description:
-        'Leading development of collaborative data science tooling and dashboard infrastructure.',
+        'Worked on complex collaborative apps. Talked directly to customers.',
       color: '#632CA6',
       projects: [
         projectsMap['datadog-notebooks-2-0'],
@@ -33,8 +29,7 @@ const resumeData: ResumeData = {
       period: 'June 2021 - September 2022',
       startDate: '2021-06',
       endDate: '2022-09',
-      description:
-        'Led frontend platform architecture and TypeScript migration for marketing technology platform.',
+      description: 'Owned the frontend platform.',
       color: '#00254a',
       projects: [
         projectsMap['bluecore-frontend-north-star-architecture-modernization'],

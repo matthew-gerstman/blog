@@ -15,10 +15,12 @@ export const Resume: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <header className={styles.hero}>
-        <GradientText as="h1">{data.hero.title}</GradientText>
-        <p className={styles.subtitle}>{data.hero.subtitle}</p>
-      </header>
+      {data.hero && (
+        <header className={styles.hero}>
+          <GradientText as="h1">{data.hero.title}</GradientText>
+          <p className={styles.subtitle}>{data.hero.subtitle}</p>
+        </header>
+      )}
 
       <div className={styles.timeline}>
         {data.jobs.map((job) => (
