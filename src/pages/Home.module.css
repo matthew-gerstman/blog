@@ -4,38 +4,6 @@
   padding: 2rem 2rem 8rem;
 }
 
-.header {
-  margin-bottom: 2rem;
-}
-
-.sortControls {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-}
-
-.sortButton {
-  padding: 0.5rem 1rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.sortButton:hover {
-  border-color: var(--grappa-border);
-  color: var(--text);
-}
-
-.sortButton.active {
-  background: var(--grappa);
-  border-color: var(--grappa);
-  color: var(--text);
-}
-
 .posts {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
