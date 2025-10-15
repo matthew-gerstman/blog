@@ -2,6 +2,19 @@ import type { PostsData } from './types/posts.types';
 
 const postsData: PostsData = [
   {
+    id: 100,
+    slug: 'hello-there',
+    title: 'Hello There',
+    date: 'January 01, 2024',
+    excerpt:
+      "A bit about me, my journey in tech, and what I'm passionate about. From building DBZ dance parties at age 10 to engineering at Dropbox and beyond.",
+    content: '',
+    tags: ['About'],
+    banner_img: '/images/blog/hero-mountains-night.jpg',
+    type: 'page-link',
+    externalLink: '/about',
+  },
+  {
     id: 17,
     slug: 'performance-testing-anonymous-functions',
     title: 'Performance Testing React With Anonymous Functions',
