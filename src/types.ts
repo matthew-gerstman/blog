@@ -8,6 +8,8 @@ export interface Post {
   tags: string[];
   featureImage?: string;
   banner_img?: string;
+  type?: 'blog' | 'page'; // New field to differentiate article types
+  pageUrl?: string; // For page articles that link to other pages
 }
 
 export interface Talk {
