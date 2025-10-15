@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ProjectCard } from './ProjectCard';
 import type { Job } from '../types/resume';
+import {
+  emitStickyJobTitle,
+  clearStickyJobTitle,
+} from '../utils/stickyJobTitle';
 import styles from './JobCard.module.css';
 
 interface JobCardProps {
@@ -14,9 +18,45 @@ export function JobCard({
   expandAll = false,
   targetProject,
 }: JobCardProps) {
+  const jobInfoRef = useRef<HTMLDivElement>(null);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const stuck = entry.intersectionRatio < 1;
+        setIsSticky(stuck);
+
+        emitStickyJobTitle({
+          title: job.company,
+          color: job.color,
+          visible: stuck,
+        });
+      },
+      {
+        threshold: [1],
+        rootMargin: '-100px 0px 0px 0px', // Account for header height
+      }
+    );
+
+    if (jobInfoRef.current) {
+      observer.observe(jobInfoRef.current);
+    }
+
+    return () => {
+      if (jobInfoRef.current) {
+        observer.unobserve(jobInfoRef.current);
+      }
+      clearStickyJobTitle();
+    };
+  }, [job.company, job.color]);
+
   return (
     <div className={styles.timelineItem}>
-      <div className={styles.jobInfo}>
+      <div
+        ref={jobInfoRef}
+        className={`${styles.jobInfo} ${isSticky ? styles.sticky : ''}`}
+      >
         <h2 className={styles.companyName} style={{ color: job.color }}>
           {job.company}
         </h2>
