@@ -1,36 +1,67 @@
 .container {
-  max-width: 720px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 2rem 2rem 8rem;
 }
+
+.header {
+  margin-bottom: 2rem;
+}
+
 .sortControls {
-  padding: 1rem 2rem;
   display: flex;
   gap: 0.5rem;
+  margin-bottom: 2rem;
 }
+
 .sortButton {
-  padding: 0.35rem 0.75rem;
+  padding: 0.5rem 1rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--text-muted);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s;
 }
+
 .sortButton:hover {
   border-color: var(--grappa-border);
   color: var(--text);
 }
+
 .sortButton.active {
   background: var(--grappa);
   border-color: var(--grappa);
   color: var(--text);
 }
+
 .posts {
-  padding: 2rem 2rem 8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
 }
-@media (max-width: 768px) {
-  .posts {
+
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+  .container {
     padding: 2rem 1.5rem 6rem;
+  }
+
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .posts {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
