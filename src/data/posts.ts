@@ -11,7 +11,7 @@ const postsData: PostsData = [
     content:
       "<p>Hi! I'm Matthew Gerstman, a software engineer passionate about building great web applications.</p><p>Click through to learn more about my background, experience, and what I'm working on.</p>",
     tags: ['About'],
-    banner_img: '/images/blog/hi-im-matthew.jpeg',
+    banner_img: '/images/blog/hero-northern-lights.jpg',
     externalLink: '/about',
   },
 
