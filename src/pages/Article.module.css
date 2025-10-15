@@ -98,7 +98,7 @@
   background: #1a1b26;
   border: 1px solid var(--grappa-border);
   border-radius: 8px;
-  overflow: hidden;
+  overflow-x: auto;
   margin: 2rem 0;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -152,37 +152,31 @@
   color: var(--bg);
 }
 
-.body :global(.code-content) {
-  display: flex;
-  overflow-x: auto;
-}
-
-.body :global(.line-numbers) {
-  padding: 1.5rem 0;
-  text-align: right;
-  user-select: none;
-  background: rgba(0, 0, 0, 0.2);
-  border-right: 1px solid rgba(157, 122, 159, 0.2);
-  min-width: 3.5rem;
-  flex-shrink: 0;
-}
-
-.body :global(.line-numbers span) {
-  display: block;
-  padding: 0 1rem;
-  font-family: 'SF Mono', 'Menlo', monospace;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: rgba(157, 122, 159, 0.5);
-}
-
 .body :global(pre code) {
   background: none;
   padding: 1.5rem;
   border: none;
   display: block;
-  flex: 1;
-  line-height: 1.5;
+  counter-reset: line;
+  line-height: 1.6;
+}
+
+.body :global(pre code > span) {
+  display: block;
+  position: relative;
+  padding-left: 3.5rem;
+}
+
+.body :global(pre code > span::before) {
+  content: counter(line);
+  counter-increment: line;
+  position: absolute;
+  left: 0;
+  width: 2.5rem;
+  text-align: right;
+  color: rgba(157, 122, 159, 0.4);
+  user-select: none;
+  font-size: 0.875rem;
 }
 
 .body :global(ul),
@@ -277,11 +271,11 @@
     height: 250px;
   }
   
-  .body :global(.line-numbers) {
-    min-width: 2.5rem;
+  .body :global(pre code > span) {
+    padding-left: 2.5rem;
   }
   
-  .body :global(.line-numbers span) {
-    padding: 0 0.5rem;
+  .body :global(pre code > span::before) {
+    width: 2rem;
   }
 }

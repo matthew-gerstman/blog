@@ -51,33 +51,21 @@ function getLanguageFromClass(className: string): string {
   return languageNames[lang] || lang.charAt(0).toUpperCase() + lang.slice(1);
 }
 
-function addLineNumbers(code: HTMLElement): void {
+function wrapLinesForNumbering(code: HTMLElement): void {
   const lines = (code.textContent || '').split('\n');
-  const lineCount = lines.length;
   
   // Don't add line numbers for very short snippets
-  if (lineCount <= 3) return;
+  if (lines.length <= 3) return;
   
-  const lineNumbersDiv = document.createElement('div');
-  lineNumbersDiv.className = 'line-numbers';
+  // Clear existing content
+  code.innerHTML = '';
   
-  for (let i = 1; i <= lineCount; i++) {
-    const lineNumber = document.createElement('span');
-    lineNumber.textContent = String(i);
-    lineNumbersDiv.appendChild(lineNumber);
-  }
-  
-  // Wrap code in content div
-  const contentDiv = document.createElement('div');
-  contentDiv.className = 'code-content';
-  
-  const pre = code.parentElement;
-  if (!pre) return;
-  
-  // Move code into content div
-  contentDiv.appendChild(lineNumbersDiv);
-  contentDiv.appendChild(code);
-  pre.appendChild(contentDiv);
+  // Wrap each line in a span
+  lines.forEach((line) => {
+    const span = document.createElement('span');
+    span.textContent = line || '\n';
+    code.appendChild(span);
+  });
 }
 
 export function Article({ posts }: ArticleProps) {
@@ -122,9 +110,6 @@ export function Article({ posts }: ArticleProps) {
             block.classList.add('language-bash');
           }
           
-          // Apply syntax highlighting
-          (window.hljs as any).highlightElement(block);
-
           const pre = block.parentElement;
           if (!pre || pre.querySelector('.code-header')) return;
           
@@ -158,8 +143,11 @@ export function Article({ posts }: ArticleProps) {
           // Insert header at the beginning of pre
           pre.insertBefore(header, pre.firstChild);
           
-          // Add line numbers
-          addLineNumbers(block as HTMLElement);
+          // Wrap lines for CSS counter numbering
+          wrapLinesForNumbering(block as HTMLElement);
+          
+          // Apply syntax highlighting after wrapping
+          (window.hljs as any).highlightElement(block);
         });
       }
 
