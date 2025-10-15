@@ -214,7 +214,7 @@ export function SearchModal({
         <div className={styles.results}>
           {!query && (
             <div className={styles.empty}>
-              Type to search pages, articles, talks, and projects...
+              Start typing... I promise I'm faster than Cmd+F
             </div>
           )}
           {query && results.length === 0 && (
