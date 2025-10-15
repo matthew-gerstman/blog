@@ -8,49 +8,99 @@ import styles from './Obvious.module.css';
 
 // Requirements with their matched project keys
 interface Requirement {
-  text: string;
+  title: string;
+  description: string;
   projectKeys: string[];
 }
 
 const REQUIREMENTS: Requirement[] = [
   {
-    text: 'Requirement 1',
+    title: 'Complex React Components & Real-Time Collaboration',
+    description:
+      'Virtualized tables/lists, drag-and-drop editors, real-time collaborative cursors, rich text co-authoring, and low-latency conflict-aware UX',
     projectKeys: [
-      'datadog-frontend-platform',
-      'dropbox-desktop-client',
       'bluecore-email-builder',
+      'dropbox-capture',
+      'datadog-ci-visibility',
+      'todaytix-mobile-web',
     ],
   },
   {
-    text: 'Requirement 2',
+    title: 'Performance Optimization & System-Level Thinking',
+    description:
+      'Bundle strategy, render paths, memoization, concurrent features, asset pipelines, code-splitting, hydration strategies, and profiling',
+    projectKeys: [
+      'datadog-frontend-platform',
+      'dropbox-desktop-client',
+      'todaytix-mobile-web',
+      'bluecore-platform-migration',
+    ],
+  },
+  {
+    title: 'Full-Stack Feature Development & Product Ownership',
+    description:
+      'End-to-end ownership from conception to deployment, talking directly to users, and driving key product initiatives',
     projectKeys: [
       'datadog-ci-visibility',
+      'bluecore-email-builder',
+      'dropbox-capture',
+      'todaytix-group-ticketing',
+    ],
+  },
+  {
+    title: 'Modern Frontend Technologies & Architecture',
+    description:
+      'Deep expertise in TypeScript, JavaScript, React, CSS (modern layout, animations, variables), and scalable web applications',
+    projectKeys: [
+      'datadog-frontend-platform',
+      'bluecore-email-builder',
+      'dropbox-desktop-client',
       'todaytix-mobile-web',
+      'bluecore-platform-migration',
+    ],
+  },
+  {
+    title: 'Cross-Browser/Device Testing & Reliability',
+    description:
+      'Establishing state-of-the-art testing, operational excellence, and making experiences "just work" every time',
+    projectKeys: [
+      'datadog-frontend-platform',
+      'todaytix-mobile-web',
+      'dropbox-desktop-client',
+      'datadog-ci-visibility',
+    ],
+  },
+  {
+    title: 'Technical Leadership & Standards',
+    description:
+      'Raising the bar for technical standards, performance, reliability, and influencing decisions across the organization',
+    projectKeys: [
+      'datadog-frontend-platform',
+      'bluecore-platform-migration',
+      'dropbox-desktop-client',
+      'todaytix-mobile-web',
+    ],
+  },
+  {
+    title: 'High Velocity & Autonomy',
+    description:
+      'Operating at an unreasonable pace, doing large amounts of meaningful work quickly with little oversight, and defaulting to simple designs that scale',
+    projectKeys: [
+      'datadog-ci-visibility',
+      'bluecore-email-builder',
+      'todaytix-group-ticketing',
       'dropbox-capture',
     ],
   },
   {
-    text: 'Requirement 3',
+    title: 'Design Partnership & User Experience',
+    description:
+      'Sweating the details (type, motion, density, affordances, empty states), collaborating on design, and protecting quality',
     projectKeys: [
-      'datadog-frontend-platform',
       'bluecore-email-builder',
-      'todaytix-mobile-web',
-    ],
-  },
-  {
-    text: 'Requirement 4',
-    projectKeys: [
-      'dropbox-desktop-client',
-      'datadog-ci-visibility',
-      'bluecore-email-builder',
-    ],
-  },
-  {
-    text: 'Requirement 5',
-    projectKeys: [
-      'datadog-frontend-platform',
       'dropbox-capture',
       'todaytix-mobile-web',
+      'datadog-ci-visibility',
     ],
   },
 ];
@@ -91,7 +141,12 @@ export const Obvious: React.FC = () => {
 
           return (
             <section key={index} className={styles.requirementSection}>
-              <h2 className={styles.requirementTitle}>{requirement.text}</h2>
+              <div className={styles.requirementHeader}>
+                <h2 className={styles.requirementTitle}>{requirement.title}</h2>
+                <p className={styles.requirementDescription}>
+                  {requirement.description}
+                </p>
+              </div>
 
               <div className={styles.projectsRow}>
                 {projects.map(({ key, project, companyName, companyColor }) => (

@@ -18,13 +18,19 @@
 .requirementsContainer {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .requirementSection {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.requirementHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .requirementTitle {
@@ -34,6 +40,14 @@
   margin: 0;
   padding-bottom: 0.75rem;
   border-bottom: 2px solid var(--grappa-bright);
+}
+
+.requirementDescription {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 0.25rem;
 }
 
 .projectsRow {
@@ -58,7 +72,7 @@
   }
 
   .requirementsContainer {
-    gap: 2.5rem;
+    gap: 3rem;
   }
 
   .requirementSection {
@@ -67,6 +81,10 @@
 
   .requirementTitle {
     font-size: 1.25rem;
+  }
+
+  .requirementDescription {
+    font-size: 0.9rem;
   }
 
   .projectsRow {
