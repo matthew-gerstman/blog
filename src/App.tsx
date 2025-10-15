@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { SearchModal } from './components/SearchModal';
@@ -29,7 +29,7 @@ function ScrollToTop() {
   return null;
 }
 
-function App() {
+function AppContent() {
   const { theme, toggleTheme } = useTheme();
   const [searchOpen, setSearchOpen] = useState(false);
   const [findOpen, setFindOpen] = useState(false);
@@ -90,6 +90,14 @@ function App() {
         <Route path="/:slug" element={<BlogPostRedirect />} />
       </Routes>
     </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
 
