@@ -12,13 +12,17 @@ import { Resume } from './pages/resume/Resume';
 import { About } from './pages/resume/About';
 import { useTheme } from './hooks/useTheme';
 import { useKeyboard } from './hooks/useKeyboard';
+import { useAnalytics } from './hooks/useAnalytics';
 import posts from './data/posts';
 import { projectsMap } from './data/projects';
 
-function App() {
+function AppContent() {
   const { theme, toggleTheme } = useTheme();
   const [searchOpen, setSearchOpen] = useState(false);
   const [findOpen, setFindOpen] = useState(false);
+
+  // Track page views on route changes
+  useAnalytics();
 
   // Convert projects map to array for search
   const projectsArray = Object.values(projectsMap);
@@ -33,7 +37,7 @@ function App() {
   });
 
   return (
-    <BrowserRouter basename="/">
+    <>
       <ProgressBar />
       <Header theme={theme} onToggleTheme={toggleTheme} />
       <SearchModal
@@ -63,6 +67,14 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Resume />} />
       </Routes>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter basename="/">
+      <AppContent />
     </BrowserRouter>
   );
 }
