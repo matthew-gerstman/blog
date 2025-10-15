@@ -1,5 +1,5 @@
 .container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 3rem 2rem;
   animation: fadeInUp 0.6s ease-out;
@@ -26,7 +26,7 @@
   font-size: 1.25rem;
   color: var(--text-muted);
   line-height: 1.8;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -49,6 +49,47 @@
   width: 4px;
   background: linear-gradient(180deg, var(--grappa-bright), var(--grappa));
   border-radius: 2px;
+}
+
+/* Company-specific colors */
+.zetta {
+  color: #0066cc;
+}
+
+.zetta::before {
+  background: linear-gradient(180deg, #0066cc, #004999);
+}
+
+.todaytix {
+  color: #e31c79;
+}
+
+.todaytix::before {
+  background: linear-gradient(180deg, #e31c79, #b71560);
+}
+
+.dropbox {
+  color: #0061ff;
+}
+
+.dropbox::before {
+  background: linear-gradient(180deg, #0061ff, #0047b3);
+}
+
+.bluecore {
+  color: #00a3e0;
+}
+
+.bluecore::before {
+  background: linear-gradient(180deg, #00a3e0, #0082b3);
+}
+
+.datadog {
+  color: #632ca6;
+}
+
+.datadog::before {
+  background: linear-gradient(180deg, #632ca6, #4a2080);
 }
 
 .paragraph {

@@ -99,7 +99,7 @@ export const About: React.FC = () => {
         for the jumbotron. This was the first time I got to write real software used by real people.
       </p>
 
-      <h2 className={styles.sectionTitle}>Zetta</h2>
+      <h2 className={`${styles.sectionTitle} ${styles.zetta}`}>Zetta</h2>
 
       <p className={styles.paragraph}>
         My first internship and real job was at{' '}
@@ -124,7 +124,7 @@ export const About: React.FC = () => {
         to my dayjob. I spoke to 50 companies in I got myself to New York in 3 months.
       </p>
 
-      <h2 className={styles.sectionTitle}>TodayTix</h2>
+      <h2 className={`${styles.sectionTitle} ${styles.todaytix}`}>TodayTix</h2>
 
       <p className={styles.paragraph}>
         I was so excited to land at TodayTix. This was a consumer focused product, and something I could 
@@ -142,7 +142,7 @@ export const About: React.FC = () => {
         Overall I had a great time there, but one day I saw an online ad for a Dropbox meetup.
       </p>
 
-      <h2 className={styles.sectionTitle}>Dropbox</h2>
+      <h2 className={`${styles.sectionTitle} ${styles.dropbox}`}>Dropbox</h2>
 
       <p className={styles.paragraph}>
         I loved Dropbox from the moment it was released. As a kid I wanted the ability to keep all my 
@@ -169,7 +169,7 @@ export const About: React.FC = () => {
         After Covid, Dropbox went fully remote which I was not ready for. In 2021 it was time for something new.
       </p>
 
-      <h2 className={styles.sectionTitle}>Bluecore</h2>
+      <h2 className={`${styles.sectionTitle} ${styles.bluecore}`}>Bluecore</h2>
 
       <p className={styles.paragraph}>
         I had a really ambitious mandate at Bluecore. "Go build out a frontend platform team." I got a lot 
@@ -183,7 +183,7 @@ export const About: React.FC = () => {
         funding to hire for my team. I had a friend at Datadog and he pitched me on joining.
       </p>
 
-      <h2 className={styles.sectionTitle}>Datadog</h2>
+      <h2 className={`${styles.sectionTitle} ${styles.datadog}`}>Datadog</h2>
 
       <p className={styles.paragraph}>
         I wanted this job so bad. Datadog is doing some of the best frontend work in the industry. The UI 
