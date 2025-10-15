@@ -27,13 +27,12 @@
   background: var(--background);
   border: 1px solid var(--grappa-border);
   border-radius: 12px;
-  max-width: 1000px;
+  max-width: 900px;
   width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
   position: relative;
   animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
 @keyframes slideUp {
@@ -78,7 +77,6 @@
   height: 0;
   overflow: hidden;
   background: #000;
-  border-radius: 12px 12px 0 0;
 }
 
 .videoWrapper iframe {
@@ -90,25 +88,55 @@
 }
 
 .content {
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.description {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--text);
-  opacity: 0.9;
-  margin: 0;
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Links Section */
+.links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--grappa-border);
+  background: transparent;
+  color: var(--grappa-bright);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.link:hover {
+  background: var(--grappa-bright);
+  color: var(--background);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.link svg {
+  flex-shrink: 0;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.5rem;
 }
 
 .tag {
@@ -127,18 +155,13 @@
   }
 
   .modal {
-    max-height: 100vh;
-    height: 100vh;
-    border-radius: 0;
     max-width: 100%;
-  }
-
-  .videoWrapper {
     border-radius: 0;
+    max-height: 100vh;
   }
 
   .content {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .closeButton {

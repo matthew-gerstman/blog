@@ -109,9 +109,16 @@
   flex: 1;
 }
 
+/* Actions */
+.actions {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 /* Watch Button */
 .watchButton {
-  margin-top: 0.5rem;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   border: 1px solid var(--grappa-bright);
@@ -129,6 +136,40 @@
   color: var(--background);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Card Links */
+.cardLinks {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 6px;
+  border: 1px solid var(--grappa-border);
+  background: transparent;
+  color: var(--text);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  opacity: 0.8;
+}
+
+.cardLink:hover {
+  opacity: 1;
+  border-color: var(--grappa-bright);
+  color: var(--grappa-bright);
+  transform: translateY(-1px);
+}
+
+.cardLink svg {
+  flex-shrink: 0;
 }
 
 /* Responsive */

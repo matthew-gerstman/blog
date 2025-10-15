@@ -72,12 +72,64 @@ export function Talks() {
 
                 <p className={styles.description}>{talk.description}</p>
 
-                <button
-                  className={styles.watchButton}
-                  onClick={() => openTalk(talk.id)}
-                >
-                  Watch Talk
-                </button>
+                <div className={styles.actions}>
+                  <button
+                    className={styles.watchButton}
+                    onClick={() => openTalk(talk.id)}
+                  >
+                    Watch Talk
+                  </button>
+
+                  {(talk.slidesUrl || talk.demoUrl) && (
+                    <div className={styles.cardLinks}>
+                      {talk.slidesUrl && (
+                        <a
+                          href={talk.slidesUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.cardLink}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                          </svg>
+                          Slides
+                        </a>
+                      )}
+                      {talk.demoUrl && (
+                        <a
+                          href={talk.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.cardLink}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <circle cx="12" cy="12" r="10" />
+                            <polygon points="10 8 16 12 10 16 10 8" />
+                          </svg>
+                          Demo
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           );
