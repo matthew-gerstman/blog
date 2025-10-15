@@ -131,10 +131,23 @@
 
 /* Mobile responsive styles */
 @media (max-width: 768px) {
+  /* Larger touch targets for mobile */
+  .nav a {
+    padding: 8px 4px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .themeToggle {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px;
+  }
   .inner {
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem 1.5rem;
+    padding: 1.25rem 1.5rem;
     align-items: center;
   }
 

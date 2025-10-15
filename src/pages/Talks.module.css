@@ -172,7 +172,7 @@
   flex-shrink: 0;
 }
 
-/* Responsive */
+/* Responsive with larger touch targets */
 @media (max-width: 768px) {
   .container {
     padding: 2rem 1rem 4rem;
@@ -189,5 +189,21 @@
   .talksGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  /* Larger touch targets for mobile */
+  .watchButton {
+    padding: 14px 20px;
+    min-height: 48px;
+    font-size: 1rem;
+  }
+
+  .cardLink {
+    padding: 10px 16px;
+    min-height: 44px;
+  }
+
+  .thumbnail {
+    min-height: 44px;
   }
 }

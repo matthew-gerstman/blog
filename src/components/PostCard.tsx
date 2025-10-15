@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import type { Post } from '../types';
 import { calculateReadingTime, getWordCount } from '../utils/reading';
@@ -9,15 +10,43 @@ interface PostCardProps {
 }
 
 export function PostCard({ post, index }: PostCardProps) {
+  const cardRef = useRef<HTMLElement>(null);
   const readingTime = calculateReadingTime(post.content);
   const wordCount = getWordCount(post.content);
   const banner = post.banner_img;
 
+  useEffect(() => {
+    const element = cardRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Stagger animation based on index
+            setTimeout(
+              () => {
+                entry.target.classList.add('animate-in');
+              },
+              Math.min(index * 50, 300)
+            );
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    observer.observe(element);
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, [index]);
+
   return (
-    <article
-      className={styles.card}
-      style={{ animationDelay: `${Math.min(index * 0.05, 0.3)}s` }}
-    >
+    <article ref={cardRef} className={styles.card}>
       <Link to={`/writing/${post.slug}`} className={styles.link}>
         {banner && (
           <img src={banner} alt={post.title} className={styles.banner} />
