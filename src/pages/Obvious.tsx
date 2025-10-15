@@ -130,31 +130,32 @@ export const Obvious: React.FC = () => {
 
       <section className={styles.personalStatement}>
         <p className={styles.statementText}>
-          I knew Obvious had a culture of excellence before I knew it was
-          Obvious. The Flatfile API docs made that clear.
-        </p>
-        <p className={styles.statementText}>
-          I've spent 40+ hours using Obvious in the past week because I couldn't
-          stop. The product is thoughtfully designed and genuinely useful.
+          I've haven't been able to stop using Obvious since I got it. The
+          product is thoughtfully designed and genuinely useful. Its so much fun
+          to work with.
         </p>
         <p className={styles.statementText}>
           I bring the technical depth and leadership this role needs. At
           Datadog, I managed Notebooks 2.0 — a highly collaborative real-time
           editing product—and built the dashboard reporting service from
-          scratch. At Bluecore, I picked the frontend technologies that took the
-          company to unicorn status and led the transformation. At Dropbox, I
-          designed Redux patterns that became the org standard and co-led a
-          massive utility library migration with one production bug.
+          scratch. At Bluecore, I picked the frontend technologies that set
+          direction for years to come. At Dropbox, I designed patterns that
+          became the org standard and co-led a massive utility library
+          migration.
         </p>
         <p className={styles.statementText}>
           Beyond the code, I've built the connective tissue that makes teams
           better: founding JavaScript guilds, organizing technical summits,
-          designing interview loops, teaching IC1 classes.
+          designing interview loops, teaching classes.
         </p>
         <p className={styles.statementText}>
           I want to work on Obvious because you're building something that
           matters. This is the coolest product I've seen in a very long time. I
           want to be part of that.
+        </p>
+        <p className={styles.statementText}>
+          I hope this website demonstrates what it looks like when I sweat the
+          details. It was built with Obvious.
         </p>
       </section>
 
