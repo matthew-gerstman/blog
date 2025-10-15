@@ -17,6 +17,69 @@ interface ArticleProps {
   posts: Post[];
 }
 
+// Language name mapping for display
+const languageNames: Record<string, string> = {
+  js: 'JavaScript',
+  javascript: 'JavaScript',
+  ts: 'TypeScript',
+  typescript: 'TypeScript',
+  jsx: 'JSX',
+  tsx: 'TSX',
+  bash: 'Bash',
+  sh: 'Shell',
+  python: 'Python',
+  py: 'Python',
+  css: 'CSS',
+  html: 'HTML',
+  json: 'JSON',
+  yaml: 'YAML',
+  yml: 'YAML',
+  markdown: 'Markdown',
+  md: 'Markdown',
+  sql: 'SQL',
+  go: 'Go',
+  rust: 'Rust',
+  java: 'Java',
+  cpp: 'C++',
+  c: 'C',
+};
+
+function getLanguageFromClass(className: string): string {
+  const match = className.match(/language-(\w+)/);
+  if (!match) return 'Code';
+  const lang = match[1].toLowerCase();
+  return languageNames[lang] || lang.charAt(0).toUpperCase() + lang.slice(1);
+}
+
+function addLineNumbers(code: HTMLElement): void {
+  const lines = (code.textContent || '').split('\n');
+  const lineCount = lines.length;
+  
+  // Don't add line numbers for very short snippets
+  if (lineCount <= 3) return;
+  
+  const lineNumbersDiv = document.createElement('div');
+  lineNumbersDiv.className = 'line-numbers';
+  
+  for (let i = 1; i <= lineCount; i++) {
+    const lineNumber = document.createElement('span');
+    lineNumber.textContent = String(i);
+    lineNumbersDiv.appendChild(lineNumber);
+  }
+  
+  // Wrap code in content div
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'code-content';
+  
+  const pre = code.parentElement;
+  if (!pre) return;
+  
+  // Move code into content div
+  contentDiv.appendChild(lineNumbersDiv);
+  contentDiv.appendChild(code);
+  pre.appendChild(contentDiv);
+}
+
 export function Article({ posts }: ArticleProps) {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
@@ -46,31 +109,57 @@ export function Article({ posts }: ArticleProps) {
     window.scrollTo(0, 0);
 
     setTimeout(() => {
-      // Syntax highlighting
+      // Enhanced code block processing
       if (window.hljs) {
         document.querySelectorAll('pre code').forEach((block) => {
           const text = block.textContent || '';
+          
+          // Auto-detect bash
           if (
             !block.className &&
             (text.includes('$ ') || text.includes('Matthew at '))
           ) {
             block.classList.add('language-bash');
           }
+          
+          // Apply syntax highlighting
           (window.hljs as any).highlightElement(block);
 
           const pre = block.parentElement;
-          if (pre && !pre.querySelector('.copy-button')) {
-            const button = document.createElement('button');
-            button.className = 'copy-button';
-            button.textContent = 'Copy';
-            button.onclick = () => {
-              navigator.clipboard.writeText(block.textContent || '');
-              button.textContent = 'Copied!';
-              setTimeout(() => (button.textContent = 'Copy'), 2000);
-            };
-            pre.style.position = 'relative';
-            pre.insertBefore(button, pre.firstChild);
-          }
+          if (!pre || pre.querySelector('.code-header')) return;
+          
+          // Get language
+          const language = getLanguageFromClass(block.className);
+          
+          // Create header with language badge and copy button
+          const header = document.createElement('div');
+          header.className = 'code-header';
+          
+          const languageBadge = document.createElement('span');
+          languageBadge.className = 'code-language';
+          languageBadge.textContent = language;
+          
+          const copyButton = document.createElement('button');
+          copyButton.className = 'copy-button';
+          copyButton.textContent = 'Copy';
+          copyButton.onclick = () => {
+            navigator.clipboard.writeText(block.textContent || '');
+            copyButton.textContent = 'Copied!';
+            copyButton.classList.add('copied');
+            setTimeout(() => {
+              copyButton.textContent = 'Copy';
+              copyButton.classList.remove('copied');
+            }, 2000);
+          };
+          
+          header.appendChild(languageBadge);
+          header.appendChild(copyButton);
+          
+          // Insert header at the beginning of pre
+          pre.insertBefore(header, pre.firstChild);
+          
+          // Add line numbers
+          addLineNumbers(block as HTMLElement);
         });
       }
 
