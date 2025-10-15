@@ -8,16 +8,20 @@ interface HeaderProps {
   onToggleTheme: () => void;
 }
 
+interface StickyJobData {
+  title: string;
+  color: string;
+  visible: boolean;
+}
+
 export function Header({ theme, onToggleTheme }: HeaderProps) {
   const location = useLocation();
-  const [stickyJobTitle, setStickyJobTitle] = useState<string | null>(null);
+  const [stickyJob, setStickyJob] = useState<StickyJobData | null>(null);
 
   useEffect(() => {
     // Listen for sticky job title events from JobCard
-    const handleStickyJob = (
-      event: CustomEvent<{ title: string; visible: boolean }>
-    ) => {
-      setStickyJobTitle(event.detail.visible ? event.detail.title : null);
+    const handleStickyJob = (event: CustomEvent<StickyJobData>) => {
+      setStickyJob(event.detail.visible ? event.detail : null);
     };
 
     window.addEventListener('stickyJobTitle' as any, handleStickyJob);
@@ -69,9 +73,12 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
             </span>
           </button>
         </nav>
-        {stickyJobTitle && (
-          <div className={`${styles.stickyTitle} ${styles.visible}`}>
-            {stickyJobTitle}
+        {stickyJob && (
+          <div
+            className={`${styles.stickyTitle} ${styles.visible}`}
+            style={{ color: stickyJob.color }}
+          >
+            {stickyJob.title}
           </div>
         )}
       </div>

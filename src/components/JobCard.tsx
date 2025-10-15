@@ -26,7 +26,8 @@ export function JobCard({
         // Emit custom event for header to listen to
         const event = new CustomEvent('stickyJobTitle', {
           detail: {
-            title: `${job.role} @ ${job.company}`,
+            title: job.company,
+            color: job.color,
             visible: stuck,
           },
         });
@@ -48,11 +49,11 @@ export function JobCard({
       }
       // Clear sticky title when unmounting
       const event = new CustomEvent('stickyJobTitle', {
-        detail: { title: '', visible: false },
+        detail: { title: '', color: '', visible: false },
       });
       window.dispatchEvent(event);
     };
-  }, [job.company, job.role]);
+  }, [job.company, job.color]);
 
   return (
     <div className={styles.timelineItem}>
