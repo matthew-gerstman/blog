@@ -18,21 +18,43 @@ export function ProjectGridCard({
 }: ProjectGridCardProps) {
   return (
     <div className={styles.card} onClick={onClick}>
-      <h3 className={styles.title} style={{ color: companyColor }}>
-        <span className={styles.companyName}>{companyName}</span>
-        {' — '}
-        {project.title}
-      </h3>
-
+      <ProjectTitle
+        companyName={companyName}
+        companyColor={companyColor}
+        projectTitle={project.title}
+      />
       <p className={styles.description}>{project.description}</p>
-
       {project.technologies && project.technologies.length > 0 && (
         <TagList tags={project.technologies} className={styles.tags} />
       )}
+      <ClickHint />
+    </div>
+  );
+}
 
-      <div className={styles.clickHint}>
-        <span>View Details →</span>
-      </div>
+// Components
+function ProjectTitle({
+  companyName,
+  companyColor,
+  projectTitle,
+}: {
+  companyName: string;
+  companyColor: string;
+  projectTitle: string;
+}) {
+  return (
+    <h3 className={styles.title} style={{ color: companyColor }}>
+      <span className={styles.companyName}>{companyName}</span>
+      {' — '}
+      {projectTitle}
+    </h3>
+  );
+}
+
+function ClickHint() {
+  return (
+    <div className={styles.clickHint}>
+      <span>View Details →</span>
     </div>
   );
 }
