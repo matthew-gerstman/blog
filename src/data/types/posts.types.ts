@@ -9,6 +9,7 @@ export interface Post {
   banner_img: string;
   heroImage?: string;
   externalLink?: string; // Optional field for linking to arbitrary pages
+  wordCount?: number;
 }
 
 export type PostsData = Post[];

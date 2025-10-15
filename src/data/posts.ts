@@ -10,7 +10,7 @@ const postsData: PostsData = [
     content: '',
     wordCount: 1165,
     tags: ['About'],
-    banner_img: '/images/blog/hero-northern-lights.jpg',
+    banner_img: '/images/blog/hero-library-cats.png',
     externalLink: '/about',
   },
 
