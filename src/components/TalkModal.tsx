@@ -74,6 +74,54 @@ export function TalkModal({ talk, onClose }: TalkModalProps) {
 
           <p className={styles.description}>{talk.description}</p>
 
+          {(talk.slidesUrl || talk.demoUrl) && (
+            <div className={styles.links}>
+              {talk.slidesUrl && (
+                <a
+                  href={talk.slidesUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                    <line x1="12" y1="17" x2="12" y2="21" />
+                  </svg>
+                  View Slides
+                </a>
+              )}
+              {talk.demoUrl && (
+                <a
+                  href={talk.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polygon points="10 8 16 12 10 16 10 8" />
+                  </svg>
+                  View Demo
+                </a>
+              )}
+            </div>
+          )}
+
           {talk.tags && talk.tags.length > 0 && (
             <div className={styles.tags}>
               {talk.tags.map((tag) => (
