@@ -1,0 +1,76 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+.requirements {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.requirements h2 {
+  color: var(--grappa-bright);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.requirementsList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.requirementsList li {
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  border-radius: 8px;
+  border-left: 3px solid var(--grappa-bright);
+  color: var(--text);
+}
+
+.projectsSection {
+  margin-bottom: 3rem;
+}
+
+.projectsSection h2 {
+  color: var(--text);
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .projectGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .requirements {
+    padding: 1.5rem;
+  }
+}
