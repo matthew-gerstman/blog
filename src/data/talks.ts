@@ -1,4 +1,15 @@
-export const talks = [
+export interface Talk {
+  id: number;
+  title: string;
+  subtitle: string;
+  video: string;
+  date: string;
+  venue: string;
+  description: string;
+  tags: string[];
+}
+
+export const talks: Talk[] = [
   {
     id: 1,
     title: 'Double Your Salary With This One Simple Trick',

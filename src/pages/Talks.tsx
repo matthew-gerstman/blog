@@ -2,20 +2,11 @@ import { useState } from 'react';
 import { talks } from '../data/talks';
 import type { Talk } from '../data/talks';
 import { CardHeader } from '../components/CardHeader';
-import { TagList } from '../components/TagList';
 import { MetaInfo } from '../components/MetaInfo';
 import styles from './Talks.module.css';
 
 export function Talks() {
   const [expandedId, setExpandedId] = useState<number | null>(null);
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
-
-  const allTags = Array.from(
-    new Set(talks.flatMap((talk: Talk) => talk.tags || []))
-  );
-  const filteredTalks = selectedTag
-    ? talks.filter((talk: Talk) => talk.tags?.includes(selectedTag))
-    : talks;
 
   const toggleExpand = (id: number) => {
     setExpandedId(expandedId === id ? null : id);
@@ -31,26 +22,8 @@ export function Talks() {
         </p>
       </header>
 
-      <div className={styles.tagFilter}>
-        <button
-          className={`${styles.tagButton} ${!selectedTag ? styles.active : ''}`}
-          onClick={() => setSelectedTag(null)}
-        >
-          All
-        </button>
-        {allTags.map((tag: string) => (
-          <button
-            key={tag}
-            className={`${styles.tagButton} ${selectedTag === tag ? styles.active : ''}`}
-            onClick={() => setSelectedTag(tag)}
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
-
       <div className={styles.talksGrid}>
-        {filteredTalks.map((talk: Talk) => {
+        {talks.map((talk: Talk) => {
           const isExpanded = expandedId === talk.id;
 
           return (
@@ -106,8 +79,6 @@ export function Talks() {
 
                 <p className={styles.description}>{talk.description}</p>
 
-                <TagList tags={talk.tags} className={styles.tags} />
-
                 <button
                   className={styles.watchButton}
                   onClick={() => toggleExpand(talk.id)}
@@ -119,13 +90,6 @@ export function Talks() {
           );
         })}
       </div>
-
-      {filteredTalks.length === 0 && (
-        <div className={styles.noResults}>
-          No talks found for "{selectedTag}".{' '}
-          <button onClick={() => setSelectedTag(null)}>Clear filter</button>
-        </div>
-      )}
     </div>
   );
 }
