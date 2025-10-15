@@ -290,7 +290,7 @@ export const projectsMap: Record<string, Project> = {
     endYear: 2022,
     role: 'Staff Engineer / Frontend Lead',
     description:
-      "Led frontend transformation at newly-minted unicorn ($1B valuation, $125M Series E). Established technical vision and modernized architecture to enable complex retail marketing workflows as company scaled from data science focus to product-led growth. Wrote comprehensive RFC establishing 'composable LEGO blocks' philosophy and platform layer architecture.",
+      "Led frontend transformation at newly-minted unicorn. Wrote comprehensive RFC establishing 'composable LEGO blocks' philosophy and platform layer architecture.",
     impact:
       'Published engineering blog defining frontend strategy. Established TypeScript-first culture across engineering org. Built foundation for next-generation product workflows serving enterprise retail customers.',
     technologies: [
