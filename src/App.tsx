@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from 'react-router-dom';
 import { Header } from './components/Header';
 import { ProgressBar } from './components/ProgressBar';
 import { SearchModal } from './components/SearchModal';
@@ -16,6 +22,7 @@ import { useKeyboard } from './hooks/useKeyboard';
 import { useAnalytics } from './hooks/useAnalytics';
 import posts from './data/posts';
 import { projectsMap } from './data/projects';
+import { talks } from './data/talks';
 
 function ScrollToTop() {
   const location = useLocation();
@@ -58,6 +65,7 @@ function AppContent() {
         onClose={() => setSearchOpen(false)}
         posts={posts}
         projects={projectsArray}
+        talks={talks}
       />
       <FindInPage isOpen={findOpen} onClose={() => setFindOpen(false)} />
       <Routes>
