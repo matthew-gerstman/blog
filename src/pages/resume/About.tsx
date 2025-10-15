@@ -1,15 +1,15 @@
 import React from 'react';
-import { GradientText } from '../../components/GradientText';
 import styles from './About.module.css';
 
 export const About: React.FC = () => {
   return (
     <div className={styles.container}>
-      <GradientText as="h1">About Me</GradientText>
-      
-      <p className={styles.paragraph}>
-        I'm Matthew Gerstman, and I've been building things on the internet since I was 9 years old.
-      </p>
+      <div className={styles.header}>
+        <h1 className={styles.title}>About Me</h1>
+        <p className={styles.lead}>
+          I'm Matthew Gerstman, and I've been building things on the internet since I was 9 years old.
+        </p>
+      </div>
 
       <h2 className={styles.sectionTitle}>Early Programming</h2>
       
