@@ -78,6 +78,20 @@ export const Timeline: React.FC = () => {
     originalEndYear: number;
   } | null>(null);
 
+  const [yearRange, setYearRange] = useState<{ min: number; max: number }>(
+    () => {
+      const sortedProjects = [...projectsOrder]
+        .map((key) => projectsMap[key])
+        .filter(Boolean);
+      const minYear = Math.min(...sortedProjects.map((p) => p.startYear)) - 5;
+      const maxYear =
+        Math.max(
+          ...sortedProjects.map((p) => p.endYear || new Date().getFullYear())
+        ) + 5;
+      return { min: minYear, max: maxYear };
+    }
+  );
+
   const timelineRef = useRef<HTMLDivElement>(null);
 
   // Persist to localStorage whenever workstreams change
@@ -96,17 +110,11 @@ export const Timeline: React.FC = () => {
       return (a.endYear || 9999) - (b.endYear || 9999);
     });
 
-  // Calculate year range with buffer for infinite dragging
-  const minYear = Math.min(...sortedProjects.map((p) => p.startYear)) - 5;
-  const maxYear =
-    Math.max(
-      ...sortedProjects.map((p) => p.endYear || new Date().getFullYear())
-    ) + 5;
-  const years = Array.from(
-    { length: maxYear - minYear + 1 },
-    (_, i) => minYear + i
-  );
   const yearWidth = 120; // pixels per year
+  const years = Array.from(
+    { length: yearRange.max - yearRange.min + 1 },
+    (_, i) => yearRange.min + i
+  );
 
   const handleMouseDown = (
     e: React.MouseEvent,
@@ -130,6 +138,29 @@ export const Timeline: React.FC = () => {
       const deltaX = e.clientX - dragging.startX;
       const deltaYears = deltaX / yearWidth;
 
+      const newStartYear = dragging.originalStartYear + deltaYears;
+      const newEndYear = dragging.originalEndYear + deltaYears;
+
+      // Dynamically expand the timeline if dragging beyond current range
+      setYearRange((prev) => {
+        const expandBuffer = 5; // Add 5 years buffer when expanding
+        let newMin = prev.min;
+        let newMax = prev.max;
+
+        if (newStartYear < prev.min) {
+          newMin = Math.floor(newStartYear) - expandBuffer;
+        }
+        if (newEndYear > prev.max) {
+          newMax = Math.ceil(newEndYear) + expandBuffer;
+        }
+
+        // Only update if changed
+        if (newMin !== prev.min || newMax !== prev.max) {
+          return { min: newMin, max: newMax };
+        }
+        return prev;
+      });
+
       setWorkstreams((prev) => {
         const newWorkstreams = { ...prev };
         const projectStreams = newWorkstreams[dragging.projectKey];
@@ -143,8 +174,8 @@ export const Timeline: React.FC = () => {
         const newStreams = [...projectStreams];
         newStreams[streamIndex] = {
           ...newStreams[streamIndex],
-          startYear: dragging.originalStartYear + deltaYears,
-          endYear: dragging.originalEndYear + deltaYears,
+          startYear: newStartYear,
+          endYear: newEndYear,
         };
 
         newWorkstreams[dragging.projectKey] = newStreams;
@@ -174,7 +205,8 @@ export const Timeline: React.FC = () => {
       <div className={styles.header}>
         <h1>Project Timeline</h1>
         <p className={styles.subtitle}>
-          Drag workstreams to adjust timing • Automatically saved
+          Drag workstreams to adjust timing • Timeline expands automatically •
+          Automatically saved
         </p>
       </div>
 
@@ -226,7 +258,7 @@ export const Timeline: React.FC = () => {
                 >
                   {/* Workstreams */}
                   {workstreams[project.key]?.map((stream) => {
-                    const left = (stream.startYear - minYear) * yearWidth;
+                    const left = (stream.startYear - yearRange.min) * yearWidth;
                     const width =
                       (stream.endYear - stream.startYear) * yearWidth;
                     const isDragging = dragging?.streamId === stream.id;
