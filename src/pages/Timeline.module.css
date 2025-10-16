@@ -1,0 +1,203 @@
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: calc(100vh - 80px);
+}
+
+.header {
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.timelineWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.timeline {
+  display: flex;
+  min-width: 100%;
+}
+
+/* Left column: Project names */
+.projectNames {
+  flex-shrink: 0;
+  width: 300px;
+  border-right: 2px solid var(--border-color);
+  background: var(--card-bg);
+  position: sticky;
+  left: 0;
+  z-index: 10;
+}
+
+.yearHeaderSpacer {
+  height: 48px;
+  border-bottom: 2px solid var(--border-color);
+  background: var(--card-bg);
+}
+
+.projectName {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 500;
+  gap: 0.75rem;
+  background: var(--card-bg);
+}
+
+.projectEmoji {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.projectTitle {
+  font-size: 0.95rem;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Right side: Scrollable timeline */
+.timelineScroll {
+  flex: 1;
+  overflow-x: auto;
+  position: relative;
+}
+
+.yearHeaders {
+  display: flex;
+  height: 48px;
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  background: var(--card-bg);
+  z-index: 5;
+}
+
+.yearHeader {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  border-right: 1px solid var(--border-color);
+}
+
+.timelineGrid {
+  position: relative;
+  min-height: 400px;
+}
+
+.yearLines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.yearLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border-color);
+}
+
+.projectRow {
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.workstream {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 32px;
+  border-radius: 6px;
+  padding: 0 0.75rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.workstream:hover {
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.workstreamLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Dark mode adjustments */
+:global(.dark) .timeline {
+  --card-bg: #1a1a1a;
+  --border-color: #333;
+  --text-secondary: #a0a0a0;
+}
+
+:global(.light) .timeline {
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --text-secondary: #6b7280;
+}
+
+/* Scrollbar styling */
+.timelineWrapper::-webkit-scrollbar,
+.timelineScroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.timelineWrapper::-webkit-scrollbar-track,
+.timelineScroll::-webkit-scrollbar-track {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.timelineWrapper::-webkit-scrollbar-thumb,
+.timelineScroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.timelineWrapper::-webkit-scrollbar-thumb:hover,
+.timelineScroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
