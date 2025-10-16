@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { projectsOrder, projectsMap } from '../data/projects';
+import styles from './Timeline.module.css';
 
 interface WorkStream {
   id: string;
@@ -105,7 +106,6 @@ export const Timeline: React.FC = () => {
     { length: maxYear - minYear + 1 },
     (_, i) => minYear + i
   );
-
   const yearWidth = 120; // pixels per year
 
   const handleMouseDown = (
@@ -170,85 +170,60 @@ export const Timeline: React.FC = () => {
   }, [dragging, handleMouseMove, handleMouseUp]);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 pt-20 pb-12">
-      <div className="max-w-full px-4">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">
-          Project Timeline
-        </h1>
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h1>Project Timeline</h1>
+        <p className={styles.subtitle}>
+          Drag workstreams to adjust timing • Automatically saved
+        </p>
+      </div>
 
-        <div
-          ref={timelineRef}
-          className="relative overflow-x-auto overflow-y-auto border border-gray-200 dark:border-gray-700 rounded-lg"
-          style={{
-            height: 'calc(100vh - 200px)',
-            cursor: dragging ? 'grabbing' : 'default',
-          }}
-        >
-          <div className="flex">
-            {/* Sticky project names column */}
-            <div className="sticky left-0 z-20 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700">
-              {/* Header */}
-              <div className="h-12 border-b border-gray-200 dark:border-gray-700 flex items-center px-4 font-semibold text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-800">
-                Project
+      <div
+        className={styles.timelineWrapper}
+        ref={timelineRef}
+        style={{ cursor: dragging ? 'grabbing' : 'default' }}
+      >
+        <div className={styles.timeline}>
+          {/* Left column: Project names */}
+          <div className={styles.projectNames}>
+            <div className={styles.yearHeaderSpacer} />
+            {sortedProjects.map((project) => (
+              <div key={project.key} className={styles.projectName}>
+                {project.emoji && (
+                  <span className={styles.projectEmoji}>{project.emoji}</span>
+                )}
+                <div className={styles.projectTitle}>{project.title}</div>
               </div>
+            ))}
+          </div>
 
-              {/* Project rows */}
-              {sortedProjects.map((project) => (
+          {/* Right side: Scrollable timeline */}
+          <div className={styles.timelineScroll}>
+            {/* Year headers */}
+            <div className={styles.yearHeaders}>
+              {years.map((year) => (
                 <div
-                  key={project.key}
-                  className="h-24 border-b border-gray-200 dark:border-gray-700 flex items-center px-4 bg-white dark:bg-gray-900"
+                  key={year}
+                  className={styles.yearHeader}
+                  style={{ width: `${yearWidth}px` }}
                 >
-                  <div className="min-w-[200px] max-w-[200px]">
-                    <div className="text-sm font-medium text-gray-900 dark:text-white truncate">
-                      {project.emoji && (
-                        <span className="mr-2">{project.emoji}</span>
-                      )}
-                      {project.title}
-                    </div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                      {project.year}
-                    </div>
-                  </div>
+                  {year}
                 </div>
               ))}
             </div>
 
-            {/* Scrollable timeline area */}
+            {/* Timeline grid */}
             <div
-              className="relative"
-              style={{ minWidth: `${years.length * yearWidth}px` }}
+              className={styles.timelineGrid}
+              style={{ width: `${years.length * yearWidth}px` }}
             >
-              {/* Year headers */}
-              <div className="h-12 border-b border-gray-200 dark:border-gray-700 flex bg-gray-50 dark:bg-gray-800 sticky top-0 z-10">
-                {years.map((year) => (
-                  <div
-                    key={year}
-                    className="flex-shrink-0 flex items-center justify-center font-semibold text-gray-900 dark:text-white border-r border-gray-200 dark:border-gray-700"
-                    style={{ width: `${yearWidth}px` }}
-                  >
-                    {year}
-                  </div>
-                ))}
-              </div>
-
-              {/* Project rows with workstreams */}
+              {/* Project rows */}
               {sortedProjects.map((project) => (
                 <div
                   key={project.key}
-                  className="h-24 border-b border-gray-200 dark:border-gray-700 relative"
+                  className={styles.projectRow}
+                  style={{ height: '60px' }}
                 >
-                  {/* Year grid lines */}
-                  {years.map((year) => (
-                    <div
-                      key={year}
-                      className="absolute top-0 bottom-0 border-r border-gray-100 dark:border-gray-800"
-                      style={{
-                        left: `${(year - minYear) * yearWidth}px`,
-                        width: `${yearWidth}px`,
-                      }}
-                    />
-                  ))}
-
                   {/* Workstreams */}
                   {workstreams[project.key]?.map((stream) => {
                     const left = (stream.startYear - minYear) * yearWidth;
@@ -259,24 +234,22 @@ export const Timeline: React.FC = () => {
                     return (
                       <div
                         key={stream.id}
-                        className="absolute rounded px-2 py-1 text-white text-xs font-medium transition-all cursor-grab active:cursor-grabbing"
+                        className={styles.workstream}
                         style={{
                           left: `${left}px`,
                           width: `${width}px`,
-                          top: '50%',
-                          transform: 'translateY(-50%)',
                           backgroundColor: stream.color,
                           opacity: isDragging ? 0.7 : 0.9,
                           zIndex: isDragging ? 30 : 1,
-                          boxShadow: isDragging
-                            ? '0 4px 6px rgba(0,0,0,0.3)'
-                            : '0 2px 4px rgba(0,0,0,0.1)',
+                          cursor: isDragging ? 'grabbing' : 'grab',
                         }}
                         onMouseDown={(e) =>
                           handleMouseDown(e, project.key, stream)
                         }
                       >
-                        <div className="truncate">{stream.title}</div>
+                        <div className={styles.workstreamLabel}>
+                          {stream.title}
+                        </div>
                       </div>
                     );
                   })}
@@ -285,52 +258,7 @@ export const Timeline: React.FC = () => {
             </div>
           </div>
         </div>
-
-        <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-          💡 Drag workstreams left or right to adjust timing. Changes are saved
-          automatically.
-        </div>
       </div>
-
-      <style>{`
-        /* Custom scrollbar styling */
-        .overflow-x-auto::-webkit-scrollbar,
-        .overflow-y-auto::-webkit-scrollbar {
-          height: 12px;
-          width: 12px;
-        }
-        
-        .overflow-x-auto::-webkit-scrollbar-track,
-        .overflow-y-auto::-webkit-scrollbar-track {
-          background: rgb(243 244 246);
-        }
-        
-        .dark .overflow-x-auto::-webkit-scrollbar-track,
-        .dark .overflow-y-auto::-webkit-scrollbar-track {
-          background: rgb(31 41 55);
-        }
-        
-        .overflow-x-auto::-webkit-scrollbar-thumb,
-        .overflow-y-auto::-webkit-scrollbar-thumb {
-          background: rgb(209 213 219);
-          border-radius: 6px;
-        }
-        
-        .dark .overflow-x-auto::-webkit-scrollbar-thumb,
-        .dark .overflow-y-auto::-webkit-scrollbar-thumb {
-          background: rgb(75 85 99);
-        }
-        
-        .overflow-x-auto::-webkit-scrollbar-thumb:hover,
-        .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-          background: rgb(156 163 175);
-        }
-        
-        .dark .overflow-x-auto::-webkit-scrollbar-thumb:hover,
-        .dark .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-          background: rgb(107 114 128);
-        }
-      `}</style>
     </div>
   );
 };
