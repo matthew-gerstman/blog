@@ -1,15 +1,22 @@
 import { useEffect, useState, useCallback } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 /**
  * Hook to enable j/k keyboard navigation for project cards on the resume page
+ * Integrates with existing ?project=key query parameter behavior
  */
 export function useProjectNavigation() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [focusedIndex, setFocusedIndex] = useState<number>(-1);
 
   const getProjectCards = useCallback(() => {
     return Array.from(
       document.querySelectorAll('[data-project-key]')
     ) as HTMLElement[];
+  }, []);
+
+  const getProjectKey = useCallback((element: HTMLElement): string | null => {
+    return element.getAttribute('data-project-key');
   }, []);
 
   const scrollToProject = useCallback((element: HTMLElement) => {
@@ -22,12 +29,29 @@ export function useProjectNavigation() {
     });
   }, []);
 
+  const expandProject = useCallback((element: HTMLElement) => {
+    // Click the project header to expand it if it has details
+    const projectHeader = element.querySelector(
+      '[class*="projectHeader"]'
+    ) as HTMLElement;
+    if (projectHeader && projectHeader.style.cursor === 'pointer') {
+      // Check if not already expanded
+      const isExpanded =
+        element.classList.contains('expanded') ||
+        element.className.includes('expanded');
+      if (!isExpanded) {
+        projectHeader.click();
+      }
+    }
+  }, []);
+
   const focusProject = useCallback(
     (index: number) => {
       const projects = getProjectCards();
       if (index < 0 || index >= projects.length) return;
 
       const project = projects[index];
+      const projectKey = getProjectKey(project);
 
       // Remove focus from all projects
       projects.forEach((p) => p.classList.remove('keyboard-focused'));
@@ -35,12 +59,31 @@ export function useProjectNavigation() {
       // Add focus to selected project
       project.classList.add('keyboard-focused');
 
-      // Scroll to project
-      scrollToProject(project);
+      // Update URL with project query param (preserves expandAll if present)
+      if (projectKey) {
+        const newParams = new URLSearchParams(searchParams);
+        newParams.set('project', projectKey);
+        setSearchParams(newParams, { replace: true });
+      }
+
+      // Expand the project
+      expandProject(project);
+
+      // Scroll to project (with delay to allow expansion animation)
+      setTimeout(() => {
+        scrollToProject(project);
+      }, 100);
 
       setFocusedIndex(index);
     },
-    [getProjectCards, scrollToProject]
+    [
+      getProjectCards,
+      getProjectKey,
+      scrollToProject,
+      expandProject,
+      searchParams,
+      setSearchParams,
+    ]
   );
 
   const handleNext = useCallback(() => {
@@ -62,6 +105,20 @@ export function useProjectNavigation() {
       focusProject(prevIndex);
     }
   }, [focusedIndex, getProjectCards, focusProject]);
+
+  // Sync focused index with query param on mount
+  useEffect(() => {
+    const targetProject = searchParams.get('project');
+    if (targetProject) {
+      const projects = getProjectCards();
+      const index = projects.findIndex(
+        (p) => getProjectKey(p) === targetProject
+      );
+      if (index !== -1) {
+        setFocusedIndex(index);
+      }
+    }
+  }, [searchParams, getProjectCards, getProjectKey]);
 
   // Cleanup focus when component unmounts
   useEffect(() => {

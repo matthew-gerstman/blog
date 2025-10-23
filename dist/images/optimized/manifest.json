@@ -233,6 +233,15 @@
       "full": "/images/optimized/full/hello-there/matthew-speaking-2.webp"
     }
   },
+  "hero-library-cats.png": {
+    "original": "/images/blog/hero-library-cats.png",
+    "sizes": {
+      "thumbnail": "/images/optimized/thumbnail/hero-library-cats.webp",
+      "medium": "/images/optimized/medium/hero-library-cats.webp",
+      "large": "/images/optimized/large/hero-library-cats.webp",
+      "full": "/images/optimized/full/hero-library-cats.webp"
+    }
+  },
   "hero-mountain-lake.jpg": {
     "original": "/images/blog/hero-mountain-lake.jpg",
     "sizes": {
