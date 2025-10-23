@@ -23,4 +23,8 @@ export interface KeyboardHandlers {
   onEnter?: () => void;
   onArrowUp?: () => void;
   onArrowDown?: () => void;
+  onSearch?: () => void;
+  onFindInPage?: () => void;
+  onNext?: () => void;
+  onPrevious?: () => void;
 }
