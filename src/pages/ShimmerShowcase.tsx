@@ -220,29 +220,22 @@ export const ShimmerShowcase: React.FC = () => {
         </Shimmer>
       </div>
 
-      {/* Pause on Idle Shimmers */}
+      {/* Paused by Default Examples */}
       <div className={styles.shimmerLine}>
         <label>Text - Hover to play</label>
-        <Shimmer type="text" pauseOnIdle>
-          Hover to see animation
-        </Shimmer>
+        <Shimmer type="text">Hover to see animation</Shimmer>
       </div>
 
       <div className={styles.shimmerLine}>
         <label>Text Bold - Hover to play</label>
-        <Shimmer type="text" intensity="bold" pauseOnIdle>
+        <Shimmer type="text" intensity="bold">
           Hover to see animation
         </Shimmer>
       </div>
 
       <div className={styles.shimmerLine}>
         <label>Border - Hover to play</label>
-        <Shimmer
-          type="border"
-          position="top"
-          pauseOnIdle
-          className={styles.borderLine}
-        >
+        <Shimmer type="border" position="top" className={styles.borderLine}>
           Hover to see animation
         </Shimmer>
       </div>
@@ -252,7 +245,6 @@ export const ShimmerShowcase: React.FC = () => {
         <Shimmer
           type="background"
           animationType="pulse"
-          pauseOnIdle
           className={styles.bgLine}
         >
           Hover to see animation
@@ -261,23 +253,55 @@ export const ShimmerShowcase: React.FC = () => {
 
       {/* Combined Features */}
       <div className={styles.shimmerLine}>
-        <label>Random + Pause</label>
-        <Shimmer random pauseOnIdle className={styles.randomLine}>
+        <label>Random + Paused</label>
+        <Shimmer random className={styles.randomLine}>
           Hover to animate random config
         </Shimmer>
       </div>
 
       <div className={styles.shimmerLine}>
-        <label>H1 + Pause</label>
-        <Shimmer type="text" as="h1" pauseOnIdle duration={2}>
+        <label>H1 + Paused</label>
+        <Shimmer type="text" as="h1" duration={2}>
           H1 with Pause
         </Shimmer>
       </div>
 
       <div className={styles.shimmerLine}>
-        <label>Random + H2 + Pause</label>
-        <Shimmer random as="h2" pauseOnIdle className={styles.randomLine}>
+        <label>Random + H2 + Paused</label>
+        <Shimmer random as="h2" className={styles.randomLine}>
           All Features Combined
+        </Shimmer>
+      </div>
+
+      {/* Autoplay Examples */}
+      <div className={styles.shimmerLine}>
+        <label>Text - Autoplay</label>
+        <Shimmer type="text" autoplay>
+          Always animating
+        </Shimmer>
+      </div>
+
+      <div className={styles.shimmerLine}>
+        <label>Border - Autoplay</label>
+        <Shimmer
+          type="border"
+          position="top"
+          autoplay
+          className={styles.borderLine}
+        >
+          Always animating
+        </Shimmer>
+      </div>
+
+      <div className={styles.shimmerLine}>
+        <label>Background - Autoplay</label>
+        <Shimmer
+          type="background"
+          animationType="pulse"
+          autoplay
+          className={styles.bgLine}
+        >
+          Always animating
         </Shimmer>
       </div>
     </div>

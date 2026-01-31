@@ -77,7 +77,7 @@ function AppContent() {
       />
       <FindInPage isOpen={findOpen} onClose={() => setFindOpen(false)} />
       <Routes>
-        <Route path="/" element={<Resume />} />
+        <Route path="/" element={<Home posts={posts} />} />
         <Route path="/writing" element={<Home posts={posts} />} />
         <Route path="/writing/:slug" element={<Article posts={posts} />} />
 

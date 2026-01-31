@@ -2,8 +2,15 @@ import React, { ReactNode, CSSProperties } from 'react';
 import styles from './Shimmer.module.css';
 
 export type ShimmerType = 'text' | 'border' | 'background';
-export type ShimmerPosition = 'top' | 'bottom' | 'full';
-export type ShimmerAnimationType = 'sweep' | 'pulse';
+export type ShimmerPosition = 'top' | 'bottom' | 'full' | 'rotating';
+export type ShimmerAnimationType =
+  | 'sweep'
+  | 'pulse'
+  | 'wave'
+  | 'glow'
+  | 'flicker'
+  | 'rainbow'
+  | 'bounce';
 export type ShimmerElement =
   | 'span'
   | 'div'
@@ -23,9 +30,10 @@ export interface ShimmerProps {
   animationType?: ShimmerAnimationType;
   intensity?: 'subtle' | 'normal' | 'bold';
   className?: string;
+  style?: CSSProperties;
   as?: ShimmerElement;
   random?: boolean;
-  pauseOnIdle?: boolean;
+  autoplay?: boolean;
 }
 
 type RandomConfig = {
@@ -37,10 +45,18 @@ type RandomConfig = {
 };
 
 function generateRandomConfig(): RandomConfig {
-  const types: ShimmerType[] = ['text', 'border', 'background'];
-  const animationTypes: ShimmerAnimationType[] = ['sweep', 'pulse'];
+  const types: ShimmerType[] = ['text'];
+  const animationTypes: ShimmerAnimationType[] = [
+    'sweep',
+    'pulse',
+    'wave',
+    'glow',
+    'flicker',
+    'rainbow',
+    'bounce',
+  ];
   const intensities = ['subtle', 'normal', 'bold'] as const;
-  const positions: ShimmerPosition[] = ['top', 'bottom', 'full'];
+  const positions: ShimmerPosition[] = ['top', 'bottom', 'full', 'rotating'];
 
   return {
     type: types[Math.floor(Math.random() * types.length)],
@@ -61,9 +77,10 @@ const Shimmer: React.FC<ShimmerProps> = ({
   animationType = type === 'text' ? 'sweep' : 'pulse',
   intensity = 'normal',
   className = '',
+  style,
   as,
   random = false,
-  pauseOnIdle = false,
+  autoplay = false,
 }) => {
   // Generate random config once on mount
   const [randomConfig] = React.useState<RandomConfig | null>(() =>
@@ -97,22 +114,51 @@ const Shimmer: React.FC<ShimmerProps> = ({
     .join(', ');
 
   const getAnimationClass = (): string => {
-    const pausedSuffix = pauseOnIdle ? 'Paused' : '';
+    // Use paused variants by default, unpause if autoplay is true
+    const usePaused = !autoplay;
 
-    if (finalType === 'text' && finalAnimationType === 'sweep') {
-      return pausedSuffix
-        ? styles.shimmerTextSweepPaused
-        : styles.shimmerTextSweep;
+    if (finalType === 'text') {
+      switch (finalAnimationType) {
+        case 'sweep':
+          return usePaused
+            ? styles.shimmerTextSweepPaused
+            : styles.shimmerTextSweep;
+        case 'wave':
+          return usePaused
+            ? styles.shimmerTextWavePaused
+            : styles.shimmerTextWave;
+        case 'glow':
+          return usePaused
+            ? styles.shimmerTextGlowPaused
+            : styles.shimmerTextGlow;
+        case 'flicker':
+          return usePaused
+            ? styles.shimmerTextFlickerPaused
+            : styles.shimmerTextFlicker;
+        case 'rainbow':
+          return usePaused
+            ? styles.shimmerTextRainbowPaused
+            : styles.shimmerTextRainbow;
+        case 'bounce':
+          return usePaused
+            ? styles.shimmerTextBouncePaused
+            : styles.shimmerTextBounce;
+        case 'pulse':
+          return usePaused
+            ? styles.shimmerTextPulsePaused
+            : styles.shimmerTextPulse;
+      }
     }
 
     if (finalAnimationType === 'pulse') {
-      return pausedSuffix ? styles.shimmerPulsePaused : styles.shimmerPulse;
+      return usePaused ? styles.shimmerPulsePaused : styles.shimmerPulse;
     }
 
-    return pausedSuffix ? styles.shimmerSweepPaused : styles.shimmerSweep;
+    return usePaused ? styles.shimmerSweepPaused : styles.shimmerSweep;
   };
 
   const baseStyles: CSSProperties = {
+    ...style,
     '--duration': `${finalDuration}s`,
     '--shimmer-gradient': `linear-gradient(90deg, ${gradientStops})`,
   } as CSSProperties & { '--duration': string; '--shimmer-gradient': string };
@@ -135,18 +181,25 @@ const Shimmer: React.FC<ShimmerProps> = ({
   }
 
   if (finalType === 'border') {
+    // Use paused variants by default, unpause if autoplay is true
+    const usePaused = !autoplay;
+
     const borderContainerClass =
-      finalPosition === 'full'
-        ? pauseOnIdle
-          ? styles.shimmerBorderFullPaused
-          : styles.shimmerBorderFull
-        : finalPosition === 'bottom'
-          ? pauseOnIdle
-            ? styles.shimmerBorderBottomPaused
-            : styles.shimmerBorderBottom
-          : pauseOnIdle
-            ? styles.shimmerBorderTopPaused
-            : styles.shimmerBorderTop;
+      finalPosition === 'rotating'
+        ? usePaused
+          ? styles.shimmerBorderRotatingPaused
+          : styles.shimmerBorderRotating
+        : finalPosition === 'full'
+          ? usePaused
+            ? styles.shimmerBorderFullPaused
+            : styles.shimmerBorderFull
+          : finalPosition === 'bottom'
+            ? usePaused
+              ? styles.shimmerBorderBottomPaused
+              : styles.shimmerBorderBottom
+            : usePaused
+              ? styles.shimmerBorderTopPaused
+              : styles.shimmerBorderTop;
 
     return React.createElement(
       element,

@@ -32,7 +32,8 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmerTextSweep var(--duration, 3s) linear infinite paused;
+  animation: shimmerTextSweep var(--duration, 3s) linear infinite;
+  animation-play-state: paused;
 }
 
 .shimmerTextSweepPaused:hover,
@@ -45,6 +46,245 @@
     background: none;
     -webkit-text-fill-color: var(--grappa-bright);
     animation: none;
+  }
+}
+
+/* Text shimmer with wave animation */
+@keyframes shimmerTextWave {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.shimmerTextWave {
+  background: var(--shimmer-gradient);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextWave var(--duration, 3s) ease-in-out infinite;
+}
+
+.shimmerTextWavePaused {
+  background: var(--shimmer-gradient);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextWave var(--duration, 3s) ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+/* Text shimmer with glow animation */
+@keyframes shimmerTextGlow {
+  0%,
+  100% {
+    filter: brightness(1) drop-shadow(0 0 0 transparent);
+    background-position: 0% center;
+  }
+  50% {
+    filter: brightness(1.3) drop-shadow(0 0 8px var(--grappa-bright));
+    background-position: 100% center;
+  }
+}
+
+.shimmerTextGlow {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextGlow var(--duration, 3s) ease-in-out infinite;
+}
+
+.shimmerTextGlowPaused {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextGlow var(--duration, 3s) ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+/* Text shimmer with flicker animation */
+@keyframes shimmerTextFlicker {
+  0%,
+  100% {
+    opacity: 1;
+    background-position: 0% center;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 1;
+    background-position: 25% center;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+    background-position: 50% center;
+  }
+  60% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 1;
+    background-position: 75% center;
+  }
+  90% {
+    opacity: 0.95;
+  }
+}
+
+.shimmerTextFlicker {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextFlicker var(--duration, 3s) linear infinite;
+}
+
+.shimmerTextFlickerPaused {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextFlicker var(--duration, 3s) linear infinite;
+  animation-play-state: paused;
+}
+
+/* Text shimmer with rainbow animation */
+@keyframes shimmerTextRainbow {
+  0% {
+    background-position: 0% center;
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    background-position: 200% center;
+    filter: hue-rotate(360deg);
+  }
+}
+
+.shimmerTextRainbow {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextRainbow var(--duration, 3s) linear infinite;
+}
+
+.shimmerTextRainbowPaused {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextRainbow var(--duration, 3s) linear infinite;
+  animation-play-state: paused;
+}
+
+/* Text shimmer with bounce animation */
+@keyframes shimmerTextBounce {
+  0%,
+  100% {
+    background-position: -100% center;
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.02);
+  }
+  50% {
+    background-position: 200% center;
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.98);
+  }
+}
+
+.shimmerTextBounce {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextBounce var(--duration, 3s) ease-in-out infinite;
+  display: inline-block;
+}
+
+.shimmerTextBouncePaused {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextBounce var(--duration, 3s) ease-in-out infinite;
+  animation-play-state: paused;
+  display: inline-block;
+}
+
+/* Text shimmer with pulse animation */
+@keyframes shimmerTextPulse {
+  0%,
+  100% {
+    background-position: 0% center;
+    opacity: 0.9;
+  }
+  50% {
+    background-position: 100% center;
+    opacity: 1;
+  }
+}
+
+.shimmerTextPulse {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextPulse var(--duration, 3s) ease-in-out infinite;
+}
+
+.shimmerTextPulsePaused {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextPulse var(--duration, 3s) ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+/* Reduced motion for new text animations */
+@media (prefers-reduced-motion: reduce) {
+  .shimmerTextWave,
+  .shimmerTextWavePaused,
+  .shimmerTextGlow,
+  .shimmerTextGlowPaused,
+  .shimmerTextFlicker,
+  .shimmerTextFlickerPaused,
+  .shimmerTextRainbow,
+  .shimmerTextRainbowPaused,
+  .shimmerTextBounce,
+  .shimmerTextBouncePaused,
+  .shimmerTextPulse,
+  .shimmerTextPulsePaused {
+    background: none;
+    -webkit-text-fill-color: var(--grappa-bright);
+    animation: none;
+    filter: none;
+    transform: none;
   }
 }
 
@@ -68,7 +308,8 @@
 .shimmerSweepPaused {
   background: var(--shimmer-gradient);
   background-size: 200% auto;
-  animation: shimmerSweep var(--duration, 3s) linear infinite paused;
+  animation: shimmerSweep var(--duration, 3s) linear infinite;
+  animation-play-state: paused;
 }
 
 .shimmerSweepPaused:hover,
@@ -97,7 +338,8 @@
 .shimmerPulsePaused {
   background: var(--shimmer-gradient);
   background-size: 200% 100%;
-  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite paused;
+  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite;
+  animation-play-state: paused;
 }
 
 .shimmerPulsePaused:hover,
@@ -119,6 +361,11 @@
 .shimmerBorderFull {
   position: relative;
   overflow: hidden;
+}
+
+.shimmerBorderRotating,
+.shimmerBorderRotatingPaused {
+  position: relative;
 }
 
 .shimmerBorderTop::before {
@@ -144,7 +391,8 @@
   height: 4px;
   background: var(--shimmer-gradient);
   background-size: 200% 100%;
-  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite paused;
+  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite;
+  animation-play-state: paused;
   z-index: 1;
 }
 
@@ -176,7 +424,8 @@
   height: 4px;
   background: var(--shimmer-gradient);
   background-size: 200% 100%;
-  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite paused;
+  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite;
+  animation-play-state: paused;
   z-index: 1;
 }
 
@@ -195,12 +444,89 @@
 .shimmerBorderFullPaused {
   border: 2px solid;
   border-image: var(--shimmer-gradient) 1;
-  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite paused;
+  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite;
+  animation-play-state: paused;
 }
 
 .shimmerBorderFullPaused:hover,
 .shimmerBorderFullPaused:focus-within {
   animation-play-state: running;
+}
+
+/* Rotating border animation using @property for smooth gradient rotation */
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes shimmerRotateBorder {
+  from {
+    --border-angle: var(--start-angle, 0deg);
+  }
+  to {
+    --border-angle: calc(var(--start-angle, 0deg) + 360deg);
+  }
+}
+
+@keyframes shimmerRotateBorderReverse {
+  from {
+    --border-angle: var(--start-angle, 0deg);
+  }
+  to {
+    --border-angle: calc(var(--start-angle, 0deg) - 360deg);
+  }
+}
+
+.shimmerBorderRotating,
+.shimmerBorderRotatingPaused {
+  --border-thickness: 2px;
+}
+
+.shimmerBorderRotating::before,
+.shimmerBorderRotatingPaused::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: var(--border-thickness);
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--border-angle, 0deg),
+    transparent 0deg,
+    transparent 30deg,
+    var(--grappa-bright) 90deg,
+    transparent 150deg,
+    transparent 360deg
+  );
+  /* Mask trick: creates a hollow element showing only the border */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.shimmerBorderRotating::before {
+  animation: shimmerRotateBorder var(--duration, 3s) linear infinite;
+  animation-direction: var(--rotation-direction, normal);
+}
+
+.shimmerBorderRotatingPaused::before {
+  animation: shimmerRotateBorder var(--duration, 3s) linear infinite;
+  animation-direction: var(--rotation-direction, normal);
+  animation-play-state: paused;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.shimmerBorderRotatingPaused:hover::before,
+.shimmerBorderRotatingPaused:focus-within::before {
+  animation-play-state: running;
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -236,5 +562,18 @@
   .shimmerBorderFullPaused {
     animation: none;
     border-color: var(--grappa-bright);
+  }
+
+  .shimmerBorderRotating::before,
+  .shimmerBorderRotatingPaused::before {
+    animation: none;
+    /* Show a subtle static border instead of rotating */
+    background: conic-gradient(
+      from 45deg,
+      var(--border) 0deg,
+      var(--grappa-bright) 90deg,
+      var(--border) 180deg,
+      var(--border) 360deg
+    );
   }
 }

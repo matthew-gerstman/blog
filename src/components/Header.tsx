@@ -23,7 +23,7 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
 
   const isActive = (path: string) => {
     if (path === '/' && location.pathname === '/') return true;
-    if (path === '/resume' && location.pathname === '/') return true; // Resume is home
+    if (path === '/writing' && location.pathname === '/') return true; // Writing is home
     if (path !== '/' && location.pathname.startsWith(path)) return true;
     return false;
   };
@@ -37,9 +37,7 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
         <nav className={styles.nav}>
           <Link
             to="/resume"
-            className={
-              isActive('/resume') || isActive('/') ? styles.active : ''
-            }
+            className={isActive('/resume') ? styles.active : ''}
           >
             Resume
           </Link>
