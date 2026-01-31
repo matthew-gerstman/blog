@@ -29,35 +29,6 @@
   border-radius: 20px;
   border: 2px solid rgba(157, 122, 159, 0.15);
   box-shadow: 0 8px 32px rgba(157, 122, 159, 0.08);
-  position: relative;
-  overflow: hidden;
-}
-
-.personalStatement::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--grappa-bright) 0%,
-    var(--grappa) 50%,
-    var(--grappa-bright) 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0%,
-  100% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
 }
 
 .statementText {

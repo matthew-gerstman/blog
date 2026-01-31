@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { GradientText } from '../components/GradientText';
 import { ProjectGridCard } from '../components/ProjectGridCard';
 import { ProjectModal } from '../components/ProjectModal';
+import Shimmer from '../components/Shimmer';
 import type { Project } from '../data/types/resume.types';
 import { projectsMap } from '../data/projects';
 import { jobsMap } from '../data/resume';
@@ -128,7 +129,12 @@ export const Obvious: React.FC = () => {
         </p>
       </header>
 
-      <section className={styles.personalStatement}>
+      <Shimmer
+        type="border"
+        position="top"
+        animationType="pulse"
+        className={styles.personalStatement}
+      >
         <p className={styles.statementText}>
           I've haven't been able to stop using Obvious since I got it. The
           product is thoughtfully designed and genuinely useful. Its so much fun
@@ -157,7 +163,7 @@ export const Obvious: React.FC = () => {
           I hope this website demonstrates what it looks like when I sweat the
           details. It was built with Obvious.
         </p>
-      </section>
+      </Shimmer>
 
       <div className={styles.requirementsContainer}>
         <h2 className={styles.sectionTitle}>

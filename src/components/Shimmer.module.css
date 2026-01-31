@@ -1,0 +1,120 @@
+/* Text shimmer with sweep animation */
+@keyframes shimmerTextSweep {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmerTextSweep {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextSweep var(--duration, 3s) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmerTextSweep {
+    background: none;
+    -webkit-text-fill-color: var(--grappa-bright);
+    animation: none;
+  }
+}
+
+/* Sweep animation for general use */
+@keyframes shimmerSweep {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmerSweep {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  animation: shimmerSweep var(--duration, 3s) linear infinite;
+}
+
+/* Pulse animation */
+@keyframes shimmerPulse {
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+}
+
+.shimmerPulse {
+  background: var(--shimmer-gradient);
+  background-size: 200% 100%;
+  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmerSweep,
+  .shimmerPulse {
+    animation: none;
+    background: var(--grappa-bright);
+  }
+}
+
+/* Border shimmer variants */
+.shimmerBorderTop,
+.shimmerBorderBottom,
+.shimmerBorderFull {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerBorderTop::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--shimmer-gradient);
+  background-size: 200% 100%;
+  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite;
+  z-index: 1;
+}
+
+.shimmerBorderBottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--shimmer-gradient);
+  background-size: 200% 100%;
+  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite;
+  z-index: 1;
+}
+
+.shimmerBorderFull {
+  border: 2px solid;
+  border-image: var(--shimmer-gradient) 1;
+  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmerBorderTop::before,
+  .shimmerBorderBottom::after {
+    animation: none;
+    background: var(--grappa-bright);
+  }
+
+  .shimmerBorderFull {
+    animation: none;
+    border-color: var(--grappa-bright);
+  }
+}
