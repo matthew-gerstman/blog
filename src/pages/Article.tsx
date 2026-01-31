@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import type { Post } from '../types';
-import { calculateReadingTime, getWordCount } from '../utils/reading';
+import { calculateReadingTime, getWordCountFromHtml } from '../utils/reading';
 import { useKeyboard } from '../hooks/useKeyboard';
 import { TwitterEmbed } from '../components/TwitterEmbed';
 import {
@@ -175,8 +175,8 @@ export function Article({ posts }: ArticleProps) {
 
   if (!post) return null;
 
-  const readingTime = calculateReadingTime(post.content);
-  const wordCount = getWordCount(post.content);
+  const wordCount = getWordCountFromHtml(post.content);
+  const readingTime = calculateReadingTime(wordCount);
   const banner = post.banner_img;
 
   return (
@@ -211,15 +211,12 @@ export function Article({ posts }: ArticleProps) {
 
       <div className={styles.authorBio}>
         <div className={styles.authorName}>Matthew Gerstman</div>
-        <div className={styles.authorTitle}>
-          Software Engineer & Tech Writer
-        </div>
+        <div className={styles.authorTitle}>Software Engineer - Obvious</div>
         <p className={styles.authorText}>
           Matthew is a software engineer with over a decade of experience
-          building web applications. He's passionate about JavaScript,
-          TypeScript, React, and teaching others about web development.
-          Previously at Dropbox and Bluecore, he now writes about the web and
-          gives talks at conferences.
+          building web applications. He's passionate about TypeScript, React,
+          and teaching others about web development. He lives in Syracuse, NY
+          with his wife and three cats.
         </p>
       </div>
 
