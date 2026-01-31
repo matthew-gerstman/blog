@@ -11,6 +11,19 @@ export default defineConfig({
   plugins: [
     react(),
     {
+      name: 'reload-data-files',
+      handleHotUpdate({ file, server }) {
+        // Force full reload when data files change
+        if (file.includes('/src/data/')) {
+          server.ws.send({
+            type: 'full-reload',
+            path: '*',
+          });
+          return [];
+        }
+      },
+    },
+    {
       name: 'copy-index-to-404',
       closeBundle() {
         const outDir = resolve(__dirname, 'dist');

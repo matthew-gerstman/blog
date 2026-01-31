@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import type { Post } from '../types';
-import { calculateReadingTime, getWordCountFromHtml } from '../utils/reading';
+import { calculateReadingTime } from '../utils/reading';
 import { useKeyboard } from '../hooks/useKeyboard';
 import { TwitterEmbed } from '../components/TwitterEmbed';
 import {
@@ -175,7 +175,7 @@ export function Article({ posts }: ArticleProps) {
 
   if (!post) return null;
 
-  const wordCount = getWordCountFromHtml(post.content);
+  const wordCount = post.wordCount || 0;
   const readingTime = calculateReadingTime(wordCount);
   const banner = post.banner_img;
 

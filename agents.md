@@ -15,6 +15,7 @@ npm run dev              # Start dev server on http://localhost:3001
 
 ```bash
 npm run build            # Build for production (output to dist/)
+                         # Note: Automatically runs word count calculation first (prebuild hook)
 npm run preview          # Preview production build locally
 ```
 
@@ -37,7 +38,8 @@ npm run format:check     # Check if code is formatted
 ### Utilities
 
 ```bash
-npm run optimize-images  # Optimize images with Sharp
+npm run optimize-images      # Optimize images with Sharp
+npm run calculate-wordcounts # Calculate word counts for blog posts
 ```
 
 ## Project Overview
@@ -87,7 +89,8 @@ blog/
 │   └── CNAME                 # Custom domain config
 ├── dist/                     # Build output (generated)
 ├── scripts/                  # Build and utility scripts
-│   └── optimize-images.js    # Image optimization script
+│   ├── optimize-images.js    # Image optimization script
+│   └── calculate-wordcounts.js  # Word count calculation script
 ├── .github/                  # GitHub configuration
 │   └── workflows/            # CI/CD workflows
 ├── .husky/                   # Git hooks
@@ -259,13 +262,24 @@ npm run deploy           # Build and deploy to gh-pages
 ### Other Scripts
 
 ```bash
-npm test                 # Run Vitest tests
-npm run lint             # Run ESLint
-npm run lint:fix         # Fix ESLint issues
-npm run format           # Format with Prettier
-npm run format:check     # Check Prettier formatting
-npm run optimize-images  # Optimize images with Sharp
+npm test                    # Run Vitest tests
+npm run lint                # Run ESLint
+npm run lint:fix            # Fix ESLint issues
+npm run format              # Format with Prettier
+npm run format:check        # Check Prettier formatting
+npm run optimize-images     # Optimize images with Sharp
+npm run calculate-wordcounts # Calculate word counts for all posts
 ```
+
+### Word Count Calculation
+
+The `calculate-wordcounts` script processes all blog posts and calculates word counts:
+
+- **What it does**: Reads `src/data/posts.ts`, extracts HTML content, strips tags, counts words
+- **How it works**: Uses jsdom to parse HTML and extract plain text
+- **When it runs**: Automatically before `npm run build` (via `prebuild` hook), or manually via `npm run calculate-wordcounts`
+- **Output**: Updates the `wordCount` field in each post object in `posts.ts`
+- **Edge cases**: Preserves manual word counts for posts with empty content (e.g., external links)
 
 ## Configuration Files
 
@@ -308,8 +322,12 @@ npm run optimize-images  # Optimize images with Sharp
   date: string;
   excerpt: string;
   content: string; // HTML string
+  wordCount?: number; // Calculated at build time
   tags?: string[];
   banner?: string; // Image path
+  banner_position?: string;
+  heroImage?: string;
+  externalLink?: string;
 }
 ```
 
@@ -352,6 +370,15 @@ npm run optimize-images  # Optimize images with Sharp
 3. Content is HTML string (can include React components if needed)
 4. Add banner image to `public/images/blog/`
 5. Run `npm run optimize-images` for banner optimization
+6. Run `npm run calculate-wordcounts` to calculate word counts (or it will run automatically during build)
+
+**Note:** Word counts are calculated at build time and stored in the `wordCount` field. The script:
+
+- Strips HTML tags from post content
+- Counts words in plain text
+- Updates the `wordCount` field for each post
+- Skips posts with empty content but manual word counts (e.g., external links)
+- Runs automatically before `npm run build` via the `prebuild` hook
 
 ### Adding Projects
 

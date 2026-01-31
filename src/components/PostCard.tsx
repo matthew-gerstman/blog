@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { OptimizedImage } from './OptimizedImage';
 import type { Post } from '../data/types/posts.types';
+import { calculateReadingTime } from '../utils/reading';
 import styles from './PostCard.module.css';
 
 interface PostCardProps {
@@ -10,7 +11,7 @@ interface PostCardProps {
 
 export function PostCard({ post, index }: PostCardProps) {
   const wordCount = post.wordCount || 0;
-  const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+  const readingTime = calculateReadingTime(wordCount);
   const banner = post.banner_img;
   const bannerPosition = post.banner_position || 'center';
 
