@@ -25,6 +25,29 @@
   }
 }
 
+/* Text shimmer with sweep animation - paused by default */
+.shimmerTextSweepPaused {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTextSweep var(--duration, 3s) linear infinite paused;
+}
+
+.shimmerTextSweepPaused:hover,
+.shimmerTextSweepPaused:focus-within {
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmerTextSweepPaused {
+    background: none;
+    -webkit-text-fill-color: var(--grappa-bright);
+    animation: none;
+  }
+}
+
 /* Sweep animation for general use */
 @keyframes shimmerSweep {
   0% {
@@ -39,6 +62,18 @@
   background: var(--shimmer-gradient);
   background-size: 200% auto;
   animation: shimmerSweep var(--duration, 3s) linear infinite;
+}
+
+/* Sweep animation - paused by default */
+.shimmerSweepPaused {
+  background: var(--shimmer-gradient);
+  background-size: 200% auto;
+  animation: shimmerSweep var(--duration, 3s) linear infinite paused;
+}
+
+.shimmerSweepPaused:hover,
+.shimmerSweepPaused:focus-within {
+  animation-play-state: running;
 }
 
 /* Pulse animation */
@@ -56,6 +91,18 @@
   background: var(--shimmer-gradient);
   background-size: 200% 100%;
   animation: shimmerPulse var(--duration, 3s) ease-in-out infinite;
+}
+
+/* Pulse animation - paused by default */
+.shimmerPulsePaused {
+  background: var(--shimmer-gradient);
+  background-size: 200% 100%;
+  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite paused;
+}
+
+.shimmerPulsePaused:hover,
+.shimmerPulsePaused:focus-within {
+  animation-play-state: running;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -87,6 +134,25 @@
   z-index: 1;
 }
 
+/* Border top - paused by default */
+.shimmerBorderTopPaused::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--shimmer-gradient);
+  background-size: 200% 100%;
+  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite paused;
+  z-index: 1;
+}
+
+.shimmerBorderTopPaused:hover::before,
+.shimmerBorderTopPaused:focus-within::before {
+  animation-play-state: running;
+}
+
 .shimmerBorderBottom::after {
   content: '';
   position: absolute;
@@ -100,20 +166,74 @@
   z-index: 1;
 }
 
+/* Border bottom - paused by default */
+.shimmerBorderBottomPaused::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--shimmer-gradient);
+  background-size: 200% 100%;
+  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite paused;
+  z-index: 1;
+}
+
+.shimmerBorderBottomPaused:hover::after,
+.shimmerBorderBottomPaused:focus-within::after {
+  animation-play-state: running;
+}
+
 .shimmerBorderFull {
   border: 2px solid;
   border-image: var(--shimmer-gradient) 1;
   animation: shimmerPulse var(--duration, 3s) ease-in-out infinite;
 }
 
+/* Border full - paused by default */
+.shimmerBorderFullPaused {
+  border: 2px solid;
+  border-image: var(--shimmer-gradient) 1;
+  animation: shimmerPulse var(--duration, 3s) ease-in-out infinite paused;
+}
+
+.shimmerBorderFullPaused:hover,
+.shimmerBorderFullPaused:focus-within {
+  animation-play-state: running;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .shimmerSweepPaused,
+  .shimmerPulsePaused {
+    animation: none;
+    background: var(--grappa-bright);
+  }
+
+  .shimmerTextSweepPaused {
+    background: none;
+    -webkit-text-fill-color: var(--grappa-bright);
+    animation: none;
+  }
+
   .shimmerBorderTop::before,
   .shimmerBorderBottom::after {
     animation: none;
     background: var(--grappa-bright);
   }
 
+  .shimmerBorderTopPaused::before,
+  .shimmerBorderBottomPaused::after {
+    animation: none;
+    background: var(--grappa-bright);
+  }
+
   .shimmerBorderFull {
+    animation: none;
+    border-color: var(--grappa-bright);
+  }
+
+  .shimmerBorderFullPaused {
     animation: none;
     border-color: var(--grappa-bright);
   }

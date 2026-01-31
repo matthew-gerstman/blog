@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { SearchModal } from './components/SearchModal';
@@ -11,6 +17,7 @@ import { Talks } from './pages/Talks';
 import { Resume } from './pages/resume/Resume';
 import { About } from './pages/resume/About';
 import { Obvious } from './pages/Obvious';
+import { ShimmerShowcase } from './pages/ShimmerShowcase';
 import { useTheme } from './hooks/useTheme';
 import { useKeyboard } from './hooks/useKeyboard';
 import { useAnalytics } from './hooks/useAnalytics';
@@ -42,9 +49,10 @@ function AppContent() {
   const projectsArray = Object.values(projectsMap);
 
   // Only enable find-in-page (/) on article pages
-  const isArticlePage = location.pathname.startsWith('/writing/') && 
-                        location.pathname !== '/writing' &&
-                        location.pathname !== '/writing/';
+  const isArticlePage =
+    location.pathname.startsWith('/writing/') &&
+    location.pathname !== '/writing' &&
+    location.pathname !== '/writing/';
 
   useKeyboard({
     onSearch: () => setSearchOpen(true),
@@ -78,6 +86,7 @@ function AppContent() {
         <Route path="/resume" element={<Resume />} />
         <Route path="/about" element={<About />} />
         <Route path="/obvious" element={<Obvious />} />
+        <Route path="/shimmer" element={<ShimmerShowcase />} />
         <Route path="/hello-there" element={<About />} />
 
         {/* Redirect /tech to /writing */}

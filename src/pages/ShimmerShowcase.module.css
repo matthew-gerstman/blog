@@ -1,0 +1,90 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: var(--background);
+  color: var(--text);
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--text);
+}
+
+.shimmerLine {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(157, 122, 159, 0.1);
+}
+
+.shimmerLine label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.borderLine {
+  padding: 1.75rem 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(157, 122, 159, 0.08) 0%,
+    rgba(157, 122, 159, 0.02) 100%
+  );
+  border-radius: 8px;
+  font-size: 1.4rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.bgLine {
+  padding: 1.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.randomLine {
+  padding: 1.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  color: var(--text);
+  font-weight: 700;
+  min-height: 60px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .shimmerLine {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .shimmerLine label {
+    text-align: left;
+  }
+
+  .borderLine,
+  .bgLine,
+  .randomLine {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
