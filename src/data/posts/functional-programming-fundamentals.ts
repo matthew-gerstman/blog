@@ -345,7 +345,7 @@ const getFileNames = lodash.partialRight(lodash.map, 'name');</code></pre>
   banner_img:
     '/images/blog/functional-programming-fundamentals/functional-programming-hero.jpg',
   heroImage: '',
-  wordCount: 1983,
+  wordCount: 2536,
 };
 
 export default post;

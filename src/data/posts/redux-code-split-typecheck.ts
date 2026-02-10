@@ -311,7 +311,7 @@ export const getStoreForWizardApp = once(
 `.trim(),
   tags: ['Tech', 'redux', 'typescript', 'code-splitting'],
   banner_img: '/images/blog/hero-mountain-lake.jpg',
-  wordCount: 1415,
+  wordCount: 2127,
 };
 
 export default post;
