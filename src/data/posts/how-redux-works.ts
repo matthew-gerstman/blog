@@ -8,7 +8,7 @@ const post: Post = {
   excerpt:
     "In this article we'll be covering createStore. This is the function that sets up the redux store and provides access to getState, dispatch, subscribe, and replaceReducer. ",
   content: `
-<p><em>This is part one of a two part series. For part two <a href="__GHOST_URL__/how-redux-works-2/">see here</a>.</em></p>
+<p><em>This is part one of a two part series. For part two <a href="/writing/how-redux-works-2">see here</a>.</em></p>
 <h1 id="create-store">Create Store</h1>
 <p>I spend a lot of time walking people through Redux best practices and how to use it, and throughout this process I've found it really helpful to dive into the source itself. While this source is very readable and well commented, I thought I'd put together a blog post to break it down and add some more context.</p>
 <p>In this article we'll be covering <code><a href="https://github.com/reduxjs/redux/blob/master/src/createStore.js">createStore</a></code>. This is the function that sets up the redux store and provides access to <code>getState</code>, <code>dispatch</code>, <code>subscribe</code>, and <code>replaceReducer</code>. </p>
@@ -153,7 +153,7 @@ const post: Post = {
 <p>This is how users get access to <code>store.getState</code>, <code>store.dispatch</code>, <code>store.subscribe</code>, and <code>replaceReducer</code>. </p>
 <h1 id="next-time-">Next Time!</h1>
 <p>In our next article we'll be covering a lot of the tooling around redux. We'll talk about <code>applyMiddleware</code>, <code>bindActionCreators</code>, thunks, and more!</p>
-<p>Part two is now available <a href="__GHOST_URL__/how-redux-works-2/">here</a>!</p>
+<p>Part two is now available <a href="/writing/how-redux-works-2">here</a>!</p>
 `.trim(),
   tags: ['Tech', 'redux'],
   banner_img: '/images/blog/how-redux-works/redux-architecture-hero.jpeg',

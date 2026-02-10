@@ -56,7 +56,7 @@ const post: Post = {
 <!--kg-card-end: html-->
 <p>This function takes a <strong>list</strong>, iterates over it, and calls a <strong>callback</strong> on the previous value along with each item in the list. it then returns the final <strong>value</strong>.</p>
 <h1 id="all-of-the-examples">All of The Examples</h1>
-<p>Hopefully you now understand <strong>how </strong>reduce works, but it may not be clear <strong>why </strong>you would want to use it. First, let’s get the sample data out of the way. This is the same <a href="__GHOST_URL__/map-filter-reduce/" rel="noreferrer nofollow noopener">data as last time.</a></p>
+<p>Hopefully you now understand <strong>how </strong>reduce works, but it may not be clear <strong>why </strong>you would want to use it. First, let’s get the sample data out of the way. This is the same <a href="/writing/map-filter-reduce" rel="noreferrer nofollow noopener">data as last time.</a></p>
 <!--kg-card-begin: html-->
 <script src="https://gist.github.com/matthew-gerstman/b024143766f91edf8278415568aa235a.js"></script>
 <!--kg-card-end: html-->
@@ -105,7 +105,7 @@ const post: Post = {
 <script src="https://gist.github.com/matthew-gerstman/c2e3823a0b063c3fc311eaa1e5e26333.js"></script>
 <!--kg-card-end: html-->
 <h2 id="flatmap">flatMap</h2>
-<p>We can take this a step further with flatMap. This <a href="__GHOST_URL__/map-filter-reduce/"><strong>maps</strong></a> over the list and flattens any results from the given function.</p>
+<p>We can take this a step further with flatMap. This <a href="/writing/map-filter-reduce"><strong>maps</strong></a> over the list and flattens any results from the given function.</p>
 <!--kg-card-begin: html-->
 <script src="https://gist.github.com/matthew-gerstman/31a1fc7ad9ef71acd0d9ed5ee3503e90.js"></script>
 <!--kg-card-end: html-->
@@ -117,14 +117,14 @@ const post: Post = {
 <script src="https://gist.github.com/matthew-gerstman/a98fbd728d753141306aaff42aaa4db3.js"></script>
 <!--kg-card-end: html-->
 <h1 id="map-and-filter">Map and Filter</h1>
-<p>One last fun fact, we can implement <a href="__GHOST_URL__/map-filter-reduce/" rel="noreferrer nofollow noopener"><strong>map</strong></a><strong> </strong>and <a href="__GHOST_URL__/map-filter-reduce/" rel="noreferrer nofollow noopener"><strong>filter</strong></a><strong> </strong>with reduce.</p>
+<p>One last fun fact, we can implement <a href="/writing/map-filter-reduce" rel="noreferrer nofollow noopener"><strong>map</strong></a><strong> </strong>and <a href="/writing/map-filter-reduce" rel="noreferrer nofollow noopener"><strong>filter</strong></a><strong> </strong>with reduce.</p>
 <!--kg-card-begin: html-->
 <script src="https://gist.github.com/matthew-gerstman/77c2e270789dbcff7f02ea123ffd3cb2.js"></script>
 <!--kg-card-end: html-->
 <!--kg-card-begin: html-->
 <script src="https://gist.github.com/matthew-gerstman/6ec04a34ba7d97df3e8f9677c20fe9e5.js"></script>
 <!--kg-card-end: html-->
-<p>If you're looking for reasons to use map or filter, check out my previous article, <a href="__GHOST_URL__/map-filter-reduce/">map, filter, reduce</a>.</p>
+<p>If you're looking for reasons to use map or filter, check out my previous article, <a href="/writing/map-filter-reduce">map, filter, reduce</a>.</p>
 <h1 id="wrapping-up">Wrapping Up</h1>
 <p>Reduce is one of the most powerful functions built into JavaScript. While most of the functions above are available in <a href="http://lodash.com/" rel="noreferrer nofollow noopener">lodash</a> <a href="http://lodash.com/" rel="noreferrer nofollow noopener">[3]</a>, they’re good examples of when you may want to use reduce. Give them a try and feel free to tweet questions <a href="https://twitter.com/MatthewGerstman" rel="noreferrer nofollow noopener">@MatthewGerstman.</a></p>
 <hr>
