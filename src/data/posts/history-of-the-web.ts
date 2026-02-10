@@ -123,7 +123,7 @@ $(document).on("click", ".display_tardis", function (e) {
 <p>Much like jQuery ascended into modern DOM apis, CoffeeScript ascended into JavaScript. Many of its more novel features made their way into ECMAScript and we moved off of it.</p>
 <p>In addition, we had libraries like underscore and lodash influencing JavaScript. ES6 gave us map, filter, and reduce right in the language. This rendered the bulk of these libraries obsolete.</p>
 <p>In 2014, 6to5 (later babel) was introduced. This allowed us to write source code using the new ES6 (ECMAScript 6) spec without dropping support for older browsers. It worked by transpiling newer ES6 into ES5. </p>
-<p>This was one of the biggest developments the web has ever seen. The ability to improve the language without worrying about old browsers. Development on ES6 was accelerated and <a href="__GHOST_URL__/tech/es-everything/">TC39</a> were able to move to yearly releases.</p>
+<p>This was one of the biggest developments the web has ever seen. The ability to improve the language without worrying about old browsers. Development on ES6 was accelerated and <a href="/writing/es-everything">TC39</a> were able to move to yearly releases.</p>
 <p>CSS and HTML evolved as well. HTML 5 was released in 2014 and brought about a whole set of new tags we could implement against. CSS saw new dialects like SASS (2006) and LESS (2009) that were supported by the same build tooling we used for JavaScript.</p>
 <h1 id="almost-there">Almost There</h1>
 <p>We've reached the point where the JavaScript ecosystem looked a lot like the modern web. Let's take a look at a very common stack in 2015.</p>
@@ -163,7 +163,7 @@ $(document).on("click", ".display_tardis", function (e) {
 <p>React provides an interface for writing declarative components. This means you tell React <em>take this state and turn it into this UI. </em>What it doesn't do is tell you how to get from (State A, UI A) to (State B, UI B); React did all of that under the hood.</p>
 <p>React would do a full render of State A, later it would do a full render of State B and then it would do a diff on two virtual DOMs (as opposed to the slow real DOM) and determine the minimum set of changes to make to the DOM.</p>
 <p>React also introduced a syntax called JSX, a way to write html-like markup directly inside a JavaScript module. This allowed developers to create components with business logic adjacent to markup, without actually putting HTML strings in code.</p>
-<p>This made applications both faster and more predictable, a win for everyone. Eventually, Redux became the most popular flux implementation. This led to the popularity of &nbsp;<a href="__GHOST_URL__/tech/functional-programming-fundamentals/">functional programming</a> on the web.</p>
+<p>This made applications both faster and more predictable, a win for everyone. Eventually, Redux became the most popular flux implementation. This led to the popularity of &nbsp;<a href="/writing/functional-programming-fundamentals">functional programming</a> on the web.</p>
 <p>Here's what some React code might look like.</p>
 <pre><code class="language-javascript">import React from "react";
 
