@@ -9,12 +9,12 @@ const post: Post = {
 
 In that article I covered monads, mon`,
   content: `
-<p>Originally I set out to write a sequel to <a href="http://matthewgerstman.com/functional-programming-fundamentals/"><strong>Functional Programming Fundamentals</strong></a> that covered all of the scary jargon. &nbsp;This quickly evolved into <strong><a href="__GHOST_URL__/what-the-functor/">What the Functor?</a> </strong></p>
+<p>Originally I set out to write a sequel to <a href="http://matthewgerstman.com/functional-programming-fundamentals/"><strong>Functional Programming Fundamentals</strong></a> that covered all of the scary jargon. &nbsp;This quickly evolved into <strong><a href="/writing/what-the-functor">What the Functor?</a> </strong></p>
 <p>In that article I covered monads, monoids, and functors. Now we have one last bit of scary functional jargon, lambdas.</p>
 <figure class="kg-card kg-image-card"><img src="/images/blog/mary-had-a-little-lambda/lambda-diagram.png" class="kg-image" alt loading="lazy"></figure>
 <h1 id="lambda">Lambda</h1>
 <p>A lambda is an anonymous function that can be treated like a value.<a href="https://github.com/hemanth/functional-programming-jargon"> [2]</a></p>
-<p>We actually saw some of these in the <a href="__GHOST_URL__/what-the-functor/">previous post</a>. These were <code>learnExpelliarmous</code> and <code>joinGryffindor</code>. </p>
+<p>We actually saw some of these in the <a href="/writing/what-the-functor">previous post</a>. These were <code>learnExpelliarmous</code> and <code>joinGryffindor</code>. </p>
 <!--kg-card-begin: html-->
 <script src="https://gist.github.com/matthew-gerstman/82876b9911bc8b1bba5c5cc733b2427d.js"></script>
 <!--kg-card-end: html-->
@@ -121,7 +121,7 @@ In that article I covered monads, mon`,
 <hr>
 <h1 id="wrapping-up">Wrapping Up</h1>
 <p>I'd like to reiterate, none of this is important to your day to day code. But if you were curious what all those scary FP terms mean hopefully this satisfied that curiosity.</p>
-<p>If you'd like something that will make your code better, check out <a href="http://matthewgerstman.com/functional-programming-fundamentals/"><strong>Functional Programming Fundamentals</strong></a>. If you want even scarier terms check out <strong><a href="__GHOST_URL__/what-the-functor/">What the Functor?</a></strong></p>
+<p>If you'd like something that will make your code better, check out <a href="http://matthewgerstman.com/functional-programming-fundamentals/"><strong>Functional Programming Fundamentals</strong></a>. If you want even scarier terms check out <strong><a href="/writing/what-the-functor">What the Functor?</a></strong></p>
 <p>Also if you feel the need to buy me a drink you can do so <a href="http://cash.me/$MatthewGerstman">here</a> or follow me on twitter <a href="https://twitter.com/MatthewGerstman">@MatthewGerstman</a>.</p>
 <hr>
 <h1 id="ads">Ads</h1>

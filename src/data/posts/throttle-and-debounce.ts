@@ -53,8 +53,8 @@ const post: Post = {
 <p>Now these implementations of throttle and debounce were both very naive. If you take a look at the <a href="https://github.com/lodash/lodash/blob/master/debounce.js">lodash source</a> you can see a much more advanced version of debounce that considers things like calling the function before or after we set the timeout.</p>
 <p>It also allows fancy things like a <code>maxWait</code> and a <code>cancel</code>. They even implement <a href="https://github.com/lodash/lodash/blob/master/throttle.js">throttle with debounce.</a></p>
 <h1 id="wrapping-up">Wrapping Up</h1>
-<p>Hopefully you've learned a bit about debounce and throttle. For more real world code, check out some of my other articles <a href="http://matthewgerstman.com/functional-programming-fundamentals/"><strong>Functional Programming Fundamental</strong></a><strong> </strong>or <a href="__GHOST_URL__/map-filter-reduce/"><strong>Map, Filter, Reduce</strong></a><strong>.</strong></p>
-<p>If you're looking for more abstract stuff check out <a href="__GHOST_URL__/what-the-functor/"><strong>What the Functor?</strong></a><strong> </strong>and <strong><a href="__GHOST_URL__/mary-had-a-little-lambda/">Mary Had a Little Lambda.</a> </strong></p>
+<p>Hopefully you've learned a bit about debounce and throttle. For more real world code, check out some of my other articles <a href="http://matthewgerstman.com/functional-programming-fundamentals/"><strong>Functional Programming Fundamental</strong></a><strong> </strong>or <a href="/writing/map-filter-reduce"><strong>Map, Filter, Reduce</strong></a><strong>.</strong></p>
+<p>If you're looking for more abstract stuff check out <a href="/writing/what-the-functor"><strong>What the Functor?</strong></a><strong> </strong>and <strong><a href="/writing/mary-had-a-little-lambda">Mary Had a Little Lambda.</a> </strong></p>
 <p>Also if you feel the need to buy me a drink you can do so <a href="http://cash.me/$MatthewGerstman">here</a> or follow me on twitter <a href="https://twitter.com/MatthewGerstman">@MatthewGerstman</a>.</p>
 `.trim(),
   tags: ['Tech'],

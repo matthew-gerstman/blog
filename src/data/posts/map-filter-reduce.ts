@@ -8,7 +8,7 @@ const post: Post = {
   excerpt:
     "In this article we'll go back to basics and cover three of the most important functions in functional programming, map, filter, and reduce.",
   content: `
-<p>In this article we'll go <a href="__GHOST_URL__/functional-programming-fundamentals/">back to basics</a> and cover three of the most important functions in <a href="__GHOST_URL__/functional-programming-fundamentals/">functional programming</a>, map, filter, and reduce.</p>
+<p>In this article we'll go <a href="/writing/functional-programming-fundamentals">back to basics</a> and cover three of the most important functions in <a href="/writing/functional-programming-fundamentals">functional programming</a>, map, filter, and reduce.</p>
 <p>All three of these are useful functions for iterating over a list (or array) and doing some kind of transformation or computation. This will then produce a new list or the result of the computation done across the previous list.</p>
 <h1 id="types">Types</h1>
 <p>Before we dive into map, filter, and reduce, let's set up the list.</p>
@@ -28,7 +28,7 @@ const post: Post = {
 <!--kg-card-begin: html-->
 <script src="https://gist.github.com/matthew-gerstman/29ebae139d7839eb981fb110e9c1723f.js"></script>
 <!--kg-card-end: html-->
-<p>Now in this example we were using a <a href="__GHOST_URL__/mary-had-a-little-lambda/">lambda</a> (aka an anonymous function), but we can also use a named function.</p>
+<p>Now in this example we were using a <a href="/writing/mary-had-a-little-lambda">lambda</a> (aka an anonymous function), but we can also use a named function.</p>
 <!--kg-card-begin: html-->
 <script src="https://gist.github.com/matthew-gerstman/3d64ba545ca863db2fc3c6abd558abe7.js"></script>
 <!--kg-card-end: html-->
@@ -37,7 +37,7 @@ const post: Post = {
 <script src="https://gist.github.com/matthew-gerstman/bf416ade6e4e95b9ce568a2df5449754.js"></script>
 <!--kg-card-end: html-->
 <h1 id="filter-function filter() { [native code] }1">Filter</h1>
-<p>Next up is filter. Filter behaves like map in that it iterates over the list, but it instead of transforming each item, it transforms the whole list. Filter takes a function that returns true or false or <a href="__GHOST_URL__/mary-had-a-little-lambda/">predicate</a>. It then returns a new list with items where the predicate returns <code>true</code>. Let's look at an example.</p>
+<p>Next up is filter. Filter behaves like map in that it iterates over the list, but it instead of transforming each item, it transforms the whole list. Filter takes a function that returns true or false or <a href="/writing/mary-had-a-little-lambda">predicate</a>. It then returns a new list with items where the predicate returns <code>true</code>. Let's look at an example.</p>
 <!--kg-card-begin: html-->
 <script src="https://gist.github.com/matthew-gerstman/fe6468ae65e0e7a1e11c9d726b09b0ca.js"></script>
 <!--kg-card-end: html-->
@@ -46,7 +46,7 @@ const post: Post = {
 <script src="https://gist.github.com/matthew-gerstman/048d64ccc3719ba07a2b52a886bf6437.js"></script>
 <!--kg-card-end: html-->
 <p>As an aside, Taylor and Lin are two of the most acclaimed Slytherins of our day.</p>
-<p>Just like with map, we don't need to use a <a href="__GHOST_URL__/mary-had-a-little-lambda/">lambda</a>, we can also use a predefined function.</p>
+<p>Just like with map, we don't need to use a <a href="/writing/mary-had-a-little-lambda">lambda</a>, we can also use a predefined function.</p>
 <!--kg-card-begin: html-->
 <script src="https://gist.github.com/matthew-gerstman/884e4116282875442d860d44cb97eac3.js"></script>
 <!--kg-card-end: html-->
@@ -85,7 +85,7 @@ const post: Post = {
 <p>Now we have nice strings for the best person in each house.</p>
 <h1 id="wrapping-up">Wrapping Up</h1>
 <p>Hopefully you're more comfortable with map, filter, and reduce now. If you'd like a deeper dive into practical FP check out my article, <a href="http://matthewgerstman.com/functional-programming-fundamentals/"><strong>Functional Programming Fundamentals</strong></a>.</p>
-<p>If you're looking for more abstract stuff check out <a href="__GHOST_URL__/what-the-functor/"><strong>What the Functor?</strong></a><strong> </strong>and <strong><a href="__GHOST_URL__/mary-had-a-little-lambda/">Mary Had a Little Lambda.</a> </strong></p>
+<p>If you're looking for more abstract stuff check out <a href="/writing/what-the-functor"><strong>What the Functor?</strong></a><strong> </strong>and <strong><a href="/writing/mary-had-a-little-lambda">Mary Had a Little Lambda.</a> </strong></p>
 <p>Also if you feel the need to buy me a drink you can do so <a href="http://cash.me/$MatthewGerstman">here</a> or follow me on twitter <a href="https://twitter.com/MatthewGerstman">@MatthewGerstman</a>.</p>
 `.trim(),
   tags: ['Tech', 'functional-programming'],

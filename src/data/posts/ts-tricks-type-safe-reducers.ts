@@ -8,7 +8,7 @@ const post: Post = {
   excerpt:
     " We're going to talk about how to build a type-safe reducer. Now, I use these for redux reducers, but these principles could apply to any function.",
   content: `
-<p>If you enjoyed my post on <a href="__GHOST_URL__/ts-tricks-type-guards/">type guards</a>, this one might tickle your fancy. We're going to talk about how to build a type-safe reducer. Now, I use these for redux reducers, but these principles could apply to any function.</p>
+<p>If you enjoyed my post on <a href="/writing/ts-tricks-type-guards">type guards</a>, this one might tickle your fancy. We're going to talk about how to build a type-safe reducer. Now, I use these for redux reducers, but these principles could apply to any function.</p>
 <p>Let's start by typing some actions.</p>
 <!--kg-card-begin: html-->
 <script src="https://gist.github.com/e44f3e0a9181aa543480a23b0c18409b.js"></script>
