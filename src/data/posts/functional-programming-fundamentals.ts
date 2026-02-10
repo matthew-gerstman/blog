@@ -10,7 +10,7 @@ const post: Post = {
   content: `
 <p>In the past few years, React and Redux have generated a surge of Functional Programming which we often take for granted. However many of us never got a chance to learn the fundamentals.</p>
 <p>In this post, we’ll cover the fundamentals of Functional Programming and how they apply to modern JavaScript. We’ll also avoid unnecessary jargon like monads and functors and stick to concepts that will make our code better.</p>
-<p>If you'd like to learn all the unnecessary jargon, check out my other posts, <a href="__GHOST_URL__/what-the-functor/">What The Functor</a> and <a href="__GHOST_URL__/mary-had-a-little-lambda/">Mary Had a Little Lambda</a>. I also have an article on <a href="__GHOST_URL__/map-filter-reduce/">map, filter, and reduce.</a></p>
+<p>If you'd like to learn all the unnecessary jargon, check out my other posts, <a href="/writing/what-the-functor">What The Functor</a> and <a href="/writing/mary-had-a-little-lambda">Mary Had a Little Lambda</a>. I also have an article on <a href="/writing/map-filter-reduce">map, filter, and reduce.</a></p>
 <p><em>Note: If you wanna see this post in talk form you can <a href="https://www.youtube.com/watch?v=kkRyjXDpYqg">here</a>.</em></p>
 <hr>
 <h1 id="none-of-this-is-new">None of this is new</h1>
@@ -21,9 +21,12 @@ const post: Post = {
 <h1 id="when-is-functional-programming-most-useful">When is Functional Programming most useful?</h1>
 <p>Before we cover <em>what</em> functional programming is. I think it's helpful to define when we use it.</p>
 <p>Functional Programming is most useful when we’re doing 1 to 1 data transformations.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/e1a796c632887ce0c1004824553f9542.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-typescript">// This is the data store
+type UserMap = {[userId: number]: User}
+// This is the functional layer
+type convertUserMapToArray: (userMap: UserMap) =&gt; User[];
+// This is the presentation layer.
+type Component = ({ users: User[] }) =&gt; JSX.Element</code></pre>
 <p>In the code snipped above we have some types listed for a data store, a component, and a functional layer in between them.</p>
 <p>This functional layer, <code>convertUserMapToArray</code>, converts the data from a format that makes sense to the store to a format that makes sense for the UI. This is what we're going to zero in on today.</p>
 <hr>
@@ -38,37 +41,77 @@ const post: Post = {
 <p>Let's take a look a some examples of side effects.</p>
 <h2 id="mutation">Mutation</h2>
 <p>Modifying the argument that’s passed in <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0" rel="noreferrer nofollow noopener">[1]</a>.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/73ef079b4f0d418938062615c601757f.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">// Mutates the given array
+function pop(arr) {
+  return arr.splice(0, 1);
+}
+
+const arr = [1,2,3,4];
+pop(arr);
+console.log(arr); // [2, 3, 4]; </code></pre>
 <p>In this example above, we're changing the value of <code>arr</code> at the reference it lives at. As a result, we can't predict what this function will return at any point. What happens when <code>arr</code> runs out of values? </p>
 <h2 id="shared-state">Shared State</h2>
 <p>Using some form of global state <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0" rel="noreferrer nofollow noopener">[1]</a>.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/6d0ca6210f3dc13a7ff031b8ab88fb0d.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">// These have different values every time you call them.
+let i = 0;
+function increment() {
+ return i++;
+}
+
+function decrement() {
+  return i--;
+}</code></pre>
 <p>In this example, we can't predict what these functions will return because they depend on some external value. The order of the function calls will matter.</p>
 <p>Furthermore what happens if someone else changes the value of <code>i</code>? Do you feel like googling what <code>string++</code> is? </p>
 <h2 id="asynchronous-code">Asynchronous Code</h2>
 <p>Code that doesn't execute immediately <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0" rel="noreferrer nofollow noopener">[1]</a>.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/4cdb5608124ab2e4ea3d1679ef89a63a.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">let i = 0;
+function incrementAsync(obj) {
+  setTimeout(() =&gt; {
+    i++;
+  }, 0)
+}
+incrementAsync();
+console.log(i); // 0
+// later
+console.log(i); // 1</code></pre>
 <p>This one deserves an extra mention because its a necessity. We have to do some things asynchronously. We have to hit APIs; we have to fetch data.</p>
 <p>This brings me back to my earlier point. Side effects aren't inherently bad, but they should be properly isolated to make your code more predictable.</p>
 <hr>
 <h1 id="example-time">Example Time</h1>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/44a40f904f1e6016c9fd0682e9f60c5c.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">// This is a pure function
+function clone(obj) {
+  return {...obj};
+}
+
+// This mutates the given object
+function killParents(wizard) {
+  wizard.parents = "Dead";
+  return wizard;
+}
+
+// This mutates the given object
+function addScar(wizard) {
+  wizard.scar = true;
+}
+
+const a = {name: "Harry Potter"};
+const b = clone(a);
+const c = killParents(b);
+const d = addScar(c);</code></pre>
 <p>Looking at the code above, we would expect it to produce the following:</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/b44e6a7990f0c96439b17ed94417c5d7.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">// In a pure function world.
+
+console.log(a) // {Name: "Harry Potter"};
+console.log(b) // {Name: "Harry Potter"};
+console.log(c) // {Name: "Harry Potter", parents: "Dead"};
+console.log(d) // {Name: "Harry Potter", scar: true, parents: "Dead"};</code></pre>
 <p>Unfortunately, this isn't what we get. This is:</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/00d4010a7a5a1dde0b4f6449f65bb69f.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">// Actual results
+console.log(a) // {Name: "Harry Potter"};
+console.log(b) // {Name: "Harry Potter", scar: true, parents: "Dead"};
+console.log(c) // {Name: "Harry Potter", scar: true, parents: "Dead"};
+console.log(d) // undefined</code></pre>
 <p>What happened?</p>
 <p>Well the first function, <code>clone</code> is a pure function and works as expected. It produced a new object at a new reference.</p>
 <p><code>killParents</code> is not a pure function. It mutates the given argument and marks the parent as dead. It does however return the object so it <em>appears</em> we're getting a new copy.</p>
@@ -77,25 +120,32 @@ const post: Post = {
 <hr>
 <h1 id="declarative-and-imperative">Declarative and Imperative</h1>
 <p><strong>Declarative code describes what it does.</strong></p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/2998e01ec2f15a2fe5d63ebcda6609ac.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">function ReactComponent({counter}) {
+  return &lt;span&gt;{counter}&lt;/span&gt;
+}</code></pre>
 <h3 id="imperative-code-describes-how-it-does-it-">Imperative code describes how it does it.</h3>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/5a7da58e7074d3168dcb63d80da86e52.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">function UpdateCounter({counter}) {
+  document.getElementById('counter').innerHTML(
+    \`&lt;span&gt;\${counter}&lt;span&gt;\`
+  );
+}</code></pre>
 <p>Looking at the two code samples above, we can see a stark contrast. The top block is written using React and just says "we want a counter on the page." This code trusts React, the declarative library, to get it right.</p>
 <p>The bottom block is using vanilla JS. It explicitly finds a DOM node and updates it. While this is fine for such a simple example this won't scale well. What happens when we want multiple counters in multiple locations? React is ready for that, with vanilla JS we have a lot of work to do.</p>
 <p>Now it's worth noting that declarative code will always end up either compiling down to or being processed by something imperative. What do I mean by that? Well <em>something</em> has to do the DOM mutation. In this case that's React. Even with functional languages like Lisp or Haskell they <em>eventually</em> get compiled to imperative machine code.</p>
 <h2 id="example">Example</h2>
 <h3 id="imperative">Imperative</h3>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/9fc233a7e7dcd880912a25f5fec938c0.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">function getFileMapById(files) {
+  const fileMap = {};
+  for (let i=0; i&lt;files.length; i++) {
+    const file = files[i];
+    fileMap[file.id] = file;
+  }
+  return fileMap;
+}</code></pre>
 <h3 id="declarative">Declarative</h3>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/f4b604ff5b55acda3300866195d4d0bf.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">function getFileMapById(files) {
+  return lodash.keyBy(files, 'id');
+}</code></pre>
 <p>Now these two functions achieve the exact same thing. They take a list of <code>files</code> and return a dictionary of files where the key is <code>file.id</code>.</p>
 <p>But the imperative one is sloppier. It's 8 lines of code instead of 3. It also leaves a lot of room for error.</p>
 <p>What happens if a file doesn't have an <code>id</code>? What happens if we get our exit clause wrong? And fun fact, there are faster ways to do for loops (they're ugly), but we can trust lodash to do those under the hood.</p>
@@ -107,16 +157,35 @@ const post: Post = {
 <h2 id="composition">Composition</h2>
 <blockquote><em>Plan for composition. Write functions whose outputs will naturally work as inputs to many other functions. Keep function signatures as simple as possible. </em><a href="https://medium.com/javascript-scene/the-dao-of-immutability-9f91a70c88cd" rel="noreferrer nofollow noopener"><em>[4]</em></a></blockquote>
 <p>I pulled these quotes from an article called <em><a href="https://medium.com/javascript-scene/the-dao-of-immutability-9f91a70c88cd">The Dao of Immutability</a>. </em>What we're saying here is we want small functions that easily chain together to make larger ones. Let's take a look at an example:</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/cb7622935829a6ce49badfdc1af3974e.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">function sortFilesByName(files) {
+  return lodash.sortBy(files, 'name');
+}
+
+function getPdfFiles(files) {
+  return lodash.filter(files, {extension: PDF});
+}
+
+function getFileNames(files) {
+  return lodash.map(files, 'name');
+}</code></pre>
 <p>These three functions are all super simple. They take one argument and do a transformation on that argument. The first function sorts the list of files.</p>
 <p>The second function is a <code>filter</code>. &nbsp;<code>filter</code> is an FP term for filtering in, as opposed to filtering out. So this code returning an array of files who's extensions are PDFs.</p>
 <p>The last function is just a <code>map</code>. <code>map</code> is another FP term, a 1:1 transformation over a list to a new version of that list. In this case we're looping over the list of files and returning the key <code>name</code> from each of them.</p>
 <p>Now we can combine them together:</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/e49ca9b4e211c8eda34ea078ee88645f.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">const getSortedPDFFileNames = lodash.flow(
+  getPdfFiles,
+  getFileNames,
+  lodash.sortBy
+);
+
+// Alternative
+const getSortedPdfFileNames = (files) =&gt; (
+  lodash.sortBy(
+    getFileNames(
+      getPdfFiles(files)
+    )
+  )
+);</code></pre>
 <p>Now both of these functions are equivalent. They take a list of files, filter for pdfs, get their names, and return a sorted list of file names.</p>
 <p><code>lodash.flow</code> does have some optimizations under the hood, but the second syntax might be more readable to you. Do whatever you think is best.</p>
 <p>Let's move on to the next set of concepts.</p>
@@ -125,9 +194,19 @@ const post: Post = {
 <h2 id="memoization">Memoization</h2>
 <blockquote><em>Memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again. </em><a href="https://en.wikipedia.org/wiki/Memoization" rel="noreferrer nofollow noopener"><em>[5]</em></a></blockquote>
 <p>These pair really nicely. Immutability says we're never gonna mutate an argument only return a new one, and memoization allows us to remember outputs. Let's look at an example combining them.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/47fe2834b2da7bab88c705095db096de.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">function killSibling(wizard) {
+  return {
+    ...wizard,
+    numSiblings: wizard.numSiblings - 1,
+  };
+}
+const killSiblingMemoized = lodash.memoize(killSibling);
+const ron = { name: "Ron Weasley", siblings: 6 };
+const ronAfterFredDies = killSiblingMemoized(ron);
+ron === ronAfterFredDies // false, he's a different person now.
+
+const ronAfterFredDiesAgain = killSiblingMemoized(ron);
+ronAfterFredDies === ronAfterFredDiesAgain // true</code></pre>
 <p>What's going on here? Well we have a function called <code>killSibling</code> (dark I know), that takes a wizard. It copies over the wizard and decrements the number of siblings that wizard has. Please ignore any glaring bugs here, I wanted to keep this simple.</p>
 <p>We then pass <code>killSibling</code> to <code>lodash.memoize</code>, this produces a new function called <code>killSiblingMemoized</code>. Now when we call <code>killSiblingMemoized</code> on <code>ron</code>, it returns a brand new object. If we do a strict equality check it returns false. Of course it does, his brother died, he's a different person now.</p>
 <p>Because we've memoized this, if we repeat this call to <code>killSiblingMemoized</code> we'll get the exact same version of <code>ron</code> we got after the first call.</p>
@@ -141,28 +220,54 @@ const post: Post = {
 </ul>
 <p>This seems much more intimidating than it actually is. In fact I bet you've written some of these before without realizing it.</p>
 <h2 id="function-that-takes-a-function">Function that takes a function</h2>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/ed44a6db0c48aaf8ca0da717154d4427.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">fetch('user', {userId: 1}).then((response) =&gt; {
+  persistUser(response);
+})</code></pre>
 <p>These are just <strong>callbacks.</strong> In this case <code>then</code> is the higher order function that takes an anonymous function as its argument.</p>
 <h2 id="function-that-returns-a-function">Function that returns a function</h2>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/3ccbd0608ba61e231d1a1858106d56d1.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">function counterGenerator() {
+  let i = 0;
+  return function() {
+    console.log(++i);
+  }
+}
+
+// Usage
+const counter = counterGenerator();
+counter(); // =&gt; 1
+counter(); // =&gt; 2
+counter(); // =&gt; 3</code></pre>
 <p>Another thing you've probably done before, <strong>closures. </strong>In this case <code>counterGenerator</code> is the higher order function because it returns a function.</p>
 <h2 id="function-that-takes-a-function-and-returns-a-function">Function that takes a function and returns a function</h2>
 <p>Last, the final form, a function that does both. But you've already seen these.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/484c1aecc9e69ba39377afb4fd1f89d4.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">const killSiblingMemoized = lodash.memoize(killSibling);
+
+const getSortedPDFFileNames = lodash.flow(
+  getPdfFiles,
+  getFileNames,
+  lodash.sortBy
+);</code></pre>
 <p>Both <code>memoize</code> and <code>flow</code> were higher order functions that take a function (or several) as arguments and return a new function.</p>
 <hr>
 <h1 id="currying">Currying</h1>
 <blockquote><em>Currying is the technique of translating the evaluation of a function that takes multiple arguments (or a tuple of arguments) into evaluating a sequence of functions, each with a single argument. </em><a href="https://en.wikipedia.org/wiki/Currying" rel="noreferrer nofollow noopener"><em>[7]</em></a></blockquote>
 <p>This seems a little intimidating but I think an example will help.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/d31c96725e9d1cbc76abc3b4a89b00e8.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">function sum(a, b, c) {
+  return a + b + c;
+}
+const curriedSum = lodash.curry(sum);
+
+curriedSum(1,2,3) // 6
+
+const addFive = curriedSum(2,3);
+addFive(7) // 12
+addFive(8) // 13
+
+const addOne = curriedSum(1)
+addOne(2,3) // 6
+const addThree = addOne(2);
+addThree(3) // 6;
+addThree(4) // 7;</code></pre>
 <p>We have a function <code>sum</code> which takes arguments <code>a</code>, <code>b</code>, and <code>c</code>. When we pass <code>sum</code> to <code>lodash.curry</code> (a higher order function), it becomes a new function that keeps returning functions until <code>a</code>, <code>b</code>, and <code>c</code> have all been filled.</p>
 <p>If we give it arguments <code>1,2,3</code> then it executes immediately and returns 6. If we give it just <code>2,3</code> it returns a new function waiting for one more argument.</p>
 <p>This works for all permutations of arguments.</p>
@@ -171,18 +276,39 @@ const post: Post = {
 <blockquote><em>Partial application (or partial function application) refers to the process of fixing a number of arguments to a function, producing another function of smaller arity. </em><a href="https://en.wikipedia.org/wiki/Partial_application" rel="noreferrer nofollow noopener"><em>[8]</em></a></blockquote>
 <p><em>Note: Arity is just a term for the number of arguments a function takes. <a href="https://github.com/hemanth/functional-programming-jargon" rel="noreferrer nofollow noopener">[2]</a></em></p>
 <p>With partial application, we can take a function and bind arguments to it. Let's take a look at an example.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/79394bccde6191763a31f48c32f47f39.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">function learnSpell(spell, wizard) {
+  return {
+    ...wizard,
+    spells: [
+      ...wizard.spells,
+      spell
+    ],
+  };
+}
+
+const learnExpelliarmus = lodash.partial(learnSpell, "Expelliarmus");
+const learnExpectoPatronum = lodash.partial(learnSpell, "Expecto Patronum!");
+
+let harry = {name: "Harry Potter", spells: []};
+harry = learnExpelliarmus(harry);
+// {name: "Harry Potter", spells: ["Expelliarmus"]}
+harry = learnExpectoPatronum(harry);
+// {name: "Harry Potter", spells: ["Expelliarmus", "Expecto Patronum"]}</code></pre>
 <p>In this case we have a function called <code>learnSpell</code> that takes a <code>spell</code> and a <code>wizard</code>. If we pass these functions to <code>lodash.partial</code> with a spell, it will create a new function that teaches a wizard a predefined spell. In this case we can generate <code>learnExpelliarmus</code> and <code>learnExpectoPatronum</code>.</p>
 <p>We actually saw some examples of this earlier when we were talking about composition. </p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/bfb76754ceff4093a1511e13cf06e127.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">function sortFilesByName(files) {
+  return lodash.sortBy(files, 'name');
+}
+function getPdfFiles(files) {
+  return lodash.filter(files, {extension: PDF});
+}
+function getFileNames(files) {
+  return lodash.map(files, 'name');
+}</code></pre>
 <p>All of these functions are partially applying an argument to a lodash function. In fact it's functionally equivalent to this block.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/2d72d421f0a81aecf3aa6399964ff7e5.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-javascript">const sortFilesByName = lodash.partialRight(lodash.sortBy, 'name'));
+const getPdfFiles = lodash.partialRight(lodash.filter, {extension: PDF}));
+const getFileNames = lodash.partialRight(lodash.map, 'name');</code></pre>
 <p>Much like with <code>flow</code> you should do what you're comfortable with here. Both methods works well.</p>
 <hr>
 <h1 id="what-are-we-optimizing-for">What Are We Optimizing For?</h1>
@@ -196,7 +322,7 @@ const post: Post = {
 <hr>
 <h1 id="thanks">Thanks</h1>
 <p>Thanks so much for reading! If you'd like to buy me a drink you can do so <a href="http://cash.me/$MatthewGerstman">here</a> or follow me on twitter <a href="https://twitter.com/MatthewGerstman">@MatthewGerstman</a>.</p>
-<p>If you'd like to learn all the scary jargon check out my other posts <a href="__GHOST_URL__/what-the-functor/">What The Functor</a>, <a href="__GHOST_URL__/mary-had-a-little-lambda/">Mary Had a Little Lambda</a>, and <a href="__GHOST_URL__/map-filter-reduce/">Map, Filter, Reduce.</a></p>
+<p>If you'd like to learn all the scary jargon check out my other posts <a href="/writing/what-the-functor">What The Functor</a>, <a href="/writing/mary-had-a-little-lambda">Mary Had a Little Lambda</a>, and <a href="/writing/map-filter-reduce">Map, Filter, Reduce.</a></p>
 <hr>
 <h1 id="references">References</h1>
 <ol>
