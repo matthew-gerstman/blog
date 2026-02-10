@@ -88,6 +88,40 @@ async function optimizeImage(inputPath, relativePath) {
   return { relativePath, result };
 }
 
+function generateManifestTs(manifest) {
+  const entries = Object.entries(manifest)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([key, value]) => {
+      const sizesEntries = Object.entries(value.sizes)
+        .map(([sizeName, sizePath]) => {
+          // Check if the path is long enough to need line breaks
+          const line = `      ${sizeName}: '${sizePath}',`;
+          if (line.length > 80) {
+            return `      ${sizeName}:\n        '${sizePath}',`;
+          }
+          return line;
+        })
+        .join('\n');
+
+      return `  '${key}': {
+    original: '${value.original}',
+    sizes: {
+${sizesEntries}
+    },
+  },`;
+    })
+    .join('\n');
+
+  return `import type { ImageManifest } from '../../../src/data/types/manifest.types';
+
+const imageManifest: ImageManifest = {
+${entries}
+};
+
+export default imageManifest;
+`;
+}
+
 async function main() {
   console.log('🖼️  Optimizing blog images...\n');
 
@@ -130,14 +164,20 @@ async function main() {
     }
   }
 
+  // Write manifest.json
   await fs.writeFile(
     path.join(OUTPUT_DIR, 'manifest.json'),
     JSON.stringify(manifest, null, 2)
   );
 
+  // Generate manifest.ts from the JSON output
+  const manifestTs = generateManifestTs(manifest);
+  await fs.writeFile(path.join(OUTPUT_DIR, 'manifest.ts'), manifestTs);
+
   console.log(`\n✅ Optimization complete!`);
   console.log(`   Processed ${images.length} images`);
   console.log(`   Manifest written to ${OUTPUT_DIR}/manifest.json`);
+  console.log(`   TypeScript manifest written to ${OUTPUT_DIR}/manifest.ts`);
 }
 
 main().catch((err) => {
