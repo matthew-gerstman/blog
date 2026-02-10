@@ -14,7 +14,7 @@ const post: Post = {
 <p><em>Note: If you wanna see this post in talk form you can <a href="https://www.youtube.com/watch?v=kkRyjXDpYqg">here</a>.</em></p>
 <hr>
 <h1 id="none-of-this-is-new">None of this is new</h1>
-<figure class="kg-card kg-image-card kg-card-hascaption"><img src="/images/blog/functional-programming-fundamentals/fp-concepts-diagram.svg" class="kg-image" alt loading="lazy"><figcaption>https://xkcd.com/297/</figcaption></figure>
+<figure class="kg-card kg-image-card kg-card-hascaption"><img src="/images/blog/functional-programming-fundamentals/fp-concepts-diagram.png" class="kg-image" alt loading="lazy"><figcaption>https://xkcd.com/297/</figcaption></figure>
 <p>Before we dive into actual concepts, I want to lead by saying that none of this is new. Functional Programming as existed for over 60 years. <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a>, a popular FP programming language, was first developed in 1958.</p>
 <p>What is new is the popularity of FP, which has surged in the past few years.</p>
 <hr>
