@@ -1,236 +1,232 @@
 import type { ImageManifest } from '../../../src/data/types/manifest.types';
 
 const imageManifest: ImageManifest = {
-  'all-in-on-homekit/homekit-app-1.jpeg': {
-    original: '/images/blog/all-in-on-homekit/homekit-app-1.jpeg',
+  'all-in-on-homekit/bedroom-media.jpeg': {
+    original: '/images/blog/all-in-on-homekit/bedroom-media.jpeg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/homekit-app-1.webp',
-      medium: '/images/optimized/medium/all-in-on-homekit/homekit-app-1.webp',
-      large: '/images/optimized/large/all-in-on-homekit/homekit-app-1.webp',
-      full: '/images/optimized/full/all-in-on-homekit/homekit-app-1.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/bedroom-media.webp',
+      medium: '/images/optimized/medium/all-in-on-homekit/bedroom-media.webp',
+      large: '/images/optimized/large/all-in-on-homekit/bedroom-media.webp',
+      full: '/images/optimized/full/all-in-on-homekit/bedroom-media.webp',
     },
   },
-  'all-in-on-homekit/homekit-app-2.jpeg': {
-    original: '/images/blog/all-in-on-homekit/homekit-app-2.jpeg',
+  'all-in-on-homekit/bedroom.jpeg': {
+    original: '/images/blog/all-in-on-homekit/bedroom.jpeg',
     sizes: {
-      thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/homekit-app-2.webp',
-      medium: '/images/optimized/medium/all-in-on-homekit/homekit-app-2.webp',
-      large: '/images/optimized/large/all-in-on-homekit/homekit-app-2.webp',
-      full: '/images/optimized/full/all-in-on-homekit/homekit-app-2.webp',
+      thumbnail: '/images/optimized/thumbnail/all-in-on-homekit/bedroom.webp',
+      medium: '/images/optimized/medium/all-in-on-homekit/bedroom.webp',
+      large: '/images/optimized/large/all-in-on-homekit/bedroom.webp',
+      full: '/images/optimized/full/all-in-on-homekit/bedroom.webp',
     },
   },
-  'all-in-on-homekit/homekit-app-3.jpeg': {
-    original: '/images/blog/all-in-on-homekit/homekit-app-3.jpeg',
+  'all-in-on-homekit/dining-room.jpeg': {
+    original: '/images/blog/all-in-on-homekit/dining-room.jpeg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/homekit-app-3.webp',
-      medium: '/images/optimized/medium/all-in-on-homekit/homekit-app-3.webp',
-      large: '/images/optimized/large/all-in-on-homekit/homekit-app-3.webp',
-      full: '/images/optimized/full/all-in-on-homekit/homekit-app-3.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/dining-room.webp',
+      medium: '/images/optimized/medium/all-in-on-homekit/dining-room.webp',
+      large: '/images/optimized/large/all-in-on-homekit/dining-room.webp',
+      full: '/images/optimized/full/all-in-on-homekit/dining-room.webp',
     },
   },
-  'all-in-on-homekit/homekit-automation-1.png': {
-    original: '/images/blog/all-in-on-homekit/homekit-automation-1.png',
+  'all-in-on-homekit/entryway-dakboard.jpeg': {
+    original: '/images/blog/all-in-on-homekit/entryway-dakboard.jpeg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/homekit-automation-1.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/entryway-dakboard.webp',
       medium:
-        '/images/optimized/medium/all-in-on-homekit/homekit-automation-1.webp',
-      large:
-        '/images/optimized/large/all-in-on-homekit/homekit-automation-1.webp',
-      full: '/images/optimized/full/all-in-on-homekit/homekit-automation-1.webp',
+        '/images/optimized/medium/all-in-on-homekit/entryway-dakboard.webp',
+      large: '/images/optimized/large/all-in-on-homekit/entryway-dakboard.webp',
+      full: '/images/optimized/full/all-in-on-homekit/entryway-dakboard.webp',
     },
   },
-  'all-in-on-homekit/homekit-automation-2.png': {
-    original: '/images/blog/all-in-on-homekit/homekit-automation-2.png',
+  'all-in-on-homekit/floorplan-markup.jpg': {
+    original: '/images/blog/all-in-on-homekit/floorplan-markup.jpg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/homekit-automation-2.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/floorplan-markup.webp',
       medium:
-        '/images/optimized/medium/all-in-on-homekit/homekit-automation-2.webp',
-      large:
-        '/images/optimized/large/all-in-on-homekit/homekit-automation-2.webp',
-      full: '/images/optimized/full/all-in-on-homekit/homekit-automation-2.webp',
+        '/images/optimized/medium/all-in-on-homekit/floorplan-markup.webp',
+      large: '/images/optimized/large/all-in-on-homekit/floorplan-markup.webp',
+      full: '/images/optimized/full/all-in-on-homekit/floorplan-markup.webp',
     },
   },
-  'all-in-on-homekit/homekit-automation-3.png': {
-    original: '/images/blog/all-in-on-homekit/homekit-automation-3.png',
+  'all-in-on-homekit/home-app-bedroom.png': {
+    original: '/images/blog/all-in-on-homekit/home-app-bedroom.png',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/homekit-automation-3.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/home-app-bedroom.webp',
       medium:
-        '/images/optimized/medium/all-in-on-homekit/homekit-automation-3.webp',
-      large:
-        '/images/optimized/large/all-in-on-homekit/homekit-automation-3.webp',
-      full: '/images/optimized/full/all-in-on-homekit/homekit-automation-3.webp',
+        '/images/optimized/medium/all-in-on-homekit/home-app-bedroom.webp',
+      large: '/images/optimized/large/all-in-on-homekit/home-app-bedroom.webp',
+      full: '/images/optimized/full/all-in-on-homekit/home-app-bedroom.webp',
     },
   },
-  'all-in-on-homekit/homekit-automation-4.png': {
-    original: '/images/blog/all-in-on-homekit/homekit-automation-4.png',
+  'all-in-on-homekit/home-app-kitchen.png': {
+    original: '/images/blog/all-in-on-homekit/home-app-kitchen.png',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/homekit-automation-4.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/home-app-kitchen.webp',
       medium:
-        '/images/optimized/medium/all-in-on-homekit/homekit-automation-4.webp',
-      large:
-        '/images/optimized/large/all-in-on-homekit/homekit-automation-4.webp',
-      full: '/images/optimized/full/all-in-on-homekit/homekit-automation-4.webp',
+        '/images/optimized/medium/all-in-on-homekit/home-app-kitchen.webp',
+      large: '/images/optimized/large/all-in-on-homekit/home-app-kitchen.webp',
+      full: '/images/optimized/full/all-in-on-homekit/home-app-kitchen.webp',
     },
   },
-  'all-in-on-homekit/homekit-automation-5.png': {
-    original: '/images/blog/all-in-on-homekit/homekit-automation-5.png',
+  'all-in-on-homekit/home-app-living-room.png': {
+    original: '/images/blog/all-in-on-homekit/home-app-living-room.png',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/homekit-automation-5.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/home-app-living-room.webp',
       medium:
-        '/images/optimized/medium/all-in-on-homekit/homekit-automation-5.webp',
+        '/images/optimized/medium/all-in-on-homekit/home-app-living-room.webp',
       large:
-        '/images/optimized/large/all-in-on-homekit/homekit-automation-5.webp',
-      full: '/images/optimized/full/all-in-on-homekit/homekit-automation-5.webp',
+        '/images/optimized/large/all-in-on-homekit/home-app-living-room.webp',
+      full:
+        '/images/optimized/full/all-in-on-homekit/home-app-living-room.webp',
     },
   },
-  'all-in-on-homekit/homekit-automation-6.png': {
-    original: '/images/blog/all-in-on-homekit/homekit-automation-6.png',
+  'all-in-on-homekit/home-app-misc.png': {
+    original: '/images/blog/all-in-on-homekit/home-app-misc.png',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/homekit-automation-6.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/home-app-misc.webp',
+      medium: '/images/optimized/medium/all-in-on-homekit/home-app-misc.webp',
+      large: '/images/optimized/large/all-in-on-homekit/home-app-misc.webp',
+      full: '/images/optimized/full/all-in-on-homekit/home-app-misc.webp',
+    },
+  },
+  'all-in-on-homekit/home-app-office.png': {
+    original: '/images/blog/all-in-on-homekit/home-app-office.png',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/all-in-on-homekit/home-app-office.webp',
+      medium: '/images/optimized/medium/all-in-on-homekit/home-app-office.webp',
+      large: '/images/optimized/large/all-in-on-homekit/home-app-office.webp',
+      full: '/images/optimized/full/all-in-on-homekit/home-app-office.webp',
+    },
+  },
+  'all-in-on-homekit/home-app-overview.png': {
+    original: '/images/blog/all-in-on-homekit/home-app-overview.png',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/all-in-on-homekit/home-app-overview.webp',
       medium:
-        '/images/optimized/medium/all-in-on-homekit/homekit-automation-6.webp',
-      large:
-        '/images/optimized/large/all-in-on-homekit/homekit-automation-6.webp',
-      full: '/images/optimized/full/all-in-on-homekit/homekit-automation-6.webp',
+        '/images/optimized/medium/all-in-on-homekit/home-app-overview.webp',
+      large: '/images/optimized/large/all-in-on-homekit/home-app-overview.webp',
+      full: '/images/optimized/full/all-in-on-homekit/home-app-overview.webp',
     },
   },
-  'all-in-on-homekit/homekit-device-setup.jpeg': {
-    original: '/images/blog/all-in-on-homekit/homekit-device-setup.jpeg',
+  'all-in-on-homekit/homekit-hero.jpeg': {
+    original: '/images/blog/all-in-on-homekit/homekit-hero.jpeg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/homekit-device-setup.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/homekit-hero.webp',
+      medium: '/images/optimized/medium/all-in-on-homekit/homekit-hero.webp',
+      large: '/images/optimized/large/all-in-on-homekit/homekit-hero.webp',
+      full: '/images/optimized/full/all-in-on-homekit/homekit-hero.webp',
+    },
+  },
+  'all-in-on-homekit/ipod-mini-display.jpeg': {
+    original: '/images/blog/all-in-on-homekit/ipod-mini-display.jpeg',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/all-in-on-homekit/ipod-mini-display.webp',
       medium:
-        '/images/optimized/medium/all-in-on-homekit/homekit-device-setup.webp',
-      large:
-        '/images/optimized/large/all-in-on-homekit/homekit-device-setup.webp',
-      full: '/images/optimized/full/all-in-on-homekit/homekit-device-setup.webp',
+        '/images/optimized/medium/all-in-on-homekit/ipod-mini-display.webp',
+      large: '/images/optimized/large/all-in-on-homekit/ipod-mini-display.webp',
+      full: '/images/optimized/full/all-in-on-homekit/ipod-mini-display.webp',
     },
   },
-  'all-in-on-homekit/homekit-setup.jpg': {
-    original: '/images/blog/all-in-on-homekit/homekit-setup.jpg',
+  'all-in-on-homekit/kitchen.jpeg': {
+    original: '/images/blog/all-in-on-homekit/kitchen.jpeg',
     sizes: {
-      thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/homekit-setup.webp',
-      medium: '/images/optimized/medium/all-in-on-homekit/homekit-setup.webp',
-      large: '/images/optimized/large/all-in-on-homekit/homekit-setup.webp',
-      full: '/images/optimized/full/all-in-on-homekit/homekit-setup.webp',
+      thumbnail: '/images/optimized/thumbnail/all-in-on-homekit/kitchen.webp',
+      medium: '/images/optimized/medium/all-in-on-homekit/kitchen.webp',
+      large: '/images/optimized/large/all-in-on-homekit/kitchen.webp',
+      full: '/images/optimized/full/all-in-on-homekit/kitchen.webp',
     },
   },
-  'all-in-on-homekit/smart-home-device-1.jpeg': {
-    original: '/images/blog/all-in-on-homekit/smart-home-device-1.jpeg',
+  'all-in-on-homekit/living-room-behind-couch.jpeg': {
+    original: '/images/blog/all-in-on-homekit/living-room-behind-couch.jpeg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/smart-home-device-1.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/living-room-behind-couch.webp',
       medium:
-        '/images/optimized/medium/all-in-on-homekit/smart-home-device-1.webp',
+        '/images/optimized/medium/all-in-on-homekit/living-room-behind-couch.webp',
       large:
-        '/images/optimized/large/all-in-on-homekit/smart-home-device-1.webp',
-      full: '/images/optimized/full/all-in-on-homekit/smart-home-device-1.webp',
+        '/images/optimized/large/all-in-on-homekit/living-room-behind-couch.webp',
+      full:
+        '/images/optimized/full/all-in-on-homekit/living-room-behind-couch.webp',
     },
   },
-  'all-in-on-homekit/smart-home-device-2.jpeg': {
-    original: '/images/blog/all-in-on-homekit/smart-home-device-2.jpeg',
+  'all-in-on-homekit/living-room.jpeg': {
+    original: '/images/blog/all-in-on-homekit/living-room.jpeg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/smart-home-device-2.webp',
-      medium:
-        '/images/optimized/medium/all-in-on-homekit/smart-home-device-2.webp',
-      large:
-        '/images/optimized/large/all-in-on-homekit/smart-home-device-2.webp',
-      full: '/images/optimized/full/all-in-on-homekit/smart-home-device-2.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/living-room.webp',
+      medium: '/images/optimized/medium/all-in-on-homekit/living-room.webp',
+      large: '/images/optimized/large/all-in-on-homekit/living-room.webp',
+      full: '/images/optimized/full/all-in-on-homekit/living-room.webp',
     },
   },
-  'all-in-on-homekit/smart-home-device-3.jpeg': {
-    original: '/images/blog/all-in-on-homekit/smart-home-device-3.jpeg',
+  'all-in-on-homekit/macbook-windows-xp.jpeg': {
+    original: '/images/blog/all-in-on-homekit/macbook-windows-xp.jpeg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/smart-home-device-3.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/macbook-windows-xp.webp',
       medium:
-        '/images/optimized/medium/all-in-on-homekit/smart-home-device-3.webp',
+        '/images/optimized/medium/all-in-on-homekit/macbook-windows-xp.webp',
       large:
-        '/images/optimized/large/all-in-on-homekit/smart-home-device-3.webp',
-      full: '/images/optimized/full/all-in-on-homekit/smart-home-device-3.webp',
+        '/images/optimized/large/all-in-on-homekit/macbook-windows-xp.webp',
+      full: '/images/optimized/full/all-in-on-homekit/macbook-windows-xp.webp',
     },
   },
-  'all-in-on-homekit/smart-home-device-4.jpeg': {
-    original: '/images/blog/all-in-on-homekit/smart-home-device-4.jpeg',
+  'all-in-on-homekit/office-bed-bookshelf.jpeg': {
+    original: '/images/blog/all-in-on-homekit/office-bed-bookshelf.jpeg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/smart-home-device-4.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/office-bed-bookshelf.webp',
       medium:
-        '/images/optimized/medium/all-in-on-homekit/smart-home-device-4.webp',
+        '/images/optimized/medium/all-in-on-homekit/office-bed-bookshelf.webp',
       large:
-        '/images/optimized/large/all-in-on-homekit/smart-home-device-4.webp',
-      full: '/images/optimized/full/all-in-on-homekit/smart-home-device-4.webp',
+        '/images/optimized/large/all-in-on-homekit/office-bed-bookshelf.webp',
+      full:
+        '/images/optimized/full/all-in-on-homekit/office-bed-bookshelf.webp',
     },
   },
-  'all-in-on-homekit/smart-home-device-5.jpeg': {
-    original: '/images/blog/all-in-on-homekit/smart-home-device-5.jpeg',
+  'all-in-on-homekit/office-doorway.jpeg': {
+    original: '/images/blog/all-in-on-homekit/office-doorway.jpeg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/smart-home-device-5.webp',
-      medium:
-        '/images/optimized/medium/all-in-on-homekit/smart-home-device-5.webp',
-      large:
-        '/images/optimized/large/all-in-on-homekit/smart-home-device-5.webp',
-      full: '/images/optimized/full/all-in-on-homekit/smart-home-device-5.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/office-doorway.webp',
+      medium: '/images/optimized/medium/all-in-on-homekit/office-doorway.webp',
+      large: '/images/optimized/large/all-in-on-homekit/office-doorway.webp',
+      full: '/images/optimized/full/all-in-on-homekit/office-doorway.webp',
     },
   },
-  'all-in-on-homekit/smart-home-device-6.jpeg': {
-    original: '/images/blog/all-in-on-homekit/smart-home-device-6.jpeg',
+  'all-in-on-homekit/photo-wall-ipod-display.jpeg': {
+    original: '/images/blog/all-in-on-homekit/photo-wall-ipod-display.jpeg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/smart-home-device-6.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/photo-wall-ipod-display.webp',
       medium:
-        '/images/optimized/medium/all-in-on-homekit/smart-home-device-6.webp',
+        '/images/optimized/medium/all-in-on-homekit/photo-wall-ipod-display.webp',
       large:
-        '/images/optimized/large/all-in-on-homekit/smart-home-device-6.webp',
-      full: '/images/optimized/full/all-in-on-homekit/smart-home-device-6.webp',
+        '/images/optimized/large/all-in-on-homekit/photo-wall-ipod-display.webp',
+      full:
+        '/images/optimized/full/all-in-on-homekit/photo-wall-ipod-display.webp',
     },
   },
-  'all-in-on-homekit/smart-home-device-7.jpeg': {
-    original: '/images/blog/all-in-on-homekit/smart-home-device-7.jpeg',
+  'all-in-on-homekit/server-closet.jpeg': {
+    original: '/images/blog/all-in-on-homekit/server-closet.jpeg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/smart-home-device-7.webp',
-      medium:
-        '/images/optimized/medium/all-in-on-homekit/smart-home-device-7.webp',
-      large:
-        '/images/optimized/large/all-in-on-homekit/smart-home-device-7.webp',
-      full: '/images/optimized/full/all-in-on-homekit/smart-home-device-7.webp',
-    },
-  },
-  'all-in-on-homekit/smart-home-device-8.jpeg': {
-    original: '/images/blog/all-in-on-homekit/smart-home-device-8.jpeg',
-    sizes: {
-      thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/smart-home-device-8.webp',
-      medium:
-        '/images/optimized/medium/all-in-on-homekit/smart-home-device-8.webp',
-      large:
-        '/images/optimized/large/all-in-on-homekit/smart-home-device-8.webp',
-      full: '/images/optimized/full/all-in-on-homekit/smart-home-device-8.webp',
-    },
-  },
-  'all-in-on-homekit/smart-home-device-9.jpeg': {
-    original: '/images/blog/all-in-on-homekit/smart-home-device-9.jpeg',
-    sizes: {
-      thumbnail:
-        '/images/optimized/thumbnail/all-in-on-homekit/smart-home-device-9.webp',
-      medium:
-        '/images/optimized/medium/all-in-on-homekit/smart-home-device-9.webp',
-      large:
-        '/images/optimized/large/all-in-on-homekit/smart-home-device-9.webp',
-      full: '/images/optimized/full/all-in-on-homekit/smart-home-device-9.webp',
+        '/images/optimized/thumbnail/all-in-on-homekit/server-closet.webp',
+      medium: '/images/optimized/medium/all-in-on-homekit/server-closet.webp',
+      large: '/images/optimized/large/all-in-on-homekit/server-closet.webp',
+      full: '/images/optimized/full/all-in-on-homekit/server-closet.webp',
     },
   },
   'apartment.jpeg': {
@@ -242,9 +238,21 @@ const imageManifest: ImageManifest = {
       full: '/images/optimized/full/apartment.webp',
     },
   },
+  'everything-i-wish-i-knew-before-my-first-bay-area-internship/Bay-Bridge.jpg': {
+    original: '/images/blog/everything-i-wish-i-knew-before-my-first-bay-area-internship/Bay-Bridge.jpg',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/everything-i-wish-i-knew-before-my-first-bay-area-internship/Bay-Bridge.webp',
+      medium:
+        '/images/optimized/medium/everything-i-wish-i-knew-before-my-first-bay-area-internship/Bay-Bridge.webp',
+      large:
+        '/images/optimized/large/everything-i-wish-i-knew-before-my-first-bay-area-internship/Bay-Bridge.webp',
+      full:
+        '/images/optimized/full/everything-i-wish-i-knew-before-my-first-bay-area-internship/Bay-Bridge.webp',
+    },
+  },
   'functional-programming-fundamentals/fp-concepts-diagram.png': {
-    original:
-      '/images/blog/functional-programming-fundamentals/fp-concepts-diagram.png',
+    original: '/images/blog/functional-programming-fundamentals/fp-concepts-diagram.png',
     sizes: {
       thumbnail:
         '/images/optimized/thumbnail/functional-programming-fundamentals/fp-concepts-diagram.webp',
@@ -252,12 +260,12 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/functional-programming-fundamentals/fp-concepts-diagram.webp',
       large:
         '/images/optimized/large/functional-programming-fundamentals/fp-concepts-diagram.webp',
-      full: '/images/optimized/full/functional-programming-fundamentals/fp-concepts-diagram.webp',
+      full:
+        '/images/optimized/full/functional-programming-fundamentals/fp-concepts-diagram.webp',
     },
   },
   'functional-programming-fundamentals/functional-programming-hero.jpg': {
-    original:
-      '/images/blog/functional-programming-fundamentals/functional-programming-hero.jpg',
+    original: '/images/blog/functional-programming-fundamentals/functional-programming-hero.jpg',
     sizes: {
       thumbnail:
         '/images/optimized/thumbnail/functional-programming-fundamentals/functional-programming-hero.webp',
@@ -265,7 +273,8 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/functional-programming-fundamentals/functional-programming-hero.webp',
       large:
         '/images/optimized/large/functional-programming-fundamentals/functional-programming-hero.webp',
-      full: '/images/optimized/full/functional-programming-fundamentals/functional-programming-hero.webp',
+      full:
+        '/images/optimized/full/functional-programming-fundamentals/functional-programming-hero.webp',
     },
   },
   'hello-there/bay-bridge-sf.jpg': {
@@ -295,6 +304,15 @@ const imageManifest: ImageManifest = {
       medium: '/images/optimized/medium/hello-there/matthew-speaking-2.webp',
       large: '/images/optimized/large/hello-there/matthew-speaking-2.webp',
       full: '/images/optimized/full/hello-there/matthew-speaking-2.webp',
+    },
+  },
+  'hero-library-cats.png': {
+    original: '/images/blog/hero-library-cats.png',
+    sizes: {
+      thumbnail: '/images/optimized/thumbnail/hero-library-cats.webp',
+      medium: '/images/optimized/medium/hero-library-cats.webp',
+      large: '/images/optimized/large/hero-library-cats.webp',
+      full: '/images/optimized/full/hero-library-cats.webp',
     },
   },
   'hero-mountain-lake.jpg': {
@@ -351,18 +369,6 @@ const imageManifest: ImageManifest = {
       full: '/images/optimized/full/hero-technical-interview.webp',
     },
   },
-  'history-of-the-web/browser-market-share.png': {
-    original: '/images/blog/history-of-the-web/browser-market-share.png',
-    sizes: {
-      thumbnail:
-        '/images/optimized/thumbnail/history-of-the-web/browser-market-share.webp',
-      medium:
-        '/images/optimized/medium/history-of-the-web/browser-market-share.webp',
-      large:
-        '/images/optimized/large/history-of-the-web/browser-market-share.webp',
-      full: '/images/optimized/full/history-of-the-web/browser-market-share.webp',
-    },
-  },
   'history-of-the-web/chrome-announcement.png': {
     original: '/images/blog/history-of-the-web/chrome-announcement.png',
     sizes: {
@@ -372,59 +378,82 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/history-of-the-web/chrome-announcement.webp',
       large:
         '/images/optimized/large/history-of-the-web/chrome-announcement.webp',
-      full: '/images/optimized/full/history-of-the-web/chrome-announcement.webp',
+      full:
+        '/images/optimized/full/history-of-the-web/chrome-announcement.webp',
     },
   },
-  'history-of-the-web/edge-browser.png': {
-    original: '/images/blog/history-of-the-web/edge-browser.png',
+  'history-of-the-web/digg-website.png': {
+    original: '/images/blog/history-of-the-web/digg-website.png',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/history-of-the-web/edge-browser.webp',
-      medium: '/images/optimized/medium/history-of-the-web/edge-browser.webp',
-      large: '/images/optimized/large/history-of-the-web/edge-browser.webp',
-      full: '/images/optimized/full/history-of-the-web/edge-browser.webp',
+        '/images/optimized/thumbnail/history-of-the-web/digg-website.webp',
+      medium: '/images/optimized/medium/history-of-the-web/digg-website.webp',
+      large: '/images/optimized/large/history-of-the-web/digg-website.webp',
+      full: '/images/optimized/full/history-of-the-web/digg-website.webp',
     },
   },
-  'history-of-the-web/firefox-launch.png': {
-    original: '/images/blog/history-of-the-web/firefox-launch.png',
+  'history-of-the-web/dom-tree.png': {
+    original: '/images/blog/history-of-the-web/dom-tree.png',
     sizes: {
-      thumbnail:
-        '/images/optimized/thumbnail/history-of-the-web/firefox-launch.webp',
-      medium: '/images/optimized/medium/history-of-the-web/firefox-launch.webp',
-      large: '/images/optimized/large/history-of-the-web/firefox-launch.webp',
-      full: '/images/optimized/full/history-of-the-web/firefox-launch.webp',
+      thumbnail: '/images/optimized/thumbnail/history-of-the-web/dom-tree.webp',
+      medium: '/images/optimized/medium/history-of-the-web/dom-tree.webp',
+      large: '/images/optimized/large/history-of-the-web/dom-tree.webp',
+      full: '/images/optimized/full/history-of-the-web/dom-tree.webp',
     },
   },
-  'history-of-the-web/html5-logo.png': {
-    original: '/images/blog/history-of-the-web/html5-logo.png',
+  'history-of-the-web/esbuild-benchmark.png': {
+    original: '/images/blog/history-of-the-web/esbuild-benchmark.png',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/history-of-the-web/html5-logo.webp',
-      medium: '/images/optimized/medium/history-of-the-web/html5-logo.webp',
-      large: '/images/optimized/large/history-of-the-web/html5-logo.webp',
-      full: '/images/optimized/full/history-of-the-web/html5-logo.webp',
-    },
-  },
-  'history-of-the-web/ie-browser-wars.png': {
-    original: '/images/blog/history-of-the-web/ie-browser-wars.png',
-    sizes: {
-      thumbnail:
-        '/images/optimized/thumbnail/history-of-the-web/ie-browser-wars.webp',
+        '/images/optimized/thumbnail/history-of-the-web/esbuild-benchmark.webp',
       medium:
-        '/images/optimized/medium/history-of-the-web/ie-browser-wars.webp',
-      large: '/images/optimized/large/history-of-the-web/ie-browser-wars.webp',
-      full: '/images/optimized/full/history-of-the-web/ie-browser-wars.webp',
+        '/images/optimized/medium/history-of-the-web/esbuild-benchmark.webp',
+      large:
+        '/images/optimized/large/history-of-the-web/esbuild-benchmark.webp',
+      full: '/images/optimized/full/history-of-the-web/esbuild-benchmark.webp',
     },
   },
-  'history-of-the-web/modern-web-stack.png': {
-    original: '/images/blog/history-of-the-web/modern-web-stack.png',
+  'history-of-the-web/firefox-windows-xp.png': {
+    original: '/images/blog/history-of-the-web/firefox-windows-xp.png',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/history-of-the-web/modern-web-stack.webp',
+        '/images/optimized/thumbnail/history-of-the-web/firefox-windows-xp.webp',
       medium:
-        '/images/optimized/medium/history-of-the-web/modern-web-stack.webp',
-      large: '/images/optimized/large/history-of-the-web/modern-web-stack.webp',
-      full: '/images/optimized/full/history-of-the-web/modern-web-stack.webp',
+        '/images/optimized/medium/history-of-the-web/firefox-windows-xp.webp',
+      large:
+        '/images/optimized/large/history-of-the-web/firefox-windows-xp.webp',
+      full: '/images/optimized/full/history-of-the-web/firefox-windows-xp.webp',
+    },
+  },
+  'history-of-the-web/flux-data-flow.png': {
+    original: '/images/blog/history-of-the-web/flux-data-flow.png',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/history-of-the-web/flux-data-flow.webp',
+      medium: '/images/optimized/medium/history-of-the-web/flux-data-flow.webp',
+      large: '/images/optimized/large/history-of-the-web/flux-data-flow.webp',
+      full: '/images/optimized/full/history-of-the-web/flux-data-flow.webp',
+    },
+  },
+  'history-of-the-web/ie-browser.png': {
+    original: '/images/blog/history-of-the-web/ie-browser.png',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/history-of-the-web/ie-browser.webp',
+      medium: '/images/optimized/medium/history-of-the-web/ie-browser.webp',
+      large: '/images/optimized/large/history-of-the-web/ie-browser.webp',
+      full: '/images/optimized/full/history-of-the-web/ie-browser.webp',
+    },
+  },
+  'history-of-the-web/meebo-messenger.png': {
+    original: '/images/blog/history-of-the-web/meebo-messenger.png',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/history-of-the-web/meebo-messenger.webp',
+      medium:
+        '/images/optimized/medium/history-of-the-web/meebo-messenger.webp',
+      large: '/images/optimized/large/history-of-the-web/meebo-messenger.webp',
+      full: '/images/optimized/full/history-of-the-web/meebo-messenger.webp',
     },
   },
   'history-of-the-web/mosaic-browser.png': {
@@ -435,6 +464,19 @@ const imageManifest: ImageManifest = {
       medium: '/images/optimized/medium/history-of-the-web/mosaic-browser.webp',
       large: '/images/optimized/large/history-of-the-web/mosaic-browser.webp',
       full: '/images/optimized/full/history-of-the-web/mosaic-browser.webp',
+    },
+  },
+  'history-of-the-web/netscape-ask-jeeves.png': {
+    original: '/images/blog/history-of-the-web/netscape-ask-jeeves.png',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/history-of-the-web/netscape-ask-jeeves.webp',
+      medium:
+        '/images/optimized/medium/history-of-the-web/netscape-ask-jeeves.webp',
+      large:
+        '/images/optimized/large/history-of-the-web/netscape-ask-jeeves.webp',
+      full:
+        '/images/optimized/full/history-of-the-web/netscape-ask-jeeves.webp',
     },
   },
   'history-of-the-web/netscape-navigator.png': {
@@ -449,34 +491,37 @@ const imageManifest: ImageManifest = {
       full: '/images/optimized/full/history-of-the-web/netscape-navigator.webp',
     },
   },
-  'history-of-the-web/opera-browser.png': {
-    original: '/images/blog/history-of-the-web/opera-browser.png',
+  'history-of-the-web/safari-mac-os.png': {
+    original: '/images/blog/history-of-the-web/safari-mac-os.png',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/history-of-the-web/opera-browser.webp',
-      medium: '/images/optimized/medium/history-of-the-web/opera-browser.webp',
-      large: '/images/optimized/large/history-of-the-web/opera-browser.webp',
-      full: '/images/optimized/full/history-of-the-web/opera-browser.webp',
+        '/images/optimized/thumbnail/history-of-the-web/safari-mac-os.webp',
+      medium: '/images/optimized/medium/history-of-the-web/safari-mac-os.webp',
+      large: '/images/optimized/large/history-of-the-web/safari-mac-os.webp',
+      full: '/images/optimized/full/history-of-the-web/safari-mac-os.webp',
     },
   },
-  'history-of-the-web/safari-browser.png': {
-    original: '/images/blog/history-of-the-web/safari-browser.png',
+  'how-i-prepare-a-talk/Mic-Talks.jpg': {
+    original: '/images/blog/how-i-prepare-a-talk/Mic-Talks.jpg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/history-of-the-web/safari-browser.webp',
-      medium: '/images/optimized/medium/history-of-the-web/safari-browser.webp',
-      large: '/images/optimized/large/history-of-the-web/safari-browser.webp',
-      full: '/images/optimized/full/history-of-the-web/safari-browser.webp',
+        '/images/optimized/thumbnail/how-i-prepare-a-talk/Mic-Talks.webp',
+      medium: '/images/optimized/medium/how-i-prepare-a-talk/Mic-Talks.webp',
+      large: '/images/optimized/large/how-i-prepare-a-talk/Mic-Talks.webp',
+      full: '/images/optimized/full/how-i-prepare-a-talk/Mic-Talks.webp',
     },
   },
-  'history-of-the-web/web-standards.png': {
-    original: '/images/blog/history-of-the-web/web-standards.png',
+  'how-redux-works-2/westboundary-photography-chris-gill-60180-unsplash.jpg': {
+    original: '/images/blog/how-redux-works-2/westboundary-photography-chris-gill-60180-unsplash.jpg',
     sizes: {
       thumbnail:
-        '/images/optimized/thumbnail/history-of-the-web/web-standards.webp',
-      medium: '/images/optimized/medium/history-of-the-web/web-standards.webp',
-      large: '/images/optimized/large/history-of-the-web/web-standards.webp',
-      full: '/images/optimized/full/history-of-the-web/web-standards.webp',
+        '/images/optimized/thumbnail/how-redux-works-2/westboundary-photography-chris-gill-60180-unsplash.webp',
+      medium:
+        '/images/optimized/medium/how-redux-works-2/westboundary-photography-chris-gill-60180-unsplash.webp',
+      large:
+        '/images/optimized/large/how-redux-works-2/westboundary-photography-chris-gill-60180-unsplash.webp',
+      full:
+        '/images/optimized/full/how-redux-works-2/westboundary-photography-chris-gill-60180-unsplash.webp',
     },
   },
   'how-redux-works/redux-architecture-hero.jpeg': {
@@ -488,7 +533,8 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/how-redux-works/redux-architecture-hero.webp',
       large:
         '/images/optimized/large/how-redux-works/redux-architecture-hero.webp',
-      full: '/images/optimized/full/how-redux-works/redux-architecture-hero.webp',
+      full:
+        '/images/optimized/full/how-redux-works/redux-architecture-hero.webp',
     },
   },
   'living-room.jpeg': {
@@ -509,7 +555,8 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/map-filter-reduce/map-filter-reduce-hero.webp',
       large:
         '/images/optimized/large/map-filter-reduce/map-filter-reduce-hero.webp',
-      full: '/images/optimized/full/map-filter-reduce/map-filter-reduce-hero.webp',
+      full:
+        '/images/optimized/full/map-filter-reduce/map-filter-reduce-hero.webp',
     },
   },
   'mary-had-a-little-lambda/lambda-calculus-hero.jpg': {
@@ -521,7 +568,8 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/mary-had-a-little-lambda/lambda-calculus-hero.webp',
       large:
         '/images/optimized/large/mary-had-a-little-lambda/lambda-calculus-hero.webp',
-      full: '/images/optimized/full/mary-had-a-little-lambda/lambda-calculus-hero.webp',
+      full:
+        '/images/optimized/full/mary-had-a-little-lambda/lambda-calculus-hero.webp',
     },
   },
   'mary-had-a-little-lambda/lambda-diagram.png': {
@@ -533,12 +581,12 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/mary-had-a-little-lambda/lambda-diagram.webp',
       large:
         '/images/optimized/large/mary-had-a-little-lambda/lambda-diagram.webp',
-      full: '/images/optimized/full/mary-had-a-little-lambda/lambda-diagram.webp',
+      full:
+        '/images/optimized/full/mary-had-a-little-lambda/lambda-diagram.webp',
     },
   },
   'migrating-from-underscore-to-lodash/underscore-lodash-train.jpg': {
-    original:
-      '/images/blog/migrating-from-underscore-to-lodash/underscore-lodash-train.jpg',
+    original: '/images/blog/migrating-from-underscore-to-lodash/underscore-lodash-train.jpg',
     sizes: {
       thumbnail:
         '/images/optimized/thumbnail/migrating-from-underscore-to-lodash/underscore-lodash-train.webp',
@@ -546,7 +594,8 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/migrating-from-underscore-to-lodash/underscore-lodash-train.webp',
       large:
         '/images/optimized/large/migrating-from-underscore-to-lodash/underscore-lodash-train.webp',
-      full: '/images/optimized/full/migrating-from-underscore-to-lodash/underscore-lodash-train.webp',
+      full:
+        '/images/optimized/full/migrating-from-underscore-to-lodash/underscore-lodash-train.webp',
     },
   },
   'misc-1438.jpeg': {
@@ -567,6 +616,19 @@ const imageManifest: ImageManifest = {
       full: '/images/optimized/full/misc-diagram.webp',
     },
   },
+  'performance-testing-anonymous-functions/ahmad-dirini-F7Sive0fwIg-unsplash.jpg': {
+    original: '/images/blog/performance-testing-anonymous-functions/ahmad-dirini-F7Sive0fwIg-unsplash.jpg',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/performance-testing-anonymous-functions/ahmad-dirini-F7Sive0fwIg-unsplash.webp',
+      medium:
+        '/images/optimized/medium/performance-testing-anonymous-functions/ahmad-dirini-F7Sive0fwIg-unsplash.webp',
+      large:
+        '/images/optimized/large/performance-testing-anonymous-functions/ahmad-dirini-F7Sive0fwIg-unsplash.webp',
+      full:
+        '/images/optimized/full/performance-testing-anonymous-functions/ahmad-dirini-F7Sive0fwIg-unsplash.webp',
+    },
+  },
   'public-speaking.jpg': {
     original: '/images/blog/public-speaking.jpg',
     sizes: {
@@ -585,12 +647,12 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/reduce-reduce-reduce/reduce-function-hero.webp',
       large:
         '/images/optimized/large/reduce-reduce-reduce/reduce-function-hero.webp',
-      full: '/images/optimized/full/reduce-reduce-reduce/reduce-function-hero.webp',
+      full:
+        '/images/optimized/full/reduce-reduce-reduce/reduce-function-hero.webp',
     },
   },
   'software-engineering-lifecycle-dropbox-plus/dropbox-plus-hero.jpg': {
-    original:
-      '/images/blog/software-engineering-lifecycle-dropbox-plus/dropbox-plus-hero.jpg',
+    original: '/images/blog/software-engineering-lifecycle-dropbox-plus/dropbox-plus-hero.jpg',
     sizes: {
       thumbnail:
         '/images/optimized/thumbnail/software-engineering-lifecycle-dropbox-plus/dropbox-plus-hero.webp',
@@ -598,7 +660,8 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/software-engineering-lifecycle-dropbox-plus/dropbox-plus-hero.webp',
       large:
         '/images/optimized/large/software-engineering-lifecycle-dropbox-plus/dropbox-plus-hero.webp',
-      full: '/images/optimized/full/software-engineering-lifecycle-dropbox-plus/dropbox-plus-hero.webp',
+      full:
+        '/images/optimized/full/software-engineering-lifecycle-dropbox-plus/dropbox-plus-hero.webp',
     },
   },
   'throttle-and-debounce/throttle-debounce-hero.jpg': {
@@ -610,12 +673,12 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/throttle-and-debounce/throttle-debounce-hero.webp',
       large:
         '/images/optimized/large/throttle-and-debounce/throttle-debounce-hero.webp',
-      full: '/images/optimized/full/throttle-and-debounce/throttle-debounce-hero.webp',
+      full:
+        '/images/optimized/full/throttle-and-debounce/throttle-debounce-hero.webp',
     },
   },
   'ts-tricks-higher-order-components/higher-order-components-hero.jpg': {
-    original:
-      '/images/blog/ts-tricks-higher-order-components/higher-order-components-hero.jpg',
+    original: '/images/blog/ts-tricks-higher-order-components/higher-order-components-hero.jpg',
     sizes: {
       thumbnail:
         '/images/optimized/thumbnail/ts-tricks-higher-order-components/higher-order-components-hero.webp',
@@ -623,7 +686,8 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/ts-tricks-higher-order-components/higher-order-components-hero.webp',
       large:
         '/images/optimized/large/ts-tricks-higher-order-components/higher-order-components-hero.webp',
-      full: '/images/optimized/full/ts-tricks-higher-order-components/higher-order-components-hero.webp',
+      full:
+        '/images/optimized/full/ts-tricks-higher-order-components/higher-order-components-hero.webp',
     },
   },
   'ts-tricks-type-guards/type-guards-hero.jpg': {
@@ -635,12 +699,12 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/ts-tricks-type-guards/type-guards-hero.webp',
       large:
         '/images/optimized/large/ts-tricks-type-guards/type-guards-hero.webp',
-      full: '/images/optimized/full/ts-tricks-type-guards/type-guards-hero.webp',
+      full:
+        '/images/optimized/full/ts-tricks-type-guards/type-guards-hero.webp',
     },
   },
   'ts-tricks-type-safe-reducers/type-safe-reducers-hero.jpg': {
-    original:
-      '/images/blog/ts-tricks-type-safe-reducers/type-safe-reducers-hero.jpg',
+    original: '/images/blog/ts-tricks-type-safe-reducers/type-safe-reducers-hero.jpg',
     sizes: {
       thumbnail:
         '/images/optimized/thumbnail/ts-tricks-type-safe-reducers/type-safe-reducers-hero.webp',
@@ -648,7 +712,38 @@ const imageManifest: ImageManifest = {
         '/images/optimized/medium/ts-tricks-type-safe-reducers/type-safe-reducers-hero.webp',
       large:
         '/images/optimized/large/ts-tricks-type-safe-reducers/type-safe-reducers-hero.webp',
-      full: '/images/optimized/full/ts-tricks-type-safe-reducers/type-safe-reducers-hero.webp',
+      full:
+        '/images/optimized/full/ts-tricks-type-safe-reducers/type-safe-reducers-hero.webp',
+    },
+  },
+  'what-ive-been-working-on/hero.png': {
+    original: '/images/blog/what-ive-been-working-on/hero.png',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/what-ive-been-working-on/hero.webp',
+      medium: '/images/optimized/medium/what-ive-been-working-on/hero.webp',
+      large: '/images/optimized/large/what-ive-been-working-on/hero.webp',
+      full: '/images/optimized/full/what-ive-been-working-on/hero.webp',
+    },
+  },
+  'what-the-functor/category-diagram.png': {
+    original: '/images/blog/what-the-functor/category-diagram.png',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/what-the-functor/category-diagram.webp',
+      medium: '/images/optimized/medium/what-the-functor/category-diagram.webp',
+      large: '/images/optimized/large/what-the-functor/category-diagram.webp',
+      full: '/images/optimized/full/what-the-functor/category-diagram.webp',
+    },
+  },
+  'what-the-functor/functor-diagram.png': {
+    original: '/images/blog/what-the-functor/functor-diagram.png',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/what-the-functor/functor-diagram.webp',
+      medium: '/images/optimized/medium/what-the-functor/functor-diagram.webp',
+      large: '/images/optimized/large/what-the-functor/functor-diagram.webp',
+      full: '/images/optimized/full/what-the-functor/functor-diagram.webp',
     },
   },
   'what-the-functor/functor-hero.jpg': {
@@ -659,6 +754,19 @@ const imageManifest: ImageManifest = {
       medium: '/images/optimized/medium/what-the-functor/functor-hero.webp',
       large: '/images/optimized/large/what-the-functor/functor-hero.webp',
       full: '/images/optimized/full/what-the-functor/functor-hero.webp',
+    },
+  },
+  'what-the-functor/xkcd-functional-programming.png': {
+    original: '/images/blog/what-the-functor/xkcd-functional-programming.png',
+    sizes: {
+      thumbnail:
+        '/images/optimized/thumbnail/what-the-functor/xkcd-functional-programming.webp',
+      medium:
+        '/images/optimized/medium/what-the-functor/xkcd-functional-programming.webp',
+      large:
+        '/images/optimized/large/what-the-functor/xkcd-functional-programming.webp',
+      full:
+        '/images/optimized/full/what-the-functor/xkcd-functional-programming.webp',
     },
   },
 };

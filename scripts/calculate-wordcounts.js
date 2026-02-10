@@ -3,13 +3,13 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { JSDOM } from 'jsdom';
-import prettier from 'prettier';
 import vm from 'vm';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const POSTS_FILE = path.join(__dirname, '../src/data/posts.ts');
+const POSTS_DIR = path.join(__dirname, '../src/data/posts');
+const POSTS_INDEX = path.join(__dirname, '../src/data/posts.ts');
 
 // Strip HTML tags using jsdom
 function stripHtmlTags(html) {
@@ -27,41 +27,51 @@ function getWordCount(text) {
 async function calculateWordCounts() {
   console.log('📊 Calculating word counts for blog posts...\n');
 
-  // Read posts.ts file
-  const fileContent = await fs.readFile(POSTS_FILE, 'utf-8');
+  // Read the index file to get the import order
+  const indexContent = await fs.readFile(POSTS_INDEX, 'utf-8');
 
-  // Extract the posts array by evaluating it in a safe context
-  // Remove the import and export statements, keep just the array
-  const arrayMatch = fileContent.match(
-    /const postsData: PostsData = (\[[\s\S]*\]);/
-  );
-
-  if (!arrayMatch) {
-    throw new Error('Could not find posts data array in file');
+  // Extract import lines to get slugs in order
+  const importRegex = /import \w+ from '\.\/posts\/([^']+)';/g;
+  const slugs = [];
+  let m;
+  while ((m = importRegex.exec(indexContent)) !== null) {
+    slugs.push(m[1]);
   }
 
-  // Safely evaluate the array
-  const arrayCode = arrayMatch[1];
-  const posts = vm.runInNewContext(arrayCode);
-
-  console.log(`Found ${posts.length} posts\n`);
+  console.log(`Found ${slugs.length} posts\n`);
 
   let updatedCount = 0;
 
-  // Process each post
-  for (const post of posts) {
-    const postId = post.id;
+  for (const slug of slugs) {
+    const filePath = path.join(POSTS_DIR, `${slug}.ts`);
+    let content = await fs.readFile(filePath, 'utf-8');
+
+    // Extract the post object
+    const match = content.match(/const post:\s*Post\s*=\s*(\{[\s\S]*\});/);
+    if (!match) {
+      console.log(`  ${slug}: Skipping (could not parse)`);
+      continue;
+    }
+
+    const objCode = match[1];
+    let post;
+    try {
+      post = vm.runInNewContext(`(${objCode})`);
+    } catch (e) {
+      console.log(`  ${slug}: Skipping (eval error: ${e.message})`);
+      continue;
+    }
 
     // Skip posts with empty content but manually set wordCount
     if ((!post.content || post.content.trim() === '') && post.wordCount) {
       console.log(
-        `  Post ${postId}: Skipping (empty content with manual wordCount: ${post.wordCount})`
+        `  Post ${post.id} (${slug}): Skipping (empty content with manual wordCount: ${post.wordCount})`
       );
       continue;
     }
 
     if (!post.content || post.content.trim() === '') {
-      console.log(`  Post ${postId}: Skipping (empty content)`);
+      console.log(`  Post ${post.id} (${slug}): Skipping (empty content)`);
       continue;
     }
 
@@ -74,43 +84,33 @@ async function calculateWordCounts() {
     if (existingCount !== undefined) {
       if (existingCount !== wordCount) {
         console.log(
-          `  Post ${postId}: Updating wordCount ${existingCount} → ${wordCount}`
+          `  Post ${post.id} (${slug}): Updating wordCount ${existingCount} → ${wordCount}`
         );
+
+        // Update the file - replace the wordCount value
+        content = content.replace(
+          /wordCount:\s*\d+/,
+          `wordCount: ${wordCount}`
+        );
+        await fs.writeFile(filePath, content, 'utf-8');
       } else {
-        console.log(`  Post ${postId}: wordCount unchanged (${wordCount})`);
+        console.log(
+          `  Post ${post.id} (${slug}): wordCount unchanged (${wordCount})`
+        );
       }
     } else {
-      console.log(`  Post ${postId}: Adding wordCount: ${wordCount}`);
+      console.log(
+        `  Post ${post.id} (${slug}): Adding wordCount: ${wordCount}`
+      );
+      // Insert wordCount before tags line
+      content = content.replace(/(\s*tags:)/, `  wordCount: ${wordCount},\n$1`);
+      await fs.writeFile(filePath, content, 'utf-8');
     }
 
-    // Update the post object
-    post.wordCount = wordCount;
     updatedCount++;
   }
 
-  console.log(`\n📝 Updated ${updatedCount} posts\n`);
-
-  // Generate new TypeScript file content
-  console.log('🔨 Generating new posts.ts file...');
-
-  const newContent = `import type { PostsData } from './types/posts.types';
-
-const postsData: PostsData = ${JSON.stringify(posts, null, 2)};
-
-export default postsData;
-`;
-
-  // Format with Prettier
-  console.log('🎨 Formatting with Prettier...');
-  const prettierConfig = await prettier.resolveConfig(POSTS_FILE);
-  const formattedContent = await prettier.format(newContent, {
-    ...prettierConfig,
-    filepath: POSTS_FILE,
-  });
-
-  // Write back to file
-  await fs.writeFile(POSTS_FILE, formattedContent, 'utf-8');
-
+  console.log(`\n📝 Processed ${updatedCount} posts`);
   console.log('✅ Word counts calculated successfully!\n');
 }
 
