@@ -27,7 +27,9 @@ const post: Post = {
 <h1 id="function-signature">Function Signature</h1>
 <p>Now that we've introduced this, let's dive into <code>createStore</code>. We'll start with the function signature.</p>
 <!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/23ad2daace19787621102bf7c04e6d3a.js"></script>
+<!--kg-card-begin: html-->
+<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-f6e25add23b42c0d.css">
+<!--kg-card-end: html-->
 <!--kg-card-end: html-->
 <p>This takes three arguments <code>reducer</code> <code>preloadedState</code> and <code>enhancer</code>.</p>
 <h2 id="reducer">Reducer</h2>
@@ -45,7 +47,9 @@ const post: Post = {
 <li>Ensures the reducer is an actual function.</li>
 </ol>
 <!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/8268324853199df738b0e3b82670b703.js"></script>
+<!--kg-card-begin: html-->
+<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-f6e25add23b42c0d.css">
+<!--kg-card-end: html-->
 <!--kg-card-end: html-->
 <p>There is one <em>very interesting </em>thing going on here though. You can see it on line 22 in the gist above.</p>
 <p><code>enhancer(createStore)(reducer, preloadedState)</code></p>
@@ -55,7 +59,9 @@ const post: Post = {
 <h1 id="internal-state">Internal State</h1>
 <p>Before we get to the function declarations, <code>createStore</code> needs to set up some internal state.</p>
 <!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/3a6d6b547dfb5b01b5f7b3f7aa1287a6.js"></script>
+<!--kg-card-begin: html-->
+<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-f6e25add23b42c0d.css">
+<!--kg-card-end: html-->
 <!--kg-card-end: html-->
 <p>Let's walk through each of these.</p>
 <ul>
@@ -70,7 +76,9 @@ const post: Post = {
 <p>We're still inside of <code>createStore</code> but now we're declaring functions that will be used throughout the lifecycle of the store. Some of these will be returned as part of the store, others will only be used internally. I'll label each as we're going.</p>
 <h2 id="ensurecanmutatenextlisteners">ensureCanMutateNextListeners</h2>
 <!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/acf68892b5ffce759b6c7ff1114c8287.js"></script>
+<!--kg-card-begin: html-->
+<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-f6e25add23b42c0d.css">
+<!--kg-card-end: html-->
 <!--kg-card-end: html-->
 <p>This function seems inconsequential but it's actually very important. Redux supports pub-sub or publish-subscribe. We have no invariants around when a consumer may decide to subscribe to our store or unsubscribe from it. As a result <code>nextListeners</code> needs to be mutable at all times. </p>
 <p>Consider, a listener might even unsubscribe as a result of being called!</p>
@@ -79,14 +87,18 @@ const post: Post = {
 <h2 id="getstate">getState</h2>
 <p>This is a fan favorite, this is the function that returns <code>state</code>. It get's returned as part of the store and returns a reference to the current underlying <code>state</code> object.</p>
 <!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/73d678df7c701ec3a3478d536d0e46c1.js"></script>
+<!--kg-card-begin: html-->
+<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-f6e25add23b42c0d.css">
+<!--kg-card-end: html-->
 <!--kg-card-end: html-->
 <p>You'll notice there's an invariant here that prevents us from calling this function during a dispatch. There's a good reason for this. When reducers are combined they only get a slice of the state, more on that in part 2. We don't want a reducer to get access to this function and derive it's state from another namespace state tree. As a result this throws if we're in the middle of a dispatch.</p>
 <p>You may be thinking, but I call <code>getState</code> from a thunk! We're specifically referring to the plain action <code>dispatch</code>, not thunk <code>dispatch</code>. We'll cover thunks in part 2.</p>
 <h2 id="subscribe">Subscribe</h2>
 <p>The next function created is <code>subscribe</code>. This is what notifies listeners that something in the store has changed. This function is returned as part of the store.</p>
 <!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/91a474355477ea619c32005de42d318a.js"></script>
+<!--kg-card-begin: html-->
+<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-f6e25add23b42c0d.css">
+<!--kg-card-end: html-->
 <!--kg-card-end: html-->
 <p>Hopefully this pattern is starting to look familiar. Subscribe takes a function that gets called every time the internal <code>state</code> updates. It also does the following validation:</p>
 <ol>
@@ -98,7 +110,9 @@ const post: Post = {
 <h2 id="unsubscribe-">Unsubscribe.</h2>
 <p>We've covered how we start listening to things, we call <code>subscribe</code>. But how do we stop? Well <code>subscribe</code> conveniently returns a function called <code>unsubscribe</code> that allows us to stop paying attention to redux.</p>
 <!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/3600b8330c4a40417ea3bbc5c874beb1.js"></script>
+<!--kg-card-begin: html-->
+<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-f6e25add23b42c0d.css">
+<!--kg-card-end: html-->
 <!--kg-card-end: html-->
 <p>This function is very similar to <code>subscribe</code>. It checks <code>isSubscribed</code> (internal state) to see if it's already been called, and does some validation to make sure we're not currently <code>dispatching</code>. </p>
 <p>Then it removes listener from the list.</p>
@@ -109,7 +123,9 @@ const post: Post = {
 <h2 id="validation">Validation</h2>
 <p>Like every other function we've encountered. <code>dispatch</code> starts with a bunch of validation.</p>
 <!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/1d2e71c16f656255bc7edc5d79c5f387.js"></script>
+<!--kg-card-begin: html-->
+<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-f6e25add23b42c0d.css">
+<!--kg-card-end: html-->
 <!--kg-card-end: html-->
 <p>You can see above it's enforcing the following rules</p>
 <ol>
@@ -120,7 +136,9 @@ const post: Post = {
 <p>But once again you might be thinking, but I dispatch functions! This is taken care of by the thunk middleware, something to look forward to in part 2 of this article.</p>
 <h2 id="business-logic">Business Logic</h2>
 <!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/dd42acdb76fdeb65f66a5a45be266cac.js"></script>
+<!--kg-card-begin: html-->
+<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-f6e25add23b42c0d.css">
+<!--kg-card-end: html-->
 <!--kg-card-end: html-->
 <p>Now that we've made it this far, this function is probably much less impressive than you expected. Here's what it's doing.</p>
 <ol>
@@ -135,7 +153,9 @@ const post: Post = {
 <p>We've now covered the bulk of the business logic in <code>createStore</code>. There are now just two functions we need to mention, <code>replaceReducer</code> and <code>observable</code>.</p>
 <h3 id="replacereducer">replaceReducer</h3>
 <!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/4ab3646462fcbac0eea9b6f4d4d75a75.js"></script>
+<!--kg-card-begin: html-->
+<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-f6e25add23b42c0d.css">
+<!--kg-card-end: html-->
 <!--kg-card-end: html-->
 <p>The function itself seems pretty straightforward, we take a new reducer and replace the one we use in the store. Then we dispatch an action announcing this has happened.</p>
 <p>This action will also have the "side effect" of copying over any state that the new reducer needs to know about.</p>
@@ -143,12 +163,16 @@ const post: Post = {
 <h2 id="observable">Observable</h2>
 <p>This last bit I've never actually used, so I don't think I'm qualified to go into too much detail about it. Effectively it adds support for to support <code>observables</code>, a proposal to ecmascript. It's &nbsp;just a simple wrapper around <code>subscribe</code>/<code>unsubscribe</code>.</p>
 <!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/198ebd8fb599fe4563c0db2df6ad052a.js"></script>
+<!--kg-card-begin: html-->
+<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-f6e25add23b42c0d.css">
+<!--kg-card-end: html-->
 <!--kg-card-end: html-->
 <h1 id="wrapping-up">Wrapping Up</h1>
 <p>The very last bit in <code>createStore</code> is initializing the state tree and exporting functions.</p>
 <!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/005294ffb5ff7563607cf1fa35a84638.js"></script>
+<!--kg-card-begin: html-->
+<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-f6e25add23b42c0d.css">
+<!--kg-card-end: html-->
 <!--kg-card-end: html-->
 <p>This is how users get access to <code>store.getState</code>, <code>store.dispatch</code>, <code>store.subscribe</code>, and <code>replaceReducer</code>. </p>
 <h1 id="next-time-">Next Time!</h1>
