@@ -15,13 +15,27 @@ In that article I covered monads, mon`,
 <h1 id="lambda">Lambda</h1>
 <p>A lambda is an anonymous function that can be treated like a value.<a href="https://github.com/hemanth/functional-programming-jargon"> [2]</a></p>
 <p>We actually saw some of these in the <a href="/writing/what-the-functor">previous post</a>. These were <code>learnExpelliarmous</code> and <code>joinGryffindor</code>. </p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/82876b9911bc8b1bba5c5cc733b2427d.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-typescript">const joinGryffindor = (wizard: Wizard) =&gt; {
+  return {
+    ...wizard,
+    house: &#x27;Gryffindor&#x27;,
+  };
+};
+
+const learnExpelliarmous = (wizard: Wizard) =&gt; {
+  return {
+    ...wizard,
+    spells: [...wizard.spells, &#x27;Expelliarmous&#x27;],
+  };
+};</code></pre>
 <p>In this case we create an anonymous function and assign it to the variable <code>joinGryffindor</code>. We then pass this as an argument to <code>map</code>. We could also just pass this anonymous function directly like so:</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/61fb080c43c384ecc6d34bc7fba30ce3.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-typescript">const map = wizard.map((wizard: Wizard) =&gt; {
+  return {
+    ...wizard,
+    house: &#x27;Gryffindor&#x27;,
+  };
+});
+</code></pre>
 <p>This is a common pattern, passing a lambda, or an anonymous function to a <a href="http://matthewgerstman.com/functional-programming-fundamentals/">higher order function</a>.</p>
 <h1 id="lambda-calculus">Lambda Calculus</h1>
 <p>Now the scarier term Lambda Calculus. Let's break this down. Lambdas are anonymous functions, we just learned that. </p>
@@ -115,9 +129,8 @@ In that article I covered monads, mon`,
 <h1 id="predicate">Predicate</h1>
 <p>Let's finish up with a comparatively straightforward term. What is a predicate? A predicate is just a function that returns true or false [<a href="https://stackoverflow.com/questions/3230944/what-does-predicate-mean-in-the-context-of-computer-science">5</a>]. It's most commonly used as criteria for a filter.</p>
 <p>Here's a predicate:</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/3951b37d8edeb0ee55153a2d76d0655c.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-typescript">const isGryffindor = (wizard: Wizard) =&gt; wizard.house === &#x27;Gryffindor&#x27;;
+</code></pre>
 <hr>
 <h1 id="wrapping-up">Wrapping Up</h1>
 <p>I'd like to reiterate, none of this is important to your day to day code. But if you were curious what all those scary FP terms mean hopefully this satisfied that curiosity.</p>
@@ -143,7 +156,7 @@ In that article I covered monads, mon`,
   tags: ['Tech', 'functional-programming'],
   banner_img: '/images/blog/mary-had-a-little-lambda/lambda-calculus-hero.jpg',
   heroImage: '',
-  wordCount: 580,
+  wordCount: 632,
 };
 
 export default post;

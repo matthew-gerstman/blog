@@ -13,25 +13,68 @@ const post: Post = {
 <h1 id="throttle">Throttle</h1>
 <p>Throttle is a <a href="http://matthewgerstman.com/functional-programming-fundamentals/">higher order function</a> that takes a function and a timeout and only allows that function at most once per the amount of time specified.</p>
 <p>Before we use throttle. Let's start with an example.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/c5d7a590204043ad7982946b3ca63a5c.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-tsx">export class CastSpellsBasic extends Component&lt;{}, {numSpells: number}&gt; {
+  state = {numSpells: 0};
+
+  castSpell = () =&gt; this.setState({numSpells: this.state.numSpells + 1});
+
+  render() {
+    return (
+      &lt;div className="spells-wrapper"&gt;
+        {this.state.numSpells} Spells Cast!
+        &lt;div&gt;
+          &lt;button onClick={this.castSpell}&gt;Cast Spell!&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
 <p>In this example above we have a piece of state <code>numSpells</code> and a function that can increment this state <code>castSpell</code>. We have a button we can click that increments <code>numSpells</code>. You can play with it below.</p>
 <!--kg-card-begin: html-->
 <div data-demo="throttle-debounce-basic"></div>
 <!--kg-card-end: html-->
 <p>Now you can click this button as quickly as you want and it will increment the number of spells cast. Now spells take some time to recharge, so we can use throttle to slow down the user.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/cc13aaffdcf78987efb8a61d403324bc.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-tsx">export class CastSpellsThrottle extends Component&lt;{}, {numSpells: number}&gt; {
+  state = {numSpells: 0};
+
+  castSpell = () =&gt; this.setState({numSpells: this.state.numSpells + 1});
+  castSpellThrottled = throttle(this.castSpell, timeout);
+
+  render() {
+    return (
+      &lt;div className="spells-wrapper"&gt;
+        {this.state.numSpells} Spells Cast!
+        &lt;div&gt;
+          &lt;button onClick={this.castSpell}&gt;Cast Spell!&lt;/button&gt;
+          &lt;button onClick={this.castSpellThrottled}&gt;
+            Cast Spell Throttled!
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
 <p>We now have a button that call <code>castSpellThrottled</code> when the user clicks it. Try it out below.</p>
 <!--kg-card-begin: html-->
 <div data-demo="throttle-debounce-throttle"></div>
 <!--kg-card-end: html-->
 <p>Now that we understand what it does, lets dive into the source of throttle.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/d8d2090f84290dbcfe92ba51ef5dc6a8.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-typescript">function throttle(func, timeout) {
+  let ready: boolean = true;
+  return (...args) =&gt; {
+    if (!ready) {
+      return;
+    }
+
+    ready = false;
+    func(...args);
+    setTimeout(() =&gt; {
+      ready = true;
+    }, timeout);
+  };
+}
+</code></pre>
 <p>What's going on here? Throttle is a function that takes a function and a timeout. Throttle returns a new function that forms a closure around the original one.</p>
 <p>We keep track of a <code>boolean</code> called <code>ready</code> that stops the inner function from firing unless the timeout has elapsed. If we fire the function we also fire a timeout that will set <code>ready</code> to true when the timeout has elapsed. Pretty cool, huh?</p>
 <h1 id="debounce">Debounce</h1>
@@ -41,13 +84,41 @@ const post: Post = {
 <div data-demo="throttle-debounce-debounce"></div>
 <!--kg-card-end: html-->
 <p>You'll notice, you can click Cast Spell Debounced as many times as you'd like, but it will only fire after you've stopped clicking it. The source for this is similar to the previous component.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/d4fea64d5553a71058bbaef129d08d09.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-tsx">export class CastSpells extends Component&lt;{}, {numSpells: number}&gt; {
+  state = {numSpells: 0};
+
+  castSpell = () =&gt; this.setState({numSpells: this.state.numSpells + 1});
+  castSpellThrottled = throttle(this.castSpell, timeout);
+  castSpellDebounced = debounce(this.castSpell, timeout);
+
+  render() {
+    return (
+      &lt;div className="spells-wrapper"&gt;
+        {this.state.numSpells} Spells Cast!
+        &lt;div&gt;
+          &lt;button onClick={this.castSpell}&gt;Cast Spell!&lt;/button&gt;
+          &lt;button onClick={this.castSpellThrottled}&gt;
+            Cast Spell Throttled!
+          &lt;/button&gt;
+          &lt;button onClick={this.castSpellDebounced}&gt;
+            Cast Spell Debounced!
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
 <p>Now that we know what it does, let's see how it works.</p>
-<!--kg-card-begin: html-->
-<script src="https://gist.github.com/matthew-gerstman/f9b5c2df747a4e50b46ea4cc2e7e68b0.js"></script>
-<!--kg-card-end: html-->
+<pre><code class="language-typescript">export function debounce(func: Function, timeout: number) {
+  let timer: NodeJS.Timeout;
+  return (...args: any) =&gt; {
+    clearTimeout(timer);
+    timer = setTimeout(() =&gt; {
+      func(...args);
+    }, timeout);
+  };
+}
+</code></pre>
 <p>While the last one relied on a simple boolean, with this one we need to maintain access to the timer. We do this because we need to clear the previous timeout every time the function gets called again. We then set a new timeout to call the inner function.</p>
 <h1 id="real-world">Real World</h1>
 <p>Now these implementations of throttle and debounce were both very naive. If you take a look at the <a href="https://github.com/lodash/lodash/blob/master/debounce.js">lodash source</a> you can see a much more advanced version of debounce that considers things like calling the function before or after we set the timeout.</p>
@@ -60,7 +131,7 @@ const post: Post = {
   tags: ['Tech'],
   banner_img: '/images/blog/throttle-and-debounce/throttle-debounce-hero.jpg',
   heroImage: '',
-  wordCount: 567,
+  wordCount: 769,
 };
 
 export default post;
