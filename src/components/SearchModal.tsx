@@ -75,16 +75,14 @@ export function SearchModal({
   // Random witty empty state messages
   const emptyStateMessages = [
     "Start typing... I promise I'm faster than Cmd+F",
-    "Your search begins here... no pressure though",
+    'Your search begins here... no pressure though',
     "Type something. Anything. I'm not picky.",
-    "Waiting patiently for your keystrokes...",
+    'Waiting patiently for your keystrokes...',
     "Go ahead, I've indexed everything. Try me.",
-    "Nothing to see here... yet.",
+    'Nothing to see here... yet.',
   ];
-  
-  const [emptyMessage, setEmptyMessage] = useState(
-    emptyStateMessages[0]
-  );
+
+  const [emptyMessage, setEmptyMessage] = useState(emptyStateMessages[0]);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -94,7 +92,11 @@ export function SearchModal({
       setQuery('');
       setResults([]);
       setSelectedIndex(0);
-      setEmptyMessage(emptyStateMessages[Math.floor(Math.random() * emptyStateMessages.length)]);
+      setEmptyMessage(
+        emptyStateMessages[
+          Math.floor(Math.random() * emptyStateMessages.length)
+        ]
+      );
       setTimeout(() => inputRef.current?.focus(), 100);
     }
   }, [isOpen]);
@@ -227,11 +229,7 @@ export function SearchModal({
           autoComplete="off"
         />
         <div className={styles.results}>
-          {!query && (
-            <div className={styles.empty}>
-              {emptyMessage}
-            </div>
-          )}
+          {!query && <div className={styles.empty}>{emptyMessage}</div>}
           {query && results.length === 0 && (
             <div className={styles.empty}>No results found</div>
           )}
@@ -256,7 +254,7 @@ export function SearchModal({
             } else if (result.type === 'post') {
               const post = result.item;
               const banner = post.banner_img;
-              const readingTime = calculateReadingTime(post.content);
+              const readingTime = calculateReadingTime(post.wordCount || 0);
               return (
                 <div
                   key={`post-${post.id}`}
