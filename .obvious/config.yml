@@ -1,0 +1,22 @@
+branches:
+  defaultBase: main
+pr:
+  merge:
+    method: squash
+
+ci:
+  generatedFileCommands:
+    - name: post-word-counts
+      filePatterns:
+        - src/data/posts.ts
+      command: npm run calculate-wordcounts
+# TODO(repo owner): preview deploys exist but are keyed by branch name, not PR number.
+# `.github/workflows/preview.yml` publishes to
+# https://matthew-gerstman.github.io/blog/previews/<safe-branch-name>/
+# The urlTemplate field only interpolates {prNumber}, so it cannot express that path.
+# Set preview.primaryEnvironment + preview.environments.<name>.urlTemplate if the
+# preview workflow is ever changed to a PR-number-keyed URL.
+
+# TODO(repo owner): set notifications.slack.mergeAnnouncements.channelId / channelName
+# if this repo should announce merges to a Slack channel.
+
