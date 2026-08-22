@@ -53,6 +53,12 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
           <Link to="/about" className={isActive('/about') ? styles.active : ''}>
             About
           </Link>
+          <Link
+            to="/wishlist"
+            className={isActive('/wishlist') ? styles.active : ''}
+          >
+            Wishlist
+          </Link>
           <button
             className={styles.themeToggle}
             onClick={onToggleTheme}

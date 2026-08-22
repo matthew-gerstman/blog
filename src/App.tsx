@@ -17,6 +17,7 @@ import { Talks } from './pages/Talks';
 import { Resume } from './pages/resume/Resume';
 import { About } from './pages/resume/About';
 import { Obvious } from './pages/Obvious';
+import { Wishlist } from './pages/Wishlist';
 import { ShimmerShowcase } from './pages/ShimmerShowcase';
 import { useTheme } from './hooks/useTheme';
 import { useKeyboard } from './hooks/useKeyboard';
@@ -86,6 +87,7 @@ function AppContent() {
         <Route path="/resume" element={<Resume />} />
         <Route path="/about" element={<About />} />
         <Route path="/obvious" element={<Obvious />} />
+        <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/shimmer" element={<ShimmerShowcase />} />
         <Route path="/hello-there" element={<About />} />
 
