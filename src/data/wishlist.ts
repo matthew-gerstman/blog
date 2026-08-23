@@ -18,7 +18,7 @@ export const wishlist: WishlistItem[] = [
       'One of those late-90s Napster tees that somehow everyone owned and no one kept. Would fit right in with the rest of my hoard of things I have no practical reason to own.',
     category: 'Apparel',
     priority: 'medium',
-    link: 'https://www.etsy.com/search?q=vintage%20napster%20t-shirt',
+    link: 'https://www.etsy.com/listing/4320612812/vintage-napster-logo-t-shirt-90s-y2k',
   },
   {
     id: 'betamax-players',
@@ -27,6 +27,7 @@ export const wishlist: WishlistItem[] = [
       'I already have one, but a proper Betamax habit requires backups. Actively hunting for more to add to the pile.',
     category: 'Retro Tech',
     priority: 'high',
+    link: 'https://www.ebay.com/itm/188499673012',
   },
   {
     id: 'betamax-vhs-movies',
