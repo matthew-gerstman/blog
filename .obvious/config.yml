@@ -1,0 +1,14 @@
+# Autobuild configuration for matthew-gerstman/blog
+# https://app.obvious.ai
+
+merge:
+  method: squash
+
+branch:
+  default: main
+
+ci:
+  workflows:
+    - .github/workflows/deploy.yml   # Production deploy to GitHub Pages (push to main)
+    - .github/workflows/preview.yml  # PR preview deployments
+
